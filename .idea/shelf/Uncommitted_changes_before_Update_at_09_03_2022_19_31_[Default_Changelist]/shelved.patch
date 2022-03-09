@@ -1,0 +1,166 @@
+Index: Classes/Character Classes/NitzamonUser.py
+===================================================================
+diff --git a/Classes/Character Classes/NitzamonUser.py b/Classes/Character Classes/NitzamonUser.py
+deleted file mode 100644
+--- a/Classes/Character Classes/NitzamonUser.py	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
++++ /dev/null	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
+@@ -1,6 +0,0 @@
+-import Character
+-class NitzamonUser(Character):
+-    def __init__(self, name, sprite, nitzamons, num_of_nitzamons):
+-        super(self, name, sprite)
+-        self.nitzamons = nitzamons
+-        self.num_of_nitzamons = num_of_nitzamons
+\ No newline at end of file
+Index: Classes/Character Classes/NPC.py
+===================================================================
+diff --git a/Classes/Character Classes/NPC.py b/Classes/Character Classes/NPC.py
+deleted file mode 100644
+--- a/Classes/Character Classes/NPC.py	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
++++ /dev/null	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
+@@ -1,6 +0,0 @@
+-import Character
+-class NPC(Character):
+-    def __init__(self, name, sprite, quests, small_talk):
+-        super(self, name, sprite)
+-        self.quests = quests
+-        self.small_talk = small_talk
+\ No newline at end of file
+Index: Classes/Character Classes/quest.py
+===================================================================
+diff --git a/Classes/Character Classes/quest.py b/Classes/Character Classes/quest.py
+deleted file mode 100644
+--- a/Classes/Character Classes/quest.py	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
++++ /dev/null	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
+@@ -1,9 +0,0 @@
+-
+-
+-class Quest:
+-
+-    def __init__(self, is_completed, reward, dialogue):
+-        self.is_completed = is_completed
+-        self.reward = reward
+-        self.dialogue = dialogue
+-    
+\ No newline at end of file
+Index: Classes/Character Classes/Character.py
+===================================================================
+diff --git a/Classes/Character Classes/Character.py b/Classes/Character Classes/Character.py
+deleted file mode 100644
+--- a/Classes/Character Classes/Character.py	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
++++ /dev/null	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
+@@ -1,4 +0,0 @@
+-class Character:
+-    def __init__(self, name ,pos):
+-        self.name = name
+-        self.pos = pos
+Index: Classes/Nitzamon Classes/nitzamon.py
+===================================================================
+diff --git a/Classes/Nitzamon Classes/nitzamon.py b/Classes/Nitzamon Classes/nitzamon.py
+deleted file mode 100644
+--- a/Classes/Nitzamon Classes/nitzamon.py	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
++++ /dev/null	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
+@@ -1,12 +0,0 @@
+-
+-
+-class Nitzamon:
+-
+-    def __init__(self, element, dmg, hp, spd, sprite, list_of_moves, name):
+-        self.name = name
+-        self.element = element
+-        self.dmg = dmg
+-        self.hp = hp
+-        self.spd = spd
+-        self.sprite = sprite
+-        self.list_of_moves = list_of_moves
+Index: Classes/Nitzamon Classes/move.py
+===================================================================
+diff --git a/Classes/Nitzamon Classes/move.py b/Classes/Nitzamon Classes/move.py
+deleted file mode 100644
+--- a/Classes/Nitzamon Classes/move.py	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
++++ /dev/null	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
+@@ -1,11 +0,0 @@
+-
+-
+-class Move:
+-
+-    def __init__(self, move_element, move_dmg, move_name):
+-        self.move_element = move_element
+-        self.move_dmg = move_dmg
+-        self.move_name = move_name
+-
+-    def is_effective(self):
+-        pass
+Index: Classes/Character Classes/dialogue.py
+===================================================================
+diff --git a/Classes/Character Classes/dialogue.py b/Classes/Character Classes/dialogue.py
+deleted file mode 100644
+--- a/Classes/Character Classes/dialogue.py	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
++++ /dev/null	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
+@@ -1,8 +0,0 @@
+-
+-
+-class Dialogue:
+-
+-    def __init__(self, text, sound):
+-        self.text = text
+-        self.sound = sound
+-
+Index: Constants.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Constants.py b/Constants.py
+new file mode 100644
+--- /dev/null	(date 1646846283717)
++++ b/Constants.py	(date 1646846283717)
+@@ -0,0 +1,23 @@
++import pygame
++
++# Pygame screen variables
++X = 1000
++Y = 700
++SCALE = 20
++
++# World variables
++WORLD_WIDTH = 250
++WORLD_HEIGHT = 250
++
++
++# Enemy types
++WATER = "water"
++FIRE = "fire"
++EARTH = "earth"
++
++# Tiles
++TILES = {"G": pygame.image.load("Assets\\Tiles\\Grass1.png"),
++         "G2": pygame.image.load("Assets\\Tiles\\Grass2.png"),
++         "W": pygame.image.load("Assets\\Tiles\\Water.png"),
++         "T": pygame.image.load("Assets\\Tiles\\tall_grass.png"),
++         "N": pygame.image.load("Assets\\Characters\\npc.png")}
+Index: Worlds/Make_world.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import random\r\n\r\n\r\ndef make_world(width, height, world_name):\r\n    f = open(world_name, 'w')\r\n    for i in range(height):\r\n        for j in range(width):\r\n            if j == width - 1:\r\n                f.write(\"G\")\r\n            else:\r\n                if random.randint(1, 10) >= 5:\r\n                    f.write(\"G \")\r\n                else:\r\n                    f.write(\"G2 \")\r\n        if i != height - 1:\r\n            f.write(\"\\n\")\r\n    f.close()\r\n\r\n\r\nmake_world(250, 250, \"World1\")\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Worlds/Make_world.py b/Worlds/Make_world.py
+--- a/Worlds/Make_world.py	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
++++ b/Worlds/Make_world.py	(date 1646846283720)
+@@ -2,7 +2,7 @@
+ 
+ 
+ def make_world(width, height, world_name):
+-    f = open(world_name, 'w')
++    f = open(world_name + ".md", 'w')
+     for i in range(height):
+         for j in range(width):
+             if j == width - 1:
+@@ -17,4 +17,4 @@
+     f.close()
+ 
+ 
+-make_world(250, 250, "World1")
++make_world(250, 250, "World1.md")
