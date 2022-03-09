@@ -17,4 +17,14 @@ def make_world(width, height, world_name):
     f.close()
 
 
-make_world(250, 250, "World1.md")
+def read_world(world_name):
+    world = []
+    f = open(world_name + ".md", 'r')
+    for line in f:
+        line = line.replace("\n", "")
+        world.append(line.split(" "))
+    return world
+
+
+
+make_world(250, 250, "World1")
