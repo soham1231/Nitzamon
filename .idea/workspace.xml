@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="510207cd-e226-49f1-bf6f-9bcd1823d7b0" name="Default Changelist" comment="constants">
       <change beforePath="$PROJECT_DIR$/Classes/Character_Classes/Character.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/Character.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/Character_Classes/dialogue.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/dialogue.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/Character_Classes/quest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/quest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/Nitzamon_Classes/move.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/NitzamonClasses/move.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/Nitzamon_Classes/nitzamon.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/NitzamonClasses/nitzamon.py" afterDir="false" />
+=======
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Nitzamon classes&#10;im gay">
+      <change afterPath="$PROJECT_DIR$/Classes/CharacterClasses/quest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Classes/NitzamonClasses/move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/Character_Classes/Character.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/Character_Classes/dialogue.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/Character_Classes/quest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/Nitzamon_Classes/move.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/Nitzamon_Classes/nitzamon.py" beforeDir="false" />
+>>>>>>> origin/master
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,20 +34,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectId" id="269cI0IzDarim8Wv2pJZao9lz9T" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+=======
+  <component name="ProjectId" id="269jaZhTCQBB0sPIEvgCsT2kQsX" />
+>>>>>>> origin/master
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+=======
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+>>>>>>> origin/master
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="C:\Users\ADMIN\Desktop\nitzanim\nitzamon\Assets\Characters" />
       <recent name="C:\Users\ADMIN\Desktop\nitzanim\nitzamon\Assets\Tiles" />
       <recent name="C:\Users\ADMIN\Desktop\nitzanim\nitzamon" />
@@ -67,6 +88,16 @@
     </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="nitzamon" />
+=======
+      <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\NitzamonClasses" />
+      <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\Character Classes" />
+      <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\Nitzamon Classes" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Nitzamon" />
+>>>>>>> origin/master
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -86,6 +117,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="nitzamon" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -113,10 +145,13 @@
         <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
+=======
+>>>>>>> origin/master
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="510207cd-e226-49f1-bf6f-9bcd1823d7b0" name="Default Changelist" comment="" />
       <created>1646839159168</created>
       <option name="number" value="Default" />
@@ -200,5 +235,36 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1646844298593" />
+=======
+      <changelist id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="" />
+      <created>1646842759788</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646842759788</updated>
+    </task>
+    <task id="LOCAL‎00001" summary="Nitzamon classes&#10;im gay">
+      <created>1646844283699</created>
+      <option name="number" value="LOCAL‎00001" />
+      <option name="presentableId" value="LOCAL‎00001" />
+      <updated>1646844283699</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Nitzamon classes&#10;im gay" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nitzamon classes&#10;im gay" />
+>>>>>>> origin/master
   </component>
 </project>
