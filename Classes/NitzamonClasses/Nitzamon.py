@@ -2,7 +2,7 @@
 
 class Nitzamon:
 
-    def __init__(self, element, dmg, hp, spd, sprite, list_of_moves, name):
+    def __init__(self, element, dmg, hp, spd, sprite, list_of_moves, name, lvl):
         self.name = name
         self.element = element
         self.dmg = dmg
@@ -10,3 +10,4 @@ class Nitzamon:
         self.spd = spd
         self.sprite = sprite
         self.list_of_moves = list_of_moves
+        self.lvl = lvl

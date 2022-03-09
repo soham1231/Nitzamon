@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="510207cd-e226-49f1-bf6f-9bcd1823d7b0" name="Default Changelist" comment="constants">
-      <change beforePath="$PROJECT_DIR$/Classes/Character_Classes/Character.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/Character.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Character_Classes/dialogue.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/dialogue.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Character_Classes/quest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/quest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Nitzamon_Classes/move.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/NitzamonClasses/move.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Nitzamon_Classes/nitzamon.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/NitzamonClasses/nitzamon.py" afterDir="false" />
-=======
     <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Nitzamon classes&#10;im gay">
       <change afterPath="$PROJECT_DIR$/Classes/CharacterClasses/quest.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Classes/NitzamonClasses/move.py" afterDir="false" />
@@ -17,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/Classes/Character_Classes/quest.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/Nitzamon_Classes/move.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/Nitzamon_Classes/nitzamon.py" beforeDir="false" />
->>>>>>> origin/master
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,61 +25,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-<<<<<<< HEAD
-  <component name="ProjectId" id="269cI0IzDarim8Wv2pJZao9lz9T" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-=======
   <component name="ProjectId" id="269jaZhTCQBB0sPIEvgCsT2kQsX" />
->>>>>>> origin/master
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-<<<<<<< HEAD
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-=======
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
->>>>>>> origin/master
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-<<<<<<< HEAD
-      <recent name="C:\Users\ADMIN\Desktop\nitzanim\nitzamon\Assets\Characters" />
-      <recent name="C:\Users\ADMIN\Desktop\nitzanim\nitzamon\Assets\Tiles" />
-      <recent name="C:\Users\ADMIN\Desktop\nitzanim\nitzamon" />
-      <recent name="C:\Users\ADMIN\Desktop\nitzanim\nitzamon\Assets" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Python.Make_world">
-    <configuration name="Make_world" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="nitzamon" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Worlds" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Worlds/Make_world.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="nitzamon" />
-=======
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\NitzamonClasses" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\Character Classes" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\Nitzamon Classes" />
@@ -97,7 +45,6 @@
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Nitzamon" />
->>>>>>> origin/master
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -117,125 +64,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-<<<<<<< HEAD
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="nitzamon" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../test" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../test/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.Make_world" />
-        <item itemvalue="Python.test" />
-      </list>
-    </recent_temporary>
-=======
->>>>>>> origin/master
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-<<<<<<< HEAD
-      <changelist id="510207cd-e226-49f1-bf6f-9bcd1823d7b0" name="Default Changelist" comment="" />
-      <created>1646839159168</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1646839159168</updated>
-    </task>
-    <task id="LOCAL‎00001" summary="added directories">
-      <created>1646842239674</created>
-      <option name="number" value="LOCAL‎00001" />
-      <option name="presentableId" value="LOCAL‎00001" />
-      <updated>1646842239674</updated>
-    </task>
-    <task id="LOCAL‎00002" summary="world class">
-      <created>1646842611142</created>
-      <option name="number" value="LOCAL‎00002" />
-      <option name="presentableId" value="LOCAL‎00002" />
-      <updated>1646842611142</updated>
-    </task>
-    <task id="LOCAL‎00003" summary="classes">
-      <created>1646842674591</created>
-      <option name="number" value="LOCAL‎00003" />
-      <option name="presentableId" value="LOCAL‎00003" />
-      <updated>1646842674591</updated>
-    </task>
-    <task id="LOCAL‎00004" summary="world making algorithm">
-      <created>1646843800985</created>
-      <option name="number" value="LOCAL‎00004" />
-      <option name="presentableId" value="LOCAL‎00004" />
-      <updated>1646843800985</updated>
-    </task>
-    <task id="LOCAL‎00005" summary="changed .txt to non">
-      <created>1646844433566</created>
-      <option name="number" value="LOCAL‎00005" />
-      <option name="presentableId" value="LOCAL‎00005" />
-      <updated>1646844433566</updated>
-    </task>
-    <task id="LOCAL‎00006" summary="constants">
-      <created>1646846262010</created>
-      <option name="number" value="LOCAL‎00006" />
-      <option name="presentableId" value="LOCAL‎00006" />
-      <updated>1646846262010</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
-    <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="added directories" />
-    <MESSAGE value="world class" />
-    <MESSAGE value="classes" />
-    <MESSAGE value="world making algorithm" />
-    <MESSAGE value="changed .txt to non" />
-    <MESSAGE value="constants" />
-    <option name="LAST_COMMIT_MESSAGE" value="constants" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="463" y="106" key="FileChooserDialogImpl" timestamp="1646841635174">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="463" y="106" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1646841635174" />
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1646843830025">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1646843830025" />
-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1646843830025">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1646843830025" />
-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1646843830025">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1646843830025" />
-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1646843830025">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1646843830025" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1646846264734">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1646846264734" />
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1646844298593">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1646844298593" />
-=======
       <changelist id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="" />
       <created>1646842759788</created>
       <option name="number" value="Default" />
@@ -265,6 +97,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Nitzamon classes&#10;im gay" />
     <option name="LAST_COMMIT_MESSAGE" value="Nitzamon classes&#10;im gay" />
->>>>>>> origin/master
   </component>
 </project>

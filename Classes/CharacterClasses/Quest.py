@@ -1,9 +1,6 @@
-
-
 class Quest:
 
-    def __init__(self, is_completed, reward, dialogue):
-        self.is_completed = is_completed
+    def __init__(self, completed, reward, dialogue):
+        self.completed = completed
         self.reward = reward
         self.dialogue = dialogue
-    
