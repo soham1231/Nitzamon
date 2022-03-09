@@ -1,0 +1,9 @@
+diff --git a/Classes/Character b/Classes/dialogue.py
+rename from Classes/Character
+rename to Classes/dialogue.py
+diff --git a/Classes/Character b/Classes/Character.py
+rename from Classes/Character
+rename to Classes/Character.py
+diff --git a/Classes/Nitzamon b/Classes/nitzamon.py
+rename from Classes/Nitzamon
+rename to Classes/nitzamon.py

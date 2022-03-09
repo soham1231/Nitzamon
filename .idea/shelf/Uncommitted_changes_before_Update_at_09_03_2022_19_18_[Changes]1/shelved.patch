@@ -1,0 +1,98 @@
+Index: Classes/Character Classes/quest.py
+===================================================================
+diff --git a/Classes/Character Classes/quest.py b/Classes/Character Classes/quest.py
+deleted file mode 100644
+--- a/Classes/Character Classes/quest.py	
++++ /dev/null	
+@@ -1,9 +0,0 @@
+-
+-
+-class Quest:
+-
+-    def __init__(self, is_completed, reward, dialogue):
+-        self.is_completed = is_completed
+-        self.reward = reward
+-        self.dialogue = dialogue
+-    
+\ No newline at end of file
+Index: Classes/Nitzamon Classes/move.py
+===================================================================
+diff --git a/Classes/Nitzamon Classes/move.py b/Classes/Nitzamon Classes/move.py
+deleted file mode 100644
+--- a/Classes/Nitzamon Classes/move.py	
++++ /dev/null	
+@@ -1,11 +0,0 @@
+-
+-
+-class Move:
+-
+-    def __init__(self, move_element, move_dmg, move_name):
+-        self.move_element = move_element
+-        self.move_dmg = move_dmg
+-        self.move_name = move_name
+-
+-    def is_effective(self):
+-        pass
+Index: Classes/NitzamonClasses/move.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Classes/NitzamonClasses/move.py b/Classes/NitzamonClasses/move.py
+new file mode 100644
+--- /dev/null	
++++ b/Classes/NitzamonClasses/move.py	
+@@ -0,0 +1,31 @@
++
++
++class Move:
++
++    def __init__(self, move_element, move_dmg, move_name):
++        self.move_element = move_element
++        self.move_dmg = move_dmg
++        self.move_name = move_name
++
++    def get_effectiveness(self, enemy_type):
++        if self.move_element == "water":
++            if enemy_type == "water" or enemy_type == "grass":
++                return "Not very effective"
++            if enemy_type == "fire":
++                return "Super effective"
++            else:
++                return "Effective"
++        if self.move_element == "earth":
++            if enemy_type == "fire" or enemy_type == "earth":
++                return "Not very effective"
++            if enemy_type == "water":
++                return "Super effective"
++            else:
++                return "Effective"
++        if self.move_element == "fire":
++            if enemy_type == "water" or enemy_type == "fire":
++                return "Not very effective"
++            if enemy_type == "earth":
++                return "Super effective"
++            else:
++                return "Effective"
+Index: Classes/CharacterClasses/quest.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Classes/CharacterClasses/quest.py b/Classes/CharacterClasses/quest.py
+new file mode 100644
+--- /dev/null	
++++ b/Classes/CharacterClasses/quest.py	
+@@ -0,0 +1,11 @@
++
++
++class Quest:
++
++    def __init__(self, completed, reward, dialogue):
++        self.completed = completed
++        self.reward = reward
++        self.dialogue = dialogue
++
++    def is_completed(self):
++        pass
+\ No newline at end of file
