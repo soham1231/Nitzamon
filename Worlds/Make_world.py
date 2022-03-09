@@ -2,7 +2,7 @@ import random
 
 
 def make_world(width, height, world_name):
-    f = open(world_name + ".txt", 'w')
+    f = open(world_name, 'w')
     for i in range(height):
         for j in range(width):
             if j == width - 1:
