@@ -1,5 +1,3 @@
-
-
 class Quest:
 
     def __init__(self, completed, reward, dialogue):
