@@ -1,0 +1,71 @@
+Index: Classes/Character Classes/Character.py
+===================================================================
+diff --git a/Classes/Character Classes/Character.py b/Classes/Character Classes/Character.py
+deleted file mode 100644
+--- a/Classes/Character Classes/Character.py	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
++++ /dev/null	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
+@@ -1,4 +0,0 @@
+-class Character:
+-    def __init__(self, name ,pos):
+-        self.name = name
+-        self.pos = pos
+Index: Classes/Character Classes/NitzamonUser.py
+===================================================================
+diff --git a/Classes/Character Classes/NitzamonUser.py b/Classes/Character Classes/NitzamonUser.py
+deleted file mode 100644
+--- a/Classes/Character Classes/NitzamonUser.py	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
++++ /dev/null	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
+@@ -1,6 +0,0 @@
+-import Character
+-class NitzamonUser(Character):
+-    def __init__(self, name, sprite, nitzamons, num_of_nitzamons):
+-        super(self, name, sprite)
+-        self.nitzamons = nitzamons
+-        self.num_of_nitzamons = num_of_nitzamons
+\ No newline at end of file
+Index: Classes/Character Classes/NPC.py
+===================================================================
+diff --git a/Classes/Character Classes/NPC.py b/Classes/Character Classes/NPC.py
+deleted file mode 100644
+--- a/Classes/Character Classes/NPC.py	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
++++ /dev/null	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
+@@ -1,6 +0,0 @@
+-import Character
+-class NPC(Character):
+-    def __init__(self, name, sprite, quests, small_talk):
+-        super(self, name, sprite)
+-        self.quests = quests
+-        self.small_talk = small_talk
+\ No newline at end of file
+Index: Classes/Character Classes/dialogue.py
+===================================================================
+diff --git a/Classes/Character Classes/dialogue.py b/Classes/Character Classes/dialogue.py
+deleted file mode 100644
+--- a/Classes/Character Classes/dialogue.py	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
++++ /dev/null	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
+@@ -1,8 +0,0 @@
+-
+-
+-class Dialogue:
+-
+-    def __init__(self, text, sound):
+-        self.text = text
+-        self.sound = sound
+-
+Index: Classes/Character Classes/quest.py
+===================================================================
+diff --git a/Classes/Character Classes/quest.py b/Classes/Character Classes/quest.py
+deleted file mode 100644
+--- a/Classes/Character Classes/quest.py	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
++++ /dev/null	(revision bd1cbc54010060b23d7790e0bb9106aea1cda98a)
+@@ -1,9 +0,0 @@
+-
+-
+-class Quest:
+-
+-    def __init__(self, is_completed, reward, dialogue):
+-        self.is_completed = is_completed
+-        self.reward = reward
+-        self.dialogue = dialogue
+-    
+\ No newline at end of file
