@@ -3,12 +3,12 @@ import math
 
 import Constants
 from Constants import WIN
-import Player
-import WorldFunctions
+from Classes.CharacterClasses import Player
+from Worlds import WorldFunctions
 
 pygame.init()
 pygame.display.set_caption("Nitzamon!! ")
-world = WorldFunctions.read_world("World1")
+world = WorldFunctions.read_world(Constants.WORLD1_PATH)
 
 player_sprite = pygame.image.load("Assets\\Characters\\amongus.png")
 player_sprite = pygame.transform.scale(player_sprite, (Constants.SCALE, Constants.SCALE))
@@ -39,6 +39,7 @@ def draw_world():
 
 run = True
 while run:
+    WIN.fill((0, 0, 0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False

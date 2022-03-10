@@ -24,3 +24,6 @@ TILES = {"G": pygame.image.load("Assets\\Tiles\\Grass1.png"),
          "N": pygame.image.load("Assets\\Characters\\npc.png")}
 TILE_ROW = ceil(X/SCALE)
 TILE_COL = ceil(Y/SCALE)
+
+# Paths
+WORLD1_PATH = "Worlds\\World1.txt"

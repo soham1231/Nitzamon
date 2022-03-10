@@ -1,5 +1,5 @@
-from NitzamonUser import *
-import WorldFunctions
+from Classes.CharacterClasses.NitzamonUser import *
+from Worlds import WorldFunctions
 import Constants
 from Constants import WIN
 import math
@@ -14,7 +14,7 @@ class Player(NitzamonUser):
         self.camera_pos = [0, 0]
 
     def camera(self):
-        world = WorldFunctions.read_world("World1")
+        world = WorldFunctions.read_world(Constants.WORLD1_PATH)
         max_camera_y = int(len(world) - (Constants.Y / Constants.SCALE))
         max_camera_x = int(len(world) - (Constants.X / Constants.SCALE))
         camera_x = self.pos[0] - math.ceil(round(Constants.X / Constants.SCALE / 2))
@@ -38,12 +38,12 @@ class Player(NitzamonUser):
                                self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
         
     def check_in_bounds(self, pos):
-        world = WorldFunctions.read_world("World1")
-        if pos[0] >= len(world):
+        world = WorldFunctions.read_world(Constants.WORLD1_PATH)
+        if pos[0] >= len(world) - 1:
             return False
         if pos[0] < 0:
             return False
-        if pos[1] >= len(world):
+        if pos[1] >= len(world) - 1:
             return False
         if pos[1] < 0:
             return False

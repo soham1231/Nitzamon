@@ -2,7 +2,7 @@ import random
 
 
 def make_world(width, height, world_name):
-    f = open(world_name + ".md", 'w')
+    f = open(world_name + ".txt", 'w')
     for i in range(height):
         for j in range(width):
             if j == width - 1:
@@ -17,14 +17,14 @@ def make_world(width, height, world_name):
     f.close()
 
 
-def read_world(world_name):
+def read_world(world_path):
     world = []
-    f = open(world_name + ".md", 'r')
+    f = open(world_path, 'r')
     for line in f:
         line = line.replace("\n", "")
         world.append(line.split(" "))
     return world
 
 
-
-make_world(250, 250, "World1")
+if __name__ == "__main__":
+    make_world(250, 250, "World1")
