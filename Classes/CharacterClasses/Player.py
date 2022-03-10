@@ -50,19 +50,14 @@ class Player(NitzamonUser):
         return True
 
     def move(self, keys):
+        if (keys[pygame.K_w] or keys[pygame.K_s]) and (keys[pygame.K_a] or keys[pygame.K_d]):
+            if Constants.fps == Constants.FPS:
+                Constants.fps /= 2
+        else:
+            Constants.fps = Constants.FPS
         if keys[pygame.K_a] and self.check_in_bounds([self.pos[0] - 1, self.pos[1]]):  # Left
-            if not (keys[pygame.K_w] or keys[pygame.K_s]):
-                Constants.fps = Constants.FPS
-            else:
-                if Constants.fps == Constants.FPS:
-                    Constants.fps /= 2
             self.pos[0] -= 1
         if keys[pygame.K_d] and self.check_in_bounds([self.pos[0] + 1, self.pos[1]]):  # Right
-            if not (keys[pygame.K_w] or keys[pygame.K_s]):
-                Constants.fps = Constants.FPS
-            else:
-                if Constants.fps == Constants.FPS:
-                    Constants.fps /= 2
             self.pos[0] += 1
         if keys[pygame.K_w] and self.check_in_bounds([self.pos[0], self.pos[1] - 1]):  # Up
             self.pos[1] -= 1
