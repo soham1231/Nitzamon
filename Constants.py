@@ -37,3 +37,4 @@ TILE_COL = ceil(Y/SCALE)
 WORLD1_PATH = "Worlds\\World1.txt"
 
 FPS = 10
+fps = FPS  # Not a constant but idk where to put it
