@@ -19,10 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Nitzamon classes&#10;im gay">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="added player movement and check in bounds of map">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/Player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +126,13 @@
       <option name="presentableId" value="LOCAL‎00002" />
       <updated>1646859875809</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL‎00003" summary="added player movement and check in bounds of map">
+      <created>1646919652481</created>
+      <option name="number" value="LOCAL‎00003" />
+      <option name="presentableId" value="LOCAL‎00003" />
+      <updated>1646919652481</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,29 +149,30 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Nitzamon classes&#10;im gay" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nitzamon classes&#10;im gay" />
+    <MESSAGE value="added player movement and check in bounds of map" />
+    <option name="LAST_COMMIT_MESSAGE" value="added player movement and check in bounds of map" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1646851464209">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1646851464209" />
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1646919481645">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1646920037871">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1646919481645" />
-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1646919481645">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1646920037871" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1646920037871">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1646919481645" />
-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1646919481645">
+    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1646920037871" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1646920037871">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1646919481645" />
-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1646919481645">
+    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1646920037871" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1646920037871">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1646919481645" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1646920037871" />
     <state x="129" y="55" key="MergeDialog" timestamp="1646859868475">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -179,10 +185,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1646851507762" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1646859879971">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1646919655927">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1646859879971" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1646919655927" />
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1646859836192">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

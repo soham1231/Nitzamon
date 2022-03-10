@@ -28,8 +28,8 @@ def draw_world():
     j_min = 0
     if player.pos[0] > Constants.TILE_ROW:
         i_min = player.pos[0] - Constants.TILE_ROW
-    if player.pos[1] > Constants.TILE_ROW:
-        j_min = player.pos[1] - Constants.TILE_ROW
+    if player.pos[1] > Constants.TILE_COL:
+        j_min = player.pos[1] - Constants.TILE_COL
 
     for i in range(i_min, i_max):
         for j in range(j_min, j_max):

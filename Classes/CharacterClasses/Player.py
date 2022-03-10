@@ -16,7 +16,7 @@ class Player(NitzamonUser):
     def camera(self):
         world = WorldFunctions.read_world("World1")
         max_camera_y = int(len(world) - (Constants.Y / Constants.SCALE))
-        max_camera_x = int(len(world) - (Constants.Y / Constants.SCALE))
+        max_camera_x = int(len(world) - (Constants.X / Constants.SCALE))
         camera_x = self.pos[0] - math.ceil(round(Constants.X / Constants.SCALE / 2))
         camera_y = self.pos[1] - math.ceil(round(Constants.Y / Constants.SCALE / 2))
         if max_camera_y >= camera_y >= 0:
@@ -36,14 +36,14 @@ class Player(NitzamonUser):
     def draw_player(self):
         WIN.blit(self.sprite, (self.pos[0] * Constants.SCALE - (self.camera_pos[0] * Constants.SCALE),
                                self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
-
+        
     def check_in_bounds(self, pos):
         world = WorldFunctions.read_world("World1")
-        if pos[0] >= len(world):
+        if pos[0] > len(world):
             return False
         if pos[0] < 0:
             return False
-        if pos[1] >= len(world):
+        if pos[1] > len(world):
             return False
         if pos[1] < 0:
             return False
