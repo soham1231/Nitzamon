@@ -19,12 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="changed player image again because Gilad is retarded">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="changed grass images">
+      <change afterPath="$PROJECT_DIR$/Assets/Menus/Fight.PNG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Grass1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/Grass1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Grass2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/Grass2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiles/tall_grass.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/tall_grass.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Water.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/Water.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/Player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Worlds/World1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Worlds/World1.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -225,7 +226,13 @@
       <option name="presentableId" value="LOCAL‎00009" />
       <updated>1646935160379</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL‎00010" summary="changed grass images">
+      <created>1646936946340</created>
+      <option name="number" value="LOCAL‎00010" />
+      <option name="presentableId" value="LOCAL‎00010" />
+      <updated>1646936946340</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,6 +257,7 @@
     <MESSAGE value="When player goes diagonally the fps is halved" />
     <MESSAGE value="Changed player image and name" />
     <MESSAGE value="changed player image again because Gilad is retarded" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed player image again because Gilad is retarded" />
+    <MESSAGE value="changed grass images" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed grass images" />
   </component>
 </project>

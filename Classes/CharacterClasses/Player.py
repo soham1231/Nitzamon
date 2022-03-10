@@ -7,7 +7,7 @@ import pygame
 
 
 class Player(NitzamonUser):
-    def __init__(self, name, sprite, pos, nitzamons=0, nitzamon_bag=0, active_quests=0):
+    def __init__(self, name, sprite, pos, nitzamons, nitzamon_bag, active_quests):
         super().__init__(name, sprite, pos, nitzamons)
         self.nitzamon_bag = nitzamon_bag
         self.active_quests = active_quests
@@ -37,16 +37,24 @@ class Player(NitzamonUser):
         WIN.blit(self.sprite, (self.pos[0] * Constants.SCALE - (self.camera_pos[0] * Constants.SCALE),
                                self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
         
-    def check_in_bounds(self, pos):
+    def check_collisions(self, pos):
         world = WorldFunctions.read_world(Constants.WORLD1_PATH)
+
         if pos[0] >= len(world) - 1:
             return False
+
         if pos[0] < 0:
             return False
+
         if pos[1] >= len(world) - 1:
             return False
+
         if pos[1] < 0:
             return False
+
+        if world[pos[0]][pos[1]] not in Constants.WALKABLE_TILES:
+            return False
+
         return True
 
     def move(self, keys):
@@ -55,11 +63,15 @@ class Player(NitzamonUser):
                 Constants.fps /= 2
         else:
             Constants.fps = Constants.FPS
-        if keys[pygame.K_a] and self.check_in_bounds([self.pos[0] - 1, self.pos[1]]):  # Left
+
+        if keys[pygame.K_a] and self.check_collisions([self.pos[0] - 1, self.pos[1]]):  # Left
             self.pos[0] -= 1
-        if keys[pygame.K_d] and self.check_in_bounds([self.pos[0] + 1, self.pos[1]]):  # Right
+
+        if keys[pygame.K_d] and self.check_collisions([self.pos[0] + 1, self.pos[1]]):  # Right
             self.pos[0] += 1
-        if keys[pygame.K_w] and self.check_in_bounds([self.pos[0], self.pos[1] - 1]):  # Up
+
+        if keys[pygame.K_w] and self.check_collisions([self.pos[0], self.pos[1] - 1]):  # Up
             self.pos[1] -= 1
-        if keys[pygame.K_s] and self.check_in_bounds([self.pos[0], self.pos[1] + 1]):  # Down
+
+        if keys[pygame.K_s] and self.check_collisions([self.pos[0], self.pos[1] + 1]):  # Down
             self.pos[1] += 1

@@ -30,6 +30,8 @@ TILES = {"G": GRASS1_IMAGE,
          "W": WATER_IMAGE,
          "T": TALL_GRASS_IMAGE,
          "N": NPC_IMAGE}
+
+WALKABLE_TILES = ["G", "G2", "T"]
 TILE_ROW = ceil(X/SCALE)
 TILE_COL = ceil(Y/SCALE)
 

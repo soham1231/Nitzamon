@@ -10,7 +10,7 @@ pygame.init()
 pygame.display.set_caption("Nitzamon!! ")
 world = WorldFunctions.read_world(Constants.WORLD1_PATH)
 
-player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [0, 0])
+player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [0, 0], 0, 0, 0)
 player.camera()
 
 
@@ -35,21 +35,25 @@ def draw_world():
             WIN.blit(tile, (i * Constants.SCALE - (player.camera_pos[0] * Constants.SCALE), j * Constants.SCALE - (player.camera_pos[1] * Constants.SCALE)))
 
 
+fight_image = pygame.transform.scale(pygame.image.load("Assets\\Menus\\Fight.PNG"), (Constants.X, Constants.Y))
 clock = pygame.time.Clock()
 run = True
 while run:
     clock.tick(Constants.fps)
-    WIN.fill((0, 0, 0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
     keys = pygame.key.get_pressed()
     if keys[pygame.K_ESCAPE]:
         run = False
-    player.camera()
-    draw_world()
-    player.move(keys)
-    player.draw_player()
+
+    if world[player.pos[0]][player.pos[1]] != "T":
+        player.camera()
+        draw_world()
+        player.move(keys)
+        player.draw_player()
+    else:
+        WIN.blit(fight_image, (0, 0))
 
     pygame.display.update()
 pygame.quit()
