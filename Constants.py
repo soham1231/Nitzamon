@@ -4,7 +4,7 @@ from math import ceil
 # Pygame screen variables
 WIN = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 X, Y = WIN.get_size()
-SCALE = 30
+SCALE = 50
 
 # World variables
 WORLD_WIDTH = 250

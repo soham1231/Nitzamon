@@ -39,11 +39,11 @@ class Player(NitzamonUser):
         
     def check_in_bounds(self, pos):
         world = WorldFunctions.read_world("World1")
-        if pos[0] > len(world):
+        if pos[0] >= len(world):
             return False
         if pos[0] < 0:
             return False
-        if pos[1] > len(world):
+        if pos[1] >= len(world):
             return False
         if pos[1] < 0:
             return False
