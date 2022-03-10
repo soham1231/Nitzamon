@@ -3,6 +3,7 @@ import WorldFunctions
 import Constants
 from Constants import WIN
 import math
+import pygame
 
 
 class Player(NitzamonUser):
@@ -35,3 +36,25 @@ class Player(NitzamonUser):
     def draw_player(self):
         WIN.blit(self.sprite, (self.pos[0] * Constants.SCALE - (self.camera_pos[0] * Constants.SCALE),
                                self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
+
+    def check_in_bounds(self, pos):
+        world = WorldFunctions.read_world("World1")
+        if pos[0] >= len(world):
+            return False
+        if pos[0] < 0:
+            return False
+        if pos[1] >= len(world):
+            return False
+        if pos[1] < 0:
+            return False
+        return True
+
+    def move(self, keys):
+        if keys[pygame.K_a] and self.check_in_bounds([self.pos[0] - 1, self.pos[1]]):  # Left
+            self.pos[0] -= 1
+        if keys[pygame.K_d] and self.check_in_bounds([self.pos[0] + 1, self.pos[1]]):  # Right
+            self.pos[0] += 1
+        if keys[pygame.K_w] and self.check_in_bounds([self.pos[0], self.pos[1] - 1]):  # Up
+            self.pos[1] -= 1
+        if keys[pygame.K_s] and self.check_in_bounds([self.pos[0], self.pos[1] + 1]):  # Down
+            self.pos[1] += 1

@@ -42,8 +42,12 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_ESCAPE]:
+        run = False
     player.camera()
     draw_world()
+    player.move(keys)
     player.draw_player()
 
     pygame.display.update()

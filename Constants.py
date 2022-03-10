@@ -1,10 +1,10 @@
 import pygame
+from math import ceil
 
 # Pygame screen variables
-X = 1000
-Y = 700
-SCALE = 20
-WIN = pygame.display.set_mode((X, Y))
+WIN = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+X, Y = WIN.get_size()
+SCALE = 30
 
 # World variables
 WORLD_WIDTH = 250
@@ -22,5 +22,5 @@ TILES = {"G": pygame.image.load("Assets\\Tiles\\Grass1.png"),
          "W": pygame.image.load("Assets\\Tiles\\Water.png"),
          "T": pygame.image.load("Assets\\Tiles\\tall_grass.png"),
          "N": pygame.image.load("Assets\\Characters\\npc.png")}
-TILE_ROW = int(X/SCALE)
-TILE_COL = int(Y/SCALE)
+TILE_ROW = ceil(X/SCALE)
+TILE_COL = ceil(Y/SCALE)
