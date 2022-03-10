@@ -10,9 +10,7 @@ pygame.init()
 pygame.display.set_caption("Nitzamon!! ")
 world = WorldFunctions.read_world(Constants.WORLD1_PATH)
 
-player_sprite = pygame.image.load("Assets\\Characters\\amongus.png")
-player_sprite = pygame.transform.scale(player_sprite, (Constants.SCALE, Constants.SCALE))
-player = Player.Player("Shoham", player_sprite, [0, 0])
+player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [0, 0])
 player.camera()
 
 
@@ -33,12 +31,14 @@ def draw_world():
 
     for i in range(i_min, i_max):
         for j in range(j_min, j_max):
-            tile = pygame.transform.scale(Constants.TILES[world[i][j]], (Constants.SCALE, Constants.SCALE))
+            tile = Constants.TILES[world[i][j]]
             WIN.blit(tile, (i * Constants.SCALE - (player.camera_pos[0] * Constants.SCALE), j * Constants.SCALE - (player.camera_pos[1] * Constants.SCALE)))
 
 
+clock = pygame.time.Clock()
 run = True
 while run:
+    clock.tick(Constants.FPS)
     WIN.fill((0, 0, 0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
