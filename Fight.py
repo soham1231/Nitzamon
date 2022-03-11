@@ -1,9 +1,15 @@
+import time
+
 import pygame
 import Constants
+import random
 
 
 class FightMenu:
     def __init__(self):
+        self.in_fight = False
+        self.fight_start = time.time()
+
         self.main_rect = pygame.Rect((0, Constants.Y - 250), (Constants.X, 250))
         self.fight_rect = pygame.Rect((Constants.X - 500, Constants.Y - 200), (170, 50))
         self.inventory_rect = pygame.Rect((Constants.X - 250, Constants.Y - 200), (170, 50))
@@ -48,3 +54,11 @@ class FightMenu:
             self.inventory_rect_color = Constants.BLACK
             self.catch_rect_color = Constants.BLACK
             self.run_rect_color = Constants.BLACK
+
+    def run(self, pos):
+        if self.run_rect.collidepoint(pos):
+            num = random.randint(1, 10)
+            print(num)
+            if num == 10:
+                self.in_fight = False
+                self.fight_start = time.time()

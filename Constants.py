@@ -46,4 +46,5 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GREY = (60, 60, 60)
 
-
+# Fight
+FIGHT_COOL_DOWN = 5

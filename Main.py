@@ -1,5 +1,7 @@
+import time
+
 import pygame
-import math
+import random
 
 import Constants
 from Constants import WIN
@@ -38,24 +40,33 @@ def draw_world():
 
 fight_menu = Fight.FightMenu()
 clock = pygame.time.Clock()
+
 run = True
 while run:
     clock.tick(Constants.fps)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
+        if fight_menu.in_fight:
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                fight_menu.run(pygame.mouse.get_pos())
     keys = pygame.key.get_pressed()
     if keys[pygame.K_ESCAPE]:
         run = False
 
-    if world[player.pos[0]][player.pos[1]] != "T":
+    if world[player.pos[0]][player.pos[1]] == "T":
+        num = random.randint(1, 100)
+        if num >= 90 and time.time() - fight_menu.fight_start > Constants.FIGHT_COOL_DOWN:
+            fight_menu.in_fight = True
+
+    if fight_menu.in_fight:
+        fight_menu.draw_screen()
+        fight_menu.check_hovers(pygame.mouse.get_pos())
+    else:
         player.camera()
         draw_world()
         player.move(keys)
         player.draw_player()
-    else:
-        fight_menu.draw_screen()
-        fight_menu.check_hovers(pygame.mouse.get_pos())
 
     pygame.display.update()
 pygame.quit()
