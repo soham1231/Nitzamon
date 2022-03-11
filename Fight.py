@@ -85,8 +85,8 @@ class FightMenu:
 
         player_nitzamon_sprite = pygame.transform.scale(self.equipped_player_nitzamon.sprite, (200, 200))
         enemy_nitzamon_sprite = pygame.transform.scale(self.equipped_enemy_nitzamon.sprite, (200, 200))
-        Constants.WIN.blit(player_nitzamon_sprite, (100, Constants.Y / 2 - 200))
-        Constants.WIN.blit(enemy_nitzamon_sprite, (Constants.X - 300, Constants.Y / 2 - 200))
+        Constants.WIN.blit(player_nitzamon_sprite, (100, self.player_nitzamon_info.y + 250))
+        Constants.WIN.blit(enemy_nitzamon_sprite, (Constants.X - 300, self.enemy_nitzamon_info.y + 250))
 
     # Checking if the mouse is hovering over the buttons, if it is, the buttons will change color
     def check_hovers(self, pos):
