@@ -63,7 +63,7 @@ while run:
 
     if world[player.pos[0]][player.pos[1]] == "T":
         passed_time = time.time() - fight_menu.fight_start
-        if random.randint(1, 100) > 90 and passed_time > Constants.FIGHT_COOL_DOWN:  # 10% chance of fighting and checking if enough time passed since the last fight
+        if random.randint(1, 100) == 100 and passed_time > Constants.FIGHT_COOL_DOWN:  # 10% chance of fighting and checking if enough time passed since the last fight
             fight_menu.in_fight = True
 
     if fight_menu.in_fight:
