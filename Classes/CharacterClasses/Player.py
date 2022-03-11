@@ -34,9 +34,6 @@ class Player(NitzamonUser):
         else:
             self.camera_pos[0] = max_camera_x
 
-    def draw_player(self):
-        WIN.blit(self.sprite, (self.pos[0] * Constants.SCALE - (self.camera_pos[0] * Constants.SCALE),
-                               self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
 
     # Only use it in the movement method
     def check_collisions(self, pos):

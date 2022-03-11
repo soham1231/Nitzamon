@@ -5,7 +5,7 @@ import random
 
 import Constants
 from Constants import WIN
-from Classes.CharacterClasses import Player
+from Classes.CharacterClasses import Player, Enemy
 from Classes.NitzamonClasses import Nitzamon
 from Worlds import WorldFunctions
 import Fight
@@ -14,8 +14,12 @@ pygame.init()
 pygame.display.set_caption("Nitzamon!! ")
 world = WorldFunctions.read_world(Constants.WORLD1_PATH)
 
-player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [0, 0], 0, 0, 0)
+player_nitzamon = Nitzamon.Nitzamon(Constants.WATER, 50, 50, 50, Constants.NPC_IMAGE, [], "Shoham", 50)
+player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [0, 0], [player_nitzamon], 0, 0)
 player.camera()
+
+enemy_nitzamon = Nitzamon.Nitzamon(Constants.FIRE, 40, 40, 40, Constants.NPC_IMAGE, [], "Adi", 40)
+enemy = Enemy.Enemy("Adi", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], "Hi")
 
 
 def draw_world():
@@ -39,9 +43,7 @@ def draw_world():
             WIN.blit(tile, (i * Constants.SCALE - (player.camera_pos[0] * Constants.SCALE), j * Constants.SCALE - (player.camera_pos[1] * Constants.SCALE)))
 
 
-player_nitzamon = Nitzamon.Nitzamon(Constants.WATER, 50, 50, 50, Constants.NPC_IMAGE, [], "Shoham", 50)
-enemy_nitzamon = Nitzamon.Nitzamon(Constants.FIRE, 40, 40, 40, Constants.NPC_IMAGE, [], "Adi", 40)
-fight_menu = Fight.FightMenu(player_nitzamon, enemy_nitzamon)
+fight_menu = Fight.FightMenu(player.nitzamons, enemy.nitzamons)
 clock = pygame.time.Clock()
 
 run = True
@@ -72,7 +74,8 @@ while run:
         player.camera()
         draw_world()
         player.move(keys)
-        player.draw_player()
+        player.draw(player)
+        enemy.draw(player)
 
     pygame.display.update()
 pygame.quit()

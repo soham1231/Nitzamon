@@ -1,4 +1,4 @@
-from NitzamonUser import *
+from Classes.CharacterClasses.NitzamonUser import *
 
 
 class Enemy(NitzamonUser):
