@@ -21,17 +21,24 @@ GRASS1_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Grass1.p
 GRASS2_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Grass2.png"), (SCALE, SCALE))
 WATER_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Water.png"), (SCALE, SCALE))
 TALL_GRASS_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\tall_grass.png"), (SCALE, SCALE))
+LOG_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\log.png"), (SCALE, SCALE))
+LEAVES_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\leaves.png"), (SCALE, SCALE))
+BORDER_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Borded.png"), (SCALE, SCALE))
+
 NPC_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Characters\\npc.png"), (SCALE, SCALE))
 PLAYER_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Characters\\player.png"), (SCALE, SCALE))
 
 # Tiles
 TILES = {"G": GRASS1_IMAGE,
-         "G2": GRASS2_IMAGE,
+         "g": GRASS2_IMAGE,
          "W": WATER_IMAGE,
          "T": TALL_GRASS_IMAGE,
-         "N": NPC_IMAGE}
+         "N": NPC_IMAGE,
+         "L": LOG_IMAGE,
+         "l": LEAVES_IMAGE,
+         "B": BORDER_IMAGE}
 
-WALKABLE_TILES = ["G", "G2", "T"]
+WALKABLE_TILES = ["G", "g", "T"]
 TILE_ROW = ceil(X/SCALE)
 TILE_COL = ceil(Y/SCALE)
 
