@@ -19,10 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Added borders">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Changed the chances of finding a nitzamon in tall grass and added grass in the middle of the map">
+      <change afterPath="$PROJECT_DIR$/Game.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainMenu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Worlds/World1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Worlds/World1.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +62,7 @@
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\Nitzamon Classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.Game">
     <configuration name="Constants" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NITZAMON" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,6 +97,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Fight.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Nitzamon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Game.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -172,9 +195,11 @@
       <item itemvalue="Python.Main" />
       <item itemvalue="Python.WorldFunctions" />
       <item itemvalue="Python.Fight" />
+      <item itemvalue="Python.Game" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Game" />
         <item itemvalue="Python.Main" />
         <item itemvalue="Python.WorldFunctions" />
         <item itemvalue="Python.Fight" />
@@ -251,7 +276,13 @@
       <option name="presentableId" value="LOCAL‎00010" />
       <updated>1647033200688</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL‎00011" summary="Changed the chances of finding a nitzamon in tall grass and added grass in the middle of the map">
+      <created>1647034537816</created>
+      <option name="number" value="LOCAL‎00011" />
+      <option name="presentableId" value="LOCAL‎00011" />
+      <updated>1647034537816</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,6 +308,7 @@
     <MESSAGE value="Added hovering color" />
     <MESSAGE value="Added fight info (bad looking code)" />
     <MESSAGE value="Added borders" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added borders" />
+    <MESSAGE value="Changed the chances of finding a nitzamon in tall grass and added grass in the middle of the map" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the chances of finding a nitzamon in tall grass and added grass in the middle of the map" />
   </component>
 </project>

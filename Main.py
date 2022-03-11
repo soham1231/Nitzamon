@@ -9,20 +9,13 @@ from Classes.CharacterClasses import Player, Enemy
 from Classes.NitzamonClasses import Nitzamon
 from Worlds import WorldFunctions
 import Fight
+import MainMenu
 
 pygame.init()
 pygame.display.set_caption("Nitzamon!! ")
-world = WorldFunctions.read_world(Constants.WORLD1_PATH)
-
-player_nitzamon = Nitzamon.Nitzamon(Constants.WATER, 50, 50, 50, Constants.NPC_IMAGE, [], "Shoham", 50)
-player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [player_nitzamon], 0, 0)
-player.camera()
-
-enemy_nitzamon = Nitzamon.Nitzamon(Constants.FIRE, 40, 40, 40, Constants.NPC_IMAGE, [], "Adi", 40)
-enemy = Enemy.Enemy("Adi", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], ["Hi"])
 
 
-def draw_world():
+def draw_world(world, player):
     i_max = len(world)
     j_max = len(world)
     if player.pos[0] + Constants.TILE_ROW < len(world):
@@ -40,42 +33,57 @@ def draw_world():
     for i in range(i_min, i_max):
         for j in range(j_min, j_max):
             tile = Constants.TILES[world[i][j]]
-            WIN.blit(tile, (i * Constants.SCALE - (player.camera_pos[0] * Constants.SCALE), j * Constants.SCALE - (player.camera_pos[1] * Constants.SCALE)))
+            WIN.blit(tile, (i * Constants.SCALE - (player.camera_pos[0] * Constants.SCALE),
+                            j * Constants.SCALE - (player.camera_pos[1] * Constants.SCALE)))
 
 
-fight_menu = Fight.FightMenu(player.nitzamons, enemy.nitzamons)
-clock = pygame.time.Clock()
+def main():
+    world = WorldFunctions.read_world(Constants.WORLD1_PATH)
 
-run = True
-while run:
-    clock.tick(Constants.fps)
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+    player_nitzamon = Nitzamon.Nitzamon(Constants.WATER, 50, 50, 50, Constants.NPC_IMAGE, [], "Shoham", 50)
+    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [player_nitzamon], 0, 0)
+    player.camera()
+
+    enemy_nitzamon = Nitzamon.Nitzamon(Constants.FIRE, 40, 40, 40, Constants.NPC_IMAGE, [], "Adi", 40)
+    enemy = Enemy.Enemy("Adi", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], ["Hi"])
+
+    fight_menu = Fight.FightMenu(player.nitzamons, enemy.nitzamons)
+    clock = pygame.time.Clock()
+
+    run = True
+    while run:
+        clock.tick(Constants.fps)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+
+            if fight_menu.in_fight:
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    fight_menu.run(pygame.mouse.get_pos())
+
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_ESCAPE]:
             run = False
 
+        if world[player.pos[0]][player.pos[1]] == "T":
+            passed_time = time.time() - fight_menu.fight_start
+            if random.randint(1, 100) == 100 and passed_time > Constants.FIGHT_COOL_DOWN:  # 10% chance of fighting and checking if enough time passed since the last fight
+                fight_menu.in_fight = True
+
         if fight_menu.in_fight:
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                fight_menu.run(pygame.mouse.get_pos())
+            fight_menu.draw_screen()
+            fight_menu.check_hovers(pygame.mouse.get_pos())
 
-    keys = pygame.key.get_pressed()
-    if keys[pygame.K_ESCAPE]:
-        run = False
+        else:
+            player.camera()
+            draw_world(world, player)
+            player.move(keys)
+            player.draw(player.camera_pos)
+            enemy.draw(player.camera_pos)
 
-    if world[player.pos[0]][player.pos[1]] == "T":
-        passed_time = time.time() - fight_menu.fight_start
-        if random.randint(1, 100) == 100 and passed_time > Constants.FIGHT_COOL_DOWN:  # 10% chance of fighting and checking if enough time passed since the last fight
-            fight_menu.in_fight = True
+        pygame.display.update()
+    return run
 
-    if fight_menu.in_fight:
-        fight_menu.draw_screen()
-        fight_menu.check_hovers(pygame.mouse.get_pos())
 
-    else:
-        player.camera()
-        draw_world()
-        player.move(keys)
-        player.draw(player.camera_pos)
-        enemy.draw(player.camera_pos)
-
-    pygame.display.update()
-pygame.quit()
+if __name__ == "__main__":
+    main()
