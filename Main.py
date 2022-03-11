@@ -47,21 +47,24 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
+
         if fight_menu.in_fight:
             if event.type == pygame.MOUSEBUTTONDOWN:
                 fight_menu.run(pygame.mouse.get_pos())
+
     keys = pygame.key.get_pressed()
     if keys[pygame.K_ESCAPE]:
         run = False
 
     if world[player.pos[0]][player.pos[1]] == "T":
-        num = random.randint(1, 100)
-        if num >= 90 and time.time() - fight_menu.fight_start > Constants.FIGHT_COOL_DOWN:
+        passed_time = time.time() - fight_menu.fight_start
+        if random.randint(1, 100) > 90 and passed_time > Constants.FIGHT_COOL_DOWN:  # 10% chance of fighting and checking if enough time passed since the last fight
             fight_menu.in_fight = True
 
     if fight_menu.in_fight:
         fight_menu.draw_screen()
         fight_menu.check_hovers(pygame.mouse.get_pos())
+
     else:
         player.camera()
         draw_world()

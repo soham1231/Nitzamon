@@ -57,8 +57,6 @@ class FightMenu:
 
     def run(self, pos):
         if self.run_rect.collidepoint(pos):
-            num = random.randint(1, 10)
-            print(num)
-            if num == 10:
+            if random.randint(1, 10) == 10:
                 self.in_fight = False
                 self.fight_start = time.time()
