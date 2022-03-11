@@ -13,6 +13,7 @@ class Player(NitzamonUser):
         self.active_quests = active_quests
         self.camera_pos = [0, 0]
 
+    # Making the camera that follows the player
     def camera(self):
         world = WorldFunctions.read_world(Constants.WORLD1_PATH)
         max_camera_y = int(len(world) - (Constants.Y / Constants.SCALE))
@@ -36,7 +37,8 @@ class Player(NitzamonUser):
     def draw_player(self):
         WIN.blit(self.sprite, (self.pos[0] * Constants.SCALE - (self.camera_pos[0] * Constants.SCALE),
                                self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
-        
+
+    # Only use it in the movement method
     def check_collisions(self, pos):
         world = WorldFunctions.read_world(Constants.WORLD1_PATH)
 
@@ -58,7 +60,7 @@ class Player(NitzamonUser):
         return True
 
     def move(self, keys):
-        if (keys[pygame.K_w] or keys[pygame.K_s]) and (keys[pygame.K_a] or keys[pygame.K_d]):
+        if (keys[pygame.K_w] or keys[pygame.K_s]) and (keys[pygame.K_a] or keys[pygame.K_d]):  # Reducing fps when player moves diagonally
             if Constants.fps == Constants.FPS:
                 Constants.fps /= 2
         else:
