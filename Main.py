@@ -6,6 +6,7 @@ import random
 import Constants
 from Constants import WIN
 from Classes.CharacterClasses import Player
+from Classes.NitzamonClasses import Nitzamon
 from Worlds import WorldFunctions
 import Fight
 
@@ -38,7 +39,9 @@ def draw_world():
             WIN.blit(tile, (i * Constants.SCALE - (player.camera_pos[0] * Constants.SCALE), j * Constants.SCALE - (player.camera_pos[1] * Constants.SCALE)))
 
 
-fight_menu = Fight.FightMenu()
+player_nitzamon = Nitzamon.Nitzamon(Constants.WATER, 50, 50, 50, Constants.NPC_IMAGE, [], "Shoham", 50)
+enemy_nitzamon = Nitzamon.Nitzamon(Constants.FIRE, 40, 40, 40, Constants.NPC_IMAGE, [], "Adi", 40)
+fight_menu = Fight.FightMenu(player_nitzamon, enemy_nitzamon)
 clock = pygame.time.Clock()
 
 run = True
