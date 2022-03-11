@@ -19,15 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="changed grass images">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_41__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_41__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_48__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_48__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Fixed a small bug in the player movement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,13 +84,13 @@
       <method v="2" />
     </configuration>
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Nitzamon" />
+      <module name="NITZAMON" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\USER\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\ADMIN\AppData\Local\Programs\Python\Python39\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -150,12 +146,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Python.main" />
-      <item itemvalue="Python.Constants" />
-      <item itemvalue="Python.Main" />
-      <item itemvalue="Python.WorldFunctions" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Main" />
@@ -215,25 +205,7 @@
       <option name="presentableId" value="LOCAL‎00007" />
       <updated>1646931641227</updated>
     </task>
-    <task id="LOCAL‎00008" summary="Changed player image and name">
-      <created>1646935052642</created>
-      <option name="number" value="LOCAL‎00008" />
-      <option name="presentableId" value="LOCAL‎00008" />
-      <updated>1646935052642</updated>
-    </task>
-    <task id="LOCAL‎00009" summary="changed player image again because Gilad is retarded">
-      <created>1646935160379</created>
-      <option name="number" value="LOCAL‎00009" />
-      <option name="presentableId" value="LOCAL‎00009" />
-      <updated>1646935160379</updated>
-    </task>
-    <task id="LOCAL‎00010" summary="changed grass images">
-      <created>1646936946340</created>
-      <option name="number" value="LOCAL‎00010" />
-      <option name="presentableId" value="LOCAL‎00010" />
-      <updated>1646936946340</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -256,9 +228,52 @@
     <MESSAGE value="Pushed World1.txt" />
     <MESSAGE value="REDUCED THE LAG SO MUCH ITS LIKE THE MOST OPTIMIZED GAME EVER&#10;and added fps" />
     <MESSAGE value="When player goes diagonally the fps is halved" />
-    <MESSAGE value="Changed player image and name" />
-    <MESSAGE value="changed player image again because Gilad is retarded" />
-    <MESSAGE value="changed grass images" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed grass images" />
+    <option name="LAST_COMMIT_MESSAGE" value="When player goes diagonally the fps is halved" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1646928575760">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1646928575760" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1646940894446">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1646940894446" />
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1647008070919">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1647008070919" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1647008070919">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1647008070919" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1647008070918">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1647008070918" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1647008070919">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1647008070919" />
+    <state x="129" y="55" key="MergeDialog" timestamp="1646859868475">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="129" y="55" key="MergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1646859868475" />
+    <state x="321" y="125" key="MultipleFileMergeDialog" timestamp="1646859868491">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="321" y="125" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1646859868491" />
+    <state x="184" y="9" key="SettingsEditor" timestamp="1646851507762">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1646851507762" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1646931644191">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1646931644191" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1646998084471">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1646998084471" />
   </component>
 </project>
