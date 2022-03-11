@@ -22,6 +22,7 @@ class FightMenu:
         self.run_text = self.font.render("Run", True, Constants.WHITE)
 
     def draw_screen(self):
+        Constants.WIN.fill((0, 255, 0))
         pygame.draw.rect(Constants.WIN, Constants.GREY, self.main_rect)
         pygame.draw.rect(Constants.WIN, self.fight_rect_color, self.fight_rect)
         pygame.draw.rect(Constants.WIN, self.inventory_rect_color, self.inventory_rect)

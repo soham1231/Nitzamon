@@ -36,7 +36,6 @@ def draw_world():
             WIN.blit(tile, (i * Constants.SCALE - (player.camera_pos[0] * Constants.SCALE), j * Constants.SCALE - (player.camera_pos[1] * Constants.SCALE)))
 
 
-fight_image = pygame.transform.scale(pygame.image.load("Assets\\Menus\\Fight.png"), (Constants.X, Constants.Y))
 fight_menu = Fight.FightMenu()
 clock = pygame.time.Clock()
 run = True
@@ -55,7 +54,6 @@ while run:
         player.move(keys)
         player.draw_player()
     else:
-        WIN.blit(fight_image, (0, 0))
         fight_menu.draw_screen()
         fight_menu.check_hovers(pygame.mouse.get_pos())
 

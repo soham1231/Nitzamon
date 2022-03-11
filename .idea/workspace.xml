@@ -19,9 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Hopefully i made the buttons' positions good">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Added fight menu text">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +228,13 @@
       <option name="presentableId" value="LOCAL‎00010" />
       <updated>1646936946340</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL‎00011" summary="Added fight menu text">
+      <created>1647008461696</created>
+      <option name="number" value="LOCAL‎00011" />
+      <option name="presentableId" value="LOCAL‎00011" />
+      <updated>1647008461696</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,6 +260,7 @@
     <MESSAGE value="Changed player image and name" />
     <MESSAGE value="changed player image again because Gilad is retarded" />
     <MESSAGE value="changed grass images" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed grass images" />
+    <MESSAGE value="Added fight menu text" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added fight menu text" />
   </component>
 </project>
