@@ -52,15 +52,22 @@ class FightMenu:
         Constants.WIN.blit(self.inventory_text, (self.inventory_rect.x + 30, self.inventory_rect.y + 5))
         Constants.WIN.blit(self.catch_text, (self.catch_rect.x + 50, self.catch_rect.y + 5))
         Constants.WIN.blit(self.run_text, (self.run_rect.x + 60, self.run_rect.y + 5))
+
         Constants.WIN.blit(self.player_nitzamon_name,
-                           (self.player_nitzamon_info.x + 10, self.player_nitzamon_info.y + 10))
+                           (self.player_nitzamon_info.x + 10,
+                            self.player_nitzamon_info.y + 10))
+
         Constants.WIN.blit(self.player_nitzamon_hp,
-                           (self.player_nitzamon_info.x + 10, self.player_nitzamon_info.y + 20 + Constants.FIGHT_FONT_SIZE))
+                           (self.player_nitzamon_info.x + 10,
+                            self.player_nitzamon_info.y + 20 + Constants.FIGHT_FONT_SIZE))
+
         Constants.WIN.blit(self.player_nitzamon_lvl,
-                           (self.player_nitzamon_info.x + 10, self.player_nitzamon_info.y + 30 + 2*Constants.FIGHT_FONT_SIZE))
+                           (self.player_nitzamon_info.x + 10,
+                            self.player_nitzamon_info.y + 30 + 2 * Constants.FIGHT_FONT_SIZE))
 
         Constants.WIN.blit(self.enemy_nitzamon_name,
                            (self.enemy_nitzamon_info.x + 10, self.enemy_nitzamon_info.y + 10))
+
         Constants.WIN.blit(self.enemy_nitzamon_hp,
                            (self.enemy_nitzamon_info.x + 10,
                             self.enemy_nitzamon_info.y + 20 + Constants.FIGHT_FONT_SIZE))
