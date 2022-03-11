@@ -39,12 +39,13 @@ TILE_COL = ceil(Y/SCALE)
 WORLD1_PATH = "Worlds\\World1.txt"
 
 FPS = 20
-fps = FPS  # Not a constant but idk where to put it
+fps = FPS  # Not a constant but i don't know where to put it
 
 # Colors
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GREY = (60, 60, 60)
+HOVER_COLOR = (30, 30, 30)
 
 # Fight
 FIGHT_COOL_DOWN = 5

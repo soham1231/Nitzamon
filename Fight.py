@@ -42,13 +42,13 @@ class FightMenu:
 
     def check_hovers(self, pos):
         if self.fight_rect.collidepoint(pos):
-            self.fight_rect_color = Constants.GREY
+            self.fight_rect_color = Constants.HOVER_COLOR
         elif self.inventory_rect.collidepoint(pos):
-            self.inventory_rect_color = Constants.GREY
+            self.inventory_rect_color = Constants.HOVER_COLOR
         elif self.catch_rect.collidepoint(pos):
-            self.catch_rect_color = Constants.GREY
+            self.catch_rect_color = Constants.HOVER_COLOR
         elif self.run_rect.collidepoint(pos):
-            self.run_rect_color = Constants.GREY
+            self.run_rect_color = Constants.HOVER_COLOR
         else:
             self.fight_rect_color = Constants.BLACK
             self.inventory_rect_color = Constants.BLACK
