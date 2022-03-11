@@ -6,7 +6,14 @@ import random
 
 
 class FightMenu:
-    def __init__(self, player_nitzamon, enemy_nitzamon):
+    def __init__(self, player_nitzamons, enemy_nitzamons):
+
+        self.player_nitzamons = player_nitzamons
+        self.enemy_nitzamons = enemy_nitzamons
+
+        self.equipped_player_nitzamon = self.player_nitzamons[0]
+        self.equipped_enemy_nitzamon = self.enemy_nitzamons[0]
+
         self.in_fight = False
         self.fight_start = time.time()
 
@@ -30,15 +37,16 @@ class FightMenu:
         self.catch_text = self.font.render("Catch", True, Constants.WHITE)
         self.run_text = self.font.render("Run", True, Constants.WHITE)
 
-        self.player_nitzamon_name = self.font.render(f"Name: {player_nitzamon.name}", True, Constants.BLACK)
+        self.player_nitzamon_name = self.font.render(f"Name: {self.equipped_player_nitzamon.name}", True, Constants.BLACK)
         self.player_nitzamon_hp = self.font.render("HP: ", True, Constants.BLACK)
-        self.player_nitzamon_lvl = self.font.render(f"Level: {player_nitzamon.lvl}", True, Constants.BLACK)
+        self.player_nitzamon_lvl = self.font.render(f"Level: {self.equipped_player_nitzamon.lvl}", True, Constants.BLACK)
 
-        self.enemy_nitzamon_name = self.font.render(f"Name: {enemy_nitzamon.name}", True, Constants.BLACK)
+        self.enemy_nitzamon_name = self.font.render(f"Name: {self.equipped_enemy_nitzamon.name}", True, Constants.BLACK)
         self.enemy_nitzamon_hp = self.font.render("HP: ", True, Constants.BLACK)
-        self.enemy_nitzamon_lvl = self.font.render(f"Level: {enemy_nitzamon.lvl}", True, Constants.BLACK)
+        self.enemy_nitzamon_lvl = self.font.render(f"Level: {self.equipped_enemy_nitzamon.lvl}", True, Constants.BLACK)
 
     def draw_screen(self):
+        self.change_info()
         Constants.WIN.fill((0, 255, 0))
         pygame.draw.rect(Constants.WIN, Constants.GREY, self.main_rect)
         pygame.draw.rect(Constants.WIN, self.fight_rect_color, self.fight_rect)
@@ -75,7 +83,12 @@ class FightMenu:
                            (self.enemy_nitzamon_info.x + 10,
                             self.enemy_nitzamon_info.y + 30 + 2 * Constants.FIGHT_FONT_SIZE))
 
+        player_nitzamon_sprite = pygame.transform.scale(self.equipped_player_nitzamon.sprite, (200, 200))
+        enemy_nitzamon_sprite = pygame.transform.scale(self.equipped_enemy_nitzamon.sprite, (200, 200))
+        Constants.WIN.blit(player_nitzamon_sprite, (100, Constants.Y / 2 - 200))
+        Constants.WIN.blit(enemy_nitzamon_sprite, (Constants.X - 300, Constants.Y / 2 - 200))
 
+    # Checking if the mouse is hovering over the buttons, if it is, the buttons will change color
     def check_hovers(self, pos):
         if self.fight_rect.collidepoint(pos):
             self.fight_rect_color = Constants.HOVER_COLOR
@@ -96,3 +109,23 @@ class FightMenu:
             if random.randint(1, 10) == 10:
                 self.in_fight = False
                 self.fight_start = time.time()
+
+    def change_nitzamons(self, p, e):
+        # Checking if the current nitzamon is the player's equipped nitzamon
+        for i in range(len(self.player_nitzamons)):
+            if self.player_nitzamons[i] == p.equipped_nitzamon:
+                self.equipped_player_nitzamon = self.player_nitzamons[i]
+
+        # Checking if the current nitzamon is the enemy's equipped nitzamon
+        for i in range(len(self.enemy_nitzamons)):
+            if self.enemy_nitzamons[i] == e.equipped_nitzamon:
+                self.equipped_enemy_nitzamon = self.enemy_nitzamons[i]
+
+    def change_info(self):
+        self.player_nitzamon_name = self.font.render(f"Name: {self.equipped_player_nitzamon.name}", True, Constants.BLACK)
+        self.player_nitzamon_hp = self.font.render("HP: ", True, Constants.BLACK)
+        self.player_nitzamon_lvl = self.font.render(f"Level: {self.equipped_player_nitzamon.lvl}", True, Constants.BLACK)
+
+        self.enemy_nitzamon_name = self.font.render(f"Name: {self.equipped_enemy_nitzamon.name}", True, Constants.BLACK)
+        self.enemy_nitzamon_hp = self.font.render("HP: ", True, Constants.BLACK)
+        self.enemy_nitzamon_lvl = self.font.render(f"Level: {self.equipped_enemy_nitzamon.lvl}", True, Constants.BLACK)
