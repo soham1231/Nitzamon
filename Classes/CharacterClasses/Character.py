@@ -8,6 +8,6 @@ class Character:
         self.sprite = sprite
         self.pos = pos
 
-    def draw(self, p):
-        WIN.blit(self.sprite, (self.pos[0] * Constants.SCALE - (p.camera_pos[0] * Constants.SCALE),
-                               self.pos[1] * Constants.SCALE - (p.camera_pos[1] * Constants.SCALE)))
+    def draw(self, camera_pos):
+        WIN.blit(self.sprite, (self.pos[0] * Constants.SCALE - (camera_pos[0] * Constants.SCALE),
+                               self.pos[1] * Constants.SCALE - (camera_pos[1] * Constants.SCALE)))

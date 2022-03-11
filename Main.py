@@ -74,8 +74,8 @@ while run:
         player.camera()
         draw_world()
         player.move(keys)
-        player.draw(player)
-        enemy.draw(player)
+        player.draw(player.camera_pos)
+        enemy.draw(player.camera_pos)
 
     pygame.display.update()
 pygame.quit()
