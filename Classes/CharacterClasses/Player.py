@@ -1,22 +1,20 @@
 from Classes.CharacterClasses.NitzamonUser import *
-from Worlds import WorldFunctions
 import Constants
 import math
 import pygame
 
 
 class Player(NitzamonUser):
-    def __init__(self, name, sprite, pos, nitzamons, nitzamon_bag, active_quests):
-        super().__init__(name, sprite, pos, nitzamons)
+    def __init__(self, name, sprite, pos, nitzamons, nitzamon_bag, active_quests, world):
+        super().__init__(name, sprite, pos, nitzamons, world)
         self.nitzamon_bag = nitzamon_bag
         self.active_quests = active_quests
         self.camera_pos = [0, 0]
 
     # Making the camera that follows the player
     def camera(self):
-        world = WorldFunctions.read_world(Constants.WORLD1_PATH)
-        max_camera_y = int(len(world) - (Constants.Y / Constants.SCALE))
-        max_camera_x = int(len(world) - (Constants.X / Constants.SCALE))
+        max_camera_y = int(len(self.world) - (Constants.Y / Constants.SCALE))
+        max_camera_x = int(len(self.world) - (Constants.X / Constants.SCALE))
         camera_x = self.pos[0] - math.ceil(round(Constants.X / Constants.SCALE / 2))
         camera_y = self.pos[1] - math.ceil(round(Constants.Y / Constants.SCALE / 2))
         if max_camera_y >= camera_y >= 0:
@@ -35,30 +33,29 @@ class Player(NitzamonUser):
 
     # Only use it in the movement method
     def check_collisions(self, direction):
-        world = WorldFunctions.read_world(Constants.WORLD1_PATH)
 
         if direction == "r":
-            if self.pos[0] + 1 >= len(world) - 1:
+            if self.pos[0] + 1 >= len(self.world) - 1:
                 return False
-            if world[self.pos[0] + 1][self.pos[1]] not in Constants.WALKABLE_TILES:
+            if self.world[self.pos[0] + 1][self.pos[1]] not in Constants.WALKABLE_TILES:
                 return False
 
         if direction == "l":
             if self.pos[0] - 1 < 0:
                 return False
-            if world[self.pos[0] - 1][self.pos[1]] not in Constants.WALKABLE_TILES:
+            if self.world[self.pos[0] - 1][self.pos[1]] not in Constants.WALKABLE_TILES:
                 return False
 
         if direction == "d":
-            if self.pos[1] + 1 >= len(world) - 1:
+            if self.pos[1] + 1 >= len(self.world) - 1:
                 return False
-            if world[self.pos[0]][self.pos[1] + 1] not in Constants.WALKABLE_TILES:
+            if self.world[self.pos[0]][self.pos[1] + 1] not in Constants.WALKABLE_TILES:
                 return False
 
         if direction == "u":
             if self.pos[1] - 1 < 0:
                 return False
-            if world[self.pos[0]][self.pos[1] - 1] not in Constants.WALKABLE_TILES:
+            if self.world[self.pos[0]][self.pos[1] - 1] not in Constants.WALKABLE_TILES:
                 return False
 
         return True
@@ -81,3 +78,4 @@ class Player(NitzamonUser):
 
         if keys[pygame.K_s] and self.check_collisions("d"):  # Down
             self.pos[1] += 1
+

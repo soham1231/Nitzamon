@@ -1,7 +1,7 @@
 import time
-
 import pygame
 import random
+import json
 
 import Constants
 from Constants import WIN
@@ -9,7 +9,7 @@ from Classes.CharacterClasses import Player, Enemy
 from Classes.NitzamonClasses import Nitzamon
 from Worlds import WorldFunctions
 import Fight
-import MainMenu
+
 
 pygame.init()
 pygame.display.set_caption("Nitzamon!! ")
@@ -37,15 +37,30 @@ def draw_world(world, player):
                             j * Constants.SCALE - (player.camera_pos[1] * Constants.SCALE)))
 
 
+def save(player, enemy):
+
+    info = {
+        "name": player.name,
+        "pos": player.pos,
+        "nitzamon_bag": player.nitzamon_bag,
+        "active_quests": player.active_quests,
+        "world": player.world
+    }
+    nitzamon_info = {}
+    for i in player.nitzamons:
+        nitzamon_info[i.name] = json.dumps(i.__dict__)
+    print(nitzamon_info)
+
+
 def main():
     world = WorldFunctions.read_world(Constants.WORLD1_PATH)
 
     player_nitzamon = Nitzamon.Nitzamon(Constants.WATER, 50, 50, 50, Constants.NPC_IMAGE, [], "Shoham", 50)
-    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [player_nitzamon], 0, 0)
+    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [player_nitzamon], 0, 0, world)
     player.camera()
 
     enemy_nitzamon = Nitzamon.Nitzamon(Constants.FIRE, 40, 40, 40, Constants.NPC_IMAGE, [], "Adi", 40)
-    enemy = Enemy.Enemy("Adi", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], ["Hi"])
+    enemy = Enemy.Enemy("Adi", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], ["Hi"], world)
 
     fight_menu = Fight.FightMenu(player.nitzamons, enemy.nitzamons)
     clock = pygame.time.Clock()
