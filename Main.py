@@ -88,6 +88,7 @@ def main():
         if fight_menu.in_fight:
             fight_menu.draw_screen()
             fight_menu.check_hovers(pygame.mouse.get_pos())
+            WIN.blit(pygame.transform.scale(pygame.image.load("Assets\\Menus\\Fight.PNG"), (Constants.X, Constants.Y)), (0, 0))
 
         else:
             player.camera()
