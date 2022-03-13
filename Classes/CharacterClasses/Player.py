@@ -37,25 +37,25 @@ class Player(NitzamonUser):
         if direction == "r":
             if self.pos[0] + 1 >= len(self.world) - 1:
                 return False
-            if self.world[self.pos[0] + 1][self.pos[1]] not in Constants.WALKABLE_TILES:
+            if self.world[self.pos[1]][self.pos[0] + 1] not in Constants.WALKABLE_TILES:
                 return False
 
         if direction == "l":
             if self.pos[0] - 1 < 0:
                 return False
-            if self.world[self.pos[0] - 1][self.pos[1]] not in Constants.WALKABLE_TILES:
+            if self.world[self.pos[1]][self.pos[0] - 1] not in Constants.WALKABLE_TILES:
                 return False
 
         if direction == "d":
             if self.pos[1] + 1 >= len(self.world) - 1:
                 return False
-            if self.world[self.pos[0]][self.pos[1] + 1] not in Constants.WALKABLE_TILES:
+            if self.world[self.pos[1] + 1][self.pos[0]] not in Constants.WALKABLE_TILES:
                 return False
 
         if direction == "u":
             if self.pos[1] - 1 < 0:
                 return False
-            if self.world[self.pos[0]][self.pos[1] - 1] not in Constants.WALKABLE_TILES:
+            if self.world[self.pos[1] - 1][self.pos[0]] not in Constants.WALKABLE_TILES:
                 return False
 
         return True

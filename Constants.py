@@ -38,7 +38,7 @@ TILES = {"G": GRASS1_IMAGE,
          "l": LEAVES_IMAGE,
          "B": BORDER_IMAGE}
 
-WALKABLE_TILES = ["G", "g", "T"]
+WALKABLE_TILES = ["G", "g", "T", "l"]
 TILE_ROW = ceil(X/SCALE)
 TILE_COL = ceil(Y/SCALE)
 

@@ -9,6 +9,7 @@ from Classes.CharacterClasses import Player, Enemy
 from Classes.NitzamonClasses import Nitzamon
 from Worlds import WorldFunctions
 import Fight
+from Classes.CharacterClasses import Dialogue
 
 
 pygame.init()
@@ -30,11 +31,11 @@ def draw_world(world, player):
     if player.pos[1] > Constants.TILE_COL:
         j_min = player.pos[1] - Constants.TILE_COL
 
-    for i in range(i_min, i_max):
-        for j in range(j_min, j_max):
-            tile = Constants.TILES[world[i][j]]
-            WIN.blit(tile, (i * Constants.SCALE - (player.camera_pos[0] * Constants.SCALE),
-                            j * Constants.SCALE - (player.camera_pos[1] * Constants.SCALE)))
+    for y in range(j_min, j_max):
+        for x in range(i_min, i_max):
+            tile = Constants.TILES[world[y][x]]
+            WIN.blit(tile, (x * Constants.SCALE - (player.camera_pos[0] * Constants.SCALE),
+                            y * Constants.SCALE - (player.camera_pos[1] * Constants.SCALE)))
 
 
 def save(player, enemy):
@@ -55,12 +56,14 @@ def save(player, enemy):
 def main():
     world = WorldFunctions.read_world(Constants.WORLD1_PATH)
 
-    player_nitzamon = Nitzamon.Nitzamon(Constants.WATER, 50, 50, 50, Constants.NPC_IMAGE, [], "Shoham", 50)
+    player_nitzamon = Nitzamon.Nitzamon("Shoham", 100, 100, 120, 40, 40, Constants.NPC_IMAGE, Constants.WATER, [])
     player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [player_nitzamon], 0, 0, world)
     player.camera()
 
-    enemy_nitzamon = Nitzamon.Nitzamon(Constants.FIRE, 40, 40, 40, Constants.NPC_IMAGE, [], "Adi", 40)
-    enemy = Enemy.Enemy("Adi", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], ["Hi"], world)
+    enemy_nitzamon = Nitzamon.Nitzamon("Adi", 50, 50, 60, 30, 30, Constants.NPC_IMAGE, Constants.FIRE, [])
+
+    dialogs = [Dialogue.Dialogue("Hi", 0), Dialogue.Dialogue("H1", 0)]
+    enemy = Enemy.Enemy("Adi", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], dialogs, world)
 
     fight_menu = Fight.FightMenu(player.nitzamons, enemy.nitzamons)
     clock = pygame.time.Clock()
@@ -88,7 +91,7 @@ def main():
         if fight_menu.in_fight:
             fight_menu.draw_screen()
             fight_menu.check_hovers(pygame.mouse.get_pos())
-            WIN.blit(pygame.transform.scale(pygame.image.load("Assets\\Menus\\Fight.PNG"), (Constants.X, Constants.Y)), (0, 0))
+            # WIN.blit(pygame.transform.scale(pygame.image.load("Assets\\Menus\\Fight.PNG"), (Constants.X, Constants.Y)), (0, 0))
 
         else:
             player.camera()
