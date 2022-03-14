@@ -5,6 +5,7 @@ from math import ceil
 WIN = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 X, Y = WIN.get_size()
 SCALE = 50
+MINI_SCALE = 7
 
 # World variables
 WORLD_WIDTH = 250
@@ -23,7 +24,7 @@ WATER_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Water.png
 TALL_GRASS_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\tall_grass.png"), (SCALE, SCALE))
 LOG_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\log.png"), (SCALE, SCALE))
 LEAVES_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\leaves.png"), (SCALE, SCALE))
-BORDER_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Borded.png"), (SCALE, SCALE))
+BORDER_IMAGE = pygame.transform.scale(pygame.image.load("Assets/Tiles/Border.png"), (SCALE, SCALE))
 
 NPC_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Characters\\npc.png"), (SCALE, SCALE))
 PLAYER_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Characters\\player.png"), (SCALE, SCALE))

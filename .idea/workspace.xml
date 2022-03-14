@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Leaves are now transparent when you walk under them">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="fixed a small bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,7 +299,13 @@
       <option name="presentableId" value="LOCAL‎00013" />
       <updated>1647205068661</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL‎00014" summary="fixed a small bug">
+      <created>1647264017027</created>
+      <option name="number" value="LOCAL‎00014" />
+      <option name="presentableId" value="LOCAL‎00014" />
+      <updated>1647264017027</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -328,29 +334,30 @@
     <MESSAGE value="Changed the chances of finding a nitzamon in tall grass and added grass in the middle of the map" />
     <MESSAGE value="Added a main menu" />
     <MESSAGE value="Leaves are now transparent when you walk under them" />
-    <option name="LAST_COMMIT_MESSAGE" value="Leaves are now transparent when you walk under them" />
+    <MESSAGE value="fixed a small bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed a small bug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1647204207447">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1647204207447" />
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1647205094588">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1647285625611">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1647205094588" />
-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1647205094588">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1647285625611" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1647285625611">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1647205094588" />
-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1647205094588">
+    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1647285625611" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1647285625611">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1647205094588" />
-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1647205094588">
+    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1647285625611" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1647285625611">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1647205094588" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1647285625611" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1647205084063">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
