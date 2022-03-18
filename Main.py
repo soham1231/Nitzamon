@@ -97,8 +97,7 @@ def main():
             player.camera()
             draw_world(world, player)
             player.move(keys)
-            player.draw(player.camera_pos)
-            enemy.draw(player.camera_pos)
+            player.draw()
 
         pygame.display.update()
     return run
