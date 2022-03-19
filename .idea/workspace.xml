@@ -19,8 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="changed typo">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="fixed a small bug">
+      <change afterPath="$PROJECT_DIR$/Assets/Tiles/Water1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Water.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/Water.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Worlds/World1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Worlds/World1.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,12 +198,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.main" />
       <item itemvalue="Python.Constants" />
-      <item itemvalue="Python.Main" />
-      <item itemvalue="Python.WorldFunctions" />
       <item itemvalue="Python.Fight" />
       <item itemvalue="Python.Game" />
+      <item itemvalue="Python.Main" />
+      <item itemvalue="Python.WorldFunctions" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
@@ -298,13 +302,7 @@
       <option name="presentableId" value="LOCAL‎00013" />
       <updated>1647640201968</updated>
     </task>
-    <task id="LOCAL‎00014" summary="changed typo">
-      <created>1647640232196</created>
-      <option name="number" value="LOCAL‎00014" />
-      <option name="presentableId" value="LOCAL‎00014" />
-      <updated>1647640232196</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -343,7 +341,6 @@
     <MESSAGE value="Changed the chances of finding a nitzamon in tall grass and added grass in the middle of the map" />
     <MESSAGE value="Added a main menu" />
     <MESSAGE value="Moved the draw function from character class back to player class and added Adi's random world generation" />
-    <MESSAGE value="changed typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved the draw function from character class back to player class and added Adi's random world generation" />
   </component>
 </project>

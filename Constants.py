@@ -20,7 +20,7 @@ EARTH = "earth"
 # Images
 GRASS1_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Grass1.png"), (SCALE, SCALE))
 GRASS2_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Grass2.png"), (SCALE, SCALE))
-WATER_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Water.png"), (SCALE, SCALE))
+WATER_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Water1.png"), (SCALE, SCALE))
 TALL_GRASS_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\tall_grass.png"), (SCALE, SCALE))
 LOG_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\log.png"), (SCALE, SCALE))
 LEAVES_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\leaves.png"), (SCALE, SCALE))
