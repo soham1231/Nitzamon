@@ -19,9 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Moved the draw function from character class back to player class and added Adi's random world generation">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="changed typo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,7 +298,13 @@
       <option name="presentableId" value="LOCAL‎00013" />
       <updated>1647640201968</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL‎00014" summary="changed typo">
+      <created>1647640232196</created>
+      <option name="number" value="LOCAL‎00014" />
+      <option name="presentableId" value="LOCAL‎00014" />
+      <updated>1647640232196</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -338,6 +343,7 @@
     <MESSAGE value="Changed the chances of finding a nitzamon in tall grass and added grass in the middle of the map" />
     <MESSAGE value="Added a main menu" />
     <MESSAGE value="Moved the draw function from character class back to player class and added Adi's random world generation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved the draw function from character class back to player class and added Adi's random world generation" />
+    <MESSAGE value="changed typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed typo" />
   </component>
 </project>
