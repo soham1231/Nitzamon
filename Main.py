@@ -91,9 +91,14 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
 
-            if fight_menu.in_fight:
-                if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if fight_menu.in_fight:
                     fight_menu.run(pygame.mouse.get_pos())
+                if Inventory.is_open:
+                    nitzamon_pressed = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamons)
+                    if nitzamon_pressed is not None:
+                        Inventory.show_info(nitzamon_pressed)
+
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_e:
                     Inventory.is_open = not Inventory.is_open

@@ -21,3 +21,22 @@ def draw_inventory(inv):
             nitzamon_sprite = pygame.transform.scale(inv[current_nitzamon].sprite, (nitzamon_img_scale, nitzamon_img_scale))
             Constants.WIN.blit(nitzamon_sprite, (40 + j * nitzamon_img_scale, 40 + i * nitzamon_img_scale))
             current_nitzamon += 1
+
+
+def check_collision(pos, inv):
+    current_nitzamon = 0
+    for i in range(nitzamon_per_col + 1):
+        for j in range(nitzamon_per_row + 1):
+            if current_nitzamon >= len(inv):
+                return None
+            if 40 + j * nitzamon_img_scale <= pos[0] <= 40 + j * 2 * nitzamon_img_scale:
+                if 40 + i * nitzamon_img_scale <= pos[1] <= 40 + i * 2 * nitzamon_img_scale:
+                    return inv[current_nitzamon]
+            current_nitzamon += 1
+    return None
+
+
+def show_info(nitzamon):
+    info_img = pygame.image.load("Assets\\Menus\\NitzamonDisplay.png")
+    Constants.WIN.blit(info_img, (100, 50))
+    Constants.WIN.blit(nitzamon.sprite, (50, 50))
