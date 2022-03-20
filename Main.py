@@ -10,6 +10,7 @@ from Classes.NitzamonClasses import Nitzamon
 from Worlds import WorldFunctions
 import Fight
 from Classes.CharacterClasses import Dialogue
+import Inventory
 
 
 pygame.init()
@@ -57,7 +58,22 @@ def main():
     world = WorldFunctions.read_world(Constants.WORLD1_PATH)
 
     player_nitzamon = Nitzamon.Nitzamon("Shoham", 100, 100, 120, 40, 40, Constants.NPC_IMAGE, Constants.WATER, [])
-    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [player_nitzamon], 0, 0, world)
+    player_nitzamon2 = Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, [])
+    nitzamon_list = [player_nitzamon, player_nitzamon2,
+                     Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []),
+                     Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []),
+                     Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []),
+                     Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []),
+                     Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []),
+                     Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []),
+                     Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []),
+                     Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []),
+                     Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []),
+                     Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []),
+                     Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []),
+                     Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []),
+                     Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, [])]
+    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], nitzamon_list, 0, 0, world)
     player.camera()
 
     enemy_nitzamon = Nitzamon.Nitzamon("Adi", 50, 50, 60, 30, 30, Constants.NPC_IMAGE, Constants.FIRE, [])
@@ -78,10 +94,14 @@ def main():
             if fight_menu.in_fight:
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     fight_menu.run(pygame.mouse.get_pos())
-
-        keys = pygame.key.get_pressed()
-        if keys[pygame.K_ESCAPE]:
-            run = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_e:
+                    Inventory.is_open = not Inventory.is_open
+                if event.key == pygame.K_ESCAPE:
+                    if Inventory.is_open:
+                        Inventory.is_open = False
+                    else:
+                        run = False
 
         if world[player.pos[1]][player.pos[0]] == "T":
             passed_time = time.time() - fight_menu.fight_start
@@ -93,10 +113,13 @@ def main():
             fight_menu.check_hovers(pygame.mouse.get_pos())
             # WIN.blit(pygame.transform.scale(pygame.image.load("Assets\\Menus\\Fight.PNG"), (Constants.X, Constants.Y)), (0, 0))
 
+        elif Inventory.is_open:
+            Inventory.draw_inventory(player.nitzamons)
+
         else:
             player.camera()
             draw_world(world, player)
-            player.move(keys)
+            player.move(pygame.key.get_pressed())
             player.draw()
 
         pygame.display.update()
