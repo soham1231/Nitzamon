@@ -41,18 +41,20 @@ def draw_inventory(inv):
 
 def check_collision(pos, inv):
     nitzamons = turn_into_img_matrix(inv)
-    y_min = 40
-    y_max = 40 + nitzamon_img_scale
-    x_min = 40
-    x_max = 40 + nitzamon_img_scale
     for i in range(len(nitzamons)):
         if i != 0:
             y_min = 40 + i * nitzamon_img_scale
             y_max = nitzamon_img_scale + 40 + i * nitzamon_img_scale
+        else:
+            y_min = 40
+            y_max = 40 + nitzamon_img_scale
         for j in range(len(nitzamons[i])):
             if j != 0:
                 x_min = 40 + j * nitzamon_img_scale
                 x_max = nitzamon_img_scale + 40 + j * nitzamon_img_scale
+            else:
+                x_min = 40
+                x_max = 40 + nitzamon_img_scale
             if y_min <= pos[1] <= y_max and x_min <= pos[0] <= x_max:
                 return nitzamons[i][j]
     return None
