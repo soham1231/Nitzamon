@@ -1,6 +1,6 @@
 import Constants
 import pygame
-from math import ceil, floor
+from math import ceil
 
 
 is_open = False
