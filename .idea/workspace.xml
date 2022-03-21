@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="added 150 nitzamons to player">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-    </list>
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Working on fixing a bug(clicking on a nitzamon in inventory doesnt work)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -312,7 +308,13 @@
       <option name="presentableId" value="LOCAL‎00015" />
       <updated>1647865575930</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL‎00016" summary="Working on fixing a bug(clicking on a nitzamon in inventory doesnt work)">
+      <created>1647870206909</created>
+      <option name="number" value="LOCAL‎00016" />
+      <option name="presentableId" value="LOCAL‎00016" />
+      <updated>1647870206909</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -353,7 +355,8 @@
     <MESSAGE value="Moved the draw function from character class back to player class and added Adi's random world generation" />
     <MESSAGE value="added water images" />
     <MESSAGE value="added 150 nitzamons to player" />
-    <option name="LAST_COMMIT_MESSAGE" value="added 150 nitzamons to player" />
+    <MESSAGE value="Working on fixing a bug(clicking on a nitzamon in inventory doesnt work)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on fixing a bug(clicking on a nitzamon in inventory doesnt work)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="129" y="55" key="DiffContextDialog" timestamp="1647720062123">
@@ -376,9 +379,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1647870105270" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1647865579112">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1647870215551">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1647865579112" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1647870215551" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1647884538793">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1647884538793" />
   </component>
 </project>
