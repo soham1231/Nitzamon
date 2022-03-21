@@ -63,6 +63,7 @@ def main():
         else:
             nitzamon_list.append(Nitzamon.Nitzamon("Shoham", 100, 100, 120, 40, 40, Constants.NPC_IMAGE, Constants.WATER, []))
     player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], nitzamon_list, 0, 0, world)
+    nitzamon_pressed = None
     player.camera()
 
     enemy_nitzamon = Nitzamon.Nitzamon("Adi", 50, 50, 60, 30, 30, Constants.NPC_IMAGE, Constants.FIRE, [])
@@ -85,8 +86,6 @@ def main():
                     fight_menu.run(pygame.mouse.get_pos())
                 if Inventory.is_open:
                     nitzamon_pressed = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamons)
-                    if nitzamon_pressed is not None:
-                        Inventory.show_info(nitzamon_pressed)
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_e:
@@ -109,6 +108,8 @@ def main():
 
         elif Inventory.is_open:
             Inventory.draw_inventory(player.nitzamons)
+            if nitzamon_pressed is not None:
+                Inventory.show_info(nitzamon_pressed)
 
         else:
             player.camera()

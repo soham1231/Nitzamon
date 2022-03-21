@@ -25,12 +25,17 @@ def draw_inventory(inv):
 
 def check_collision(pos, inv):
     current_nitzamon = 0
-    for i in range(nitzamon_per_col + 1):
+    for i in range(nitzamon_per_col):
+        min_y = 40 + i * nitzamon_img_scale
+        max_y = 40 + i * 2 * nitzamon_img_scale
         for j in range(nitzamon_per_row + 1):
             if current_nitzamon >= len(inv):
                 return None
-            if 40 + j * nitzamon_img_scale <= pos[0] <= 40 + j * 2 * nitzamon_img_scale:
-                if 40 + i * nitzamon_img_scale <= pos[1] <= 40 + i * 2 * nitzamon_img_scale:
+            min_x = 40 + j * nitzamon_img_scale
+            max_x = 40 + j * 2 * nitzamon_img_scale
+            if min_x <= pos[0] <= max_x:
+                if min_y <= pos[1] <= max_y:
+                    print("HI")
                     return inv[current_nitzamon]
             current_nitzamon += 1
     return None
