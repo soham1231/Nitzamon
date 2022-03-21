@@ -50,14 +50,14 @@ def save(player, enemy):
     }
     nitzamon_info = {}
     for i in player.nitzamons:
-        nitzamon_info[i.name] = json.dumps(i.__dict__)
+        nitzamon_info = json.dumps(i.__dict__)
     print(nitzamon_info)
 
 
 def main():
     world = WorldFunctions.read_world(Constants.WORLD1_PATH)
     nitzamon_list = []
-    for i in range(150):
+    for i in range(19):
         if i % 2 == 0:
             nitzamon_list.append(Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []))
         else:
