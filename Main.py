@@ -84,14 +84,18 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if fight_menu.in_fight:
                     fight_menu.run(pygame.mouse.get_pos())
-                if Inventory.is_open:
+                if Inventory.is_open and not Inventory.info_open:
                     nitzamon_pressed = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamons)
+                    if nitzamon_pressed is not None:
+                        Inventory.info_open = True
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_e:
                     Inventory.is_open = not Inventory.is_open
                 if event.key == pygame.K_ESCAPE:
-                    if Inventory.is_open:
+                    if Inventory.info_open:
+                        Inventory.info_open = False
+                    elif Inventory.is_open:
                         Inventory.is_open = False
                     else:
                         run = False
@@ -108,9 +112,8 @@ def main():
 
         elif Inventory.is_open:
             Inventory.draw_inventory(player.nitzamons)
-            if nitzamon_pressed is not None:
+            if Inventory.info_open:
                 Inventory.show_info(nitzamon_pressed)
-
         else:
             player.camera()
             draw_world(world, player)

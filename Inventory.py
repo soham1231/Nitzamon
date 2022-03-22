@@ -4,6 +4,7 @@ from math import ceil
 
 
 is_open = False
+info_open = False
 inventory_rect = pygame.Rect((30, 30), (Constants.X - 60, Constants.Y - 60))
 nitzamon_img_scale = 100
 cols_of_nitzamons = 1 + ceil(inventory_rect.width / (nitzamon_img_scale + 10))
@@ -61,6 +62,10 @@ def check_collision(pos, inv):
 
 
 def show_info(nitzamon):
+    info_img_x = 500
+    info_img_y = 50
+    Constants.WIN.fill(Constants.GREY)
     info_img = pygame.image.load("Assets\\Menus\\NitzamonDisplay.png")
-    Constants.WIN.blit(info_img, (100, 50))
-    Constants.WIN.blit(nitzamon.sprite, (50, 50))
+    Constants.WIN.blit(info_img, (info_img_x, info_img_y))
+    nitzamon_image = pygame.transform.scale(nitzamon.sprite, (290, 388))
+    Constants.WIN.blit(nitzamon_image, (info_img_x + 30, info_img_y + 28))
