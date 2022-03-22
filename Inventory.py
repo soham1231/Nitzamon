@@ -62,10 +62,12 @@ def check_collision(pos, inv):
 
 
 def show_info(nitzamon):
-    info_img_x = 500
-    info_img_y = 50
     Constants.WIN.fill(Constants.GREY)
     info_img = pygame.image.load("Assets\\Menus\\NitzamonDisplay.png")
+
+    info_img_x = Constants.X / 2 - info_img.get_width() / 2
+    info_img_y = Constants.Y / 2 - info_img.get_height() / 2
+
     Constants.WIN.blit(info_img, (info_img_x, info_img_y))
     nitzamon_image = pygame.transform.scale(nitzamon.sprite, (290, 388))
     Constants.WIN.blit(nitzamon_image, (info_img_x + 30, info_img_y + 28))
