@@ -1,8 +1,18 @@
 import pygame
+import os
 from math import ceil
 
 # Pygame screen variables
-WIN = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+os.environ['SDL_VIDEO_WINDOW_POS'] = "0,0"
+pygame.init()
+
+# now let's see how big our screen is
+info = pygame.display.Info()
+
+# and create a borderless window that's as big as the entire screen
+WIN = pygame.display.set_mode((info.current_w, info.current_h), pygame.NOFRAME)
+
+# WIN = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 X, Y = WIN.get_size()
 SCALE = 50
 MINI_SCALE = 7

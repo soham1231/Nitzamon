@@ -39,6 +39,16 @@ def draw_world(world, player):
                             y * Constants.SCALE - (player.camera_pos[1] * Constants.SCALE)))
 
 
+def draw_minimap(world, player):
+    WIN.fill(Constants.BLACK)
+    for y in range(len(world)):
+        for x in range(len(world)):
+            tile = pygame.transform.scale(Constants.TILES[world[y][x]], (Constants.MINI_SCALE, Constants.MINI_SCALE))
+            WIN.blit(tile, (300 + x * Constants.MINI_SCALE, 18 + y * Constants.MINI_SCALE))
+    player_image = pygame.transform.scale(player.sprite, (Constants.MINI_SCALE, Constants.MINI_SCALE))
+    WIN.blit(player_image, (300 + player.pos[0] * Constants.MINI_SCALE, 18 + player.pos[1] * Constants.MINI_SCALE))
+
+
 def save(player, enemy):
 
     info = {
@@ -105,11 +115,14 @@ def main():
             if random.randint(1, 100) == 100 and passed_time > Constants.FIGHT_COOL_DOWN:  # 1% chance of fighting and checking if enough time passed since the last fight
                 fight_menu.in_fight = True
 
+        keys = pygame.key.get_pressed()
         if fight_menu.in_fight:
             fight_menu.draw_screen()
             fight_menu.check_hovers(pygame.mouse.get_pos())
             # WIN.blit(pygame.transform.scale(pygame.image.load("Assets\\Menus\\Fight.PNG"), (Constants.X, Constants.Y)), (0, 0))
 
+        elif keys[pygame.K_m]:
+            draw_minimap(world, player)
         elif Inventory.is_open:
             Inventory.draw_inventory(player.nitzamons)
             if Inventory.info_open:
