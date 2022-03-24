@@ -5,7 +5,18 @@ from math import ceil
 
 is_open = False
 info_open = False
+
 inventory_rect = pygame.Rect((30, 30), (Constants.X - 60, Constants.Y - 60))
+
+info_rect_width = 350
+info_rect_height = 600
+info_rect_x = Constants.X / 2 - info_rect_width / 2
+info_rect_y = Constants.Y / 2 - info_rect_height / 2
+info_rect = pygame.Rect((info_rect_x, info_rect_y), (info_rect_width, info_rect_height))
+
+pygame.font.init()
+font = pygame.font.SysFont("Arial", 20)
+
 nitzamon_img_scale = 100
 cols_of_nitzamons = 1 + ceil(inventory_rect.width / (nitzamon_img_scale + 10))
 rows_of_nitzamons = ceil(inventory_rect.height / (nitzamon_img_scale + 10))
@@ -63,11 +74,18 @@ def check_collision(pos, inv):
 
 def show_info(nitzamon):
     Constants.WIN.fill(Constants.GREY)
-    info_img = pygame.image.load("Assets\\Menus\\NitzamonDisplay.png")
+    pygame.draw.rect(Constants.WIN, Constants.WHITE, info_rect)
 
-    info_img_x = Constants.X / 2 - info_img.get_width() / 2
-    info_img_y = Constants.Y / 2 - info_img.get_height() / 2
+    name = font.render(f"Name: {nitzamon.name}", True, Constants.BLACK)
+    Constants.WIN.blit(name, (info_rect_x + 10, info_rect_y + 500))
 
-    Constants.WIN.blit(info_img, (info_img_x, info_img_y))
+    hp = font.render(f"Hp: {nitzamon.hp} / {nitzamon.max_hp}", True, Constants.BLACK)
+    Constants.WIN.blit(hp, (info_rect_x + 10, info_rect_y + 530))
+
+    lvl = font.render(f"level: {nitzamon.lvl}", True, Constants.BLACK)
+    Constants.WIN.blit(lvl, (info_rect_x + 10, info_rect_y + 560))
+
     nitzamon_image = pygame.transform.scale(nitzamon.sprite, (290, 388))
-    Constants.WIN.blit(nitzamon_image, (info_img_x + 30, info_img_y + 28))
+    Constants.WIN.blit(nitzamon_image, (info_rect_x + 30, info_rect_y + 50))
+
+    pygame.draw.line(Constants.WIN, (0, 0, 0), (info_rect_x, info_rect_y + 490), (info_rect_x + info_rect_width, info_rect_y + 490), 5)
