@@ -5,19 +5,15 @@ import json
 
 import Constants
 from Constants import WIN
-from Classes.CharacterClasses import Player, Enemy
 from Classes.NitzamonClasses import Nitzamon
 from Worlds import WorldFunctions
 import Fight
-from Classes.CharacterClasses import Dialogue
+from Classes.CharacterClasses import Dialogue, Enemy, Player, NPC
 import Inventory
-
-from Classes.CharacterClasses.NPC import *
 
 
 pygame.init()
 pygame.display.set_caption("Nitzamon!! ")
-
 
 
 def draw_world(world, player):
@@ -44,12 +40,14 @@ def draw_world(world, player):
 
 def draw_minimap(world, player):
     WIN.fill(Constants.BLACK)
+    x_center = Constants.X/2 - Constants.MINI_SCALE/2 * len(world)
+    y_center = Constants.Y/2 - Constants.MINI_SCALE/2 * len(world)
     for y in range(len(world)):
         for x in range(len(world)):
             tile = pygame.transform.scale(Constants.TILES[world[y][x]], (Constants.MINI_SCALE, Constants.MINI_SCALE))
-            WIN.blit(tile, (300 + x * Constants.MINI_SCALE, 18 + y * Constants.MINI_SCALE))
+            WIN.blit(tile, (x_center + x * Constants.MINI_SCALE, y_center + y * Constants.MINI_SCALE))
     player_image = pygame.transform.scale(player.sprite, (Constants.MINI_SCALE, Constants.MINI_SCALE))
-    WIN.blit(player_image, (300 + player.pos[0] * Constants.MINI_SCALE, 18 + player.pos[1] * Constants.MINI_SCALE))
+    WIN.blit(player_image, (x_center + player.pos[0] * Constants.MINI_SCALE, y_center + player.pos[1] * Constants.MINI_SCALE))
 
 
 def save(player, enemy):
@@ -69,7 +67,7 @@ def save(player, enemy):
 
 def main():
     world = WorldFunctions.read_world(Constants.WORLD1_PATH)
-    NPC_list = []
+    npc_list = []
 
     nitzamon_list = []
     for i in range(19):
@@ -115,8 +113,6 @@ def main():
                     else:
                         run = False
 
-
-
         if world[player.pos[1]][player.pos[0]] == "T":
             passed_time = time.time() - fight_menu.fight_start
             if random.randint(1, 100) == 100 and passed_time > Constants.FIGHT_COOL_DOWN:  # 1% chance of fighting and checking if enough time passed since the last fight
@@ -142,6 +138,7 @@ def main():
         # pygame.draw.rect(WIN, BLACK, pygame.Rect((0, (3 * Y / 4)), (X, (3 * Y / 4))))
         pygame.display.update()
     return run
+
 
 if __name__ == "__main__":
     main()

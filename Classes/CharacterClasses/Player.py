@@ -3,6 +3,7 @@ import Constants
 import math
 import pygame
 
+
 class Player(NitzamonUser):
     def __init__(self, name, sprite, pos, nitzamons, nitzamon_bag, active_quests, world):
         super().__init__(name, sprite, pos, nitzamons, world)
