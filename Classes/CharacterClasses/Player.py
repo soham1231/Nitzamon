@@ -3,7 +3,6 @@ import Constants
 import math
 import pygame
 
-
 class Player(NitzamonUser):
     def __init__(self, name, sprite, pos, nitzamons, nitzamon_bag, active_quests, world):
         super().__init__(name, sprite, pos, nitzamons, world)
@@ -100,3 +99,6 @@ class Player(NitzamonUser):
             tile.set_alpha(255)
             WIN.blit(self.sprite, (self.pos[0] * Constants.SCALE - (self.camera_pos[0] * Constants.SCALE),
                                    self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
+
+    def fight(self, enemy_nitzamons):
+        pass

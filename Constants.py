@@ -21,7 +21,6 @@ MINI_SCALE = 7
 WORLD_WIDTH = 250
 WORLD_HEIGHT = 250
 
-
 # Enemy types
 WATER = "water"
 FIRE = "fire"

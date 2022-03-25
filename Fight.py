@@ -18,10 +18,10 @@ class FightMenu:
         self.fight_start = time.time()
 
         self.main_rect = pygame.Rect((0, Constants.Y - 250), (Constants.X, 250))
-        self.fight_rect = pygame.Rect((Constants.X - 500, Constants.Y - 200), (170, 50))
-        self.inventory_rect = pygame.Rect((Constants.X - 250, Constants.Y - 200), (170, 50))
-        self.catch_rect = pygame.Rect((Constants.X - 500, Constants.Y - 100), (170, 50))
-        self.run_rect = pygame.Rect((Constants.X - 250, Constants.Y - 100), (170, 50))
+        self.topLeft_rect = pygame.Rect((Constants.X - 500, Constants.Y - 200), (170, 50))
+        self.topRight_rect = pygame.Rect((Constants.X - 250, Constants.Y - 200), (170, 50))
+        self.bottomLeft_rect = pygame.Rect((Constants.X - 500, Constants.Y - 100), (170, 50))
+        self.bottomRight_rect = pygame.Rect((Constants.X - 250, Constants.Y - 100), (170, 50))
 
         self.enemy_nitzamon_info = pygame.Rect((Constants.X - 360, 10), (350, 200))
         self.player_nitzamon_info = pygame.Rect((10, 10), (350, 200))
@@ -49,17 +49,17 @@ class FightMenu:
         self.change_info()
         Constants.WIN.fill((0, 255, 0))
         pygame.draw.rect(Constants.WIN, Constants.GREY, self.main_rect)
-        pygame.draw.rect(Constants.WIN, self.fight_rect_color, self.fight_rect)
-        pygame.draw.rect(Constants.WIN, self.inventory_rect_color, self.inventory_rect)
-        pygame.draw.rect(Constants.WIN, self.catch_rect_color, self.catch_rect)
-        pygame.draw.rect(Constants.WIN, self.run_rect_color, self.run_rect)
+        pygame.draw.rect(Constants.WIN, self.fight_rect_color, self.topLeft_rect)
+        pygame.draw.rect(Constants.WIN, self.inventory_rect_color, self.topRight_rect)
+        pygame.draw.rect(Constants.WIN, self.catch_rect_color, self.bottomLeft_rect)
+        pygame.draw.rect(Constants.WIN, self.run_rect_color, self.bottomRight_rect)
         pygame.draw.rect(Constants.WIN, Constants.GREY, self.enemy_nitzamon_info)
         pygame.draw.rect(Constants.WIN, Constants.GREY, self.player_nitzamon_info)
 
-        Constants.WIN.blit(self.fight_text, (self.fight_rect.x + 50, self.fight_rect.y + 5))
-        Constants.WIN.blit(self.inventory_text, (self.inventory_rect.x + 30, self.inventory_rect.y + 5))
-        Constants.WIN.blit(self.catch_text, (self.catch_rect.x + 50, self.catch_rect.y + 5))
-        Constants.WIN.blit(self.run_text, (self.run_rect.x + 60, self.run_rect.y + 5))
+        Constants.WIN.blit(self.fight_text, (self.topLeft_rect.x + 50, self.topLeft_rect.y + 5))
+        Constants.WIN.blit(self.inventory_text, (self.topRight_rect.x + 30, self.topRight_rect.y + 5))
+        Constants.WIN.blit(self.catch_text, (self.bottomLeft_rect.x + 50, self.bottomLeft_rect.y + 5))
+        Constants.WIN.blit(self.run_text, (self.bottomRight_rect.x + 60, self.bottomRight_rect.y + 5))
 
         Constants.WIN.blit(self.player_nitzamon_name,
                            (self.player_nitzamon_info.x + 10,
@@ -90,13 +90,13 @@ class FightMenu:
 
     # Checking if the mouse is hovering over the buttons, if it is, the buttons will change color
     def check_hovers(self, pos):
-        if self.fight_rect.collidepoint(pos):
+        if self.topLeft_rect.collidepoint(pos):
             self.fight_rect_color = Constants.HOVER_COLOR
-        elif self.inventory_rect.collidepoint(pos):
+        elif self.topRight_rect.collidepoint(pos):
             self.inventory_rect_color = Constants.HOVER_COLOR
-        elif self.catch_rect.collidepoint(pos):
+        elif self.bottomLeft_rect.collidepoint(pos):
             self.catch_rect_color = Constants.HOVER_COLOR
-        elif self.run_rect.collidepoint(pos):
+        elif self.bottomRight_rect.collidepoint(pos):
             self.run_rect_color = Constants.HOVER_COLOR
         else:
             self.fight_rect_color = Constants.BLACK
@@ -105,10 +105,21 @@ class FightMenu:
             self.run_rect_color = Constants.BLACK
 
     def run(self, pos):
-        if self.run_rect.collidepoint(pos):
+        if self.bottomRight_rect.collidepoint(pos):
             if random.randint(1, 10) == 10:
                 self.in_fight = False
                 self.fight_start = time.time()
+
+    def attack(self):
+        move1 = self.font.render(self.equipped_player_nitzamon.list_of_moves[0].name, True, Constants.WHITE)
+        move2 = self.font.render(self.equipped_player_nitzamon.list_of_moves[1].name, True, Constants.WHITE)
+        move3 = self.font.render(self.equipped_player_nitzamon.list_of_moves[2].name, True, Constants.WHITE)
+        move4 = self.font.render(self.equipped_player_nitzamon.list_of_moves[3].name, True, Constants.WHITE)
+
+        Constants.WIN.blit(move1, (self.topLeft_rect.x + 50, self.topLeft_rect.y + 5))
+        Constants.WIN.blit(self.inventory_text, (self.topRight_rect.x + 30, self.topRight_rect.y + 5))
+        Constants.WIN.blit(self.catch_text, (self.bottomLeft_rect.x + 50, self.bottomLeft_rect.y + 5))
+        Constants.WIN.blit(self.run_text, (self.bottomRight_rect.x + 60, self.bottomRight_rect.y + 5))
 
     def change_nitzamons(self, p, e):
         # Checking if the current nitzamon is the player's equipped nitzamon

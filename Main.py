@@ -12,9 +12,12 @@ import Fight
 from Classes.CharacterClasses import Dialogue
 import Inventory
 
+from Classes.CharacterClasses.NPC import *
+
 
 pygame.init()
 pygame.display.set_caption("Nitzamon!! ")
+
 
 
 def draw_world(world, player):
@@ -66,6 +69,8 @@ def save(player, enemy):
 
 def main():
     world = WorldFunctions.read_world(Constants.WORLD1_PATH)
+    NPC_list = []
+
     nitzamon_list = []
     for i in range(19):
         if i % 2 == 0:
@@ -110,6 +115,8 @@ def main():
                     else:
                         run = False
 
+
+
         if world[player.pos[1]][player.pos[0]] == "T":
             passed_time = time.time() - fight_menu.fight_start
             if random.randint(1, 100) == 100 and passed_time > Constants.FIGHT_COOL_DOWN:  # 1% chance of fighting and checking if enough time passed since the last fight
@@ -132,10 +139,9 @@ def main():
             draw_world(world, player)
             player.move(pygame.key.get_pressed())
             player.draw()
-
+        # pygame.draw.rect(WIN, BLACK, pygame.Rect((0, (3 * Y / 4)), (X, (3 * Y / 4))))
         pygame.display.update()
     return run
-
 
 if __name__ == "__main__":
     main()

@@ -4,3 +4,5 @@ class Dialogue:
         self.text = text
         self.sound = sound
 
+    def getText(self):
+        return self.text

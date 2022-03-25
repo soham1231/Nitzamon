@@ -2,10 +2,10 @@
 
 class Move:
 
-    def __init__(self, move_element, move_dmg, move_name):
+    def __init__(self, move_element, move_dmg, name):
         self.move_element = move_element
         self.move_dmg = move_dmg
-        self.move_name = move_name
+        self.name = name
 
     def get_effectiveness(self, enemy_type):
         if self.move_element == "water":
