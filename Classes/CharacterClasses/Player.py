@@ -101,5 +101,10 @@ class Player(NitzamonUser):
             WIN.blit(self.sprite, (self.pos[0] * Constants.SCALE - (self.camera_pos[0] * Constants.SCALE),
                                    self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
 
-    def fight(self, enemy_nitzamons):
-        pass
+    def change_equipped(self, old_nitzamon, new_nitzamon):
+
+        self.nitzamons.remove(old_nitzamon)
+        self.nitzamons.append(new_nitzamon)
+
+        self.nitzamon_bag.remove(new_nitzamon)
+        self.nitzamon_bag.append(old_nitzamon)
