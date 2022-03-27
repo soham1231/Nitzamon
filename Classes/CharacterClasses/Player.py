@@ -7,7 +7,7 @@ import pygame
 class Player(NitzamonUser):
     def __init__(self, name, sprite, pos, nitzamons, nitzamon_bag, active_quests, world):
         super().__init__(name, sprite, pos, nitzamons, world)
-        self.nitzamon_bag = nitzamon_bag
+        self.nitzamon_bag = nitzamons + nitzamon_bag
         self.active_quests = active_quests
         self.camera_pos = [0, 0]
 

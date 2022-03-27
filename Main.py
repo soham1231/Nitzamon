@@ -75,7 +75,9 @@ def main():
             nitzamon_list.append(Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []))
         else:
             nitzamon_list.append(Nitzamon.Nitzamon("Shoham", 100, 100, 120, 40, 40, Constants.NPC_IMAGE, Constants.WATER, []))
-    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], nitzamon_list, 0, 0, world)
+    equipped1 = Nitzamon.Nitzamon("Adi", 10, 10, 20, 30, 23, Constants.NPC_IMAGE, Constants.WATER, [])
+    equipped2 = Nitzamon.Nitzamon("Ori", 116, 143, 201, 332, 50, Constants.NPC_IMAGE, Constants.EARTH, [])
+    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [equipped1, equipped2], nitzamon_list, 0, world)
     nitzamon_pressed = None
     player.camera()
 
@@ -98,7 +100,7 @@ def main():
                 if fight_menu.in_fight:
                     fight_menu.run(pygame.mouse.get_pos())
                 if Inventory.is_open and not Inventory.info_open:
-                    nitzamon_pressed = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamons)
+                    nitzamon_pressed = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamon_bag)
                     if nitzamon_pressed is not None:
                         Inventory.info_open = True
 
@@ -127,7 +129,7 @@ def main():
         elif keys[pygame.K_m]:
             draw_minimap(world, player)
         elif Inventory.is_open:
-            Inventory.draw_inventory(player.nitzamons)
+            Inventory.draw_inventory(player.nitzamon_bag)
             if Inventory.info_open:
                 Inventory.show_info(nitzamon_pressed)
         else:

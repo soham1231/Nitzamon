@@ -14,6 +14,10 @@ info_rect_x = Constants.X / 2 - info_rect_width / 2
 info_rect_y = Constants.Y / 2 - info_rect_height / 2
 info_rect = pygame.Rect((info_rect_x, info_rect_y), (info_rect_width, info_rect_height))
 
+equip_rect_x = inventory_rect.width - 160
+equip_rect_y = inventory_rect.height - 60
+equip_rect = pygame.Rect((equip_rect_x, equip_rect_y), (150, 50))
+
 pygame.font.init()
 font = pygame.font.SysFont("Arial", 20)
 
@@ -75,6 +79,7 @@ def check_collision(pos, inv):
 def show_info(nitzamon):
     Constants.WIN.fill(Constants.GREY)
     pygame.draw.rect(Constants.WIN, Constants.WHITE, info_rect)
+    pygame.draw.rect(Constants.WIN, Constants.BLACK, equip_rect)
 
     name = font.render(f"Name: {nitzamon.name}", True, Constants.BLACK)
     Constants.WIN.blit(name, (info_rect_x + 10, info_rect_y + 500))
