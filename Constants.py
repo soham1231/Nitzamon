@@ -58,6 +58,9 @@ WORLD1_PATH = "Worlds\\World1.txt"
 FPS = 20
 fps = FPS  # Not a constant but i don't know where to put it
 
+# npcs list
+npc_list = []
+
 # Colors
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
