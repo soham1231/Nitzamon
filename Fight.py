@@ -3,6 +3,7 @@ import time
 import pygame
 import Constants
 import random
+import Inventory
 
 
 class FightMenu:
@@ -15,6 +16,7 @@ class FightMenu:
         self.equipped_enemy_nitzamon = self.enemy_nitzamons[0]
 
         self.in_fight = False
+        self.changing_nitzamons = False
         self.fight_start = time.time()
 
         self.main_rect = pygame.Rect((0, Constants.Y - 250), (Constants.X, 250))
@@ -140,3 +142,4 @@ class FightMenu:
         self.enemy_nitzamon_name = self.font.render(f"Name: {self.equipped_enemy_nitzamon.name}", True, Constants.BLACK)
         self.enemy_nitzamon_hp = self.font.render("HP: ", True, Constants.BLACK)
         self.enemy_nitzamon_lvl = self.font.render(f"Level: {self.equipped_enemy_nitzamon.lvl}", True, Constants.BLACK)
+

@@ -99,6 +99,8 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if fight_menu.in_fight:
                     fight_menu.run(pygame.mouse.get_pos())
+                    if fight_menu.topRight_rect.collidepoint(pygame.mouse.get_pos()):
+                        fight_menu.changing_nitzamons = True
                 if Inventory.is_open and not (Inventory.info_open or Inventory.equip_open):
                     nitzamon_pressed = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamon_bag)
                     if nitzamon_pressed is not None:
@@ -119,7 +121,9 @@ def main():
                 if event.key == pygame.K_e:
                     Inventory.is_open = not Inventory.is_open
                 if event.key == pygame.K_ESCAPE:
-                    if Inventory.equip_open:
+                    if fight_menu.in_fight and fight_menu.changing_nitzamons:
+                        fight_menu.changing_nitzamons = False
+                    elif Inventory.equip_open:
                         Inventory.equip_open = False
                     elif Inventory.info_open:
                         Inventory.info_open = False
@@ -135,9 +139,11 @@ def main():
 
         keys = pygame.key.get_pressed()
         if fight_menu.in_fight:
-            fight_menu.draw_screen()
+            if fight_menu.changing_nitzamons:
+                Inventory.draw_inventory(player.nitzamons)
+            else:
+                fight_menu.draw_screen()
             fight_menu.check_hovers(pygame.mouse.get_pos())
-            # WIN.blit(pygame.transform.scale(pygame.image.load("Assets\\Menus\\Fight.PNG"), (Constants.X, Constants.Y)), (0, 0))
 
         elif keys[pygame.K_m]:
             draw_minimap(world, player)
