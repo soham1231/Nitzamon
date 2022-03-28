@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="not a lot of stuff">
-      <change beforePath="$PROJECT_DIR$/.idea/Nitzamon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Nitzamon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="can change the equipped nitzamon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/Player.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory.py" afterDir="false" />
@@ -327,7 +325,13 @@
       <option name="presentableId" value="LOCAL‎00017" />
       <updated>1647895046997</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL‎00018" summary="can change the equipped nitzamon">
+      <created>1648472120004</created>
+      <option name="number" value="LOCAL‎00018" />
+      <option name="presentableId" value="LOCAL‎00018" />
+      <updated>1648472120004</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -370,7 +374,8 @@
     <MESSAGE value="added 150 nitzamons to player" />
     <MESSAGE value="I.. I fixed a small bug in inventory collisions...." />
     <MESSAGE value="pep 8" />
-    <option name="LAST_COMMIT_MESSAGE" value="pep 8" />
+    <MESSAGE value="can change the equipped nitzamon" />
+    <option name="LAST_COMMIT_MESSAGE" value="can change the equipped nitzamon" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1648053290356">
@@ -381,33 +386,33 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="129" y="55" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1647720062123" />
-    <state width="1345" height="90" key="GridCell.Tab.0.bottom" timestamp="1648472056162">
+    <state width="1345" height="90" key="GridCell.Tab.0.bottom" timestamp="1648484103339">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="90" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1648472056162" />
-    <state width="1345" height="90" key="GridCell.Tab.0.center" timestamp="1648472056161">
+    <state width="1345" height="90" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1648484103339" />
+    <state width="1345" height="90" key="GridCell.Tab.0.center" timestamp="1648484103339">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="90" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1648472056161" />
-    <state width="1345" height="90" key="GridCell.Tab.0.left" timestamp="1648472056161">
+    <state width="1345" height="90" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1648484103339" />
+    <state width="1345" height="90" key="GridCell.Tab.0.left" timestamp="1648484103339">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="90" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1648472056161" />
-    <state width="1345" height="90" key="GridCell.Tab.0.right" timestamp="1648472056162">
+    <state width="1345" height="90" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1648484103339" />
+    <state width="1345" height="90" key="GridCell.Tab.0.right" timestamp="1648484103339">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="90" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1648472056162" />
+    <state width="1345" height="90" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1648484103339" />
     <state x="321" y="125" key="MultipleFileMergeDialog" timestamp="1647894908916">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="321" y="125" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1647894908916" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1647895057329">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1648472121005">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1647895057329" />
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1648207146509">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1648472121005" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1648483374309">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1648207146509" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1648483374309" />
   </component>
 </project>

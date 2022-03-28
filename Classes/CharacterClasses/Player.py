@@ -112,3 +112,10 @@ class Player(NitzamonUser):
 
         self.nitzamons.remove(old_nitzamon)
         self.nitzamons.append(new_nitzamon)
+
+    def delete_nitzamon(self, nitzamon):
+        self.nitzamon_bag.remove(nitzamon)
+        if nitzamon in self.nitzamons:
+            self.nitzamons.remove(nitzamon)
+            if len(self.nitzamon_bag) > 3:
+                self.nitzamons.append(self.nitzamon_bag[3])

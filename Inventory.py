@@ -19,6 +19,10 @@ equip_rect_x = inventory_rect.width - 160
 equip_rect_y = inventory_rect.height - 60
 equip_rect = pygame.Rect((equip_rect_x, equip_rect_y), (150, 50))
 
+remove_rect_x = inventory_rect.width - 170 - equip_rect.width
+remove_rect_y = inventory_rect.height - 60
+remove_rect = pygame.Rect((remove_rect_x, remove_rect_y), (150, 50))
+
 pygame.font.init()
 font = pygame.font.SysFont("Arial", 20)
 
@@ -33,7 +37,10 @@ def turn_into_img_matrix(inv):
         cols = cols_of_nitzamons
     else:
         cols = len(inv)
-    rows = ceil(len(inv) / cols)
+    if cols != 0:
+        rows = ceil(len(inv) / cols)
+    else:
+        rows = 1
     current_nitzamon = 0
     for i in range(rows + 1):
         new_line = []
@@ -80,7 +87,8 @@ def check_collision(pos, inv):
 def show_info(nitzamon):
     Constants.WIN.fill(Constants.GREY)
     pygame.draw.rect(Constants.WIN, Constants.WHITE, info_rect)
-    pygame.draw.rect(Constants.WIN, Constants.BLACK, equip_rect)
+    pygame.draw.rect(Constants.WIN, (0, 0, 255), equip_rect)
+    pygame.draw.rect(Constants.WIN, (255, 0, 0), remove_rect)
 
     name = font.render(f"Name: {nitzamon.name}", True, Constants.BLACK)
     Constants.WIN.blit(name, (info_rect_x + 10, info_rect_y + 500))
@@ -88,8 +96,14 @@ def show_info(nitzamon):
     hp = font.render(f"Hp: {nitzamon.hp} / {nitzamon.max_hp}", True, Constants.BLACK)
     Constants.WIN.blit(hp, (info_rect_x + 10, info_rect_y + 530))
 
-    lvl = font.render(f"level: {nitzamon.lvl}", True, Constants.BLACK)
+    lvl = font.render(f"Level: {nitzamon.lvl}", True, Constants.BLACK)
     Constants.WIN.blit(lvl, (info_rect_x + 10, info_rect_y + 560))
+
+    replace = font.render("Replace", True, Constants.BLACK)
+    Constants.WIN.blit(replace, (equip_rect_x + 45, equip_rect_y + 10))
+
+    delete = font.render("Delete", True, Constants.BLACK)
+    Constants.WIN.blit(delete, (remove_rect_x + 50, remove_rect_y + 10))
 
     nitzamon_image = pygame.transform.scale(nitzamon.sprite, (290, 388))
     Constants.WIN.blit(nitzamon_image, (info_rect_x + 30, info_rect_y + 50))

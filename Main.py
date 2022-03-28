@@ -105,6 +105,9 @@ def main():
                         Inventory.info_open = True
                 if Inventory.info_open and Inventory.equip_rect.collidepoint(pygame.mouse.get_pos()):
                     Inventory.equip_open = True
+                elif Inventory.info_open and Inventory.remove_rect.collidepoint(pygame.mouse.get_pos()):
+                    player.delete_nitzamon(nitzamon_pressed)
+                    Inventory.info_open = False
                 if Inventory.equip_open:
                     new_nitzamon = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamon_bag)
                     if new_nitzamon is not None:
