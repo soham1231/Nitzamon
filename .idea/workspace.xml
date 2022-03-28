@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Added the delete button">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="can open the inventory in fight">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fight.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
@@ -336,7 +336,13 @@
       <option name="presentableId" value="LOCAL‎00019" />
       <updated>1648484147781</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL‎00020" summary="can open the inventory in fight">
+      <created>1648486451446</created>
+      <option name="number" value="LOCAL‎00020" />
+      <option name="presentableId" value="LOCAL‎00020" />
+      <updated>1648486451446</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -381,7 +387,8 @@
     <MESSAGE value="pep 8" />
     <MESSAGE value="can change the equipped nitzamon" />
     <MESSAGE value="Added the delete button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the delete button" />
+    <MESSAGE value="can open the inventory in fight" />
+    <option name="LAST_COMMIT_MESSAGE" value="can open the inventory in fight" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1648053290356">
@@ -392,30 +399,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="129" y="55" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1647720062123" />
-    <state width="1345" height="90" key="GridCell.Tab.0.bottom" timestamp="1648486302236">
+    <state width="1345" height="90" key="GridCell.Tab.0.bottom" timestamp="1648490065384">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="90" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1648486302236" />
-    <state width="1345" height="90" key="GridCell.Tab.0.center" timestamp="1648486302235">
+    <state width="1345" height="90" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1648490065384" />
+    <state width="1345" height="90" key="GridCell.Tab.0.center" timestamp="1648490065384">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="90" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1648486302235" />
-    <state width="1345" height="90" key="GridCell.Tab.0.left" timestamp="1648486302235">
+    <state width="1345" height="90" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1648490065384" />
+    <state width="1345" height="90" key="GridCell.Tab.0.left" timestamp="1648490065384">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="90" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1648486302235" />
-    <state width="1345" height="90" key="GridCell.Tab.0.right" timestamp="1648486302236">
+    <state width="1345" height="90" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1648490065384" />
+    <state width="1345" height="90" key="GridCell.Tab.0.right" timestamp="1648490065384">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="90" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1648486302236" />
+    <state width="1345" height="90" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1648490065384" />
     <state x="321" y="125" key="MultipleFileMergeDialog" timestamp="1647894908916">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="321" y="125" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1647894908916" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1648484185721">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1648486456735">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1648484185721" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1648486456735" />
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1648483374309">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

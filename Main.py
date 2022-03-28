@@ -76,8 +76,9 @@ def main():
         else:
             nitzamon_list.append(Nitzamon.Nitzamon("Shoham", 100, 100, 120, 40, 40, Constants.NPC_IMAGE, Constants.WATER, []))
     equipped1 = Nitzamon.Nitzamon("Adi", 10, 10, 20, 30, 23, Constants.NPC_IMAGE, Constants.WATER, [])
-    equipped2 = Nitzamon.Nitzamon("Ori", 116, 143, 201, 332, 50, Constants.NPC_IMAGE, Constants.EARTH, [])
-    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [equipped1, equipped2], nitzamon_list, 0, world)
+    equipped2 = Nitzamon.Nitzamon("Ori", 116, 143, 201, 332, 50, Constants.PLAYER_IMAGE, Constants.EARTH, [])
+    equipped3 = Nitzamon.Nitzamon("Guy", 11, 53, 64, 65, 10, Constants.NPC_IMAGE, Constants.FIRE, [])
+    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [equipped1, equipped2, equipped3], nitzamon_list, 0, world)
     nitzamon_pressed = None
     player.camera()
 
@@ -101,6 +102,11 @@ def main():
                     fight_menu.run(pygame.mouse.get_pos())
                     if fight_menu.topRight_rect.collidepoint(pygame.mouse.get_pos()):
                         fight_menu.changing_nitzamons = True
+                    if fight_menu.changing_nitzamons:
+                        replacing = Inventory.check_collision(pygame.mouse.get_pos(), fight_menu.player_nitzamons)
+                        if replacing is not None:
+                            fight_menu.change_nitzamons(replacing)
+                            fight_menu.changing_nitzamons = False
                 if Inventory.is_open and not (Inventory.info_open or Inventory.equip_open):
                     nitzamon_pressed = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamon_bag)
                     if nitzamon_pressed is not None:

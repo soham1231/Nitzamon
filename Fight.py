@@ -123,16 +123,9 @@ class FightMenu:
         Constants.WIN.blit(self.catch_text, (self.bottomLeft_rect.x + 50, self.bottomLeft_rect.y + 5))
         Constants.WIN.blit(self.run_text, (self.bottomRight_rect.x + 60, self.bottomRight_rect.y + 5))
 
-    def change_nitzamons(self, p, e):
-        # Checking if the current nitzamon is the player's equipped nitzamon
-        for i in range(len(self.player_nitzamons)):
-            if self.player_nitzamons[i] == p.equipped_nitzamon:
-                self.equipped_player_nitzamon = self.player_nitzamons[i]
+    def change_nitzamons(self, new_nitzamon):
+        self.equipped_player_nitzamon = new_nitzamon
 
-        # Checking if the current nitzamon is the enemy's equipped nitzamon
-        for i in range(len(self.enemy_nitzamons)):
-            if self.enemy_nitzamons[i] == e.equipped_nitzamon:
-                self.equipped_enemy_nitzamon = self.enemy_nitzamons[i]
 
     def change_info(self):
         self.player_nitzamon_name = self.font.render(f"Name: {self.equipped_player_nitzamon.name}", True, Constants.BLACK)
