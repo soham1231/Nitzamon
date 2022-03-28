@@ -5,6 +5,7 @@ from math import ceil
 
 is_open = False
 info_open = False
+equip_open = False
 
 inventory_rect = pygame.Rect((30, 30), (Constants.X - 60, Constants.Y - 60))
 

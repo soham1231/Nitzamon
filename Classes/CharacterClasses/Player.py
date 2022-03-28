@@ -102,9 +102,13 @@ class Player(NitzamonUser):
                                    self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
 
     def change_equipped(self, old_nitzamon, new_nitzamon):
+        if old_nitzamon not in self.nitzamons:
+            return
+        old_index = self.nitzamon_bag.index(old_nitzamon)
+        self.nitzamon_bag.remove(old_nitzamon)
+        self.nitzamon_bag.remove(new_nitzamon)
+        self.nitzamon_bag.insert(old_index, new_nitzamon)
+        self.nitzamon_bag.append(old_nitzamon)
 
         self.nitzamons.remove(old_nitzamon)
         self.nitzamons.append(new_nitzamon)
-
-        self.nitzamon_bag.remove(new_nitzamon)
-        self.nitzamon_bag.append(old_nitzamon)

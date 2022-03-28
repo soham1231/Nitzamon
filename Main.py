@@ -99,16 +99,26 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if fight_menu.in_fight:
                     fight_menu.run(pygame.mouse.get_pos())
-                if Inventory.is_open and not Inventory.info_open:
+                if Inventory.is_open and not (Inventory.info_open or Inventory.equip_open):
                     nitzamon_pressed = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamon_bag)
                     if nitzamon_pressed is not None:
                         Inventory.info_open = True
+                if Inventory.info_open and Inventory.equip_rect.collidepoint(pygame.mouse.get_pos()):
+                    Inventory.equip_open = True
+                if Inventory.equip_open:
+                    new_nitzamon = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamon_bag)
+                    if new_nitzamon is not None:
+                        player.change_equipped(nitzamon_pressed, new_nitzamon)
+                        Inventory.equip_open = False
+                        Inventory.info_open = False
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_e:
                     Inventory.is_open = not Inventory.is_open
                 if event.key == pygame.K_ESCAPE:
-                    if Inventory.info_open:
+                    if Inventory.equip_open:
+                        Inventory.equip_open = False
+                    elif Inventory.info_open:
                         Inventory.info_open = False
                     elif Inventory.is_open:
                         Inventory.is_open = False
@@ -130,7 +140,9 @@ def main():
             draw_minimap(world, player)
         elif Inventory.is_open:
             Inventory.draw_inventory(player.nitzamon_bag)
-            if Inventory.info_open:
+            if Inventory.equip_open:
+                Inventory.draw_inventory(player.nitzamon_bag)
+            elif Inventory.info_open:
                 Inventory.show_info(nitzamon_pressed)
         else:
             player.camera()
