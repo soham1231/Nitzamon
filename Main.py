@@ -50,6 +50,14 @@ def draw_minimap(world, player):
     WIN.blit(player_image, (x_center + player.pos[0] * Constants.MINI_SCALE, y_center + player.pos[1] * Constants.MINI_SCALE))
 
 
+def random_nitzamon():
+    name = random.choice(Constants.NAMES)
+    sprite = pygame.image.load(f"Assets\\Nitzamons\\{name}.png")
+    level = random.randint(1, 100)
+    health = level + random.randint(50, 400)
+    return Nitzamon.Nitzamon(name, level, health, health, 10, 50, sprite, Constants.FIRE, [])
+
+
 def save(player, enemy):
 
     info = {
@@ -138,9 +146,11 @@ def main():
                     else:
                         run = False
 
-        if world[player.pos[1]][player.pos[0]] == "T":
+        if world[player.pos[1]][player.pos[0]] == "T" and not fight_menu.in_fight:
             passed_time = time.time() - fight_menu.fight_start
             if random.randint(1, 100) == 100 and passed_time > Constants.FIGHT_COOL_DOWN:  # 1% chance of fighting and checking if enough time passed since the last fight
+                fight_menu.player_nitzamons = player.nitzamons
+                fight_menu.change_to_single(random_nitzamon())
                 fight_menu.in_fight = True
 
         keys = pygame.key.get_pressed()

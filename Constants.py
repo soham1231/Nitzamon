@@ -21,10 +21,11 @@ MINI_SCALE = 7
 WORLD_WIDTH = 250
 WORLD_HEIGHT = 250
 
-# Enemy types
+# Nitzamon
 WATER = "water"
 FIRE = "fire"
 EARTH = "earth"
+NAMES = ["commentar", "gemgem", "masmer", "nitzagram", "heartian"]
 
 # Images
 GRASS1_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Grass1.png"), (SCALE, SCALE))

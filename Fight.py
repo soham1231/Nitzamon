@@ -40,11 +40,11 @@ class FightMenu:
         self.run_text = self.font.render("Run", True, Constants.WHITE)
 
         self.player_nitzamon_name = self.font.render(f"Name: {self.equipped_player_nitzamon.name}", True, Constants.BLACK)
-        self.player_nitzamon_hp = self.font.render("HP: ", True, Constants.BLACK)
+        self.player_nitzamon_hp = self.font.render(f"HP: {self.equipped_player_nitzamon.hp}/{self.equipped_player_nitzamon.max_hp}", True, Constants.BLACK)
         self.player_nitzamon_lvl = self.font.render(f"Level: {self.equipped_player_nitzamon.lvl}", True, Constants.BLACK)
 
         self.enemy_nitzamon_name = self.font.render(f"Name: {self.equipped_enemy_nitzamon.name}", True, Constants.BLACK)
-        self.enemy_nitzamon_hp = self.font.render("HP: ", True, Constants.BLACK)
+        self.enemy_nitzamon_hp = self.font.render(f"HP: {self.equipped_enemy_nitzamon.hp}/{self.equipped_enemy_nitzamon.max_hp}", True, Constants.BLACK)
         self.enemy_nitzamon_lvl = self.font.render(f"Level: {self.equipped_enemy_nitzamon.lvl}", True, Constants.BLACK)
 
     def draw_screen(self):
@@ -126,6 +126,8 @@ class FightMenu:
     def change_nitzamons(self, new_nitzamon):
         self.equipped_player_nitzamon = new_nitzamon
 
+    def change_to_single(self, nitzamon):
+        self.equipped_enemy_nitzamon = nitzamon
 
     def change_info(self):
         self.player_nitzamon_name = self.font.render(f"Name: {self.equipped_player_nitzamon.name}", True, Constants.BLACK)
