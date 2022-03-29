@@ -55,7 +55,10 @@ def random_nitzamon():
     sprite = pygame.image.load(f"Assets\\Nitzamons\\{name}.png")
     level = random.randint(1, 100)
     health = level + random.randint(50, 400)
-    return Nitzamon.Nitzamon(name, level, health, health, 10, 50, sprite, Constants.FIRE, [])
+    attack = level + random.randint(0, 50)
+    speed = level + random.randint(0, 20)
+    element = Constants.NITZAMON_ELEMENTS_DICT[name]
+    return Nitzamon.Nitzamon(name, level, health, health, attack, speed, sprite, element, [])
 
 
 def save(player, enemy):
