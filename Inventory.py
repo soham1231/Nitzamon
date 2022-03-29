@@ -102,6 +102,12 @@ def show_info(nitzamon):
     element = font.render(f"Element: {nitzamon.element}", True, Constants.BLACK)
     Constants.WIN.blit(element, (info_rect_x + 10, info_rect_y + 590))
 
+    attack = font.render(f"Attack: {nitzamon.dmg}", True, Constants.BLACK)
+    Constants.WIN.blit(attack, (info_rect_x + 10, info_rect_y + 620))
+
+    speed = font.render(f"Speed: {nitzamon.spd}", True, Constants.BLACK)
+    Constants.WIN.blit(speed, (info_rect_x + 10, info_rect_y + 650))
+
     replace = font.render("Replace", True, Constants.BLACK)
     Constants.WIN.blit(replace, (equip_rect_x + 45, equip_rect_y + 10))
 
