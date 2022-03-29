@@ -19,9 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="added backgrounds">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Added nitzamons">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_03_2022_17_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_03_2022_17_16__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nitzamons/gemgem.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Nitzamons/gem trio.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nitzamons/masmer.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Nitzamons/masmerion.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nitzamons/nitzagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Nitzamons/nitzaphone.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fight.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +69,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\Desktop\nitzanim\nitzamon\Assets\Nitzamons" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\NitzamonClasses" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\Character Classes" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\Nitzamon Classes" />
@@ -111,13 +119,13 @@
       <method v="2" />
     </configuration>
     <configuration name="Game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Nitzamon" />
+      <module name="NITZAMON" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\USER\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\ADMIN\AppData\Local\Programs\Python\Python39\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -341,31 +349,13 @@
       <option name="presentableId" value="LOCAL‎00020" />
       <updated>1648486451446</updated>
     </task>
-    <task id="LOCAL‎00021" summary="added another nitzamon">
-      <created>1648567636860</created>
+    <task id="LOCAL‎00021" summary="can change nitzamons mid fight">
+      <created>1648490113264</created>
       <option name="number" value="LOCAL‎00021" />
       <option name="presentableId" value="LOCAL‎00021" />
-      <updated>1648567636861</updated>
+      <updated>1648490113264</updated>
     </task>
-    <task id="LOCAL‎00022" summary="someone changed the fullscreen??">
-      <created>1648568783756</created>
-      <option name="number" value="LOCAL‎00022" />
-      <option name="presentableId" value="LOCAL‎00022" />
-      <updated>1648568783756</updated>
-    </task>
-    <task id="LOCAL‎00023" summary="Added nitzamons and start fight function">
-      <created>1648572795858</created>
-      <option name="number" value="LOCAL‎00023" />
-      <option name="presentableId" value="LOCAL‎00023" />
-      <updated>1648572795858</updated>
-    </task>
-    <task id="LOCAL‎00024" summary="added backgrounds">
-      <created>1648575483648</created>
-      <option name="number" value="LOCAL‎00024" />
-      <option name="presentableId" value="LOCAL‎00024" />
-      <updated>1648575483648</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -411,10 +401,45 @@
     <MESSAGE value="can change the equipped nitzamon" />
     <MESSAGE value="Added the delete button" />
     <MESSAGE value="can open the inventory in fight" />
-    <MESSAGE value="added another nitzamon" />
-    <MESSAGE value="someone changed the fullscreen??" />
-    <MESSAGE value="Added nitzamons and start fight function" />
-    <MESSAGE value="added backgrounds" />
-    <option name="LAST_COMMIT_MESSAGE" value="added backgrounds" />
+    <MESSAGE value="can change nitzamons mid fight" />
+    <option name="LAST_COMMIT_MESSAGE" value="can change nitzamons mid fight" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1648053290356">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1648053290356" />
+    <state x="129" y="55" key="DiffContextDialog" timestamp="1647720062123">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="129" y="55" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1647720062123" />
+    <state width="1345" height="144" key="GridCell.Tab.0.bottom" timestamp="1648578508680">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="144" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1648578508680" />
+    <state width="1345" height="144" key="GridCell.Tab.0.center" timestamp="1648578508680">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="144" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1648578508680" />
+    <state width="1345" height="144" key="GridCell.Tab.0.left" timestamp="1648578508680">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="144" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1648578508680" />
+    <state width="1345" height="144" key="GridCell.Tab.0.right" timestamp="1648578508680">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="144" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1648578508680" />
+    <state x="321" y="125" key="MultipleFileMergeDialog" timestamp="1647894908916">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="321" y="125" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1647894908916" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1648565138947">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1648565138947" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1648565132043">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1648565132043" />
   </component>
 </project>

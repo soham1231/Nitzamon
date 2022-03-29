@@ -136,9 +136,11 @@ class FightMenu:
         self.enemy_nitzamons = nitzamon
         self.equipped_enemy_nitzamon = nitzamon
 
-        if nitzamon.name == "dark squarion" or nitzamon.name == "gemgem" or nitzamon.name == "pentageon" or nitzamon.name == "trion":
+        if nitzamon.name == Constants.DARK_SQUARION or nitzamon.name == Constants.GEM_TRIO:
             bg = "Gemgem"
-        elif nitzamon.name == "headea" or nitzamon.name == "managereon" or nitzamon.name == "masmer":
+        elif nitzamon.name == Constants.PENTAGEON or nitzamon.name == Constants.TRION:
+            bg = "Gemgem"
+        elif nitzamon.name == Constants.HEADEA or nitzamon.name == Constants.MANAGEREON or nitzamon.name == Constants.MASMERION:
             bg = "Masmer"
         # else:
         #     bg = "nitzagram"
