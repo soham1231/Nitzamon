@@ -19,6 +19,8 @@ class FightMenu:
         self.changing_nitzamons = False
         self.fight_start = time.time()
 
+        self.background = pygame.transform.scale(pygame.image.load("Assets\\Gemgem bg.png"), (Constants.X, Constants.Y - 250))
+
         self.main_rect = pygame.Rect((0, Constants.Y - 250), (Constants.X, 250))
         self.topLeft_rect = pygame.Rect((Constants.X - 500, Constants.Y - 200), (170, 50))
         self.topRight_rect = pygame.Rect((Constants.X - 250, Constants.Y - 200), (170, 50))
@@ -49,7 +51,8 @@ class FightMenu:
 
     def draw_screen(self):
         self.change_info()
-        Constants.WIN.fill((0, 255, 0))
+
+        Constants.WIN.blit(self.background, (0, 0))
         pygame.draw.rect(Constants.WIN, Constants.GREY, self.main_rect)
         pygame.draw.rect(Constants.WIN, self.fight_rect_color, self.topLeft_rect)
         pygame.draw.rect(Constants.WIN, self.inventory_rect_color, self.topRight_rect)
@@ -132,6 +135,18 @@ class FightMenu:
         self.equipped_player_nitzamon = player_nitzamons[0]
         self.enemy_nitzamons = nitzamon
         self.equipped_enemy_nitzamon = nitzamon
+
+        if nitzamon.name == "dark squarion" or nitzamon.name == "gemgem" or nitzamon.name == "pentageon" or nitzamon.name == "trion":
+            bg = "Gemgem"
+        elif nitzamon.name == "headea" or nitzamon.name == "managereon" or nitzamon.name == "masmer":
+            bg = "Masmer"
+        # else:
+        #     bg = "nitzagram"
+
+        else:  # leave it here until nitzagram background is ready
+            bg = "Gemgem"
+
+        self.background = pygame.transform.scale(pygame.image.load(f"Assets\\{bg} bg.png"), (Constants.X, Constants.Y - 250))
         self.in_fight = True
 
     def start_fight_enemy(self, player_nitzamons, enemy_nitzamons):

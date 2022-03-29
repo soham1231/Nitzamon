@@ -81,12 +81,12 @@ def main():
     npc_list = []
 
     nitzamon_list = []
-    for i in range(19):
+    equipped = []
+    for i in range(20):
         nitzamon_list.append(random_nitzamon())
-    equipped1 = Nitzamon.Nitzamon("Adi", 10, 10, 20, 30, 23, Constants.NPC_IMAGE, Constants.WATER, [])
-    equipped2 = Nitzamon.Nitzamon("Ori", 116, 143, 201, 332, 50, Constants.PLAYER_IMAGE, Constants.EARTH, [])
-    equipped3 = Nitzamon.Nitzamon("Guy", 11, 53, 64, 65, 10, Constants.NPC_IMAGE, Constants.FIRE, [])
-    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [equipped1, equipped2, equipped3], nitzamon_list, 0, world)
+    for i in range(3):
+        equipped.append(random_nitzamon())
+    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], equipped, nitzamon_list, 0, world)
     nitzamon_pressed = None
     player.camera()
 

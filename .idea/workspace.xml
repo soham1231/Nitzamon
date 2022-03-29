@@ -19,16 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="someone changed the fullscreen??">
-      <change afterPath="$PROJECT_DIR$/Assets/Nitzamons/dark squarion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Nitzamons/headea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Nitzamons/managereon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Nitzamons/pentageon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Nitzamons/trion.png" afterDir="false" />
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Added nitzamons and start fight function">
+      <change afterPath="$PROJECT_DIR$/Assets/Gemgem bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Masmer bg.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -361,7 +356,13 @@
       <option name="presentableId" value="LOCAL‎00022" />
       <updated>1648568783756</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL‎00023" summary="Added nitzamons and start fight function">
+      <created>1648572795858</created>
+      <option name="number" value="LOCAL‎00023" />
+      <option name="presentableId" value="LOCAL‎00023" />
+      <updated>1648572795858</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -409,6 +410,7 @@
     <MESSAGE value="can open the inventory in fight" />
     <MESSAGE value="added another nitzamon" />
     <MESSAGE value="someone changed the fullscreen??" />
-    <option name="LAST_COMMIT_MESSAGE" value="someone changed the fullscreen??" />
+    <MESSAGE value="Added nitzamons and start fight function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added nitzamons and start fight function" />
   </component>
 </project>
