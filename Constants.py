@@ -4,7 +4,6 @@ from math import ceil
 pygame.init()
 WIN = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 
-# WIN = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 X, Y = WIN.get_size()
 SCALE = 50
 MINI_SCALE = 7
