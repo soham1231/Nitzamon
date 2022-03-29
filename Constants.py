@@ -17,13 +17,19 @@ WORLD_HEIGHT = 250
 WATER = "water"
 FIRE = "fire"
 EARTH = "earth"
-NAMES = ["commentar", "gemgem", "masmer", "nitzagram", "heartian", "sharee"]
+NAMES = ["commentar", "gemgem", "masmer", "nitzagram", "heartian", "sharee", "dark squarion", "managereon", "pentageon",
+         "headea", "trion"]
 NITZAMON_ELEMENTS_DICT = {"commentar": WATER,
-                          "gemgem:": FIRE,
+                          "gemgem": FIRE,
                           "masmer": EARTH,
                           "nitzagram": WATER,
                           "heartian": FIRE,
-                          "sharee": EARTH}
+                          "sharee": EARTH,
+                          "dark squarion": WATER,
+                          "managereon": EARTH,
+                          "pentageon": FIRE,
+                          "headea": FIRE,
+                          "trion": EARTH}
 
 # Images
 GRASS1_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Grass1.png"), (SCALE, SCALE))

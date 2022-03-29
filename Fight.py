@@ -87,6 +87,7 @@ class FightMenu:
 
         player_nitzamon_sprite = pygame.transform.scale(self.equipped_player_nitzamon.sprite, (200, 200))
         enemy_nitzamon_sprite = pygame.transform.scale(self.equipped_enemy_nitzamon.sprite, (200, 200))
+        enemy_nitzamon_sprite = pygame.transform.flip(enemy_nitzamon_sprite, True, False)
         Constants.WIN.blit(player_nitzamon_sprite, (100, self.player_nitzamon_info.y + 250))
         Constants.WIN.blit(enemy_nitzamon_sprite, (Constants.X - 300, self.enemy_nitzamon_info.y + 250))
 
@@ -126,8 +127,19 @@ class FightMenu:
     def change_nitzamons(self, new_nitzamon):
         self.equipped_player_nitzamon = new_nitzamon
 
-    def change_to_single(self, nitzamon):
+    def start_fight_single(self, player_nitzamons, nitzamon):
+        self.player_nitzamons = player_nitzamons
+        self.equipped_player_nitzamon = player_nitzamons[0]
+        self.enemy_nitzamons = nitzamon
         self.equipped_enemy_nitzamon = nitzamon
+        self.in_fight = True
+
+    def start_fight_enemy(self, player_nitzamons, enemy_nitzamons):
+        self.player_nitzamons = player_nitzamons
+        self.equipped_player_nitzamon = player_nitzamons[0]
+        self.enemy_nitzamons = enemy_nitzamons
+        self.equipped_enemy_nitzamon = enemy_nitzamons[0]
+        self.in_fight = True
 
     def change_info(self):
         self.player_nitzamon_name = self.font.render(f"Name: {self.equipped_player_nitzamon.name}", True, Constants.BLACK)

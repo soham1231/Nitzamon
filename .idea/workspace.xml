@@ -19,9 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="added another nitzamon">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="someone changed the fullscreen??">
+      <change afterPath="$PROJECT_DIR$/Assets/Nitzamons/dark squarion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Nitzamons/headea.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Nitzamons/managereon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Nitzamons/pentageon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Nitzamons/trion.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,7 +355,13 @@
       <option name="presentableId" value="LOCAL‎00021" />
       <updated>1648567636861</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL‎00022" summary="someone changed the fullscreen??">
+      <created>1648568783756</created>
+      <option name="number" value="LOCAL‎00022" />
+      <option name="presentableId" value="LOCAL‎00022" />
+      <updated>1648568783756</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -394,6 +408,7 @@
     <MESSAGE value="Added the delete button" />
     <MESSAGE value="can open the inventory in fight" />
     <MESSAGE value="added another nitzamon" />
-    <option name="LAST_COMMIT_MESSAGE" value="added another nitzamon" />
+    <MESSAGE value="someone changed the fullscreen??" />
+    <option name="LAST_COMMIT_MESSAGE" value="someone changed the fullscreen??" />
   </component>
 </project>

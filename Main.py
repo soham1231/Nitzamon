@@ -82,10 +82,7 @@ def main():
 
     nitzamon_list = []
     for i in range(19):
-        if i % 2 == 0:
-            nitzamon_list.append(Nitzamon.Nitzamon("Gilad", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []))
-        else:
-            nitzamon_list.append(Nitzamon.Nitzamon("Shoham", 100, 100, 120, 40, 40, Constants.NPC_IMAGE, Constants.WATER, []))
+        nitzamon_list.append(random_nitzamon())
     equipped1 = Nitzamon.Nitzamon("Adi", 10, 10, 20, 30, 23, Constants.NPC_IMAGE, Constants.WATER, [])
     equipped2 = Nitzamon.Nitzamon("Ori", 116, 143, 201, 332, 50, Constants.PLAYER_IMAGE, Constants.EARTH, [])
     equipped3 = Nitzamon.Nitzamon("Guy", 11, 53, 64, 65, 10, Constants.NPC_IMAGE, Constants.FIRE, [])
@@ -152,9 +149,7 @@ def main():
         if world[player.pos[1]][player.pos[0]] == "T" and not fight_menu.in_fight:
             passed_time = time.time() - fight_menu.fight_start
             if random.randint(1, 100) == 100 and passed_time > Constants.FIGHT_COOL_DOWN:  # 1% chance of fighting and checking if enough time passed since the last fight
-                fight_menu.player_nitzamons = player.nitzamons
-                fight_menu.change_to_single(random_nitzamon())
-                fight_menu.in_fight = True
+                fight_menu.start_fight_single(player.nitzamons, random_nitzamon())
 
         keys = pygame.key.get_pressed()
         if fight_menu.in_fight:

@@ -10,7 +10,7 @@ equip_open = False
 inventory_rect = pygame.Rect((30, 30), (Constants.X - 60, Constants.Y - 60))
 
 info_rect_width = 350
-info_rect_height = 600
+info_rect_height = 700
 info_rect_x = Constants.X / 2 - info_rect_width / 2
 info_rect_y = Constants.Y / 2 - info_rect_height / 2
 info_rect = pygame.Rect((info_rect_x, info_rect_y), (info_rect_width, info_rect_height))
@@ -98,6 +98,9 @@ def show_info(nitzamon):
 
     lvl = font.render(f"Level: {nitzamon.lvl}", True, Constants.BLACK)
     Constants.WIN.blit(lvl, (info_rect_x + 10, info_rect_y + 560))
+
+    element = font.render(f"Element: {nitzamon.element}", True, Constants.BLACK)
+    Constants.WIN.blit(element, (info_rect_x + 10, info_rect_y + 590))
 
     replace = font.render("Replace", True, Constants.BLACK)
     Constants.WIN.blit(replace, (equip_rect_x + 45, equip_rect_y + 10))
