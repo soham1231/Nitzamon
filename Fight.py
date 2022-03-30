@@ -17,6 +17,7 @@ class FightMenu:
 
         self.in_fight = False
         self.changing_nitzamons = False
+        self.attacking = False
         self.fight_start = time.time()
 
         self.background = pygame.transform.scale(pygame.image.load("Assets\\Gemgem bg.png"), (Constants.X, Constants.Y - 250))
@@ -30,10 +31,10 @@ class FightMenu:
         self.enemy_nitzamon_info = pygame.Rect((Constants.X - 360, 10), (350, 200))
         self.player_nitzamon_info = pygame.Rect((10, 10), (350, 200))
 
-        self.fight_rect_color = Constants.BLACK
-        self.inventory_rect_color = Constants.BLACK
-        self.catch_rect_color = Constants.BLACK
-        self.run_rect_color = Constants.BLACK
+        self.topLeft_rect_color = Constants.BLACK
+        self.topRight_rect_color = Constants.BLACK
+        self.bottomLeft_rect_color = Constants.BLACK
+        self.bottomRight_rect_color = Constants.BLACK
 
         self.font = pygame.font.SysFont("arial", Constants.FIGHT_FONT_SIZE)
         self.fight_text = self.font.render("Fight", True, Constants.WHITE)
@@ -54,10 +55,10 @@ class FightMenu:
 
         Constants.WIN.blit(self.background, (0, 0))
         pygame.draw.rect(Constants.WIN, Constants.GREY, self.main_rect)
-        pygame.draw.rect(Constants.WIN, self.fight_rect_color, self.topLeft_rect)
-        pygame.draw.rect(Constants.WIN, self.inventory_rect_color, self.topRight_rect)
-        pygame.draw.rect(Constants.WIN, self.catch_rect_color, self.bottomLeft_rect)
-        pygame.draw.rect(Constants.WIN, self.run_rect_color, self.bottomRight_rect)
+        pygame.draw.rect(Constants.WIN, self.topLeft_rect_color, self.topLeft_rect)
+        pygame.draw.rect(Constants.WIN, self.topRight_rect_color, self.topRight_rect)
+        pygame.draw.rect(Constants.WIN, self.bottomLeft_rect_color, self.bottomLeft_rect)
+        pygame.draw.rect(Constants.WIN, self.bottomRight_rect_color, self.bottomRight_rect)
         pygame.draw.rect(Constants.WIN, Constants.GREY, self.enemy_nitzamon_info)
         pygame.draw.rect(Constants.WIN, Constants.GREY, self.player_nitzamon_info)
 
@@ -97,18 +98,18 @@ class FightMenu:
     # Checking if the mouse is hovering over the buttons, if it is, the buttons will change color
     def check_hovers(self, pos):
         if self.topLeft_rect.collidepoint(pos):
-            self.fight_rect_color = Constants.HOVER_COLOR
+            self.topLeft_rect_color = Constants.HOVER_COLOR
         elif self.topRight_rect.collidepoint(pos):
-            self.inventory_rect_color = Constants.HOVER_COLOR
+            self.topRight_rect_color = Constants.HOVER_COLOR
         elif self.bottomLeft_rect.collidepoint(pos):
-            self.catch_rect_color = Constants.HOVER_COLOR
+            self.bottomLeft_rect_color = Constants.HOVER_COLOR
         elif self.bottomRight_rect.collidepoint(pos):
-            self.run_rect_color = Constants.HOVER_COLOR
+            self.bottomRight_rect_color = Constants.HOVER_COLOR
         else:
-            self.fight_rect_color = Constants.BLACK
-            self.inventory_rect_color = Constants.BLACK
-            self.catch_rect_color = Constants.BLACK
-            self.run_rect_color = Constants.BLACK
+            self.topLeft_rect_color = Constants.BLACK
+            self.topRight_rect_color = Constants.BLACK
+            self.bottomLeft_rect_color = Constants.BLACK
+            self.bottomRight_rect_color = Constants.BLACK
 
     def run(self, pos):
         if self.bottomRight_rect.collidepoint(pos):
@@ -116,16 +117,23 @@ class FightMenu:
                 self.in_fight = False
                 self.fight_start = time.time()
 
-    def attack(self):
+    def draw_attack(self):
         move1 = self.font.render(self.equipped_player_nitzamon.list_of_moves[0].name, True, Constants.WHITE)
         move2 = self.font.render(self.equipped_player_nitzamon.list_of_moves[1].name, True, Constants.WHITE)
         move3 = self.font.render(self.equipped_player_nitzamon.list_of_moves[2].name, True, Constants.WHITE)
         move4 = self.font.render(self.equipped_player_nitzamon.list_of_moves[3].name, True, Constants.WHITE)
 
+        pygame.draw.rect(Constants.WIN, self.topLeft_rect_color, self.topLeft_rect)
+        pygame.draw.rect(Constants.WIN, self.topRight_rect_color, self.topRight_rect)
+        pygame.draw.rect(Constants.WIN, self.bottomLeft_rect_color, self.bottomLeft_rect)
+        pygame.draw.rect(Constants.WIN, self.bottomRight_rect_color, self.bottomRight_rect)
         Constants.WIN.blit(move1, (self.topLeft_rect.x + 50, self.topLeft_rect.y + 5))
-        Constants.WIN.blit(self.inventory_text, (self.topRight_rect.x + 30, self.topRight_rect.y + 5))
-        Constants.WIN.blit(self.catch_text, (self.bottomLeft_rect.x + 50, self.bottomLeft_rect.y + 5))
-        Constants.WIN.blit(self.run_text, (self.bottomRight_rect.x + 60, self.bottomRight_rect.y + 5))
+        Constants.WIN.blit(move2, (self.topRight_rect.x + 30, self.topRight_rect.y + 5))
+        Constants.WIN.blit(move3, (self.bottomLeft_rect.x + 50, self.bottomLeft_rect.y + 5))
+        Constants.WIN.blit(move4, (self.bottomRight_rect.x + 60, self.bottomRight_rect.y + 5))
+
+    def attack(self, pos):
+        self.check_hovers(pos)
 
     def change_nitzamons(self, new_nitzamon):
         self.equipped_player_nitzamon = new_nitzamon
