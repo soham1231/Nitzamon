@@ -12,7 +12,6 @@ import Fight
 from Classes.CharacterClasses import Dialogue, Enemy, Player, NPC
 import Inventory
 
-
 pygame.init()
 pygame.display.set_caption("Nitzamon!! ")
 
@@ -41,14 +40,29 @@ def draw_world(world, player):
 
 def draw_minimap(world, player):
     WIN.fill(Constants.BLACK)
-    x_center = Constants.X/2 - Constants.MINI_SCALE/2 * len(world)
-    y_center = Constants.Y/2 - Constants.MINI_SCALE/2 * len(world)
+    x_center = Constants.X / 2 - Constants.MINI_SCALE / 2 * len(world)
+    y_center = Constants.Y / 2 - Constants.MINI_SCALE / 2 * len(world)
     for y in range(len(world)):
         for x in range(len(world)):
             tile = pygame.transform.scale(Constants.TILES[world[y][x]], (Constants.MINI_SCALE, Constants.MINI_SCALE))
             WIN.blit(tile, (x_center + x * Constants.MINI_SCALE, y_center + y * Constants.MINI_SCALE))
     player_image = pygame.transform.scale(player.sprite, (Constants.MINI_SCALE, Constants.MINI_SCALE))
-    WIN.blit(player_image, (x_center + player.pos[0] * Constants.MINI_SCALE, y_center + player.pos[1] * Constants.MINI_SCALE))
+    WIN.blit(player_image,
+             (x_center + player.pos[0] * Constants.MINI_SCALE, y_center + player.pos[1] * Constants.MINI_SCALE))
+
+
+# npcs
+# guide: create a new npc, and add it to npc_list
+world1 = WorldFunctions.read_world(Constants.WORLD1_PATH)
+NPC_SPRITE_RONI = pygame.transform.scale(pygame.image.load("Assets\\Characters\\NPCS\\Roni.jpg"),
+                                         (Constants.SCALE, Constants.SCALE))
+roni = NPC.NPC("Roni", NPC_SPRITE_RONI, (5, 5), [], [], world1)
+npc_list = [roni]
+
+
+def draw_npcs(npc_list, camera_pos):  # NUMBER OF N'S ON THE MAP MUST BE EQUAL TO NUMBER OF NPCS!
+    for npc in npc_list:
+        npc.draw(camera_pos)
 
 
 def random_move():
@@ -66,11 +80,11 @@ def random_nitzamon():
     attack = level + random.randint(0, 50)
     speed = level + random.randint(0, 20)
     element = Constants.NITZAMON_ELEMENTS_DICT[name]
-    return Nitzamon.Nitzamon(name, level, health, health, attack, speed, sprite, element, [random_move(), random_move(), random_move(), random_move()])
+    return Nitzamon.Nitzamon(name, level, health, health, attack, speed, sprite, element,
+                             [random_move(), random_move(), random_move(), random_move()])
 
 
 def save(player, enemy):
-
     info = {
         "name": player.name,
         "pos": player.pos,
@@ -86,7 +100,6 @@ def save(player, enemy):
 
 def main():
     world = WorldFunctions.read_world(Constants.WORLD1_PATH)
-    npc_list = []
 
     nitzamon_list = []
     equipped = []
@@ -160,7 +173,8 @@ def main():
 
         if world[player.pos[1]][player.pos[0]] == "T" and not fight_menu.in_fight:
             passed_time = time.time() - fight_menu.fight_start
-            if random.randint(1, 100) == 100 and passed_time > Constants.FIGHT_COOL_DOWN:  # 1% chance of fighting and checking if enough time passed since the last fight
+            if random.randint(1,
+                              100) == 100 and passed_time > Constants.FIGHT_COOL_DOWN:  # 1% chance of fighting and checking if enough time passed since the last fight
                 fight_menu.start_fight_single(player.nitzamons, random_nitzamon())
 
         keys = pygame.key.get_pressed()
@@ -185,7 +199,8 @@ def main():
             player.camera()
             draw_world(world, player)
             player.move(pygame.key.get_pressed())
-            player.draw()
+            player.draw(player.camera_pos)
+            draw_npcs(npc_list, player.camera_pos)
         # pygame.draw.rect(WIN, BLACK, pygame.Rect((0, (3 * Y / 4)), (X, (3 * Y / 4))))
         pygame.display.update()
     return run

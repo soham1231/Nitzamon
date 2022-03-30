@@ -79,27 +79,27 @@ class Player(NitzamonUser):
         if keys[pygame.K_s] and self.check_collisions("d"):  # Down
             self.pos[1] += 1
 
-    def draw(self):
-
-        tile = Constants.TILES["l"]
-        if self.world[self.pos[1]][self.pos[0]] == "l":
-
-            # Grass underneath the leaves
-            WIN.blit(Constants.TILES["G"], (self.pos[0] * Constants.SCALE - (self.camera_pos[0] * Constants.SCALE),
-                                            self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
-
-            # Player
-            WIN.blit(self.sprite, (self.pos[0] * Constants.SCALE - (self.camera_pos[0] * Constants.SCALE),
-                                   self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
-            # Changing leaf transparency and drawing it
-            tile.set_alpha(200)
-            WIN.blit(tile, (self.pos[0] * Constants.SCALE - (self.camera_pos[0] * Constants.SCALE),
-                            self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
-        else:
-            # Return the leaf to normal transparency
-            tile.set_alpha(255)
-            WIN.blit(self.sprite, (self.pos[0] * Constants.SCALE - (self.camera_pos[0] * Constants.SCALE),
-                                   self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
+    # def draw(self):
+    #
+    #     tile = Constants.TILES["l"]
+    #     if self.world[self.pos[1]][self.pos[0]] == "l":
+    #
+    #         # Grass underneath the leaves
+    #         WIN.blit(Constants.TILES["G"], (self.pos[0] * Constants.SCALE - (self.camera_pos[0] * Constants.SCALE),
+    #                                         self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
+    #
+    #         # Player
+    #         WIN.blit(self.sprite, (self.pos[0] * Constants.SCALE - (self.camera_pos[0] * Constants.SCALE),
+    #                                self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
+    #         # Changing leaf transparency and drawing it
+    #         tile.set_alpha(200)
+    #         WIN.blit(tile, (self.pos[0] * Constants.SCALE - (self.camera_pos[0] * Constants.SCALE),
+    #                         self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
+    #     else:
+    #         # Return the leaf to normal transparency
+    #         tile.set_alpha(255)
+    #         WIN.blit(self.sprite, (self.pos[0] * Constants.SCALE - (self.camera_pos[0] * Constants.SCALE),
+    #                                self.pos[1] * Constants.SCALE - (self.camera_pos[1] * Constants.SCALE)))
 
     def change_equipped(self, old_nitzamon, new_nitzamon):
         if old_nitzamon not in self.nitzamons:
