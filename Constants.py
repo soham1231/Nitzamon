@@ -47,13 +47,18 @@ PUNCH = Move("normal", 10, "Punch")
 SLASH = Move("normal", 11, "Slash")
 BURN = Move(FIRE, 10, "Burn")
 FIREBALL = Move(FIRE, 11, "Fire-ball")
-Laser = Move(FIRE, 12, "Laser")
+LASER = Move(FIRE, 12, "Laser")
 EARTHQUAKE = Move(EARTH, 12, "Earthquake")
 ROCKSLIDE = Move(EARTH, 11, "Rockslide")
-LEAFBLADE = Move(EARTH, 10, "Leaf Blade")
+LEAFBLADE = Move(EARTH, 10, "LeafBlade")
 WATERFALL = Move(WATER, 12, "Waterfall")
 SPIT = Move(WATER, 10, "Spit")
-GEYSET = Move(WATER, 11, "Geyser")
+GEYSER = Move(WATER, 11, "Geyser")
+
+FIRE_MOVES = [FIREBALL, LASER, BURN]
+EARTH_MOVES = [EARTHQUAKE, LEAFBLADE, ROCKSLIDE]
+WATER_MOVES = [SPIT, WATER, GEYSER]
+NORMAL_MOVES = [SCRATCH, PUNCH, SLASH]
 
 # Images
 GRASS1_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Grass1.png"), (SCALE, SCALE))
