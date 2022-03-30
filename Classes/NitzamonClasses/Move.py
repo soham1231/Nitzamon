@@ -1,7 +1,4 @@
-
-
 class Move:
-
     def __init__(self, element, dmg, name):
         self.element = element
         self.dmg = dmg

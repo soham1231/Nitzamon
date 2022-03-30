@@ -1,5 +1,6 @@
 import pygame
 from math import ceil
+from Classes.NitzamonClasses.Move import Move
 
 pygame.init()
 WIN = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
@@ -34,12 +35,25 @@ NITZAMON_ELEMENTS_DICT = {COMMENTAR: WATER,
                           MASMERION: EARTH,
                           NITZAPHONE: WATER,
                           HEARTIAN: FIRE,
-                          SHAREE: EARTH,
-                          DARK_SQUARION: WATER,
+                          SHAREE: WATER,
+                          DARK_SQUARION: FIRE,
                           MANAGEREON: EARTH,
-                          PENTAGEON: FIRE,
+                          PENTAGEON: WATER,
                           HEADEA: FIRE,
                           TRION: EARTH}
+# Moves
+SCRATCH = Move("normal", 9, "Scratch")
+PUNCH = Move("normal", 10, "Punch")
+SLASH = Move("normal", 11, "Slash")
+BURN = Move(FIRE, 10, "Burn")
+FIREBALL = Move(FIRE, 11, "Fire-ball")
+Laser = Move(FIRE, 12, "Laser")
+EARTHQUAKE = Move(EARTH, 12, "Earthquake")
+ROCKSLIDE = Move(EARTH, 11, "Rockslide")
+LEAFBLADE = Move(EARTH, 10, "Leaf Blade")
+WATERFALL = Move(WATER, 12, "Waterfall")
+SPIT = Move(WATER, 10, "Spit")
+GEYSET = Move(WATER, 11, "Geyser")
 
 # Images
 GRASS1_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Grass1.png"), (SCALE, SCALE))

@@ -19,13 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="implements npcs!">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_11_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_11_47__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_03_2022_21_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_03_2022_21_17__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_17_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_17_08__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_17_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_17_10__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_17_10__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_17_10__Changes_1.xml" afterDir="false" />
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="fixed bugs, added player turn">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/NitzamonClasses/Move.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/NitzamonClasses/Move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +47,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Constants.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="269jaZhTCQBB0sPIEvgCsT2kQsX" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -66,6 +66,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\Desktop\nitzanim\nitzamon\Assets\Nitzamons" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\NitzamonClasses" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\Character Classes" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\Nitzamon Classes" />
@@ -115,13 +116,13 @@
       <method v="2" />
     </configuration>
     <configuration name="Game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Nitzamon" />
+      <module name="NITZAMON" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\User\AppData\Local\Programs\Python\Python310\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\Student\AppData\Local\Programs\Python\Python310\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -199,12 +200,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.main" />
       <item itemvalue="Python.Constants" />
       <item itemvalue="Python.Fight" />
       <item itemvalue="Python.Game" />
       <item itemvalue="Python.Main" />
       <item itemvalue="Python.WorldFunctions" />
-      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
@@ -345,21 +346,31 @@
       <option name="presentableId" value="LOCAL‎00020" />
       <updated>1648486451446</updated>
     </task>
-    <task id="LOCAL-00021" summary="start of attack. shoham gay nigger">
-      <created>1648627233276</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1648627233276</updated>
+    <task id="LOCAL‎00021" summary="can change nitzamons mid fight">
+      <created>1648490113264</created>
+      <option name="number" value="LOCAL‎00021" />
+      <option name="presentableId" value="LOCAL‎00021" />
+      <updated>1648490113264</updated>
     </task>
-    <task id="LOCAL-00022" summary="START OF ATTACK">
-      <created>1648627261733</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1648627261733</updated>
+    <task id="LOCAL‎00022" summary="changed some names and added name constants">
+      <created>1648578588608</created>
+      <option name="number" value="LOCAL‎00022" />
+      <option name="presentableId" value="LOCAL‎00022" />
+      <updated>1648578588608</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL‎00023" summary="added attack">
+      <created>1648653106041</created>
+      <option name="number" value="LOCAL‎00023" />
+      <option name="presentableId" value="LOCAL‎00023" />
+      <updated>1648653106041</updated>
+    </task>
+    <task id="LOCAL‎00024" summary="fixed bugs, added player turn">
+      <created>1648655261176</created>
+      <option name="number" value="LOCAL‎00024" />
+      <option name="presentableId" value="LOCAL‎00024" />
+      <updated>1648655261176</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -405,8 +416,10 @@
     <MESSAGE value="can change the equipped nitzamon" />
     <MESSAGE value="Added the delete button" />
     <MESSAGE value="can open the inventory in fight" />
-    <MESSAGE value="start of attack. shoham gay nigger" />
-    <MESSAGE value="START OF ATTACK" />
-    <option name="LAST_COMMIT_MESSAGE" value="START OF ATTACK" />
+    <MESSAGE value="can change nitzamons mid fight" />
+    <MESSAGE value="changed some names and added name constants" />
+    <MESSAGE value="added attack" />
+    <MESSAGE value="fixed bugs, added player turn" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs, added player turn" />
   </component>
 </project>
