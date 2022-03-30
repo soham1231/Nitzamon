@@ -6,6 +6,7 @@ import json
 import Constants
 from Constants import WIN
 from Classes.NitzamonClasses import Nitzamon
+from Classes.NitzamonClasses import Move
 from Worlds import WorldFunctions
 import Fight
 from Classes.CharacterClasses import Dialogue, Enemy, Player, NPC
@@ -50,6 +51,13 @@ def draw_minimap(world, player):
     WIN.blit(player_image, (x_center + player.pos[0] * Constants.MINI_SCALE, y_center + player.pos[1] * Constants.MINI_SCALE))
 
 
+def random_move():
+    element = random.choice(["fire", "water", "earth"])
+    dmg = random.choice([1, 2, 3, 4])
+    name = random.choice(["hug", "kiss", "pet", "touch"])
+    return Move.Move(element, dmg, name)
+
+
 def random_nitzamon():
     name = random.choice(Constants.NAMES)
     sprite = pygame.image.load(f"Assets\\Nitzamons\\{name}.png")
@@ -58,7 +66,7 @@ def random_nitzamon():
     attack = level + random.randint(0, 50)
     speed = level + random.randint(0, 20)
     element = Constants.NITZAMON_ELEMENTS_DICT[name]
-    return Nitzamon.Nitzamon(name, level, health, health, attack, speed, sprite, element, [])
+    return Nitzamon.Nitzamon(name, level, health, health, attack, speed, sprite, element, [random_move(), random_move(), random_move(), random_move()])
 
 
 def save(player, enemy):
@@ -115,6 +123,10 @@ def main():
                         if replacing is not None:
                             fight_menu.change_nitzamons(replacing)
                             fight_menu.changing_nitzamons = False
+                    if fight_menu.topLeft_rect.collidepoint(pygame.mouse.get_pos()):
+                        fight_menu.attacking = True
+                    if fight_menu.attacking:
+                        fight_menu.attack(pygame.mouse.get_pos())
                 if Inventory.is_open and not (Inventory.info_open or Inventory.equip_open):
                     nitzamon_pressed = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamon_bag)
                     if nitzamon_pressed is not None:
@@ -155,6 +167,8 @@ def main():
         if fight_menu.in_fight:
             if fight_menu.changing_nitzamons:
                 Inventory.draw_inventory(player.nitzamons)
+            elif fight_menu.attacking:
+                fight_menu.draw_attack()
             else:
                 fight_menu.draw_screen()
             fight_menu.check_hovers(pygame.mouse.get_pos())

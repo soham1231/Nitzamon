@@ -27,7 +27,7 @@ pygame.font.init()
 font = pygame.font.SysFont("Arial", 20)
 
 nitzamon_img_scale = 100
-cols_of_nitzamons = 1 + ceil(inventory_rect.width / (nitzamon_img_scale + 10))
+cols_of_nitzamons = ceil(inventory_rect.width / (nitzamon_img_scale + 10))
 rows_of_nitzamons = ceil(inventory_rect.height / (nitzamon_img_scale + 10))
 
 

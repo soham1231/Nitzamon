@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Index: Inventory.py
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
@@ -50,6 +51,236 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 +    Constants.WIN.blit(nitzamon_image, (info_rect_x + 30, info_rect_y + 50))
 +
 +    pygame.draw.line(Constants.WIN, (0, 0, 0), (info_rect_x, info_rect_y + 490), (info_rect_x + info_rect_width, info_rect_y + 490), 5)
+=======
+Index: Constants.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import pygame\r\nfrom math import ceil\r\n\r\n# Pygame screen variables\r\nWIN = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)\r\nX, Y = WIN.get_size()\r\nSCALE = 50\r\nMINI_SCALE = 7\r\n\r\n# World variables\r\nWORLD_WIDTH = 250\r\nWORLD_HEIGHT = 250\r\n\r\n\r\n# Enemy types\r\nWATER = \"water\"\r\nFIRE = \"fire\"\r\nEARTH = \"earth\"\r\n\r\n# Images\r\nGRASS1_IMAGE = pygame.transform.scale(pygame.image.load(\"Assets\\\\Tiles\\\\Grass1.png\"), (SCALE, SCALE))\r\nGRASS2_IMAGE = pygame.transform.scale(pygame.image.load(\"Assets\\\\Tiles\\\\Grass2.png\"), (SCALE, SCALE))\r\nWATER_IMAGE = pygame.transform.scale(pygame.image.load(\"Assets\\\\Tiles\\\\Water1.png\"), (SCALE, SCALE))\r\nTALL_GRASS_IMAGE = pygame.transform.scale(pygame.image.load(\"Assets\\\\Tiles\\\\tall_grass.png\"), (SCALE, SCALE))\r\nLOG_IMAGE = pygame.transform.scale(pygame.image.load(\"Assets\\\\Tiles\\\\log.png\"), (SCALE, SCALE))\r\nLEAVES_IMAGE = pygame.transform.scale(pygame.image.load(\"Assets\\\\Tiles\\\\leaves.png\"), (SCALE, SCALE))\r\nBORDER_IMAGE = pygame.transform.scale(pygame.image.load(\"Assets/Tiles/Border.png\"), (SCALE, SCALE))\r\n\r\nNPC_IMAGE = pygame.transform.scale(pygame.image.load(\"Assets\\\\Characters\\\\npc.png\"), (SCALE, SCALE))\r\nPLAYER_IMAGE = pygame.transform.scale(pygame.image.load(\"Assets\\\\Characters\\\\player.png\"), (SCALE, SCALE))\r\n\r\n# Tiles\r\nTILES = {\"G\": GRASS1_IMAGE,\r\n         \"g\": GRASS2_IMAGE,\r\n         \"W\": WATER_IMAGE,\r\n         \"T\": TALL_GRASS_IMAGE,\r\n         \"N\": NPC_IMAGE,\r\n         \"L\": LOG_IMAGE,\r\n         \"l\": LEAVES_IMAGE,\r\n         \"B\": BORDER_IMAGE}\r\n\r\nWALKABLE_TILES = [\"G\", \"g\", \"T\", \"l\"]\r\nTILE_ROW = ceil(X/SCALE)\r\nTILE_COL = ceil(Y/SCALE)\r\n\r\n# Paths\r\nWORLD1_PATH = \"Worlds\\\\World1.txt\"\r\n\r\nFPS = 20\r\nfps = FPS  # Not a constant but i don't know where to put it\r\n\r\n# Colors\r\nBLACK = (0, 0, 0)\r\nWHITE = (255, 255, 255)\r\nGREY = (60, 60, 60)\r\nHOVER_COLOR = (30, 30, 30)\r\n\r\n# Fight\r\nFIGHT_COOL_DOWN = 5\r\nFIGHT_FONT_SIZE = 32\r\n\r\n# Main Menu\r\nMENU_FONT_SIZE = 32\r\nNITZAMON_FONT_SIZE = 64\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Constants.py b/Constants.py
+--- a/Constants.py	(revision ca17cbc02e0d07a85769509018779c142d573066)
++++ b/Constants.py	(date 1648053244622)
+@@ -11,7 +11,6 @@
+ WORLD_WIDTH = 250
+ WORLD_HEIGHT = 250
+ 
+-
+ # Enemy types
+ WATER = "water"
+ FIRE = "fire"
+@@ -62,3 +61,7 @@
+ # Main Menu
+ MENU_FONT_SIZE = 32
+ NITZAMON_FONT_SIZE = 64
++
++
++# NPC list
++world
+\ No newline at end of file
+Index: Classes/CharacterClasses/Dialogue.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>class Dialogue:\r\n\r\n    def __init__(self, text, sound):\r\n        self.text = text\r\n        self.sound = sound\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Classes/CharacterClasses/Dialogue.py b/Classes/CharacterClasses/Dialogue.py
+--- a/Classes/CharacterClasses/Dialogue.py	(revision ca17cbc02e0d07a85769509018779c142d573066)
++++ b/Classes/CharacterClasses/Dialogue.py	(date 1648050859698)
+@@ -4,3 +4,5 @@
+         self.text = text
+         self.sound = sound
+ 
++    def getText(self):
++        return self.text
+\ No newline at end of file
+Index: Classes/CharacterClasses/NPC.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from Character import *\r\n\r\n\r\nclass NPC(Character):\r\n    def __init__(self, name, sprite, pos, quests, small_talk, world):\r\n        super().__init__(name, sprite, pos, world)\r\n        self.quests = quests\r\n        self.small_talk = small_talk\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Classes/CharacterClasses/NPC.py b/Classes/CharacterClasses/NPC.py
+--- a/Classes/CharacterClasses/NPC.py	(revision ca17cbc02e0d07a85769509018779c142d573066)
++++ b/Classes/CharacterClasses/NPC.py	(date 1648053244622)
+@@ -1,8 +1,17 @@
+-from Character import *
+-
+-
++from Classes.CharacterClasses.Character import *
++from Classes.CharacterClasses.Player import *
++from Constants import *
++import pygame
+ class NPC(Character):
+     def __init__(self, name, sprite, pos, quests, small_talk, world):
+         super().__init__(name, sprite, pos, world)
+         self.quests = quests
+         self.small_talk = small_talk
++
++    def talk(self, player , dialogue):
++        if ((player.pos[0] == self.pos[0] - 1) and (player.pos[1] == self.pos[1])):
++
++        # pygame.draw.rect(WIN, BLACK, pygame.Rect((0, (3 * Y / 4)), (X, (3 * Y / 4))))
++        # font = pygame.font.SysFont("Comic Sans MS", 10)
++        # text = font.render(dialogue.getText(), True, (255, 255, 255))
++
+Index: Main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import time\r\nimport pygame\r\nimport random\r\nimport json\r\n\r\nimport Constants\r\nfrom Constants import WIN\r\nfrom Classes.CharacterClasses import Player, Enemy\r\nfrom Classes.NitzamonClasses import Nitzamon\r\nfrom Worlds import WorldFunctions\r\nimport Fight\r\nfrom Classes.CharacterClasses import Dialogue\r\nimport Inventory\r\n\r\n\r\npygame.init()\r\npygame.display.set_caption(\"Nitzamon!! \")\r\n\r\n\r\ndef draw_world(world, player):\r\n    i_max = len(world)\r\n    j_max = len(world)\r\n    if player.pos[0] + Constants.TILE_ROW < len(world):\r\n        i_max = player.pos[0] + Constants.TILE_ROW\r\n    if player.pos[1] + Constants.TILE_COL < len(world):\r\n        j_max = player.pos[1] + Constants.TILE_COL\r\n\r\n    i_min = 0\r\n    j_min = 0\r\n    if player.pos[0] > Constants.TILE_ROW:\r\n        i_min = player.pos[0] - Constants.TILE_ROW\r\n    if player.pos[1] > Constants.TILE_COL:\r\n        j_min = player.pos[1] - Constants.TILE_COL\r\n\r\n    for y in range(j_min, j_max):\r\n        for x in range(i_min, i_max):\r\n            tile = Constants.TILES[world[y][x]]\r\n            WIN.blit(tile, (x * Constants.SCALE - (player.camera_pos[0] * Constants.SCALE),\r\n                            y * Constants.SCALE - (player.camera_pos[1] * Constants.SCALE)))\r\n\r\n\r\ndef save(player, enemy):\r\n\r\n    info = {\r\n        \"name\": player.name,\r\n        \"pos\": player.pos,\r\n        \"nitzamon_bag\": player.nitzamon_bag,\r\n        \"active_quests\": player.active_quests,\r\n        \"world\": player.world\r\n    }\r\n    nitzamon_info = {}\r\n    for i in player.nitzamons:\r\n        nitzamon_info = json.dumps(i.__dict__)\r\n    print(nitzamon_info)\r\n\r\n\r\ndef main():\r\n    world = WorldFunctions.read_world(Constants.WORLD1_PATH)\r\n    nitzamon_list = []\r\n    for i in range(19):\r\n        if i % 2 == 0:\r\n            nitzamon_list.append(Nitzamon.Nitzamon(\"Gilad\", 90, 100, 100, 40, 0, Constants.PLAYER_IMAGE, Constants.EARTH, []))\r\n        else:\r\n            nitzamon_list.append(Nitzamon.Nitzamon(\"Shoham\", 100, 100, 120, 40, 40, Constants.NPC_IMAGE, Constants.WATER, []))\r\n    player = Player.Player(\"Shoham\", Constants.PLAYER_IMAGE, [1, 1], nitzamon_list, 0, 0, world)\r\n    nitzamon_pressed = None\r\n    player.camera()\r\n\r\n    enemy_nitzamon = Nitzamon.Nitzamon(\"Adi\", 50, 50, 60, 30, 30, Constants.NPC_IMAGE, Constants.FIRE, [])\r\n\r\n    dialogs = [Dialogue.Dialogue(\"Hi\", 0), Dialogue.Dialogue(\"H1\", 0)]\r\n    enemy = Enemy.Enemy(\"Adi\", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], dialogs, world)\r\n\r\n    fight_menu = Fight.FightMenu(player.nitzamons, enemy.nitzamons)\r\n    clock = pygame.time.Clock()\r\n\r\n    run = True\r\n    while run:\r\n        clock.tick(Constants.fps)\r\n        for event in pygame.event.get():\r\n            if event.type == pygame.QUIT:\r\n                run = False\r\n\r\n            if event.type == pygame.MOUSEBUTTONDOWN:\r\n                if fight_menu.in_fight:\r\n                    fight_menu.run(pygame.mouse.get_pos())\r\n                if Inventory.is_open and not Inventory.info_open:\r\n                    nitzamon_pressed = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamons)\r\n                    if nitzamon_pressed is not None:\r\n                        Inventory.info_open = True\r\n\r\n            if event.type == pygame.KEYDOWN:\r\n                if event.key == pygame.K_e:\r\n                    Inventory.is_open = not Inventory.is_open\r\n                if event.key == pygame.K_ESCAPE:\r\n                    if Inventory.info_open:\r\n                        Inventory.info_open = False\r\n                    elif Inventory.is_open:\r\n                        Inventory.is_open = False\r\n                    else:\r\n                        run = False\r\n\r\n        if world[player.pos[1]][player.pos[0]] == \"T\":\r\n            passed_time = time.time() - fight_menu.fight_start\r\n            if random.randint(1, 100) == 100 and passed_time > Constants.FIGHT_COOL_DOWN:  # 1% chance of fighting and checking if enough time passed since the last fight\r\n                fight_menu.in_fight = True\r\n\r\n        if fight_menu.in_fight:\r\n            fight_menu.draw_screen()\r\n            fight_menu.check_hovers(pygame.mouse.get_pos())\r\n            # WIN.blit(pygame.transform.scale(pygame.image.load(\"Assets\\\\Menus\\\\Fight.PNG\"), (Constants.X, Constants.Y)), (0, 0))\r\n\r\n        elif Inventory.is_open:\r\n            Inventory.draw_inventory(player.nitzamons)\r\n            if Inventory.info_open:\r\n                Inventory.show_info(nitzamon_pressed)\r\n        else:\r\n            player.camera()\r\n            draw_world(world, player)\r\n            player.move(pygame.key.get_pressed())\r\n            player.draw()\r\n\r\n        pygame.display.update()\r\n    return run\r\n\r\n\r\nif __name__ == \"__main__\":\r\n    main()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Main.py b/Main.py
+--- a/Main.py	(revision ca17cbc02e0d07a85769509018779c142d573066)
++++ b/Main.py	(date 1648053244637)
+@@ -12,11 +12,14 @@
+ from Classes.CharacterClasses import Dialogue
+ import Inventory
+ 
++from Classes.CharacterClasses.NPC import *
++
+ 
+ pygame.init()
+ pygame.display.set_caption("Nitzamon!! ")
+ 
+ 
++
+ def draw_world(world, player):
+     i_max = len(world)
+     j_max = len(world)
+@@ -100,6 +103,8 @@
+                     else:
+                         run = False
+ 
++
++
+         if world[player.pos[1]][player.pos[0]] == "T":
+             passed_time = time.time() - fight_menu.fight_start
+             if random.randint(1, 100) == 100 and passed_time > Constants.FIGHT_COOL_DOWN:  # 1% chance of fighting and checking if enough time passed since the last fight
+@@ -119,10 +124,9 @@
+             draw_world(world, player)
+             player.move(pygame.key.get_pressed())
+             player.draw()
+-
++        # pygame.draw.rect(WIN, BLACK, pygame.Rect((0, (3 * Y / 4)), (X, (3 * Y / 4))))
+         pygame.display.update()
+     return run
+ 
+-
+ if __name__ == "__main__":
+     main()
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_34_[Default_Changelist]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_34_[Default_Changelist]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_34_[Default_Changelist]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_34_[Default_Changelist]/shelved.patch	(revision ca17cbc02e0d07a85769509018779c142d573066)
++++ /dev/null	(revision ca17cbc02e0d07a85769509018779c142d573066)
+@@ -1,71 +0,0 @@
+-Index: Classes/Character Classes/Character.py
+-===================================================================
+-diff --git a/Classes/Character Classes/Character.py b/Classes/Character Classes/Character.py
+-deleted file mode 100644
+---- a/Classes/Character Classes/Character.py	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-+++ /dev/null	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-@@ -1,4 +0,0 @@
+--class Character:
+--    def __init__(self, name ,pos):
+--        self.name = name
+--        self.pos = pos
+-Index: Classes/Character Classes/NitzamonUser.py
+-===================================================================
+-diff --git a/Classes/Character Classes/NitzamonUser.py b/Classes/Character Classes/NitzamonUser.py
+-deleted file mode 100644
+---- a/Classes/Character Classes/NitzamonUser.py	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-+++ /dev/null	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-@@ -1,6 +0,0 @@
+--import Character
+--class NitzamonUser(Character):
+--    def __init__(self, name, sprite, nitzamons, num_of_nitzamons):
+--        super(self, name, sprite)
+--        self.nitzamons = nitzamons
+--        self.num_of_nitzamons = num_of_nitzamons
+-\ No newline at end of file
+-Index: Classes/Character Classes/NPC.py
+-===================================================================
+-diff --git a/Classes/Character Classes/NPC.py b/Classes/Character Classes/NPC.py
+-deleted file mode 100644
+---- a/Classes/Character Classes/NPC.py	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-+++ /dev/null	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-@@ -1,6 +0,0 @@
+--import Character
+--class NPC(Character):
+--    def __init__(self, name, sprite, quests, small_talk):
+--        super(self, name, sprite)
+--        self.quests = quests
+--        self.small_talk = small_talk
+-\ No newline at end of file
+-Index: Classes/Character Classes/dialogue.py
+-===================================================================
+-diff --git a/Classes/Character Classes/dialogue.py b/Classes/Character Classes/dialogue.py
+-deleted file mode 100644
+---- a/Classes/Character Classes/dialogue.py	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-+++ /dev/null	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-@@ -1,8 +0,0 @@
+--
+--
+--class Dialogue:
+--
+--    def __init__(self, text, sound):
+--        self.text = text
+--        self.sound = sound
+--
+-Index: Classes/Character Classes/quest.py
+-===================================================================
+-diff --git a/Classes/Character Classes/quest.py b/Classes/Character Classes/quest.py
+-deleted file mode 100644
+---- a/Classes/Character Classes/quest.py	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-+++ /dev/null	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-@@ -1,9 +0,0 @@
+--
+--
+--class Quest:
+--
+--    def __init__(self, is_completed, reward, dialogue):
+--        self.is_completed = is_completed
+--        self.reward = reward
+--        self.dialogue = dialogue
+--    
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_.xml	(revision ca17cbc02e0d07a85769509018779c142d573066)
++++ /dev/null	(revision ca17cbc02e0d07a85769509018779c142d573066)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_09_03_2022_19_18_[Changes]" date="1646846283456" recycled="false" toDelete="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 09/03/2022 19:18 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.9\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision ca17cbc02e0d07a85769509018779c142d573066)
++++ b/.idea/misc.xml	(date 1648049162715)
+@@ -1,4 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
+>>>>>>> origin/master
 Index: .idea/workspace.xml
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
@@ -57,13 +288,21 @@ Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
+<<<<<<< HEAD
 --- .idea/workspace.xml	(revision ca17cbc02e0d07a85769509018779c142d573066)
 +++ .idea/workspace.xml	(date 1648052885344)
 @@ -19,10 +19,9 @@
+=======
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision ca17cbc02e0d07a85769509018779c142d573066)
++++ b/.idea/workspace.xml	(date 1648052154752)
+@@ -19,9 +19,17 @@
+>>>>>>> origin/master
      <select />
    </component>
    <component name="ChangeListManager">
 -    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="pep 8">
+<<<<<<< HEAD
 +    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="started working on the nitzamon info image">
        <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
        <change beforePath="$PROJECT_DIR$/Inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory.py" afterDir="false" />
@@ -142,3 +381,171 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
    </component>
  </project>
 \ No newline at end of file
+=======
++    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Added a main menu">
++      <change beforePath="$PROJECT_DIR$/.idea/Nitzamon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Nitzamon.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Default_Changelist_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_34_[Default_Changelist]/shelved.patch" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/Dialogue.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/Dialogue.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/NPC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/NPC.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -112,15 +120,15 @@
+       <method v="2" />
+     </configuration>
+     <configuration name="Game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-      <module name="NITZAMON" />
++      <module name="Nitzamon" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+       <envs>
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+-      <option name="SDK_HOME" value="C:\Users\ADMIN\AppData\Local\Programs\Python\Python39\python.exe" />
++      <option name="SDK_HOME" value="" />
+       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="false" />
++      <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Game.py" />
+@@ -198,10 +206,10 @@
+     <list>
+       <item itemvalue="Python.main" />
+       <item itemvalue="Python.Constants" />
++      <item itemvalue="Python.Main" />
++      <item itemvalue="Python.WorldFunctions" />
+       <item itemvalue="Python.Fight" />
+       <item itemvalue="Python.Game" />
+-      <item itemvalue="Python.Main" />
+-      <item itemvalue="Python.WorldFunctions" />
+     </list>
+     <recent_temporary>
+       <list>
+@@ -294,49 +302,9 @@
+       <option name="presentableId" value="LOCAL‎00012" />
+       <updated>1647037265476</updated>
+     </task>
+-    <task id="LOCAL‎00013" summary="Moved the draw function from character class back to player class and added Adi's random world generation">
+-      <created>1647640201968</created>
+-      <option name="number" value="LOCAL‎00013" />
+-      <option name="presentableId" value="LOCAL‎00013" />
+-      <updated>1647640201968</updated>
+-    </task>
+-    <task id="LOCAL‎00014" summary="added water images">
+-      <created>1647720043968</created>
+-      <option name="number" value="LOCAL‎00014" />
+-      <option name="presentableId" value="LOCAL‎00014" />
+-      <updated>1647720043968</updated>
+-    </task>
+-    <task id="LOCAL‎00015" summary="added 150 nitzamons to player">
+-      <created>1647865575930</created>
+-      <option name="number" value="LOCAL‎00015" />
+-      <option name="presentableId" value="LOCAL‎00015" />
+-      <updated>1647865575930</updated>
+-    </task>
+-    <task id="LOCAL‎00016" summary="I.. I fixed a small bug in inventory collisions....">
+-      <created>1647895025293</created>
+-      <option name="number" value="LOCAL‎00016" />
+-      <option name="presentableId" value="LOCAL‎00016" />
+-      <updated>1647895025293</updated>
+-    </task>
+-    <task id="LOCAL‎00017" summary="pep 8">
+-      <created>1647895046997</created>
+-      <option name="number" value="LOCAL‎00017" />
+-      <option name="presentableId" value="LOCAL‎00017" />
+-      <updated>1647895046997</updated>
+-    </task>
+-    <option name="localTasksCounter" value="18" />
++    <option name="localTasksCounter" value="13" />
+     <servers />
+   </component>
+-  <component name="Vcs.Log.History.Properties">
+-    <option name="COLUMN_ID_ORDER">
+-      <list>
+-        <option value="Default.Root" />
+-        <option value="Default.Author" />
+-        <option value="Default.Date" />
+-        <option value="Default.Subject" />
+-      </list>
+-    </option>
+-  </component>
+   <component name="Vcs.Log.Tabs.Properties">
+     <option name="TAB_STATES">
+       <map>
+@@ -362,45 +330,6 @@
+     <MESSAGE value="Added borders" />
+     <MESSAGE value="Changed the chances of finding a nitzamon in tall grass and added grass in the middle of the map" />
+     <MESSAGE value="Added a main menu" />
+-    <MESSAGE value="Moved the draw function from character class back to player class and added Adi's random world generation" />
+-    <MESSAGE value="added water images" />
+-    <MESSAGE value="added 150 nitzamons to player" />
+-    <MESSAGE value="I.. I fixed a small bug in inventory collisions...." />
+-    <MESSAGE value="pep 8" />
+-    <option name="LAST_COMMIT_MESSAGE" value="pep 8" />
+-  </component>
+-  <component name="WindowStateProjectService">
+-    <state x="129" y="55" key="DiffContextDialog" timestamp="1647720062123">
+-      <screen x="0" y="0" width="1366" height="728" />
+-    </state>
+-    <state x="129" y="55" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1647720062123" />
+-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1647947947412">
+-      <screen x="0" y="0" width="1366" height="728" />
+-    </state>
+-    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1647947947412" />
+-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1647947947411">
+-      <screen x="0" y="0" width="1366" height="728" />
+-    </state>
+-    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1647947947411" />
+-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1647947947411">
+-      <screen x="0" y="0" width="1366" height="728" />
+-    </state>
+-    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1647947947411" />
+-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1647947947411">
+-      <screen x="0" y="0" width="1366" height="728" />
+-    </state>
+-    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1647947947411" />
+-    <state x="321" y="125" key="MultipleFileMergeDialog" timestamp="1647894908916">
+-      <screen x="0" y="0" width="1366" height="728" />
+-    </state>
+-    <state x="321" y="125" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1647894908916" />
+-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1647895057329">
+-      <screen x="0" y="0" width="1366" height="728" />
+-    </state>
+-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1647895057329" />
+-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1647894994636">
+-      <screen x="0" y="0" width="1366" height="728" />
+-    </state>
+-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1647894994636" />
++    <option name="LAST_COMMIT_MESSAGE" value="Added a main menu" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/Nitzamon.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\" />\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/Nitzamon.iml b/.idea/Nitzamon.iml
+--- a/.idea/Nitzamon.iml	(revision ca17cbc02e0d07a85769509018779c142d573066)
++++ b/.idea/Nitzamon.iml	(date 1648049172359)
+@@ -2,7 +2,7 @@
+ <module type="PYTHON_MODULE" version="4">
+   <component name="NewModuleRootManager">
+     <content url="file://$MODULE_DIR$" />
+-    <orderEntry type="inheritedJdk" />
++    <orderEntry type="jdk" jdkName="Python 3.10" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+ </module>
+\ No newline at end of file
+>>>>>>> origin/master
