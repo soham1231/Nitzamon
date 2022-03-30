@@ -116,17 +116,22 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if fight_menu.in_fight:
                     fight_menu.run(pygame.mouse.get_pos())
-                    if fight_menu.topRight_rect.collidepoint(pygame.mouse.get_pos()):
+
+                    if fight_menu.topRight_rect.collidepoint(pygame.mouse.get_pos()) and not fight_menu.attacking:
                         fight_menu.changing_nitzamons = True
+
                     if fight_menu.changing_nitzamons:
                         replacing = Inventory.check_collision(pygame.mouse.get_pos(), fight_menu.player_nitzamons)
                         if replacing is not None:
                             fight_menu.change_nitzamons(replacing)
                             fight_menu.changing_nitzamons = False
+
                     if fight_menu.topLeft_rect.collidepoint(pygame.mouse.get_pos()):
                         fight_menu.attacking = True
+
                     if fight_menu.attacking:
                         fight_menu.attack(pygame.mouse.get_pos())
+
                 if Inventory.is_open and not (Inventory.info_open or Inventory.equip_open):
                     nitzamon_pressed = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamon_bag)
                     if nitzamon_pressed is not None:
