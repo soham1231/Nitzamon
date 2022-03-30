@@ -245,3 +245,19 @@ class FightMenu:
         self.enemy_nitzamon_hp = self.font.render(f"HP: {self.equipped_enemy_nitzamon.hp}/{self.equipped_enemy_nitzamon.max_hp}", True, Constants.BLACK)
         self.enemy_nitzamon_lvl = self.font.render(f"Level: {self.equipped_enemy_nitzamon.lvl}", True, Constants.BLACK)
 
+    def enemy_attack(self):
+        move1 = self.equipped_enemy_nitzamon.list_of_moves[0]
+        move2 = self.equipped_enemy_nitzamon.list_of_moves[1]
+        move3 = self.equipped_enemy_nitzamon.list_of_moves[2]
+        move4 = self.equipped_enemy_nitzamon.list_of_moves[3]
+        moves = [move1, move2, move3, move4]
+
+        chosen_move = random.choice(moves)
+        damage = (self.equipped_player_nitzamon.dmg + chosen_move.dmg) / 2
+        if chosen_move.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Super effective":
+            damage *= 2
+        elif chosen_move.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Not very effective":
+            damage = int(damage * 0.5)
+        self.equipped_player_nitzamon.hp -= damage
+        self.change_info()
+        self.playerTurn = True

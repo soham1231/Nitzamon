@@ -107,6 +107,7 @@ def main():
         nitzamon_list.append(random_nitzamon())
     for i in range(3):
         equipped.append(random_nitzamon())
+    equipped[0].spd = 10000
     player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], equipped, nitzamon_list, 0, world)
     nitzamon_pressed = None
     player.camera()
@@ -177,11 +178,14 @@ def main():
         if world[player.pos[1]][player.pos[0]] == "T" and not fight_menu.in_fight:
             passed_time = time.time() - fight_menu.fight_start
             if random.randint(1,
-                              100) == 100 and passed_time > Constants.FIGHT_COOL_DOWN:  # 1% chance of fighting and checking if enough time passed since the last fight
+                              100) >= 90 and passed_time > Constants.FIGHT_COOL_DOWN:  # 1% chance of fighting and checking if enough time passed since the last fight
                 fight_menu.start_fight_single(player.nitzamons, random_nitzamon())
 
         keys = pygame.key.get_pressed()
         if fight_menu.in_fight:
+            if not fight_menu.playerTurn:
+                time.sleep(2)
+                fight_menu.enemy_attack()
             if fight_menu.changing_nitzamons:
                 Inventory.draw_inventory(player.nitzamons)
             elif fight_menu.attacking:
