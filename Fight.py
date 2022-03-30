@@ -15,6 +15,7 @@ class FightMenu:
         self.equipped_player_nitzamon = self.player_nitzamons[0]
         self.equipped_enemy_nitzamon = self.enemy_nitzamons[0]
 
+        self.playerTurn = self.equipped_player_nitzamon.spd >= self.equipped_enemy_nitzamon.spd
         self.in_fight = False
         self.changing_nitzamons = False
         self.attacking = False
@@ -116,6 +117,7 @@ class FightMenu:
             if random.randint(1, 10) == 10:
                 self.in_fight = False
                 self.fight_start = time.time()
+        self.playerTurn = False
 
     def draw_attack(self):
         move1 = self.font.render(self.equipped_player_nitzamon.list_of_moves[0].name, True, Constants.WHITE)
@@ -133,16 +135,51 @@ class FightMenu:
         Constants.WIN.blit(move4, (self.bottomRight_rect.x + 60, self.bottomRight_rect.y + 5))
 
     def attack(self, pos):
+        move1 = self.equipped_player_nitzamon.list_of_moves[0]
+        move2 = self.equipped_player_nitzamon.list_of_moves[1]
+        move3 = self.equipped_player_nitzamon.list_of_moves[2]
+        move4 = self.equipped_player_nitzamon.list_of_moves[3]
         self.check_hovers(pos)
+
+        if self.topLeft_rect.collidepoint(pos):
+            damage = (self.equipped_player_nitzamon.dmg + move1.dmg) / 2
+            if move1.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Super effective":
+                damage *= 2
+            elif move1.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Not very effective":
+                damage = int(damage * 0.5)
+
+        elif self.topRight_rect.collidepoint(pos):
+            damage = (self.equipped_player_nitzamon.dmg + move2.dmg) / 2
+            if move2.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Super effective":
+                damage *= 2
+            elif move2.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Not very effective":
+                damage = int(damage * 0.5)
+
+        elif self.bottomRight_rect.collidepoint(pos):
+            damage = (self.equipped_player_nitzamon.dmg + move3.dmg) / 2
+            if move3.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Super effective":
+                damage *= 2
+            elif move3.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Not very effective":
+                damage = int(damage * 0.5)
+
+        elif self.bottomLeft_rect.collidepoint(pos):
+            damage = (self.equipped_player_nitzamon.dmg + move4.dmg) / 2
+            if move4.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Super effective":
+                damage *= 2
+            elif move4.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Not very effective":
+                damage = int(damage * 0.5)
+        self.playerTurn = False
 
     def change_nitzamons(self, new_nitzamon):
         self.equipped_player_nitzamon = new_nitzamon
+        self.playerTurn = False
 
     def start_fight_single(self, player_nitzamons, nitzamon):
         self.player_nitzamons = player_nitzamons
         self.equipped_player_nitzamon = player_nitzamons[0]
         self.enemy_nitzamons = nitzamon
         self.equipped_enemy_nitzamon = nitzamon
+        self.playerTurn = self.equipped_player_nitzamon >= self.equipped_enemy_nitzamon
 
         if nitzamon.name == Constants.DARK_SQUARION or nitzamon.name == Constants.GEM_TRIO:
             bg = "Gemgem"
@@ -165,6 +202,7 @@ class FightMenu:
         self.enemy_nitzamons = enemy_nitzamons
         self.equipped_enemy_nitzamon = enemy_nitzamons[0]
         self.in_fight = True
+        self.playerTurn = self.equipped_player_nitzamon >= self.equipped_enemy_nitzamon
 
     def change_info(self):
         self.player_nitzamon_name = self.font.render(f"Name: {self.equipped_player_nitzamon.name}", True, Constants.BLACK)
