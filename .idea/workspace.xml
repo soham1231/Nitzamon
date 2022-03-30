@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="fixed bugs, added player turn">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/NitzamonClasses/Move.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/NitzamonClasses/Move.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="added moves (HEIL NITZLER)">
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,12 +198,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.main" />
       <item itemvalue="Python.Constants" />
       <item itemvalue="Python.Fight" />
       <item itemvalue="Python.Game" />
       <item itemvalue="Python.Main" />
       <item itemvalue="Python.WorldFunctions" />
-      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
@@ -370,7 +368,13 @@
       <option name="presentableId" value="LOCAL‎00024" />
       <updated>1648655261176</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL‎00025" summary="added moves (HEIL NITZLER)">
+      <created>1648659373284</created>
+      <option name="number" value="LOCAL‎00025" />
+      <option name="presentableId" value="LOCAL‎00025" />
+      <updated>1648659373284</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -420,6 +424,7 @@
     <MESSAGE value="changed some names and added name constants" />
     <MESSAGE value="added attack" />
     <MESSAGE value="fixed bugs, added player turn" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs, added player turn" />
+    <MESSAGE value="added moves (HEIL NITZLER)" />
+    <option name="LAST_COMMIT_MESSAGE" value="added moves (HEIL NITZLER)" />
   </component>
 </project>

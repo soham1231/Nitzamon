@@ -80,8 +80,28 @@ def random_nitzamon():
     attack = level + random.randint(0, 50)
     speed = level + random.randint(0, 20)
     element = Constants.NITZAMON_ELEMENTS_DICT[name]
+    if element == Constants.FIRE:
+        move1 = random.choice(Constants.FIRE_MOVES)
+        move2 = random.choice(Constants.FIRE_MOVES)
+        while move1 == move2:
+            move2 = random.choice(Constants.FIRE_MOVES)
+    elif element == Constants.EARTH:
+        move1 = random.choice(Constants.EARTH_MOVES)
+        move2 = random.choice(Constants.EARTH_MOVES)
+        while move1 == move2:
+            move2 = random.choice(Constants.EARTH_MOVES)
+    else:
+        move1 = random.choice(Constants.WATER_MOVES)
+        move2 = random.choice(Constants.WATER_MOVES)
+        while move1 == move2:
+            move2 = random.choice(Constants.WATER_MOVES)
+    move3 = random.choice(Constants.NORMAL_MOVES)
+    move4 = random.choice(Constants.NORMAL_MOVES)
+    while move3 == move4:
+        move2 = random.choice(Constants.NORMAL_MOVES)
+
     return Nitzamon.Nitzamon(name, level, health, health, attack, speed, sprite, element,
-                             [random_move(), random_move(), random_move(), random_move()])
+                             [move1, move2, move3, move4])
 
 
 def save(player, enemy):
