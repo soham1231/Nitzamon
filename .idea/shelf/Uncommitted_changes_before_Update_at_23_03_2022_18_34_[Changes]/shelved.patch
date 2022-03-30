@@ -1,3 +1,57 @@
+<<<<<<< HEAD
+Index: Inventory.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Constants\r\nimport pygame\r\nfrom math import ceil\r\n\r\n\r\nis_open = False\r\ninfo_open = False\r\ninventory_rect = pygame.Rect((30, 30), (Constants.X - 60, Constants.Y - 60))\r\nnitzamon_img_scale = 100\r\ncols_of_nitzamons = 1 + ceil(inventory_rect.width / (nitzamon_img_scale + 10))\r\nrows_of_nitzamons = ceil(inventory_rect.height / (nitzamon_img_scale + 10))\r\n\r\n\r\ndef turn_into_img_matrix(inv):\r\n    nitzamons = []\r\n    if len(inv) >= cols_of_nitzamons:\r\n        cols = cols_of_nitzamons\r\n    else:\r\n        cols = len(inv)\r\n    rows = ceil(len(inv) / cols)\r\n    current_nitzamon = 0\r\n    for i in range(rows + 1):\r\n        new_line = []\r\n        for j in range(cols):\r\n            if current_nitzamon >= len(inv):\r\n                break\r\n            new_line.append(inv[current_nitzamon])\r\n            current_nitzamon += 1\r\n        nitzamons.append(new_line)\r\n    return nitzamons\r\n\r\n\r\ndef draw_inventory(inv):\r\n    Constants.WIN.fill(Constants.BLACK)\r\n    pygame.draw.rect(Constants.WIN, Constants.GREY, inventory_rect)\r\n    nitzamons = turn_into_img_matrix(inv)\r\n    for i in range(len(nitzamons)):\r\n        for j in range(len(nitzamons[i])):\r\n            image = pygame.transform.scale(nitzamons[i][j].sprite, (nitzamon_img_scale, nitzamon_img_scale))\r\n            Constants.WIN.blit(image, (40 + j * nitzamon_img_scale, 40 + i * nitzamon_img_scale))\r\n\r\n\r\ndef check_collision(pos, inv):\r\n    nitzamons = turn_into_img_matrix(inv)\r\n    for i in range(len(nitzamons)):\r\n        if i != 0:\r\n            y_min = 40 + i * nitzamon_img_scale\r\n            y_max = nitzamon_img_scale + 40 + i * nitzamon_img_scale\r\n        else:\r\n            y_min = 40\r\n            y_max = 40 + nitzamon_img_scale\r\n        for j in range(len(nitzamons[i])):\r\n            if j != 0:\r\n                x_min = 40 + j * nitzamon_img_scale\r\n                x_max = nitzamon_img_scale + 40 + j * nitzamon_img_scale\r\n            else:\r\n                x_min = 40\r\n                x_max = 40 + nitzamon_img_scale\r\n            if y_min <= pos[1] <= y_max and x_min <= pos[0] <= x_max:\r\n                return nitzamons[i][j]\r\n    return None\r\n\r\n\r\ndef show_info(nitzamon):\r\n    Constants.WIN.fill(Constants.GREY)\r\n    info_img = pygame.image.load(\"Assets\\\\Menus\\\\NitzamonDisplay.png\")\r\n\r\n    info_img_x = Constants.X / 2 - info_img.get_width() / 2\r\n    info_img_y = Constants.Y / 2 - info_img.get_height() / 2\r\n\r\n    Constants.WIN.blit(info_img, (info_img_x, info_img_y))\r\n    nitzamon_image = pygame.transform.scale(nitzamon.sprite, (290, 388))\r\n    Constants.WIN.blit(nitzamon_image, (info_img_x + 30, info_img_y + 28))\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Inventory.py	(revision ca17cbc02e0d07a85769509018779c142d573066)
++++ Inventory.py	(date 1648052291844)
+@@ -5,7 +5,18 @@
+ 
+ is_open = False
+ info_open = False
++
+ inventory_rect = pygame.Rect((30, 30), (Constants.X - 60, Constants.Y - 60))
++
++info_rect_width = 350
++info_rect_height = 600
++info_rect_x = Constants.X / 2 - info_rect_width / 2
++info_rect_y = Constants.Y / 2 - info_rect_height / 2
++info_rect = pygame.Rect((info_rect_x, info_rect_y), (info_rect_width, info_rect_height))
++
++pygame.font.init()
++font = pygame.font.SysFont("Arial", 20)
++
+ nitzamon_img_scale = 100
+ cols_of_nitzamons = 1 + ceil(inventory_rect.width / (nitzamon_img_scale + 10))
+ rows_of_nitzamons = ceil(inventory_rect.height / (nitzamon_img_scale + 10))
+@@ -63,11 +74,18 @@
+ 
+ def show_info(nitzamon):
+     Constants.WIN.fill(Constants.GREY)
+-    info_img = pygame.image.load("Assets\\Menus\\NitzamonDisplay.png")
++    pygame.draw.rect(Constants.WIN, Constants.WHITE, info_rect)
++
++    name = font.render(f"Name: {nitzamon.name}", True, Constants.BLACK)
++    Constants.WIN.blit(name, (info_rect_x + 10, info_rect_y + 500))
+ 
+-    info_img_x = Constants.X / 2 - info_img.get_width() / 2
+-    info_img_y = Constants.Y / 2 - info_img.get_height() / 2
++    hp = font.render(f"Hp: {nitzamon.hp} / {nitzamon.max_hp}", True, Constants.BLACK)
++    Constants.WIN.blit(hp, (info_rect_x + 10, info_rect_y + 530))
+ 
+-    Constants.WIN.blit(info_img, (info_img_x, info_img_y))
++    lvl = font.render(f"level: {nitzamon.lvl}", True, Constants.BLACK)
++    Constants.WIN.blit(lvl, (info_rect_x + 10, info_rect_y + 560))
++
+     nitzamon_image = pygame.transform.scale(nitzamon.sprite, (290, 388))
+-    Constants.WIN.blit(nitzamon_image, (info_img_x + 30, info_img_y + 28))
++    Constants.WIN.blit(nitzamon_image, (info_rect_x + 30, info_rect_y + 50))
++
++    pygame.draw.line(Constants.WIN, (0, 0, 0), (info_rect_x, info_rect_y + 490), (info_rect_x + info_rect_width, info_rect_y + 490), 5)
+=======
 Index: Constants.py
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
@@ -226,6 +280,7 @@ diff --git a/.idea/misc.xml b/.idea/misc.xml
 +  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10" project-jdk-type="Python SDK" />
  </project>
 \ No newline at end of file
+>>>>>>> origin/master
 Index: .idea/workspace.xml
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
@@ -233,14 +288,100 @@ Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
+<<<<<<< HEAD
+--- .idea/workspace.xml	(revision ca17cbc02e0d07a85769509018779c142d573066)
++++ .idea/workspace.xml	(date 1648052885344)
+@@ -19,10 +19,9 @@
+=======
 diff --git a/.idea/workspace.xml b/.idea/workspace.xml
 --- a/.idea/workspace.xml	(revision ca17cbc02e0d07a85769509018779c142d573066)
 +++ b/.idea/workspace.xml	(date 1648052154752)
 @@ -19,9 +19,17 @@
+>>>>>>> origin/master
      <select />
    </component>
    <component name="ChangeListManager">
 -    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="pep 8">
+<<<<<<< HEAD
++    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="started working on the nitzamon info image">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -324,7 +323,13 @@
+       <option name="presentableId" value="LOCAL‎00017" />
+       <updated>1647895046997</updated>
+     </task>
+-    <option name="localTasksCounter" value="18" />
++    <task id="LOCAL‎00018" summary="started working on the nitzamon info image">
++      <created>1647948015559</created>
++      <option name="number" value="LOCAL‎00018" />
++      <option name="presentableId" value="LOCAL‎00018" />
++      <updated>1647948015560</updated>
++    </task>
++    <option name="localTasksCounter" value="19" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.History.Properties">
+@@ -367,40 +372,41 @@
+     <MESSAGE value="added 150 nitzamons to player" />
+     <MESSAGE value="I.. I fixed a small bug in inventory collisions...." />
+     <MESSAGE value="pep 8" />
+-    <option name="LAST_COMMIT_MESSAGE" value="pep 8" />
++    <MESSAGE value="started working on the nitzamon info image" />
++    <option name="LAST_COMMIT_MESSAGE" value="started working on the nitzamon info image" />
+   </component>
+   <component name="WindowStateProjectService">
+     <state x="129" y="55" key="DiffContextDialog" timestamp="1647720062123">
+       <screen x="0" y="0" width="1366" height="728" />
+     </state>
+     <state x="129" y="55" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1647720062123" />
+-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1647947947412">
++    <state width="1345" height="90" key="GridCell.Tab.0.bottom" timestamp="1648052663974">
+       <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1647947947412" />
+-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1647947947411">
++    <state width="1345" height="90" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1648052663974" />
++    <state width="1345" height="90" key="GridCell.Tab.0.center" timestamp="1648052663974">
+       <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1647947947411" />
+-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1647947947411">
++    <state width="1345" height="90" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1648052663974" />
++    <state width="1345" height="90" key="GridCell.Tab.0.left" timestamp="1648052663973">
+       <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1647947947411" />
+-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1647947947411">
++    <state width="1345" height="90" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1648052663973" />
++    <state width="1345" height="90" key="GridCell.Tab.0.right" timestamp="1648052663974">
+       <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1647947947411" />
++    <state width="1345" height="90" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1648052663974" />
+     <state x="321" y="125" key="MultipleFileMergeDialog" timestamp="1647894908916">
+       <screen x="0" y="0" width="1366" height="728" />
+     </state>
+     <state x="321" y="125" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1647894908916" />
+-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1647895057329">
++    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1647948019996">
+       <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1647895057329" />
+-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1647894994636">
++    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1647948019996" />
++    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1647950986751">
+       <screen x="0" y="0" width="1366" height="728" />
+     </state>
+-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1647894994636" />
++    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1647950986751" />
+   </component>
+ </project>
+\ No newline at end of file
+=======
 +    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Added a main menu">
 +      <change beforePath="$PROJECT_DIR$/.idea/Nitzamon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Nitzamon.iml" afterDir="false" />
 +      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -407,3 +548,4 @@ diff --git a/.idea/Nitzamon.iml b/.idea/Nitzamon.iml
    </component>
  </module>
 \ No newline at end of file
+>>>>>>> origin/master
