@@ -234,7 +234,7 @@ class FightMenu:
         self.enemy_nitzamons = enemy_nitzamons
         self.equipped_enemy_nitzamon = enemy_nitzamons[0]
         self.in_fight = True
-        self.playerTurn = self.equipped_player_nitzamon >= self.equipped_enemy_nitzamon
+        self.playerTurn = self.equipped_player_nitzamon.spd >= self.equipped_enemy_nitzamon.spd
 
     def change_info(self):
         self.player_nitzamon_name = self.font.render(f"Name: {self.equipped_player_nitzamon.name}", True, Constants.BLACK)

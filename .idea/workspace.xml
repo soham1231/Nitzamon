@@ -19,8 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="fixed bug">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="implements npcs!">
+      <change beforePath="$PROJECT_DIR$/.idea/Nitzamon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Nitzamon.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/Dialogue.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/Dialogue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/NPC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/NPC.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fight.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
@@ -46,9 +49,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Constants.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="269jaZhTCQBB0sPIEvgCsT2kQsX" />
   <component name="ProjectLevelVcsManager">
@@ -115,13 +115,13 @@
       <method v="2" />
     </configuration>
     <configuration name="Game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="NITZAMON" />
+      <module name="Nitzamon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\ADMIN\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\User\AppData\Local\Programs\Python\Python310\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -199,12 +199,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.main" />
       <item itemvalue="Python.Constants" />
       <item itemvalue="Python.Fight" />
       <item itemvalue="Python.Game" />
       <item itemvalue="Python.Main" />
       <item itemvalue="Python.WorldFunctions" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
@@ -359,13 +359,7 @@
       <option name="project" value="LOCAL" />
       <updated>1648627261733</updated>
     </task>
-    <task id="LOCAL‎00023" summary="fixed bug">
-      <created>1648657992267</created>
-      <option name="number" value="LOCAL‎00023" />
-      <option name="presentableId" value="LOCAL‎00023" />
-      <updated>1648657992267</updated>
-    </task>
-    <option name="localTasksCounter" value="24" />
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -413,33 +407,6 @@
     <MESSAGE value="can open the inventory in fight" />
     <MESSAGE value="start of attack. shoham gay nigger" />
     <MESSAGE value="START OF ATTACK" />
-    <MESSAGE value="fixed bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bug" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1648658220900">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1648658220899" />
-    <state width="663" height="144" key="GridCell.Tab.0.bottom" timestamp="1648659137001">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="663" height="144" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1648659137001" />
-    <state width="663" height="144" key="GridCell.Tab.0.center" timestamp="1648659137001">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="663" height="144" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1648659137001" />
-    <state width="663" height="144" key="GridCell.Tab.0.left" timestamp="1648659137000">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="663" height="144" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1648659137000" />
-    <state width="663" height="144" key="GridCell.Tab.0.right" timestamp="1648659137001">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="663" height="144" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1648659137001" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1648658000320">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1648658000320" />
+    <option name="LAST_COMMIT_MESSAGE" value="START OF ATTACK" />
   </component>
 </project>

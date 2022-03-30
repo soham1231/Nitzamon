@@ -56,7 +56,7 @@ def draw_minimap(world, player):
 world1 = WorldFunctions.read_world(Constants.WORLD1_PATH)
 NPC_SPRITE_RONI = pygame.transform.scale(pygame.image.load("Assets\\Characters\\NPCS\\Roni.jpg"),
                                          (Constants.SCALE, Constants.SCALE))
-roni = NPC.NPC("Roni", NPC_SPRITE_RONI, (5, 5), [], [], world1)
+roni = NPC.NPC("Roni", NPC_SPRITE_RONI, (5, 5), [], [Dialogue.Dialogue("HI! \n HELLO!", None)], world1)
 npc_list = [roni]
 
 
@@ -100,7 +100,8 @@ def save(player, enemy):
 
 def main():
     world = WorldFunctions.read_world(Constants.WORLD1_PATH)
-
+    talked_to = False
+    npc = None
     nitzamon_list = []
     equipped = []
     for i in range(20):
@@ -174,6 +175,15 @@ def main():
                         Inventory.is_open = False
                     else:
                         run = False
+                if event.key == pygame.K_f:
+                    for npc in npc_list:
+                        if ((player.pos[0] == npc.pos[0] - 1) and (player.pos[1] == npc.pos[1])) or \
+                                ((player.pos[0] == npc.pos[0]) and (player.pos[1] == npc.pos[1] + 1)) or \
+                                ((player.pos[0] == npc.pos[0] + 1) and (player.pos[1] == npc.pos[1])) or \
+                                ((player.pos[0] == npc.pos[0]) and (player.pos[1] == npc.pos[1] - 1)):
+                            print(npc.name)
+                            talked_to = True
+                            break
 
         if world[player.pos[1]][player.pos[0]] == "T" and not fight_menu.in_fight:
             passed_time = time.time() - fight_menu.fight_start
@@ -205,9 +215,13 @@ def main():
         else:
             player.camera()
             draw_world(world, player)
-            player.move(pygame.key.get_pressed())
+            player.move(keys)
             player.draw(player.camera_pos)
             draw_npcs(npc_list, player.camera_pos)
+            if talked_to and npc is not None:
+                npc.talk(player)
+                if keys[pygame.K_w] or keys[pygame.K_d] or keys[pygame.K_a] or keys[pygame.K_s]:
+                    talked_to = False
         # pygame.draw.rect(WIN, BLACK, pygame.Rect((0, (3 * Y / 4)), (X, (3 * Y / 4))))
         pygame.display.update()
     return run
