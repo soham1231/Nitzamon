@@ -1,0 +1,648 @@
+Index: Classes/CharacterClasses/NPC.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from Character import *\r\n\r\n\r\nclass NPC(Character):\r\n    def __init__(self, name, sprite, pos, quests, small_talk, world):\r\n        super().__init__(name, sprite, pos, world)\r\n        self.quests = quests\r\n        self.small_talk = small_talk\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Classes/CharacterClasses/NPC.py b/Classes/CharacterClasses/NPC.py
+--- a/Classes/CharacterClasses/NPC.py	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
++++ b/Classes/CharacterClasses/NPC.py	(date 1647153754634)
+@@ -6,3 +6,5 @@
+         super().__init__(name, sprite, pos, world)
+         self.quests = quests
+         self.small_talk = small_talk
++
++    def talk(self, dialogue):
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_41__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_41__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_41__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_41__Changes_.xml	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
++++ /dev/null	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_09_03_2022_18_41_[Changes]" date="1646844109826" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_41_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 09/03/2022 18:41 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_48_[Default_Changelist]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_48_[Default_Changelist]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_48_[Default_Changelist]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_48_[Default_Changelist]/shelved.patch	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
++++ /dev/null	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
+@@ -1,53 +0,0 @@
+-Index: Classes/Character Classes/NitzamonUser.py
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/Classes/Character Classes/NitzamonUser.py b/Classes/Character Classes/NitzamonUser.py
+-new file mode 100644
+---- /dev/null	(date 1646844436815)
+-+++ b/Classes/Character Classes/NitzamonUser.py	(date 1646844436815)
+-@@ -0,0 +1,6 @@
+-+import Character
+-+class NitzamonUser(Character):
+-+    def __init__(self, name, sprite, nitzamons, num_of_nitzamons):
+-+        super(self, name, sprite)
+-+        self.nitzamons = nitzamons
+-+        self.num_of_nitzamons = num_of_nitzamons
+-\ No newline at end of file
+-Index: Classes/Character Classes/NPC.py
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/Classes/Character Classes/NPC.py b/Classes/Character Classes/NPC.py
+-new file mode 100644
+---- /dev/null	(date 1646844399206)
+-+++ b/Classes/Character Classes/NPC.py	(date 1646844399206)
+-@@ -0,0 +1,6 @@
+-+import Character
+-+class NPC(Character):
+-+    def __init__(self, name, sprite, quests, small_talk):
+-+        super(self, name, sprite)
+-+        self.quests = quests
+-+        self.small_talk = small_talk
+-\ No newline at end of file
+-Index: Classes/Character Classes/Character.py
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>\r\n\r\nclass Character:\r\n    pass
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/Classes/Character Classes/Character.py b/Classes/Character Classes/Character.py
+---- a/Classes/Character Classes/Character.py	(revision 54bcb7d31839889f95710dbc7ab664a103740654)
+-+++ b/Classes/Character Classes/Character.py	(date 1646843579422)
+-@@ -1,4 +1,4 @@
+--
+--
+- class Character:
+--    pass
+-\ No newline at end of file
+-+    def __init__(self, name ,pos):
+-+        self.name = name
+-+        self.pos = pos
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_41_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_41_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_41_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_41_[Changes]/shelved.patch	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
++++ /dev/null	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
+@@ -1,80 +0,0 @@
+-Index: nitzamon.py
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/nitzamon.py b/nitzamon.py
+-new file mode 100644
+---- /dev/null	(date 1646843903753)
+-+++ b/nitzamon.py	(date 1646843903753)
+-@@ -0,0 +1,12 @@
+-+
+-+
+-+class Nitzamon:
+-+
+-+    def __init__(self, element, dmg, hp, spd, sprite, list_of_moves, name):
+-+        self.name = name
+-+        self.element = element
+-+        self.dmg = dmg
+-+        self.hp = hp
+-+        self.spd = spd
+-+        self.sprite = sprite
+-+        self.list_of_moves = list_of_moves
+-Index: move.py
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/move.py b/move.py
+-new file mode 100644
+---- /dev/null	(date 1646844103483)
+-+++ b/move.py	(date 1646844103483)
+-@@ -0,0 +1,10 @@
+-+
+-+
+-+class Move:
+-+
+-+    def __init__(self, move_element, move_dmg, move_name):
+-+       self.move_element = move_element
+-+       self.move_dmg = move_dmg
+-+       self.move_name = move_name
+-+
+-+    def is_effective(self):
+-Index: quest.py
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/quest.py b/quest.py
+-new file mode 100644
+---- /dev/null	(date 1646843511174)
+-+++ b/quest.py	(date 1646843511174)
+-@@ -0,0 +1,9 @@
+-+
+-+
+-+class Quest:
+-+
+-+    def __init__(self, is_completed, reward, dialogue):
+-+        self.is_completed = is_completed
+-+        self.reward = reward
+-+        self.dialogue = dialogue
+-+    
+-\ No newline at end of file
+-Index: dialogue.py
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/dialogue.py b/dialogue.py
+-new file mode 100644
+---- /dev/null	(date 1646843732550)
+-+++ b/dialogue.py	(date 1646843732550)
+-@@ -0,0 +1,8 @@
+-+
+-+
+-+class Dialogue:
+-+
+-+    def __init__(self, text, sound):
+-+        self.text = text
+-+        self.sound = sound
+-+
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_48__Default_Changelist_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_48__Default_Changelist_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_48__Default_Changelist_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_48__Default_Changelist_.xml	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
++++ /dev/null	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_09_03_2022_18_48_[Default_Changelist]" date="1646844532790" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_48_[Default_Changelist]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 09/03/2022 18:48 [Default Changelist]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_1.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_1.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_1.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_1.xml	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
++++ /dev/null	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_09_03_2022_19_18_[Changes]1" date="1646846284862" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18_[Changes]1/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 09/03/2022 19:18 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_34_[Default_Changelist]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_34_[Default_Changelist]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_34_[Default_Changelist]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_34_[Default_Changelist]/shelved.patch	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
++++ /dev/null	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
+@@ -1,71 +0,0 @@
+-Index: Classes/Character Classes/Character.py
+-===================================================================
+-diff --git a/Classes/Character Classes/Character.py b/Classes/Character Classes/Character.py
+-deleted file mode 100644
+---- a/Classes/Character Classes/Character.py	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-+++ /dev/null	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-@@ -1,4 +0,0 @@
+--class Character:
+--    def __init__(self, name ,pos):
+--        self.name = name
+--        self.pos = pos
+-Index: Classes/Character Classes/NitzamonUser.py
+-===================================================================
+-diff --git a/Classes/Character Classes/NitzamonUser.py b/Classes/Character Classes/NitzamonUser.py
+-deleted file mode 100644
+---- a/Classes/Character Classes/NitzamonUser.py	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-+++ /dev/null	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-@@ -1,6 +0,0 @@
+--import Character
+--class NitzamonUser(Character):
+--    def __init__(self, name, sprite, nitzamons, num_of_nitzamons):
+--        super(self, name, sprite)
+--        self.nitzamons = nitzamons
+--        self.num_of_nitzamons = num_of_nitzamons
+-\ No newline at end of file
+-Index: Classes/Character Classes/NPC.py
+-===================================================================
+-diff --git a/Classes/Character Classes/NPC.py b/Classes/Character Classes/NPC.py
+-deleted file mode 100644
+---- a/Classes/Character Classes/NPC.py	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-+++ /dev/null	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-@@ -1,6 +0,0 @@
+--import Character
+--class NPC(Character):
+--    def __init__(self, name, sprite, quests, small_talk):
+--        super(self, name, sprite)
+--        self.quests = quests
+--        self.small_talk = small_talk
+-\ No newline at end of file
+-Index: Classes/Character Classes/dialogue.py
+-===================================================================
+-diff --git a/Classes/Character Classes/dialogue.py b/Classes/Character Classes/dialogue.py
+-deleted file mode 100644
+---- a/Classes/Character Classes/dialogue.py	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-+++ /dev/null	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-@@ -1,8 +0,0 @@
+--
+--
+--class Dialogue:
+--
+--    def __init__(self, text, sound):
+--        self.text = text
+--        self.sound = sound
+--
+-Index: Classes/Character Classes/quest.py
+-===================================================================
+-diff --git a/Classes/Character Classes/quest.py b/Classes/Character Classes/quest.py
+-deleted file mode 100644
+---- a/Classes/Character Classes/quest.py	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-+++ /dev/null	(revision 785ef5cdb199b76c66a154aed576df60a9d0d6ca)
+-@@ -1,9 +0,0 @@
+--
+--
+--class Quest:
+--
+--    def __init__(self, is_completed, reward, dialogue):
+--        self.is_completed = is_completed
+--        self.reward = reward
+--        self.dialogue = dialogue
+--    
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_.xml	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
++++ /dev/null	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_09_03_2022_19_18_[Changes]" date="1646846283456" recycled="false" toDelete="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 09/03/2022 19:18 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.9\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
++++ b/.idea/misc.xml	(date 1647153658123)
+@@ -1,4 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BranchesTreeState\">\r\n    <expand>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"334d6a7e-db16-455a-9585-08f3f86397a4\" name=\"Changes\" comment=\"Added a main menu\">\r\n      <change afterPath=\"$PROJECT_DIR$/save1.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Classes/CharacterClasses/Character.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Classes/CharacterClasses/Character.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Classes/CharacterClasses/Enemy.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Classes/CharacterClasses/Enemy.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Classes/CharacterClasses/NPC.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Classes/CharacterClasses/NPC.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Classes/CharacterClasses/NitzamonUser.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Classes/CharacterClasses/NitzamonUser.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Classes/CharacterClasses/Player.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Classes/CharacterClasses/Player.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Main.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Main.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"269jaZhTCQBB0sPIEvgCsT2kQsX\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_ADD_EXTERNAL_FILES\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Student\\Desktop\\Nitzamon\\Classes\\NitzamonClasses\" />\r\n      <recent name=\"C:\\Users\\Student\\Desktop\\Nitzamon\\Classes\\Character Classes\" />\r\n      <recent name=\"C:\\Users\\Student\\Desktop\\Nitzamon\\Classes\\Nitzamon Classes\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Python.Game\">\r\n    <configuration name=\"Constants\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"NITZAMON\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/Constants.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Fight\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Nitzamon\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/Fight.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Game\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Nitzamon\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/Game.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Nitzamon\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"C:\\Users\\USER\\AppData\\Local\\Programs\\Python\\Python39\\python.exe\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/Main.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"WorldFunctions\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"Nitzamon\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"C:\\Users\\USER\\AppData\\Local\\Programs\\Python\\Python39\\python.exe\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/Worlds\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/Worlds/WorldFunctions.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" nameIsGenerated=\"true\">\r\n      <module name=\"Nitzamon\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/main.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Python.main\" />\r\n      <item itemvalue=\"Python.Constants\" />\r\n      <item itemvalue=\"Python.Main\" />\r\n      <item itemvalue=\"Python.WorldFunctions\" />\r\n      <item itemvalue=\"Python.Fight\" />\r\n      <item itemvalue=\"Python.Game\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.Game\" />\r\n        <item itemvalue=\"Python.Main\" />\r\n        <item itemvalue=\"Python.WorldFunctions\" />\r\n        <item itemvalue=\"Python.Fight\" />\r\n        <item itemvalue=\"Python.Constants\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"334d6a7e-db16-455a-9585-08f3f86397a4\" name=\"Changes\" comment=\"\" />\r\n      <created>1646842759788</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1646842759788</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E00001\" summary=\"Nitzamon classes&#10;im gay\">\r\n      <created>1646844283699</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E00001\" />\r\n      <updated>1646844283699</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E00002\" summary=\"Main loop&#10;camera function in Player&#10;draw world function&#10;read world function\">\r\n      <created>1646859875809</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E00002\" />\r\n      <updated>1646859875809</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E00003\" summary=\"added player movement and check in bounds of map\">\r\n      <created>1646919652481</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E00003\" />\r\n      <updated>1646919652481</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E00004\" summary=\"changed a small bug in camera\">\r\n      <created>1646920297610</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E00004\" />\r\n      <updated>1646920297610</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E00005\" summary=\"Pushed World1.txt\">\r\n      <created>1646928626860</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E00005\" />\r\n      <updated>1646928626860</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E00006\" summary=\"REDUCED THE LAG SO MUCH ITS LIKE THE MOST OPTIMIZED GAME EVER&#10;and added fps\">\r\n      <created>1646930813800</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E00006\" />\r\n      <updated>1646930813800</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E00007\" summary=\"When player goes diagonally the fps is halved\">\r\n      <created>1646931641227</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E00007\" />\r\n      <updated>1646931641227</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E00008\" summary=\"Added hovering color\">\r\n      <created>1647014662039</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E00008\" />\r\n      <updated>1647014662039</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E00009\" summary=\"Added fight info (bad looking code)\">\r\n      <created>1647023249827</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E00009\" />\r\n      <updated>1647023249827</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E00010\" summary=\"Added borders\">\r\n      <created>1647033200688</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E00010\" />\r\n      <updated>1647033200688</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E00011\" summary=\"Changed the chances of finding a nitzamon in tall grass and added grass in the middle of the map\">\r\n      <created>1647034537816</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E00011\" />\r\n      <updated>1647034537816</updated>\r\n    </task>\r\n    <task id=\"LOCAL\u200E00012\" summary=\"Added a main menu\">\r\n      <created>1647037265476</created>\r\n      <option name=\"number\" value=\"LOCAL\u200E00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL\u200E00012\" />\r\n      <updated>1647037265476</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"13\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"Nitzamon classes&#10;im gay\" />\r\n    <MESSAGE value=\"added player movement and check in bounds of map\" />\r\n    <MESSAGE value=\"changed a small bug in camera\" />\r\n    <MESSAGE value=\"Pushed World1.txt\" />\r\n    <MESSAGE value=\"REDUCED THE LAG SO MUCH ITS LIKE THE MOST OPTIMIZED GAME EVER&#10;and added fps\" />\r\n    <MESSAGE value=\"When player goes diagonally the fps is halved\" />\r\n    <MESSAGE value=\"Added hovering color\" />\r\n    <MESSAGE value=\"Added fight info (bad looking code)\" />\r\n    <MESSAGE value=\"Added borders\" />\r\n    <MESSAGE value=\"Changed the chances of finding a nitzamon in tall grass and added grass in the middle of the map\" />\r\n    <MESSAGE value=\"Added a main menu\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Added a main menu\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
++++ b/.idea/workspace.xml	(date 1648049155430)
+@@ -1,32 +1,17 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="BranchesTreeState">
+-    <expand>
+-      <path>
+-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-      </path>
+-      <path>
+-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-      </path>
+-      <path>
+-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+-      </path>
+-    </expand>
+-    <select />
+-  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Added a main menu">
+-      <change afterPath="$PROJECT_DIR$/save1.json" afterDir="false" />
++    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="Nitzamon classes&#10;im gay">
++      <change beforePath="$PROJECT_DIR$/.idea/Nitzamon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Nitzamon.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_41__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_41__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_48__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_18_48__Default_Changelist_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Changes_1.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Default_Changelist_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/Character.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/Character.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/Enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/Enemy.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/NPC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/NPC.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/NitzamonUser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/NitzamonUser.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/Player.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -44,24 +29,12 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="GitSEFilterConfiguration">
+-    <file-type-list>
+-      <filtered-out-file-type name="LOCAL_BRANCH" />
+-      <filtered-out-file-type name="REMOTE_BRANCH" />
+-      <filtered-out-file-type name="TAG" />
+-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+-    </file-type-list>
+-  </component>
+   <component name="ProjectId" id="269jaZhTCQBB0sPIEvgCsT2kQsX" />
+-  <component name="ProjectLevelVcsManager">
+-    <ConfirmationsSetting value="2" id="Add" />
+-  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">
+-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+@@ -74,48 +47,6 @@
+     </key>
+   </component>
+   <component name="RunManager" selected="Python.Game">
+-    <configuration name="Constants" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-      <module name="NITZAMON" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <envs>
+-        <env name="PYTHONUNBUFFERED" value="1" />
+-      </envs>
+-      <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="true" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Constants.py" />
+-      <option name="PARAMETERS" value="" />
+-      <option name="SHOW_COMMAND_LINE" value="false" />
+-      <option name="EMULATE_TERMINAL" value="false" />
+-      <option name="MODULE_MODE" value="false" />
+-      <option name="REDIRECT_INPUT" value="false" />
+-      <option name="INPUT_FILE" value="" />
+-      <method v="2" />
+-    </configuration>
+-    <configuration name="Fight" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-      <module name="Nitzamon" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <envs>
+-        <env name="PYTHONUNBUFFERED" value="1" />
+-      </envs>
+-      <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="true" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Fight.py" />
+-      <option name="PARAMETERS" value="" />
+-      <option name="SHOW_COMMAND_LINE" value="false" />
+-      <option name="EMULATE_TERMINAL" value="false" />
+-      <option name="MODULE_MODE" value="false" />
+-      <option name="REDIRECT_INPUT" value="false" />
+-      <option name="INPUT_FILE" value="" />
+-      <method v="2" />
+-    </configuration>
+     <configuration name="Game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="Nitzamon" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+@@ -123,9 +54,9 @@
+       <envs>
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+-      <option name="SDK_HOME" value="" />
++      <option name="SDK_HOME" value="C:\Users\User\AppData\Local\Programs\Python\Python310\python.exe" />
+       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="true" />
++      <option name="IS_MODULE_SDK" value="false" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Game.py" />
+@@ -137,48 +68,6 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-      <module name="Nitzamon" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <envs>
+-        <env name="PYTHONUNBUFFERED" value="1" />
+-      </envs>
+-      <option name="SDK_HOME" value="C:\Users\USER\AppData\Local\Programs\Python\Python39\python.exe" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="false" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+-      <option name="PARAMETERS" value="" />
+-      <option name="SHOW_COMMAND_LINE" value="false" />
+-      <option name="EMULATE_TERMINAL" value="false" />
+-      <option name="MODULE_MODE" value="false" />
+-      <option name="REDIRECT_INPUT" value="false" />
+-      <option name="INPUT_FILE" value="" />
+-      <method v="2" />
+-    </configuration>
+-    <configuration name="WorldFunctions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-      <module name="Nitzamon" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <envs>
+-        <env name="PYTHONUNBUFFERED" value="1" />
+-      </envs>
+-      <option name="SDK_HOME" value="C:\Users\USER\AppData\Local\Programs\Python\Python39\python.exe" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Worlds" />
+-      <option name="IS_MODULE_SDK" value="false" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Worlds/WorldFunctions.py" />
+-      <option name="PARAMETERS" value="" />
+-      <option name="SHOW_COMMAND_LINE" value="false" />
+-      <option name="EMULATE_TERMINAL" value="false" />
+-      <option name="MODULE_MODE" value="false" />
+-      <option name="REDIRECT_INPUT" value="false" />
+-      <option name="INPUT_FILE" value="" />
+-      <method v="2" />
+-    </configuration>
+     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+       <module name="Nitzamon" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+@@ -202,19 +91,11 @@
+     </configuration>
+     <list>
+       <item itemvalue="Python.main" />
+-      <item itemvalue="Python.Constants" />
+-      <item itemvalue="Python.Main" />
+-      <item itemvalue="Python.WorldFunctions" />
+-      <item itemvalue="Python.Fight" />
+       <item itemvalue="Python.Game" />
+     </list>
+     <recent_temporary>
+       <list>
+         <item itemvalue="Python.Game" />
+-        <item itemvalue="Python.Main" />
+-        <item itemvalue="Python.WorldFunctions" />
+-        <item itemvalue="Python.Fight" />
+-        <item itemvalue="Python.Constants" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -233,73 +114,7 @@
+       <option name="presentableId" value="LOCAL‎00001" />
+       <updated>1646844283699</updated>
+     </task>
+-    <task id="LOCAL‎00002" summary="Main loop&#10;camera function in Player&#10;draw world function&#10;read world function">
+-      <created>1646859875809</created>
+-      <option name="number" value="LOCAL‎00002" />
+-      <option name="presentableId" value="LOCAL‎00002" />
+-      <updated>1646859875809</updated>
+-    </task>
+-    <task id="LOCAL‎00003" summary="added player movement and check in bounds of map">
+-      <created>1646919652481</created>
+-      <option name="number" value="LOCAL‎00003" />
+-      <option name="presentableId" value="LOCAL‎00003" />
+-      <updated>1646919652481</updated>
+-    </task>
+-    <task id="LOCAL‎00004" summary="changed a small bug in camera">
+-      <created>1646920297610</created>
+-      <option name="number" value="LOCAL‎00004" />
+-      <option name="presentableId" value="LOCAL‎00004" />
+-      <updated>1646920297610</updated>
+-    </task>
+-    <task id="LOCAL‎00005" summary="Pushed World1.txt">
+-      <created>1646928626860</created>
+-      <option name="number" value="LOCAL‎00005" />
+-      <option name="presentableId" value="LOCAL‎00005" />
+-      <updated>1646928626860</updated>
+-    </task>
+-    <task id="LOCAL‎00006" summary="REDUCED THE LAG SO MUCH ITS LIKE THE MOST OPTIMIZED GAME EVER&#10;and added fps">
+-      <created>1646930813800</created>
+-      <option name="number" value="LOCAL‎00006" />
+-      <option name="presentableId" value="LOCAL‎00006" />
+-      <updated>1646930813800</updated>
+-    </task>
+-    <task id="LOCAL‎00007" summary="When player goes diagonally the fps is halved">
+-      <created>1646931641227</created>
+-      <option name="number" value="LOCAL‎00007" />
+-      <option name="presentableId" value="LOCAL‎00007" />
+-      <updated>1646931641227</updated>
+-    </task>
+-    <task id="LOCAL‎00008" summary="Added hovering color">
+-      <created>1647014662039</created>
+-      <option name="number" value="LOCAL‎00008" />
+-      <option name="presentableId" value="LOCAL‎00008" />
+-      <updated>1647014662039</updated>
+-    </task>
+-    <task id="LOCAL‎00009" summary="Added fight info (bad looking code)">
+-      <created>1647023249827</created>
+-      <option name="number" value="LOCAL‎00009" />
+-      <option name="presentableId" value="LOCAL‎00009" />
+-      <updated>1647023249827</updated>
+-    </task>
+-    <task id="LOCAL‎00010" summary="Added borders">
+-      <created>1647033200688</created>
+-      <option name="number" value="LOCAL‎00010" />
+-      <option name="presentableId" value="LOCAL‎00010" />
+-      <updated>1647033200688</updated>
+-    </task>
+-    <task id="LOCAL‎00011" summary="Changed the chances of finding a nitzamon in tall grass and added grass in the middle of the map">
+-      <created>1647034537816</created>
+-      <option name="number" value="LOCAL‎00011" />
+-      <option name="presentableId" value="LOCAL‎00011" />
+-      <updated>1647034537816</updated>
+-    </task>
+-    <task id="LOCAL‎00012" summary="Added a main menu">
+-      <created>1647037265476</created>
+-      <option name="number" value="LOCAL‎00012" />
+-      <option name="presentableId" value="LOCAL‎00012" />
+-      <updated>1647037265476</updated>
+-    </task>
+-    <option name="localTasksCounter" value="13" />
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -315,18 +130,7 @@
+     <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+     <MESSAGE value="Nitzamon classes&#10;im gay" />
+-    <MESSAGE value="added player movement and check in bounds of map" />
+-    <MESSAGE value="changed a small bug in camera" />
+-    <MESSAGE value="Pushed World1.txt" />
+-    <MESSAGE value="REDUCED THE LAG SO MUCH ITS LIKE THE MOST OPTIMIZED GAME EVER&#10;and added fps" />
+-    <MESSAGE value="When player goes diagonally the fps is halved" />
+-    <MESSAGE value="Added hovering color" />
+-    <MESSAGE value="Added fight info (bad looking code)" />
+-    <MESSAGE value="Added borders" />
+-    <MESSAGE value="Changed the chances of finding a nitzamon in tall grass and added grass in the middle of the map" />
+-    <MESSAGE value="Added a main menu" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Added a main menu" />
++    <option name="LAST_COMMIT_MESSAGE" value="Nitzamon classes&#10;im gay" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/Nitzamon.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\" />\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/Nitzamon.iml b/.idea/Nitzamon.iml
+--- a/.idea/Nitzamon.iml	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
++++ b/.idea/Nitzamon.iml	(date 1647153658082)
+@@ -2,7 +2,7 @@
+ <module type="PYTHON_MODULE" version="4">
+   <component name="NewModuleRootManager">
+     <content url="file://$MODULE_DIR$" />
+-    <orderEntry type="inheritedJdk" />
++    <orderEntry type="jdk" jdkName="Python 3.10" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: Main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import time\r\nimport pygame\r\nimport random\r\nimport json\r\n\r\nimport Constants\r\nfrom Constants import WIN\r\nfrom Classes.CharacterClasses import Player, Enemy\r\nfrom Classes.NitzamonClasses import Nitzamon\r\nfrom Worlds import WorldFunctions\r\nimport Fight\r\n\r\n\r\npygame.init()\r\npygame.display.set_caption(\"Nitzamon!! \")\r\n\r\n\r\ndef draw_world(world, player):\r\n    i_max = len(world)\r\n    j_max = len(world)\r\n    if player.pos[0] + Constants.TILE_ROW < len(world):\r\n        i_max = player.pos[0] + Constants.TILE_ROW\r\n    if player.pos[1] + Constants.TILE_COL < len(world):\r\n        j_max = player.pos[1] + Constants.TILE_COL\r\n\r\n    i_min = 0\r\n    j_min = 0\r\n    if player.pos[0] > Constants.TILE_ROW:\r\n        i_min = player.pos[0] - Constants.TILE_ROW\r\n    if player.pos[1] > Constants.TILE_COL:\r\n        j_min = player.pos[1] - Constants.TILE_COL\r\n\r\n    for i in range(i_min, i_max):\r\n        for j in range(j_min, j_max):\r\n            tile = Constants.TILES[world[i][j]]\r\n            WIN.blit(tile, (i * Constants.SCALE - (player.camera_pos[0] * Constants.SCALE),\r\n                            j * Constants.SCALE - (player.camera_pos[1] * Constants.SCALE)))\r\n\r\n\r\ndef save(player, enemy):\r\n\r\n    info = {\r\n        \"name\": player.name,\r\n        \"pos\": player.pos,\r\n        \"nitzamon_bag\": player.nitzamon_bag,\r\n        \"active_quests\": player.active_quests,\r\n        \"world\": player.world\r\n    }\r\n    nitzamon_info = {}\r\n    for i in player.nitzamons:\r\n        nitzamon_info[i.name] = json.dumps(i.__dict__)\r\n    print(nitzamon_info)\r\n\r\n\r\ndef main():\r\n    world = WorldFunctions.read_world(Constants.WORLD1_PATH)\r\n\r\n    player_nitzamon = Nitzamon.Nitzamon(Constants.WATER, 50, 50, 50, Constants.NPC_IMAGE, [], \"Shoham\", 50)\r\n    player = Player.Player(\"Shoham\", Constants.PLAYER_IMAGE, [1, 1], [player_nitzamon], 0, 0, world)\r\n    player.camera()\r\n\r\n    enemy_nitzamon = Nitzamon.Nitzamon(Constants.FIRE, 40, 40, 40, Constants.NPC_IMAGE, [], \"Adi\", 40)\r\n    enemy = Enemy.Enemy(\"Adi\", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], [\"Hi\"], world)\r\n\r\n    fight_menu = Fight.FightMenu(player.nitzamons, enemy.nitzamons)\r\n    clock = pygame.time.Clock()\r\n\r\n    run = True\r\n    while run:\r\n        clock.tick(Constants.fps)\r\n        for event in pygame.event.get():\r\n            if event.type == pygame.QUIT:\r\n                run = False\r\n\r\n            if fight_menu.in_fight:\r\n                if event.type == pygame.MOUSEBUTTONDOWN:\r\n                    fight_menu.run(pygame.mouse.get_pos())\r\n\r\n        keys = pygame.key.get_pressed()\r\n        if keys[pygame.K_ESCAPE]:\r\n            run = False\r\n\r\n        if world[player.pos[0]][player.pos[1]] == \"T\":\r\n            passed_time = time.time() - fight_menu.fight_start\r\n            if random.randint(1, 100) == 100 and passed_time > Constants.FIGHT_COOL_DOWN:  # 10% chance of fighting and checking if enough time passed since the last fight\r\n                fight_menu.in_fight = True\r\n\r\n        if fight_menu.in_fight:\r\n            fight_menu.draw_screen()\r\n            fight_menu.check_hovers(pygame.mouse.get_pos())\r\n            WIN.blit(pygame.transform.scale(pygame.image.load(\"Assets\\\\Menus\\\\Fight.PNG\"), (Constants.X, Constants.Y)), (0, 0))\r\n\r\n        else:\r\n            player.camera()\r\n            draw_world(world, player)\r\n            player.move(keys)\r\n            player.draw(player.camera_pos)\r\n            enemy.draw(player.camera_pos)\r\n\r\n        pygame.display.update()\r\n    return run\r\n\r\n\r\nif __name__ == \"__main__\":\r\n    main()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Main.py b/Main.py
+--- a/Main.py	(revision af5c1abbfc120ec9e7db376276872111938d9b90)
++++ b/Main.py	(date 1647152885622)
+@@ -88,7 +88,7 @@
+         if fight_menu.in_fight:
+             fight_menu.draw_screen()
+             fight_menu.check_hovers(pygame.mouse.get_pos())
+-            WIN.blit(pygame.transform.scale(pygame.image.load("Assets\\Menus\\Fight.PNG"), (Constants.X, Constants.Y)), (0, 0))
++            # WIN.blit(pygame.transform.scale(pygame.image.load("Assets\\Menus\\Fight.PNG"), (Constants.X, Constants.Y)), (0, 0))
+ 
+         else:
+             player.camera()
