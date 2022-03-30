@@ -66,8 +66,8 @@ def draw_npcs(npc_list, camera_pos):  # NUMBER OF N'S ON THE MAP MUST BE EQUAL T
 
 
 def random_move():
-    element = random.choice(["fire", "water", "earth"])
-    dmg = random.choice([1, 2, 3, 4])
+    element = random.choice([Constants.FIRE, Constants.WATER, Constants.EARTH])
+    dmg = random.randint(1, 10)
     name = random.choice(["hug", "kiss", "pet", "touch"])
     return Move.Move(element, dmg, name)
 
@@ -107,6 +107,7 @@ def main():
         nitzamon_list.append(random_nitzamon())
     for i in range(3):
         equipped.append(random_nitzamon())
+    equipped[0].spd = 10000
     player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], equipped, nitzamon_list, 0, world)
     nitzamon_pressed = None
     player.camera()
@@ -114,7 +115,7 @@ def main():
     enemy_nitzamon = Nitzamon.Nitzamon("Adi", 50, 50, 60, 30, 30, Constants.NPC_IMAGE, Constants.FIRE, [])
 
     dialogs = [Dialogue.Dialogue("Hi", 0), Dialogue.Dialogue("H1", 0)]
-    enemy = Enemy.Enemy("Adi", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], dialogs, world)
+    enemy = Enemy.Enemy("Adi", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], dialogs, world, False)
 
     fight_menu = Fight.FightMenu(player.nitzamons, enemy.nitzamons)
     clock = pygame.time.Clock()
@@ -130,7 +131,7 @@ def main():
                 if fight_menu.in_fight:
                     fight_menu.run(pygame.mouse.get_pos())
 
-                    if fight_menu.topRight_rect.collidepoint(pygame.mouse.get_pos()) and not fight_menu.attacking:
+                    if fight_menu.topRight_rect.collidepoint(pygame.mouse.get_pos()) and not fight_menu.attacking and fight_menu.playerTurn:
                         fight_menu.changing_nitzamons = True
 
                     if fight_menu.changing_nitzamons:
@@ -139,10 +140,10 @@ def main():
                             fight_menu.change_nitzamons(replacing)
                             fight_menu.changing_nitzamons = False
 
-                    if fight_menu.topLeft_rect.collidepoint(pygame.mouse.get_pos()):
+                    if fight_menu.topLeft_rect.collidepoint(pygame.mouse.get_pos()) and fight_menu.playerTurn:
                         fight_menu.attacking = True
 
-                    if fight_menu.attacking:
+                    if fight_menu.attacking and fight_menu.playerTurn:
                         fight_menu.attack(pygame.mouse.get_pos())
 
                 if Inventory.is_open and not (Inventory.info_open or Inventory.equip_open):

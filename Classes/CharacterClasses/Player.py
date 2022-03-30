@@ -63,7 +63,7 @@ class Player(NitzamonUser):
     def move(self, keys):
         if (keys[pygame.K_w] or keys[pygame.K_s]) and (keys[pygame.K_a] or keys[pygame.K_d]):  # Reducing fps when player moves diagonally
             if Constants.fps == Constants.FPS:
-                Constants.fps /= 2
+                Constants.fps = int(Constants.FPS / 2)
         else:
             Constants.fps = Constants.FPS
 
