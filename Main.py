@@ -222,6 +222,11 @@ def main():
 
         keys = pygame.key.get_pressed()
         if fight_menu.in_fight:
+            if fight_menu.player_won():
+                fight_menu.end_fight()
+            elif fight_menu.enemy_won():  # Two different if statements because we may want to add rewards when player wins
+                fight_menu.end_fight()
+            fight_menu.check_deaths()
             if not fight_menu.playerTurn:
                 if time.time() - fight_menu.enemy_attack_time >= 1:
                     fight_menu.enemy_attack()

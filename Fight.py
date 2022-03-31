@@ -3,7 +3,6 @@ import time
 import pygame
 import Constants
 import random
-import Inventory
 
 
 class FightMenu:
@@ -166,7 +165,6 @@ class FightMenu:
 
     def attack(self, pos):
         self.check_hovers(pos)
-        damage = 0
         attack_move = None
         if self.topLeft_rect.collidepoint(pos):
             attack_move = self.equipped_player_nitzamon.list_of_moves[0]
@@ -212,11 +210,8 @@ class FightMenu:
             bg = "Gemgem"
         elif nitzamon.name == Constants.HEADEA or nitzamon.name == Constants.MANAGEREON or nitzamon.name == Constants.MASMERION:
             bg = "Masmer"
-        # else:
-        #     bg = "nitzagram"
-
-        else:  # leave it here until nitzagram background is ready
-            bg = "Gemgem"
+        else:
+            bg = "nitzagram"
 
         self.background = pygame.transform.scale(pygame.image.load(f"Assets\\{bg} bg.png"), (Constants.X, Constants.Y - 250))
         self.in_fight = True
@@ -255,3 +250,46 @@ class FightMenu:
         self.equipped_player_nitzamon.hp -= damage
         self.change_info()
         self.playerTurn = True
+
+    def check_deaths(self):
+        if self.equipped_player_nitzamon.hp <= 0:
+            for nitzamon in self.player_nitzamons:
+                if nitzamon.hp > 0:
+                    self.equipped_player_nitzamon = nitzamon
+
+        if self.equipped_enemy_nitzamon.hp <= 0:
+            if type(self.enemy_nitzamons) == list:
+                for nitzamon in self.enemy_nitzamons:
+                    if nitzamon.hp > 0:
+                        self.equipped_enemy_nitzamon = nitzamon
+
+            else:
+                self.end_fight()
+        self.change_info()
+        if self.attacking:
+            self.draw_screen()
+
+    def end_fight(self):
+        self.in_fight = False
+        self.attacking = False
+        self.changing_nitzamons = False
+        self.fight_start = time.time()
+
+    def player_won(self):
+        if self.equipped_enemy_nitzamon.hp <= 0:
+            if type(self.enemy_nitzamons) == list:
+                for nitzamon in self.enemy_nitzamons:
+                    if nitzamon.hp > 0:
+                        return False
+                return True
+            else:
+                return True
+        return False
+
+    def enemy_won(self):
+        if self.equipped_player_nitzamon <= 0:
+            for nitzamon in self.player_nitzamons:
+                if nitzamon.hp > 0:
+                    return False
+            return True
+        return False
