@@ -80,25 +80,26 @@ def random_nitzamon():
     attack = level + random.randint(0, 50)
     speed = level + random.randint(0, 20)
     element = Constants.NITZAMON_ELEMENTS_DICT[name]
+    fire_moves = Constants.FIRE_MOVES
+    water_moves = Constants.WATER_MOVES
+    earth_moves = Constants.EARTH_MOVES
+    normal_moves = Constants.NORMAL_MOVES
+
     if element == Constants.FIRE:
-        move1 = random.choice(Constants.FIRE_MOVES)
-        move2 = random.choice(Constants.FIRE_MOVES)
-        while move1 == move2:
-            move2 = random.choice(Constants.FIRE_MOVES)
+        move1 = random.choice(fire_moves)
+        fire_moves.remove(move1)
+        move2 = random.choice(fire_moves)
     elif element == Constants.EARTH:
-        move1 = random.choice(Constants.EARTH_MOVES)
-        move2 = random.choice(Constants.EARTH_MOVES)
-        while move1 == move2:
-            move2 = random.choice(Constants.EARTH_MOVES)
+        move1 = random.choice(earth_moves)
+        earth_moves.remove(move1)
+        move2 = random.choice(earth_moves)
     else:
-        move1 = random.choice(Constants.WATER_MOVES)
-        move2 = random.choice(Constants.WATER_MOVES)
-        while move1 == move2:
-            move2 = random.choice(Constants.WATER_MOVES)
-    move3 = random.choice(Constants.NORMAL_MOVES)
-    move4 = random.choice(Constants.NORMAL_MOVES)
-    while move3 == move4:
-        move2 = random.choice(Constants.NORMAL_MOVES)
+        move1 = random.choice(water_moves)
+        water_moves.remove(move1)
+        move2 = random.choice(water_moves)
+    move3 = random.choice(normal_moves)
+    normal_moves.remove(move3)
+    move4 = random.choice(normal_moves)
 
     return Nitzamon.Nitzamon(name, level, health, health, attack, speed, sprite, element,
                              [move1, move2, move3, move4])
