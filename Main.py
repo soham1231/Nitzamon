@@ -130,7 +130,8 @@ def main():
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if fight_menu.in_fight:
-                    fight_menu.run(pygame.mouse.get_pos())
+                    if fight_menu.playerTurn and not fight_menu.attacking:
+                        fight_menu.run(pygame.mouse.get_pos())
 
                     if fight_menu.topRight_rect.collidepoint(pygame.mouse.get_pos()) and not fight_menu.attacking:
                         fight_menu.changing_nitzamons = True
@@ -142,7 +143,7 @@ def main():
                             fight_menu.changing_nitzamons = False
                     if fight_menu.attacking and fight_menu.playerTurn:
                         fight_menu.attack(pygame.mouse.get_pos())
-                    if fight_menu.topLeft_rect.collidepoint(pygame.mouse.get_pos()):
+                    if fight_menu.topLeft_rect.collidepoint(pygame.mouse.get_pos()) and not fight_menu.changing_nitzamons:
                         fight_menu.attacking = True
 
                 if Inventory.is_open and not (Inventory.info_open or Inventory.equip_open):
@@ -194,8 +195,8 @@ def main():
         keys = pygame.key.get_pressed()
         if fight_menu.in_fight:
             if not fight_menu.playerTurn:
-                time.sleep(2)
-                fight_menu.enemy_attack()
+                if time.time() - fight_menu.enemy_attack_time >= 1:
+                    fight_menu.enemy_attack()
             if fight_menu.changing_nitzamons:
                 Inventory.draw_inventory(player.nitzamons)
             elif fight_menu.attacking:

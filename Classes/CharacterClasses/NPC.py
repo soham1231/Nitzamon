@@ -17,7 +17,7 @@ class NPC(Character):
                 ((player.pos[0] == self.pos[0]) and (player.pos[1] == self.pos[1] - 1)):
             pygame.draw.rect(WIN, BLACK, pygame.Rect((0, (3 * Y / 4)), (X, (3 * Y / 4))))
             font = pygame.font.SysFont("Comic Sans MS", 25)
-            npc_sprite = pygame.transform.scale(self.sprite, (X / 4, Y / 4m))
+            npc_sprite = pygame.transform.scale(self.sprite, (int(X / 4), int(Y / 4)))
             text = font.render(self.small_talk[0].text, True, (255, 255, 255))
             WIN.blit(npc_sprite, (X - npc_sprite.get_width(), (3 * Y / 4) + 10))
             WIN.blit(text, (10, (3 * Y / 4) + 10))
