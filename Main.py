@@ -87,19 +87,24 @@ def random_nitzamon():
 
     if element == Constants.FIRE:
         move1 = random.choice(fire_moves)
-        fire_moves.remove(move1)
+        tmp_move = fire_moves.pop(fire_moves.index(move1))
         move2 = random.choice(fire_moves)
+        fire_moves.append(tmp_move)
     elif element == Constants.EARTH:
         move1 = random.choice(earth_moves)
-        earth_moves.remove(move1)
+        tmp_move = fire_moves.pop(earth_moves.index(move1))
         move2 = random.choice(earth_moves)
+        fire_moves.append(tmp_move)
     else:
         move1 = random.choice(water_moves)
-        water_moves.remove(move1)
+        tmp_move = fire_moves.pop(water_moves.index(move1))
         move2 = random.choice(water_moves)
+        fire_moves.append(tmp_move)
+
     move3 = random.choice(normal_moves)
-    normal_moves.remove(move3)
+    tmp_move = fire_moves.pop(normal_moves.index(move3))
     move4 = random.choice(normal_moves)
+    fire_moves.append(tmp_move)
 
     return Nitzamon.Nitzamon(name, level, health, health, attack, speed, sprite, element,
                              [move1, move2, move3, move4])
@@ -189,6 +194,8 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     if fight_menu.in_fight and fight_menu.changing_nitzamons:
                         fight_menu.changing_nitzamons = False
+                    if fight_menu.in_fight and fight_menu.attacking:
+                        fight_menu.attacking = False
                     elif Inventory.equip_open:
                         Inventory.equip_open = False
                     elif Inventory.info_open:
