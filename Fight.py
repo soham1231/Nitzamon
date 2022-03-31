@@ -181,7 +181,7 @@ class FightMenu:
         if attack_move is None:
             return
 
-        damage = (self.equipped_player_nitzamon.dmg + attack_move.dmg) / 2
+        damage = int((self.equipped_player_nitzamon.dmg + attack_move.dmg) / 2)
         if attack_move.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Super effective":
             damage *= 2
         elif attack_move.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Not very effective":
@@ -216,6 +216,7 @@ class FightMenu:
         self.background = pygame.transform.scale(pygame.image.load(f"Assets\\{bg} bg.png"), (Constants.X, Constants.Y - 250))
         self.in_fight = True
         self.playerTurn = self.equipped_player_nitzamon.spd >= self.equipped_enemy_nitzamon.spd
+        self.enemy_attack_time = time.time()
 
     def start_fight_enemy(self, player_nitzamons, enemy_nitzamons):
         self.player_nitzamons = player_nitzamons
@@ -224,6 +225,7 @@ class FightMenu:
         self.equipped_enemy_nitzamon = enemy_nitzamons[0]
         self.in_fight = True
         self.playerTurn = self.equipped_player_nitzamon.spd >= self.equipped_enemy_nitzamon.spd
+        self.enemy_attack_time = time.time()
 
     def change_info(self):
         self.player_nitzamon_name = self.font.render(f"Name: {self.equipped_player_nitzamon.name}", True, Constants.BLACK)
@@ -242,7 +244,7 @@ class FightMenu:
         moves = [move1, move2, move3, move4]
 
         chosen_move = random.choice(moves)
-        damage = (self.equipped_player_nitzamon.dmg + chosen_move.dmg) / 2
+        damage = int((self.equipped_player_nitzamon.dmg + chosen_move.dmg) / 2)
         if chosen_move.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Super effective":
             damage *= 2
         elif chosen_move.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Not very effective":
@@ -253,18 +255,20 @@ class FightMenu:
 
     def check_deaths(self):
         if self.equipped_player_nitzamon.hp <= 0:
+            self.equipped_player_nitzamon.hp = 0
             for nitzamon in self.player_nitzamons:
                 if nitzamon.hp > 0:
                     self.equipped_player_nitzamon = nitzamon
 
         if self.equipped_enemy_nitzamon.hp <= 0:
+            self.equipped_enemy_nitzamon.hp = 0
             if type(self.enemy_nitzamons) == list:
                 for nitzamon in self.enemy_nitzamons:
                     if nitzamon.hp > 0:
                         self.equipped_enemy_nitzamon = nitzamon
-
             else:
                 self.end_fight()
+
         self.change_info()
         if self.attacking:
             self.draw_screen()
@@ -281,15 +285,18 @@ class FightMenu:
                 for nitzamon in self.enemy_nitzamons:
                     if nitzamon.hp > 0:
                         return False
+                self.equipped_enemy_nitzamon.hp = 0
                 return True
             else:
+                self.equipped_enemy_nitzamon.hp = 0
                 return True
         return False
 
     def enemy_won(self):
-        if self.equipped_player_nitzamon <= 0:
+        if self.equipped_player_nitzamon.hp <= 0:
             for nitzamon in self.player_nitzamons:
                 if nitzamon.hp > 0:
                     return False
+            self.equipped_player_nitzamon.hp = 0
             return True
         return False

@@ -65,19 +65,12 @@ def draw_npcs(npc_list, camera_pos):  # NUMBER OF N'S ON THE MAP MUST BE EQUAL T
         npc.draw(camera_pos)
 
 
-def random_move():
-    element = random.choice(["fire", "water", "earth"])
-    dmg = random.choice([1, 2, 3, 4])
-    name = random.choice(["hug", "kiss", "pet", "touch"])
-    return Move.Move(element, dmg, name)
-
-
 def random_nitzamon():
     name = random.choice(Constants.NAMES)
     sprite = pygame.image.load(f"Assets\\Nitzamons\\{name}.png")
     level = random.randint(1, 100)
-    health = level + random.randint(50, 400)
-    attack = level + random.randint(0, 50)
+    health = level + random.randint(level * 2, level * 4)
+    attack = level + random.randint(0, int(level/2))
     speed = level + random.randint(0, 20)
     element = Constants.NITZAMON_ELEMENTS_DICT[name]
     fire_moves = Constants.FIRE_MOVES
@@ -134,7 +127,6 @@ def main():
         nitzamon_list.append(random_nitzamon())
     for i in range(3):
         equipped.append(random_nitzamon())
-    equipped[0].spd = 10000
     player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], equipped, nitzamon_list, 0, world)
     nitzamon_pressed = None
     player.camera()
@@ -216,8 +208,7 @@ def main():
 
         if world[player.pos[1]][player.pos[0]] == "T" and not fight_menu.in_fight:
             passed_time = time.time() - fight_menu.fight_start
-            if random.randint(1,
-                              100) >= 90 and passed_time > Constants.FIGHT_COOL_DOWN:  # 1% chance of fighting and checking if enough time passed since the last fight
+            if random.randint(1, 100) >= 90 and passed_time > Constants.FIGHT_COOL_DOWN:  # 1% chance of fighting and checking if enough time passed since the last fight
                 fight_menu.start_fight_single(player.nitzamons, random_nitzamon())
 
         keys = pygame.key.get_pressed()
