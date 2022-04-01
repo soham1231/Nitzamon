@@ -60,6 +60,13 @@ EARTH_MOVES = [EARTHQUAKE, LEAFBLADE, ROCKSLIDE]
 WATER_MOVES = [SPIT, WATERFALL, GEYSER]
 NORMAL_MOVES = [SCRATCH, PUNCH, SLASH]
 
+# Nitzaballs
+NITZABALL_CHANCES = {"Normal": 0.1,
+                     "Gem": 0.2,
+                     "Phone": 0.4,
+                     "Masmer": 0.6,
+                     "Ultimate": 1}
+
 # Images
 GRASS1_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Grass1.png"), (SCALE, SCALE))
 GRASS2_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Grass2.png"), (SCALE, SCALE))
