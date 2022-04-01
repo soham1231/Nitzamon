@@ -50,10 +50,12 @@ class FightMenu:
         self.player_nitzamon_name = self.font.render(f"Name: {self.equipped_player_nitzamon.name}", True, Constants.BLACK)
         self.player_nitzamon_hp = self.font.render(f"HP: {self.equipped_player_nitzamon.hp}/{self.equipped_player_nitzamon.max_hp}", True, Constants.BLACK)
         self.player_nitzamon_lvl = self.font.render(f"Level: {self.equipped_player_nitzamon.lvl}", True, Constants.BLACK)
+        self.player_nitzamon_element = self.font.render(f"Element: {self.equipped_player_nitzamon.element}", True, Constants.BLACK)
 
         self.enemy_nitzamon_name = self.font.render(f"Name: {self.equipped_enemy_nitzamon.name}", True, Constants.BLACK)
         self.enemy_nitzamon_hp = self.font.render(f"HP: {self.equipped_enemy_nitzamon.hp}/{self.equipped_enemy_nitzamon.max_hp}", True, Constants.BLACK)
         self.enemy_nitzamon_lvl = self.font.render(f"Level: {self.equipped_enemy_nitzamon.lvl}", True, Constants.BLACK)
+        self.enemy_nitzamon_element = self.font.render(f"Element: {self.equipped_enemy_nitzamon.element}", True, Constants.BLACK)
 
     def draw_screen(self):
         self.change_info()
@@ -84,15 +86,24 @@ class FightMenu:
                            (self.player_nitzamon_info.x + 10,
                             self.player_nitzamon_info.y + 30 + 2 * Constants.FIGHT_FONT_SIZE))
 
+        Constants.WIN.blit(self.player_nitzamon_element,
+                           (self.player_nitzamon_info.x + 10,
+                            self.player_nitzamon_info.y + 40 + 3 * Constants.FIGHT_FONT_SIZE))
+
         Constants.WIN.blit(self.enemy_nitzamon_name,
                            (self.enemy_nitzamon_info.x + 10, self.enemy_nitzamon_info.y + 10))
 
         Constants.WIN.blit(self.enemy_nitzamon_hp,
                            (self.enemy_nitzamon_info.x + 10,
                             self.enemy_nitzamon_info.y + 20 + Constants.FIGHT_FONT_SIZE))
+
         Constants.WIN.blit(self.enemy_nitzamon_lvl,
                            (self.enemy_nitzamon_info.x + 10,
                             self.enemy_nitzamon_info.y + 30 + 2 * Constants.FIGHT_FONT_SIZE))
+
+        Constants.WIN.blit(self.enemy_nitzamon_element,
+                           (self.enemy_nitzamon_info.x + 10,
+                            self.enemy_nitzamon_info.y + 40 + 3 * Constants.FIGHT_FONT_SIZE))
 
         player_nitzamon_sprite = pygame.transform.scale(self.equipped_player_nitzamon.sprite, (200, 200))
         enemy_nitzamon_sprite = pygame.transform.scale(self.equipped_enemy_nitzamon.sprite, (200, 200))
@@ -128,7 +139,8 @@ class FightMenu:
         move2 = self.font.render(self.equipped_player_nitzamon.list_of_moves[1].name, True, Constants.WHITE)
         move3 = self.font.render(self.equipped_player_nitzamon.list_of_moves[2].name, True, Constants.WHITE)
         move4 = self.font.render(self.equipped_player_nitzamon.list_of_moves[3].name, True, Constants.WHITE)
-
+        # if self.equipped_player_nitzamon.list_of_moves[0].element == Constants.FIRE:
+        #     pygame.draw.rect(Constants.WIN, (255, 0, 0), self.topLeft_rect)
         pygame.draw.rect(Constants.WIN, self.topLeft_rect_color, self.topLeft_rect)
         pygame.draw.rect(Constants.WIN, self.topRight_rect_color, self.topRight_rect)
         pygame.draw.rect(Constants.WIN, self.bottomLeft_rect_color, self.bottomLeft_rect)
@@ -154,15 +166,24 @@ class FightMenu:
                            (self.player_nitzamon_info.x + 10,
                             self.player_nitzamon_info.y + 30 + 2 * Constants.FIGHT_FONT_SIZE))
 
+        Constants.WIN.blit(self.player_nitzamon_element,
+                           (self.player_nitzamon_info.x + 10,
+                            self.player_nitzamon_info.y + 40 + 3 * Constants.FIGHT_FONT_SIZE))
+
         Constants.WIN.blit(self.enemy_nitzamon_name,
                            (self.enemy_nitzamon_info.x + 10, self.enemy_nitzamon_info.y + 10))
 
         Constants.WIN.blit(self.enemy_nitzamon_hp,
                            (self.enemy_nitzamon_info.x + 10,
                             self.enemy_nitzamon_info.y + 20 + Constants.FIGHT_FONT_SIZE))
+
         Constants.WIN.blit(self.enemy_nitzamon_lvl,
                            (self.enemy_nitzamon_info.x + 10,
                             self.enemy_nitzamon_info.y + 30 + 2 * Constants.FIGHT_FONT_SIZE))
+
+        Constants.WIN.blit(self.enemy_nitzamon_element,
+                           (self.enemy_nitzamon_info.x + 10,
+                            self.enemy_nitzamon_info.y + 40 + 3 * Constants.FIGHT_FONT_SIZE))
 
     def attack(self, pos):
         self.check_hovers(pos)
@@ -247,10 +268,12 @@ class FightMenu:
         self.player_nitzamon_name = self.font.render(f"Name: {self.equipped_player_nitzamon.name}", True, Constants.BLACK)
         self.player_nitzamon_hp = self.font.render(f"HP: {self.equipped_player_nitzamon.hp}/{self.equipped_player_nitzamon.max_hp}", True, Constants.BLACK)
         self.player_nitzamon_lvl = self.font.render(f"Level: {self.equipped_player_nitzamon.lvl}", True, Constants.BLACK)
+        self.player_nitzamon_element = self.font.render(f"Element: {self.equipped_player_nitzamon.element}", True, Constants.BLACK)
 
         self.enemy_nitzamon_name = self.font.render(f"Name: {self.equipped_enemy_nitzamon.name}", True, Constants.BLACK)
         self.enemy_nitzamon_hp = self.font.render(f"HP: {self.equipped_enemy_nitzamon.hp}/{self.equipped_enemy_nitzamon.max_hp}", True, Constants.BLACK)
         self.enemy_nitzamon_lvl = self.font.render(f"Level: {self.equipped_enemy_nitzamon.lvl}", True, Constants.BLACK)
+        self.enemy_nitzamon_element = self.font.render(f"Element: {self.equipped_enemy_nitzamon.element}", True, Constants.BLACK)
 
     # Enemy attacking
     def enemy_attack(self):

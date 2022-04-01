@@ -110,8 +110,9 @@ class Player(NitzamonUser):
         self.nitzamon_bag.insert(old_index, new_nitzamon)
         self.nitzamon_bag.append(old_nitzamon)
 
+        old_index = self.nitzamons.index(old_nitzamon)
         self.nitzamons.remove(old_nitzamon)
-        self.nitzamons.append(new_nitzamon)
+        self.nitzamons.insert(old_index, new_nitzamon)
 
     def delete_nitzamon(self, nitzamon):
         self.nitzamon_bag.remove(nitzamon)

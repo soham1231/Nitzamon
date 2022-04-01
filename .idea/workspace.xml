@@ -19,10 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="trying to fix bug">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="fixed bug">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_03_2022_8_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_03_2022_8_48__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_03_2022_16_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_03_2022_16_46__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_03_2022_21_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_03_2022_21_17__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_03_2022_22_12__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_03_2022_22_12__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_10_27__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_10_27__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_17_25__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_17_25__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_18_09__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_18_09__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/Player.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +56,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Constants.py" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="ProjectId" id="269jaZhTCQBB0sPIEvgCsT2kQsX" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -66,7 +72,6 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ADMIN\Desktop\nitzanim\nitzamon\Assets\Nitzamons" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\NitzamonClasses" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\Character Classes" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\Nitzamon Classes" />
@@ -116,13 +121,13 @@
       <method v="2" />
     </configuration>
     <configuration name="Game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="NITZAMON" />
+      <module name="Nitzamon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\ADMIN\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\USER\AppData\Local\Programs\Python\Python39\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -346,37 +351,61 @@
       <option name="presentableId" value="LOCAL‎00020" />
       <updated>1648486451446</updated>
     </task>
-    <task id="LOCAL‎00021" summary="can change nitzamons mid fight">
-      <created>1648490113264</created>
+    <task id="LOCAL‎00021" summary="added another nitzamon">
+      <created>1648567636860</created>
       <option name="number" value="LOCAL‎00021" />
       <option name="presentableId" value="LOCAL‎00021" />
-      <updated>1648490113264</updated>
+      <updated>1648567636861</updated>
     </task>
-    <task id="LOCAL‎00022" summary="changed some names and added name constants">
-      <created>1648578588608</created>
+    <task id="LOCAL‎00022" summary="someone changed the fullscreen??">
+      <created>1648568783756</created>
       <option name="number" value="LOCAL‎00022" />
       <option name="presentableId" value="LOCAL‎00022" />
-      <updated>1648578588608</updated>
+      <updated>1648568783756</updated>
     </task>
-    <task id="LOCAL‎00023" summary="added attack">
-      <created>1648653106041</created>
+    <task id="LOCAL‎00023" summary="Added nitzamons and start fight function">
+      <created>1648572795858</created>
       <option name="number" value="LOCAL‎00023" />
       <option name="presentableId" value="LOCAL‎00023" />
-      <updated>1648653106041</updated>
+      <updated>1648572795858</updated>
     </task>
-    <task id="LOCAL‎00024" summary="fixed bugs, added player turn">
-      <created>1648655261176</created>
+    <task id="LOCAL‎00024" summary="added backgrounds">
+      <created>1648575483648</created>
       <option name="number" value="LOCAL‎00024" />
       <option name="presentableId" value="LOCAL‎00024" />
-      <updated>1648655261176</updated>
+      <updated>1648575483648</updated>
     </task>
-    <task id="LOCAL‎00025" summary="added moves (HEIL NITZLER)">
-      <created>1648659373284</created>
+    <task id="LOCAL‎00025" summary="fixed some bugs, made the attack function look better">
+      <created>1648733408225</created>
       <option name="number" value="LOCAL‎00025" />
       <option name="presentableId" value="LOCAL‎00025" />
-      <updated>1648659373284</updated>
+      <updated>1648733408225</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL‎00026" summary="added win conditions for fight">
+      <created>1648738004023</created>
+      <option name="number" value="LOCAL‎00026" />
+      <option name="presentableId" value="LOCAL‎00026" />
+      <updated>1648738004023</updated>
+    </task>
+    <task id="LOCAL‎00027" summary="health is now always int">
+      <created>1648740510802</created>
+      <option name="number" value="LOCAL‎00027" />
+      <option name="presentableId" value="LOCAL‎00027" />
+      <updated>1648740510802</updated>
+    </task>
+    <task id="LOCAL‎00028" summary="I put sounds">
+      <created>1648802165268</created>
+      <option name="number" value="LOCAL‎00028" />
+      <option name="presentableId" value="LOCAL‎00028" />
+      <updated>1648802165268</updated>
+    </task>
+    <task id="LOCAL‎00029" summary="fixed bug">
+      <created>1648804244267</created>
+      <option name="number" value="LOCAL‎00029" />
+      <option name="presentableId" value="LOCAL‎00029" />
+      <updated>1648804244267</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -403,9 +432,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Nitzamon classes&#10;im gay" />
-    <MESSAGE value="added player movement and check in bounds of map" />
-    <MESSAGE value="changed a small bug in camera" />
     <MESSAGE value="Pushed World1.txt" />
     <MESSAGE value="REDUCED THE LAG SO MUCH ITS LIKE THE MOST OPTIMIZED GAME EVER&#10;and added fps" />
     <MESSAGE value="When player goes diagonally the fps is halved" />
@@ -422,83 +448,15 @@
     <MESSAGE value="can change the equipped nitzamon" />
     <MESSAGE value="Added the delete button" />
     <MESSAGE value="can open the inventory in fight" />
-    <MESSAGE value="can change nitzamons mid fight" />
-    <MESSAGE value="changed some names and added name constants" />
-    <MESSAGE value="added attack" />
-    <MESSAGE value="fixed bugs, added player turn" />
-    <MESSAGE value="added moves (HEIL NITZLER)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added moves (HEIL NITZLER)" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1648731915270">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1648731915270" />
-    <state x="426" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1648823024794">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="426" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1648823024794" />
-    <state width="672" height="144" key="GridCell.Tab.0.bottom" timestamp="1648824664568">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="672" height="144" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1648824664568" />
-    <state width="672" height="144" key="GridCell.Tab.0.center" timestamp="1648824664567">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="672" height="144" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1648824664567" />
-    <state width="672" height="144" key="GridCell.Tab.0.left" timestamp="1648824664567">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="672" height="144" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1648824664567" />
-    <state width="672" height="144" key="GridCell.Tab.0.right" timestamp="1648824664568">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="672" height="144" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1648824664568" />
-    <state width="672" height="223" key="GridCell.Tab.1.bottom" timestamp="1648822893668">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="672" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1648822893668" />
-    <state width="672" height="223" key="GridCell.Tab.1.center" timestamp="1648822893668">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="672" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1648822893668" />
-    <state width="672" height="223" key="GridCell.Tab.1.left" timestamp="1648822893667">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="672" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1648822893667" />
-    <state width="672" height="223" key="GridCell.Tab.1.right" timestamp="1648822893668">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="672" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1648822893668" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1648824929651">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1648824929651" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>96</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>95</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>97</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>66</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="added another nitzamon" />
+    <MESSAGE value="someone changed the fullscreen??" />
+    <MESSAGE value="Added nitzamons and start fight function" />
+    <MESSAGE value="added backgrounds" />
+    <MESSAGE value="fixed some bugs, made the attack function look better" />
+    <MESSAGE value="added win conditions for fight" />
+    <MESSAGE value="health is now always int" />
+    <MESSAGE value="I put sounds" />
+    <MESSAGE value="fixed bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bug" />
   </component>
 </project>
