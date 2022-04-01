@@ -181,6 +181,8 @@ class FightMenu:
         if attack_move is None:
             return
 
+        attack_move.sound.play()
+
         damage = int((self.equipped_player_nitzamon.dmg + attack_move.dmg) / 2)
         if attack_move.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Super effective":
             damage *= 2
@@ -196,6 +198,7 @@ class FightMenu:
         self.equipped_player_nitzamon = new_nitzamon
         self.playerTurn = False
         self.enemy_attack_time = time.time()
+        self.equipped_player_nitzamon.entrance_sound.play()
 
     def start_fight_single(self, player_nitzamons, nitzamon):
         self.player_nitzamons = player_nitzamons
@@ -211,12 +214,16 @@ class FightMenu:
         elif nitzamon.name == Constants.HEADEA or nitzamon.name == Constants.MANAGEREON or nitzamon.name == Constants.MASMERION:
             bg = "Masmer"
         else:
-            bg = "nitzagram"
+            bg = "Nitzagram"
 
         self.background = pygame.transform.scale(pygame.image.load(f"Assets\\{bg} bg.png"), (Constants.X, Constants.Y - 250))
         self.in_fight = True
         self.playerTurn = self.equipped_player_nitzamon.spd >= self.equipped_enemy_nitzamon.spd
-        self.enemy_attack_time = time.time()
+        if self.playerTurn:
+            self.enemy_attack_time = 0
+        else:
+            self.enemy_attack_time = time.time()
+        self.equipped_player_nitzamon.entrance_sound.play()
 
     def start_fight_enemy(self, player_nitzamons, enemy_nitzamons):
         self.player_nitzamons = player_nitzamons
@@ -225,7 +232,12 @@ class FightMenu:
         self.equipped_enemy_nitzamon = enemy_nitzamons[0]
         self.in_fight = True
         self.playerTurn = self.equipped_player_nitzamon.spd >= self.equipped_enemy_nitzamon.spd
-        self.enemy_attack_time = time.time()
+        if self.playerTurn:
+            self.enemy_attack_time = 0
+        else:
+            self.enemy_attack_time = time.time()
+
+        self.equipped_player_nitzamon.entrance_sound.play()
 
     def change_info(self):
         self.player_nitzamon_name = self.font.render(f"Name: {self.equipped_player_nitzamon.name}", True, Constants.BLACK)
@@ -244,11 +256,14 @@ class FightMenu:
         moves = [move1, move2, move3, move4]
 
         chosen_move = random.choice(moves)
+        chosen_move.sound.play()
+
         damage = int((self.equipped_player_nitzamon.dmg + chosen_move.dmg) / 2)
         if chosen_move.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Super effective":
             damage *= 2
         elif chosen_move.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Not very effective":
             damage = int(damage * 0.5)
+
         self.equipped_player_nitzamon.hp -= damage
         self.change_info()
         self.playerTurn = True
@@ -256,16 +271,20 @@ class FightMenu:
     def check_deaths(self):
         if self.equipped_player_nitzamon.hp <= 0:
             self.equipped_player_nitzamon.hp = 0
+            self.equipped_player_nitzamon.death_sound.play()
             for nitzamon in self.player_nitzamons:
                 if nitzamon.hp > 0:
                     self.equipped_player_nitzamon = nitzamon
+                    self.equipped_player_nitzamon.entrance_sound.play()
 
         if self.equipped_enemy_nitzamon.hp <= 0:
             self.equipped_enemy_nitzamon.hp = 0
+            self.equipped_enemy_nitzamon.death_sound.play()
             if type(self.enemy_nitzamons) == list:
                 for nitzamon in self.enemy_nitzamons:
                     if nitzamon.hp > 0:
                         self.equipped_enemy_nitzamon = nitzamon
+                        self.equipped_enemy_nitzamon.entrance_sound.play()
             else:
                 self.end_fight()
 

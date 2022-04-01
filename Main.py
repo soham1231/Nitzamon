@@ -98,9 +98,11 @@ def random_nitzamon():
     tmp_move = fire_moves.pop(normal_moves.index(move3))
     move4 = random.choice(normal_moves)
     fire_moves.append(tmp_move)
+    entrance_sound = pygame.mixer.Sound(f"Assets\\Sounds\\Fight Entrance\\{name}.mp3")
+    death_sound = pygame.mixer.Sound(f"Assets\\Sounds\\Death\\{name}.mp3")
 
     return Nitzamon.Nitzamon(name, level, health, health, attack, speed, sprite, element,
-                             [move1, move2, move3, move4])
+                             [move1, move2, move3, move4], entrance_sound, death_sound)
 
 
 def save(player, enemy):
@@ -131,7 +133,7 @@ def main():
     nitzamon_pressed = None
     player.camera()
 
-    enemy_nitzamon = Nitzamon.Nitzamon("Adi", 50, 50, 60, 30, 30, Constants.NPC_IMAGE, Constants.FIRE, [])
+    enemy_nitzamon = Nitzamon.Nitzamon("Adi", 50, 50, 60, 30, 30, Constants.NPC_IMAGE, Constants.FIRE, [], 0, 0)  # Two last arguments are supposed to be sounds
 
     dialogs = [Dialogue.Dialogue("Hi", 0), Dialogue.Dialogue("H1", 0)]
     enemy = Enemy.Enemy("Adi", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], dialogs, world, False)

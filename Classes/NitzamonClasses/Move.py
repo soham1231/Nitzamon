@@ -1,8 +1,9 @@
 class Move:
-    def __init__(self, element, dmg, name):
+    def __init__(self, element, dmg, name, sound):
         self.element = element
         self.dmg = dmg
         self.name = name
+        self.sound = sound
 
     def get_effectiveness(self, enemy_type):
         if self.element == "water":
