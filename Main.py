@@ -6,7 +6,6 @@ import json
 import Constants
 from Constants import WIN
 from Classes.NitzamonClasses import Nitzamon
-from Classes.NitzamonClasses import Move
 from Worlds import WorldFunctions
 import Fight
 from Classes.CharacterClasses import Dialogue, Enemy, Player, NPC
@@ -85,19 +84,19 @@ def random_nitzamon():
         fire_moves.append(tmp_move)
     elif element == Constants.EARTH:
         move1 = random.choice(earth_moves)
-        tmp_move = fire_moves.pop(earth_moves.index(move1))
+        tmp_move = earth_moves.pop(earth_moves.index(move1))
         move2 = random.choice(earth_moves)
-        fire_moves.append(tmp_move)
+        earth_moves.append(tmp_move)
     else:
         move1 = random.choice(water_moves)
-        tmp_move = fire_moves.pop(water_moves.index(move1))
+        tmp_move = water_moves.pop(water_moves.index(move1))
         move2 = random.choice(water_moves)
-        fire_moves.append(tmp_move)
+        water_moves.append(tmp_move)
 
     move3 = random.choice(normal_moves)
-    tmp_move = fire_moves.pop(normal_moves.index(move3))
+    tmp_move = normal_moves.pop(normal_moves.index(move3))
     move4 = random.choice(normal_moves)
-    fire_moves.append(tmp_move)
+    normal_moves.append(tmp_move)
     entrance_sound = pygame.mixer.Sound(f"Assets\\Sounds\\Fight Entrance\\{name}.mp3")
     death_sound = pygame.mixer.Sound(f"Assets\\Sounds\\Death\\{name}.mp3")
 
