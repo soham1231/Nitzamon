@@ -51,7 +51,7 @@ def draw_minimap(world, player):
 
 
 # npcs
-# guide: create a new npc, and add it to npc_list
+# guide: create a new npc and add it to npc_list
 world1 = WorldFunctions.read_world(Constants.WORLD1_PATH)
 NPC_SPRITE_RONI = pygame.transform.scale(pygame.image.load("Assets\\Characters\\NPCS\\Roni.jpg"),
                                          (Constants.SCALE, Constants.SCALE))
@@ -59,8 +59,8 @@ roni = NPC.NPC("Roni", NPC_SPRITE_RONI, (5, 5), [], [Dialogue.Dialogue("HI! \n H
 npc_list = [roni]
 
 
-def draw_npcs(npc_list, camera_pos):  # NUMBER OF N'S ON THE MAP MUST BE EQUAL TO NUMBER OF NPCS!
-    for npc in npc_list:
+def draw_npcs(npcs, camera_pos):  # NUMBER OF N'S ON THE MAP MUST BE EQUAL TO NUMBER OF NPCS!
+    for npc in npcs:
         npc.draw(camera_pos)
 
 
@@ -132,7 +132,7 @@ def main():
     nitzamon_pressed = None
     player.camera()
 
-    enemy_nitzamon = Nitzamon.Nitzamon("Adi", 50, 50, 60, 30, 30, Constants.NPC_IMAGE, Constants.FIRE, [], 0, 0)  # Two last arguments are supposed to be sounds
+    enemy_nitzamon = random_nitzamon()
 
     dialogs = [Dialogue.Dialogue("Hi", 0), Dialogue.Dialogue("H1", 0)]
     enemy = Enemy.Enemy("Adi", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], dialogs, world, False)
@@ -220,7 +220,7 @@ def main():
                 fight_menu.end_fight()
             fight_menu.check_deaths()
             if not fight_menu.playerTurn:
-                if time.time() - fight_menu.enemy_attack_time >= 1:
+                if time.time() - fight_menu.enemy_attack_time >= 2:
                     fight_menu.enemy_attack()
             if fight_menu.changing_nitzamons:
                 Inventory.draw_inventory(player.nitzamons)
@@ -232,6 +232,7 @@ def main():
 
         elif keys[pygame.K_m]:
             draw_minimap(world, player)
+
         elif Inventory.is_open:
             Inventory.draw_inventory(player.nitzamon_bag)
             if Inventory.equip_open:

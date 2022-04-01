@@ -14,3 +14,6 @@ class Nitzamon:
         self.lvl = lvl
         self.entrance_sound = entrance_sound
         self.death_sound = death_sound
+
+        self.entrance_sound.set_volume(0.1)
+        self.death_sound.set_volume(0.1)

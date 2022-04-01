@@ -172,10 +172,10 @@ class FightMenu:
         elif self.topRight_rect.collidepoint(pos):
             attack_move = self.equipped_player_nitzamon.list_of_moves[1]
 
-        elif self.bottomRight_rect.collidepoint(pos):
+        elif self.bottomLeft_rect.collidepoint(pos):
             attack_move = self.equipped_player_nitzamon.list_of_moves[2]
 
-        elif self.bottomLeft_rect.collidepoint(pos):
+        elif self.bottomRight_rect.collidepoint(pos):
             attack_move = self.equipped_player_nitzamon.list_of_moves[3]
 
         if attack_move is None:

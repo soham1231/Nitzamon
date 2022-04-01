@@ -4,6 +4,7 @@ class Move:
         self.dmg = dmg
         self.name = name
         self.sound = sound
+        self.sound.set_volume(0.1)
 
     def get_effectiveness(self, enemy_type):
         if self.element == "water":

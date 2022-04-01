@@ -19,8 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="I put sounds">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="fixed bug">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_11_36_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_11_36__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_11_47_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_11_47__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/NitzamonClasses/Move.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/NitzamonClasses/Move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/NitzamonClasses/Nitzamon.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/NitzamonClasses/Nitzamon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fight.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -389,7 +396,13 @@
       <option name="presentableId" value="LOCAL‎00028" />
       <updated>1648802165268</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL‎00029" summary="fixed bug">
+      <created>1648804244267</created>
+      <option name="number" value="LOCAL‎00029" />
+      <option name="presentableId" value="LOCAL‎00029" />
+      <updated>1648804244267</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -416,7 +429,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="changed a small bug in camera" />
     <MESSAGE value="Pushed World1.txt" />
     <MESSAGE value="REDUCED THE LAG SO MUCH ITS LIKE THE MOST OPTIMIZED GAME EVER&#10;and added fps" />
     <MESSAGE value="When player goes diagonally the fps is halved" />
@@ -441,6 +453,7 @@
     <MESSAGE value="added win conditions for fight" />
     <MESSAGE value="health is now always int" />
     <MESSAGE value="I put sounds" />
-    <option name="LAST_COMMIT_MESSAGE" value="I put sounds" />
+    <MESSAGE value="fixed bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bug" />
   </component>
 </project>
