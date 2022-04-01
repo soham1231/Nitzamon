@@ -104,7 +104,7 @@ def random_nitzamon():
                              [move1, move2, move3, move4], entrance_sound, death_sound)
 
 
-def save(player, enemy):
+def save(player, enemy):  # Probably gonna remove it
     info = {
         "name": player.name,
         "pos": player.pos,
@@ -118,19 +118,28 @@ def save(player, enemy):
     print(nitzamon_info)
 
 
+def npcs_in_range(npcs, pos):  # Im thinking of moving it to Player class
+    for npc in npc_list:
+        if ((pos[0] == npc.pos[0] - 1) and (pos[1] == npc.pos[1])) or \
+                ((pos[0] == npc.pos[0]) and (pos[1] == npc.pos[1] + 1)) or \
+                ((pos[0] == npc.pos[0] + 1) and (pos[1] == npc.pos[1])) or \
+                ((pos[0] == npc.pos[0]) and (pos[1] == npc.pos[1] - 1)):
+            return True, npc
+    return False, None
+
+
 def main():
     world = WorldFunctions.read_world(Constants.WORLD1_PATH)
     talked_to = False
     npc = None
     nitzamon_list = []
     equipped = []
-    for i in range(20):
+    for i in range(20):  # Leave this until we add the ability to catch nitzamons
         nitzamon_list.append(random_nitzamon())
     for i in range(3):
         equipped.append(random_nitzamon())
     player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], equipped, nitzamon_list, 0, world)
     nitzamon_pressed = None
-    player.camera()
 
     enemy_nitzamon = random_nitzamon()
 
@@ -146,34 +155,23 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
-
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if fight_menu.in_fight:
-                    if fight_menu.playerTurn and not fight_menu.attacking:
-                        fight_menu.run(pygame.mouse.get_pos())
+                fight_menu.handle_events()
 
-                    if fight_menu.topRight_rect.collidepoint(pygame.mouse.get_pos()) and not fight_menu.attacking:
-                        fight_menu.changing_nitzamons = True
-
-                    if fight_menu.changing_nitzamons:
-                        replacing = Inventory.check_collision(pygame.mouse.get_pos(), fight_menu.player_nitzamons)
-                        if replacing is not None:
-                            fight_menu.change_nitzamons(replacing)
-                            fight_menu.changing_nitzamons = False
-                    if fight_menu.attacking and fight_menu.playerTurn:
-                        fight_menu.attack(pygame.mouse.get_pos())
-                    if fight_menu.topLeft_rect.collidepoint(pygame.mouse.get_pos()) and not fight_menu.changing_nitzamons:
-                        fight_menu.attacking = True
-
+                # Checking if the player pressed a nitzamon in inventory
                 if Inventory.is_open and not (Inventory.info_open or Inventory.equip_open):
                     nitzamon_pressed = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamon_bag)
                     if nitzamon_pressed is not None:
                         Inventory.info_open = True
+                # Checking if the player is pressing the "equip"
                 if Inventory.info_open and Inventory.equip_rect.collidepoint(pygame.mouse.get_pos()):
                     Inventory.equip_open = True
+                # Checking if the player is pressing the "remove" button
                 elif Inventory.info_open and Inventory.remove_rect.collidepoint(pygame.mouse.get_pos()):
                     player.delete_nitzamon(nitzamon_pressed)
                     Inventory.info_open = False
+                # If the player pressed the "equip" button, it will open the inventory again and check if the player
+                # Has pressed another nitzamon
                 if Inventory.equip_open:
                     new_nitzamon = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamon_bag)
                     if new_nitzamon is not None:
@@ -182,8 +180,10 @@ def main():
                         Inventory.info_open = False
 
             if event.type == pygame.KEYDOWN:
+                # If the player pressed 'e' it will either open or close the inventory
                 if event.key == pygame.K_e:
                     Inventory.is_open = not Inventory.is_open
+                # Going back to the menu before or quits the game
                 if event.key == pygame.K_ESCAPE:
                     if fight_menu.in_fight and fight_menu.changing_nitzamons:
                         fight_menu.changing_nitzamons = False
@@ -197,48 +197,33 @@ def main():
                         Inventory.is_open = False
                     else:
                         run = False
+                # If the player pressed the 'f' key it will check if npcs are nearby
                 if event.key == pygame.K_f:
-                    for npc in npc_list:
-                        if ((player.pos[0] == npc.pos[0] - 1) and (player.pos[1] == npc.pos[1])) or \
-                                ((player.pos[0] == npc.pos[0]) and (player.pos[1] == npc.pos[1] + 1)) or \
-                                ((player.pos[0] == npc.pos[0] + 1) and (player.pos[1] == npc.pos[1])) or \
-                                ((player.pos[0] == npc.pos[0]) and (player.pos[1] == npc.pos[1] - 1)):
-                            print(npc.name)
-                            talked_to = True
-                            break
-
+                    talked_to, npc = npcs_in_range(npc_list, player.pos)
+        # Checking if the player is walking on tall grass and not in fight
         if world[player.pos[1]][player.pos[0]] == "T" and not fight_menu.in_fight:
             passed_time = time.time() - fight_menu.fight_start
-            if random.randint(1, 100) >= 90 and passed_time > Constants.FIGHT_COOL_DOWN:  # 1% chance of fighting and checking if enough time passed since the last fight
+            # Checking if fight cooldown is over
+            if random.randint(1, 100) > 90 and passed_time > Constants.FIGHT_COOL_DOWN:  # 10% chance of fighting and checking if enough time passed since the last fight
                 fight_menu.start_fight_single(player.nitzamons, random_nitzamon())
 
         keys = pygame.key.get_pressed()
-        if fight_menu.in_fight:
-            if fight_menu.player_won():
-                fight_menu.end_fight()
-            elif fight_menu.enemy_won():  # Two different if statements because we may want to add rewards when player wins
-                fight_menu.end_fight()
-            fight_menu.check_deaths()
-            if not fight_menu.playerTurn:
-                if time.time() - fight_menu.enemy_attack_time >= 2:
-                    fight_menu.enemy_attack()
-            if fight_menu.changing_nitzamons:
-                Inventory.draw_inventory(player.nitzamons)
-            elif fight_menu.attacking:
-                fight_menu.draw_attack()
-            else:
-                fight_menu.draw_screen()
-            fight_menu.check_hovers(pygame.mouse.get_pos())
 
+        # If the player is in fight, check which screen to draw
+        if fight_menu.in_fight:
+            fight_menu.handle_fight_encounter()
+        # If the player pressed the 'm' key, draw minimap
         elif keys[pygame.K_m]:
             draw_minimap(world, player)
 
+        # If the inventory is open, check which screen to draw
         elif Inventory.is_open:
             Inventory.draw_inventory(player.nitzamon_bag)
             if Inventory.equip_open:
                 Inventory.draw_inventory(player.nitzamon_bag)
             elif Inventory.info_open:
                 Inventory.show_info(nitzamon_pressed)
+        # Draw the world
         else:
             player.camera()
             draw_world(world, player)
