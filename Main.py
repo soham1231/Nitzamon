@@ -129,6 +129,22 @@ def draw_starters():  # Leave this to Adi
     WIN.blit(masmerion_sprite, (Constants.X / 2 + 300, Constants.Y / 2 - 150))
 
 
+def choose_starters(player, pos):  # Leave this to Adi
+    nitzamon = None
+    if Constants.Y / 2 - 150 <= pos[1] <= Constants.Y / 2 + 50:
+        if Constants.X/2 - 500 <= pos[0] <= Constants.X/2 - 300:
+            nitzamon = Constants.NITZAPHONE_STARTER
+        elif Constants.X / 2 - 100 <= pos[0] <= Constants.X / 2 + 100:
+            nitzamon = Constants.GEM_TRIO_STARTER
+        elif Constants.X / 2 + 300 <= pos[0] <= Constants.X / 2 + 500:
+            nitzamon = Constants.MASMERION_STARTER
+
+    if nitzamon is not None:
+        # player.nitzamons.append(nitzamon)
+        return True
+    return False
+
+
 def main():
     world = WorldFunctions.read_world(Constants.WORLD1_PATH)
 
@@ -165,6 +181,10 @@ def main():
                 run = False
             if event.type == pygame.MOUSEBUTTONDOWN:
                 fight_menu.handle_events()
+
+                if choosing_starter:
+                    if choose_starters(player, pygame.mouse.get_pos()):
+                        choosing_starter = False
 
                 # Checking if the player pressed a nitzamon in inventory
                 if Inventory.is_open and not (Inventory.info_open or Inventory.equip_open):
