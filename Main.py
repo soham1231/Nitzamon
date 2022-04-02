@@ -50,15 +50,6 @@ def draw_minimap(world, player):
              (x_center + player.pos[0] * Constants.MINI_SCALE, y_center + player.pos[1] * Constants.MINI_SCALE))
 
 
-# npcs
-# guide: create a new npc and add it to npc_list
-world1 = WorldFunctions.read_world(Constants.WORLD1_PATH)
-NPC_SPRITE_RONI = pygame.transform.scale(pygame.image.load("Assets\\Characters\\NPCS\\Roni.jpg"),
-                                         (Constants.SCALE, Constants.SCALE))
-roni = NPC.NPC("Roni", NPC_SPRITE_RONI, (5, 5), [], [Dialogue.Dialogue("HI! \n HELLO!", None)], world1)
-npc_list = [roni]
-
-
 def draw_npcs(npcs, camera_pos):  # NUMBER OF N'S ON THE MAP MUST BE EQUAL TO NUMBER OF NPCS!
     for npc in npcs:
         npc.draw(camera_pos)
@@ -119,7 +110,7 @@ def save(player, enemy):  # Probably gonna remove it
 
 
 def npcs_in_range(npcs, pos):  # Im thinking of moving it to Player class
-    for npc in npc_list:
+    for npc in npcs:
         if ((pos[0] == npc.pos[0] - 1) and (pos[1] == npc.pos[1])) or \
                 ((pos[0] == npc.pos[0]) and (pos[1] == npc.pos[1] + 1)) or \
                 ((pos[0] == npc.pos[0] + 1) and (pos[1] == npc.pos[1])) or \
@@ -128,17 +119,33 @@ def npcs_in_range(npcs, pos):  # Im thinking of moving it to Player class
     return False, None
 
 
+def draw_starters():  # Leave this to Adi
+    WIN.fill(Constants.GREY)
+    nitzaphone_sprite = pygame.transform.scale(Constants.NITZAPHONE_STARTER.sprite, (200, 200))
+    gem_trio_sprite = pygame.transform.scale(Constants.GEM_TRIO_STARTER.sprite, (200, 200))
+    masmerion_sprite = pygame.transform.scale(Constants.MASMERION_STARTER.sprite, (200, 200))
+    WIN.blit(nitzaphone_sprite, (Constants.X / 2 - 500, Constants.Y / 2 - 150))
+    WIN.blit(gem_trio_sprite, (Constants.X / 2 - 100, Constants.Y / 2 - 150))
+    WIN.blit(masmerion_sprite, (Constants.X / 2 + 300, Constants.Y / 2 - 150))
+
+
 def main():
     world = WorldFunctions.read_world(Constants.WORLD1_PATH)
+
+    # npcs
+    # guide: create a new npc and add it to npc_list
+    roni = NPC.NPC("Roni", Constants.NPC_SPRITE_RONI, (5, 5), [], [Dialogue.Dialogue("HI! \n HELLO!", None)], world)
+    npc_list = [roni]
     talked_to = False
     npc = None
+
     nitzamon_list = []
     equipped = []
     for i in range(20):  # Leave this until we add the ability to catch nitzamons
         nitzamon_list.append(random_nitzamon())
     for i in range(3):
         equipped.append(random_nitzamon())
-    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], equipped, nitzamon_list, 0, world)
+    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], equipped, nitzamon_list, 0, world, {"Gem": 1})
     nitzamon_pressed = None
 
     enemy_nitzamon = random_nitzamon()
@@ -149,6 +156,7 @@ def main():
     fight_menu = Fight.FightMenu(player.nitzamons, enemy.nitzamons)
     clock = pygame.time.Clock()
 
+    choosing_starter = True
     run = True
     while run:
         clock.tick(Constants.fps)
@@ -200,6 +208,9 @@ def main():
                 # If the player pressed the 'f' key it will check if npcs are nearby
                 if event.key == pygame.K_f:
                     talked_to, npc = npcs_in_range(npc_list, player.pos)
+
+                if event.key == pygame.K_h:
+                    player.heal_nitzamons()
         # Checking if the player is walking on tall grass and not in fight
         if world[player.pos[1]][player.pos[0]] == "T" and not fight_menu.in_fight:
             passed_time = time.time() - fight_menu.fight_start
@@ -209,8 +220,10 @@ def main():
 
         keys = pygame.key.get_pressed()
 
+        if choosing_starter:
+            draw_starters()
         # If the player is in fight, check which screen to draw
-        if fight_menu.in_fight:
+        elif fight_menu.in_fight:
             fight_menu.handle_fight_encounter()
         # If the player pressed the 'm' key, draw minimap
         elif keys[pygame.K_m]:
