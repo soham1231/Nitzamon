@@ -216,7 +216,7 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     if fight_menu.in_fight and fight_menu.changing_nitzamons:
                         fight_menu.changing_nitzamons = False
-                    if fight_menu.in_fight and fight_menu.attacking:
+                    elif fight_menu.in_fight and fight_menu.attacking:
                         fight_menu.attacking = False
                     elif Inventory.equip_open:
                         Inventory.equip_open = False
