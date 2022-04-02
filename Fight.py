@@ -7,19 +7,20 @@ import random
 
 
 class FightMenu:
-    def __init__(self, player_nitzamons, enemy_nitzamons):
+    def __init__(self):
 
-        self.player_nitzamons = player_nitzamons
-        self.enemy_nitzamons = enemy_nitzamons
+        self.player_nitzamons = None
+        self.enemy_nitzamons = None
 
-        self.equipped_player_nitzamon = self.player_nitzamons[0]
-        self.equipped_enemy_nitzamon = self.enemy_nitzamons[0]
+        self.equipped_player_nitzamon = None
+        self.equipped_enemy_nitzamon = None
 
-        self.playerTurn = self.equipped_player_nitzamon.spd >= self.equipped_enemy_nitzamon.spd
+        self.playerTurn = None
         if self.playerTurn:
             self.enemy_attack_time = 0
         else:
             self.enemy_attack_time = time.time()
+        self.sound_delay = 0
         self.in_fight = False
         self.changing_nitzamons = False
         self.attacking = False
@@ -47,15 +48,15 @@ class FightMenu:
         self.catch_text = self.font.render("Catch", True, Constants.WHITE)
         self.run_text = self.font.render("Run", True, Constants.WHITE)
 
-        self.player_nitzamon_name = self.font.render(f"Name: {self.equipped_player_nitzamon.name}", True, Constants.BLACK)
-        self.player_nitzamon_hp = self.font.render(f"HP: {self.equipped_player_nitzamon.hp}/{self.equipped_player_nitzamon.max_hp}", True, Constants.BLACK)
-        self.player_nitzamon_lvl = self.font.render(f"Level: {self.equipped_player_nitzamon.lvl}", True, Constants.BLACK)
-        self.player_nitzamon_element = self.font.render(f"Element: {self.equipped_player_nitzamon.element}", True, Constants.BLACK)
+        self.player_nitzamon_name = None
+        self.player_nitzamon_hp = None
+        self.player_nitzamon_lvl = None
+        self.player_nitzamon_element = None
 
-        self.enemy_nitzamon_name = self.font.render(f"Name: {self.equipped_enemy_nitzamon.name}", True, Constants.BLACK)
-        self.enemy_nitzamon_hp = self.font.render(f"HP: {self.equipped_enemy_nitzamon.hp}/{self.equipped_enemy_nitzamon.max_hp}", True, Constants.BLACK)
-        self.enemy_nitzamon_lvl = self.font.render(f"Level: {self.equipped_enemy_nitzamon.lvl}", True, Constants.BLACK)
-        self.enemy_nitzamon_element = self.font.render(f"Element: {self.equipped_enemy_nitzamon.element}", True, Constants.BLACK)
+        self.enemy_nitzamon_name = None
+        self.enemy_nitzamon_hp = None
+        self.enemy_nitzamon_lvl = None
+        self.enemy_nitzamon_element = None
 
     def draw_screen(self):
         self.change_info()
@@ -215,12 +216,14 @@ class FightMenu:
 
         self.equipped_enemy_nitzamon.hp -= damage
         self.change_info()
+        self.sound_delay = time.time()
 
     def change_nitzamons(self, new_nitzamon):
         self.equipped_player_nitzamon = new_nitzamon
         self.playerTurn = False
         self.enemy_attack_time = time.time()
         self.equipped_player_nitzamon.entrance_sound.play()
+        self.sound_delay = time.time()
 
     def start_fight_single(self, player_nitzamons, nitzamon):
         self.player_nitzamons = player_nitzamons
@@ -246,6 +249,7 @@ class FightMenu:
             self.enemy_attack_time = 0
         else:
             self.enemy_attack_time = time.time()
+        self.sound_delay = time.time()
         self.equipped_player_nitzamon.entrance_sound.play()
 
     def start_fight_enemy(self, player_nitzamons, enemy_nitzamons):
@@ -261,6 +265,7 @@ class FightMenu:
         else:
             self.enemy_attack_time = time.time()
 
+        self.sound_delay = time.time()
         self.equipped_player_nitzamon.entrance_sound.play()
 
     # Changes the onScreen info
@@ -285,6 +290,7 @@ class FightMenu:
 
         chosen_move = random.choice(moves)
         chosen_move.sound.play()
+        self.sound_delay = time.time()
 
         # Calculating damage
         damage = int((self.equipped_player_nitzamon.dmg + chosen_move.dmg) / 2)
@@ -306,6 +312,7 @@ class FightMenu:
                 if nitzamon.hp > 0:
                     self.equipped_player_nitzamon = nitzamon
                     self.equipped_player_nitzamon.entrance_sound.play()
+                    self.sound_delay = time.time()
                     break
 
     def handle_events(self):
@@ -316,13 +323,14 @@ class FightMenu:
             if self.topRight_rect.collidepoint(pygame.mouse.get_pos()) and not self.attacking:
                 self.changing_nitzamons = True
 
-            if self.changing_nitzamons:
-                replacing = Inventory.check_collision(pygame.mouse.get_pos(), self.player_nitzamons)
-                if replacing is not None:
-                    self.change_nitzamons(replacing)
-                    self.changing_nitzamons = False
-            if self.attacking and self.playerTurn:
-                self.attack(pygame.mouse.get_pos())
+            if time.time() - self.sound_delay >= 2:
+                if self.changing_nitzamons:
+                    replacing = Inventory.check_collision(pygame.mouse.get_pos(), self.player_nitzamons)
+                    if replacing is not None:
+                        self.change_nitzamons(replacing)
+                        self.changing_nitzamons = False
+                if self.attacking and self.playerTurn:
+                    self.attack(pygame.mouse.get_pos())
             if self.topLeft_rect.collidepoint(pygame.mouse.get_pos()) and not self.changing_nitzamons:
                 self.attacking = True
 
@@ -331,7 +339,8 @@ class FightMenu:
             self.end_fight()
         elif self.enemy_won():  # Two different if statements because we may want to add rewards when player wins
             self.end_fight()
-        self.check_deaths()
+        if time.time() - self.sound_delay >= 2:
+            self.change_deaths()
         if not self.playerTurn:
             if time.time() - self.enemy_attack_time >= 2:
                 self.enemy_attack()
@@ -344,7 +353,7 @@ class FightMenu:
         self.check_hovers(pygame.mouse.get_pos())
 
     # If any of the nitzamons die(player or enemy) switch to a different one
-    def check_deaths(self):
+    def change_deaths(self):
         self.change_dead_player_nitzamons()
 
         if self.equipped_enemy_nitzamon.hp <= 0:
@@ -355,6 +364,7 @@ class FightMenu:
                     if nitzamon.hp > 0:
                         self.equipped_enemy_nitzamon = nitzamon
                         self.equipped_enemy_nitzamon.entrance_sound.play()
+                        self.sound_delay = time.time()
                         break
             else:
                 self.end_fight()
