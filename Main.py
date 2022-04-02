@@ -121,9 +121,29 @@ def npcs_in_range(npcs, pos):  # Im thinking of moving it to Player class
 
 def draw_starters():  # Leave this to Adi
     WIN.fill(Constants.GREY)
+    font = pygame.font.SysFont("Comic Sans MS", 128)
+    text = font.render("Choose your starter", True, Constants.WHITE)
+    WIN.blit(text, (Constants.X / 2 - text.get_width() / 2, 20))
+    font = pygame.font.SysFont("Comic Sans MS", 16)
+
     nitzaphone_sprite = pygame.transform.scale(Constants.NITZAPHONE_STARTER.sprite, (200, 200))
+    nitzaphone_name = font.render("Name: " + Constants.NITZAPHONE, True, Constants.WHITE)
+    nitzaphone_element = font.render("Element: " + Constants.NITZAMON_ELEMENTS_DICT[Constants.NITZAPHONE], True, Constants.WHITE)
+    WIN.blit(nitzaphone_name, (Constants.X / 2 - 500, 230 + nitzaphone_sprite.get_height()))
+    WIN.blit(nitzaphone_element, (Constants.X / 2 - 500, 250 + nitzaphone_sprite.get_height()))
+
     gem_trio_sprite = pygame.transform.scale(Constants.GEM_TRIO_STARTER.sprite, (200, 200))
+    nitzaphone_name = font.render("Name: " + Constants.GEM_TRIO, True, Constants.WHITE)
+    nitzaphone_element = font.render("Element: " + Constants.NITZAMON_ELEMENTS_DICT[Constants.GEM_TRIO], True, Constants.WHITE)
+    WIN.blit(nitzaphone_name, (Constants.X / 2 - 100, 230 + gem_trio_sprite.get_height()))
+    WIN.blit(nitzaphone_element, (Constants.X / 2 - 100, 250 + gem_trio_sprite.get_height()))
+
     masmerion_sprite = pygame.transform.scale(Constants.MASMERION_STARTER.sprite, (200, 200))
+    nitzaphone_name = font.render("Name: " + Constants.MASMERION, True, Constants.WHITE)
+    nitzaphone_element = font.render("Element: " + Constants.NITZAMON_ELEMENTS_DICT[Constants.MASMERION], True, Constants.WHITE)
+    WIN.blit(nitzaphone_name, (Constants.X / 2 + 300, 230 + masmerion_sprite.get_height()))
+    WIN.blit(nitzaphone_element, (Constants.X / 2 + 300, 250 + masmerion_sprite.get_height()))
+
     WIN.blit(nitzaphone_sprite, (Constants.X / 2 - 500, Constants.Y / 2 - 150))
     WIN.blit(gem_trio_sprite, (Constants.X / 2 - 100, Constants.Y / 2 - 150))
     WIN.blit(masmerion_sprite, (Constants.X / 2 + 300, Constants.Y / 2 - 150))

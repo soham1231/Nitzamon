@@ -19,9 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="PYCHARM">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="leaving the draw_starters and choose_starters to adi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/NitzamonUser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/NitzamonUser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -411,7 +410,13 @@
       <option name="presentableId" value="LOCAL‎00031" />
       <updated>1648828558724</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL‎00032" summary="leaving the draw_starters and choose_starters to adi">
+      <created>1648904891481</created>
+      <option name="number" value="LOCAL‎00032" />
+      <option name="presentableId" value="LOCAL‎00032" />
+      <updated>1648904891481</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -438,7 +443,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="When player goes diagonally the fps is halved" />
     <MESSAGE value="Added hovering color" />
     <MESSAGE value="Added fight info (bad looking code)" />
     <MESSAGE value="Added borders" />
@@ -463,28 +467,41 @@
     <MESSAGE value="fixed bug" />
     <MESSAGE value="added element info in fight screen and fixed a small bug" />
     <MESSAGE value="started working on nitzaball class and added nitzaball chances" />
-    <option name="LAST_COMMIT_MESSAGE" value="started working on nitzaball class and added nitzaball chances" />
+    <MESSAGE value="leaving the draw_starters and choose_starters to adi" />
+    <option name="LAST_COMMIT_MESSAGE" value="leaving the draw_starters and choose_starters to adi" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1648904039775">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1648904039775" />
-    <state width="1007" height="144" key="GridCell.Tab.0.bottom" timestamp="1648904852993">
+    <state width="1345" height="144" key="GridCell.Tab.0.bottom" timestamp="1648921769227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1007" height="144" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1648904852993" />
-    <state width="1007" height="144" key="GridCell.Tab.0.center" timestamp="1648904852993">
+    <state width="1345" height="144" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1648921769227" />
+    <state width="1345" height="144" key="GridCell.Tab.0.center" timestamp="1648921769227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1007" height="144" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1648904852993" />
-    <state width="1007" height="144" key="GridCell.Tab.0.left" timestamp="1648904852993">
+    <state width="1345" height="144" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1648921769227" />
+    <state width="1345" height="144" key="GridCell.Tab.0.left" timestamp="1648921769227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1007" height="144" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1648904852993" />
-    <state width="1007" height="144" key="GridCell.Tab.0.right" timestamp="1648904852993">
+    <state width="1345" height="144" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1648921769227" />
+    <state width="1345" height="144" key="GridCell.Tab.0.right" timestamp="1648921769227">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1007" height="144" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1648904852993" />
+    <state width="1345" height="144" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1648921769227" />
+    <state x="470" y="80" key="VCS.ChangeListViewerDialog" timestamp="1648920974211">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="470" y="80" key="VCS.ChangeListViewerDialog/0.0.1366.728@0.0.1366.728" timestamp="1648920974211" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1648904895033">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1648904895033" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1648920967407">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1648920967407" />
   </component>
 </project>
