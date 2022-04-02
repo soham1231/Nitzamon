@@ -5,11 +5,24 @@ import pygame
 
 
 class Player(NitzamonUser):
-    def __init__(self, name, sprite, pos, nitzamons, nitzamon_bag, active_quests, world):
+    def __init__(self, name, sprite, pos, nitzamons, nitzamon_bag, active_quests, world, nitzaballs: dict):
         super().__init__(name, sprite, pos, nitzamons, world)
         self.nitzamon_bag = nitzamons + nitzamon_bag
         self.active_quests = active_quests
         self.camera_pos = [0, 0]
+        self.nitzaballs = nitzaballs
+
+    # Just a temporary function that heals all the nitzamons in the player's inventory
+    def heal_nitzamons(self):
+        for nitzamon in self.nitzamon_bag:
+            nitzamon.hp = nitzamon.max_hp
+
+    # Checks if nitzaball is already in nitzaball dict, if it is add the amount, if not, put it in
+    def add_nitzaballs(self, nitzaball, amount):
+        if nitzaball in self.nitzaballs.keys():
+            self.nitzaballs[nitzaball] += amount
+        else:
+            self.nitzaballs[nitzaball] = amount
 
     # Making the camera that follows the player
     def camera(self):

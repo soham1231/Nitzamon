@@ -1,6 +1,7 @@
 import pygame
 from math import ceil
 from Classes.NitzamonClasses.Move import Move
+from Classes.NitzamonClasses.Nitzamon import Nitzamon
 
 pygame.init()
 WIN = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
@@ -60,6 +61,11 @@ EARTH_MOVES = [EARTHQUAKE, LEAFBLADE, ROCKSLIDE]
 WATER_MOVES = [SPIT, WATERFALL, GEYSER]
 NORMAL_MOVES = [SCRATCH, PUNCH, SLASH]
 
+# Starters
+NITZAPHONE_STARTER = Nitzamon(NITZAPHONE, 1, 20, 20, 15, 10, pygame.image.load("Assets\\Nitzamons\\nitzaphone.png"), NITZAMON_ELEMENTS_DICT[NITZAPHONE], [SCRATCH, SLASH, WATERFALL, SPIT], pygame.mixer.Sound("Assets\\Sounds\\Fight Entrance\\Nitzaphone.mp3"), pygame.mixer.Sound("Assets\\Sounds\\Death\\Nitzaphone.mp3"))
+GEM_TRIO_STARTER = Nitzamon(GEM_TRIO, 1, 20, 20, 15, 10, pygame.image.load("Assets\\Nitzamons\\gem trio.png"), NITZAMON_ELEMENTS_DICT[GEM_TRIO], [PUNCH, SLASH, BURN, LASER], pygame.mixer.Sound("Assets\\Sounds\\Fight Entrance\\Gem trio.mp3"), pygame.mixer.Sound("Assets\\Sounds\\Death\\Gem trio.mp3"))
+MASMERION_STARTER = Nitzamon(MASMERION, 1, 20, 20, 15, 10, pygame.image.load("Assets\\Nitzamons\\masmerion.png"), NITZAMON_ELEMENTS_DICT[MASMERION], [SCRATCH, PUNCH, EARTHQUAKE, ROCKSLIDE], pygame.mixer.Sound("Assets\\Sounds\\Fight Entrance\\Masmerion.mp3"), pygame.mixer.Sound("Assets\\Sounds\\Death\\Masmerion.mp3"))
+
 # Nitzaballs
 NITZABALL_CHANCES = {"Normal": 0.1,
                      "Gem": 0.2,
@@ -78,6 +84,7 @@ BORDER_IMAGE = pygame.transform.scale(pygame.image.load("Assets/Tiles/Border.png
 
 NPC_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Characters\\npc.png"), (SCALE, SCALE))
 PLAYER_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Characters\\player.png"), (SCALE, SCALE))
+NPC_SPRITE_RONI = pygame.transform.scale(pygame.image.load("Assets\\Characters\\NPCS\\Roni.jpg"), (SCALE, SCALE))
 
 # Tiles
 TILES = {"G": GRASS1_IMAGE,
