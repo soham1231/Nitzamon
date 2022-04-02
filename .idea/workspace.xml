@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="trying to fix bug">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-    </list>
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="added comments and made Main.py look a little better" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -376,7 +372,13 @@
       <option name="presentableId" value="LOCAL‎00025" />
       <updated>1648659373284</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL‎00026" summary="added comments and made Main.py look a little better">
+      <created>1648825465771</created>
+      <option name="number" value="LOCAL‎00026" />
+      <option name="presentableId" value="LOCAL‎00026" />
+      <updated>1648825465771</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -427,7 +429,8 @@
     <MESSAGE value="added attack" />
     <MESSAGE value="fixed bugs, added player turn" />
     <MESSAGE value="added moves (HEIL NITZLER)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added moves (HEIL NITZLER)" />
+    <MESSAGE value="added comments and made Main.py look a little better" />
+    <option name="LAST_COMMIT_MESSAGE" value="added comments and made Main.py look a little better" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1648731915270">
@@ -470,6 +473,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="672" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1648822893668" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1648825469265">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1648825469265" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1648904001281">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1648904001281" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1648824929651">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
