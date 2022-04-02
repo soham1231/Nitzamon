@@ -129,7 +129,7 @@ def draw_starters():  # Leave this to Adi
     WIN.blit(masmerion_sprite, (Constants.X / 2 + 300, Constants.Y / 2 - 150))
 
 
-def choose_starters(player, pos):  # Leave this to Adi
+def choose_starters(player, pos):
     nitzamon = None
     if Constants.Y / 2 - 150 <= pos[1] <= Constants.Y / 2 + 50:
         if Constants.X/2 - 500 <= pos[0] <= Constants.X/2 - 300:
@@ -140,7 +140,8 @@ def choose_starters(player, pos):  # Leave this to Adi
             nitzamon = Constants.MASMERION_STARTER
 
     if nitzamon is not None:
-        # player.nitzamons.append(nitzamon)
+        player.nitzamons.append(nitzamon)
+        player.nitzamon_bag.append(nitzamon)
         return True
     return False
 
@@ -155,13 +156,13 @@ def main():
     talked_to = False
     npc = None
 
-    nitzamon_list = []
-    equipped = []
-    for i in range(20):  # Leave this until we add the ability to catch nitzamons
-        nitzamon_list.append(random_nitzamon())
-    for i in range(3):
-        equipped.append(random_nitzamon())
-    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], equipped, nitzamon_list, 0, world, {"Gem": 1})
+    # nitzamon_list = []
+    # equipped = []
+    # for i in range(20):  # Leave this until we add the ability to catch nitzamons
+    #     nitzamon_list.append(random_nitzamon())
+    # for i in range(3):
+    #     equipped.append(random_nitzamon())
+    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [], [], 0, world, {"Gem": 1})
     nitzamon_pressed = None
 
     enemy_nitzamon = random_nitzamon()
@@ -169,7 +170,7 @@ def main():
     dialogs = [Dialogue.Dialogue("Hi", 0), Dialogue.Dialogue("H1", 0)]
     enemy = Enemy.Enemy("Adi", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], dialogs, world, False)
 
-    fight_menu = Fight.FightMenu(player.nitzamons, enemy.nitzamons)
+    fight_menu = Fight.FightMenu()
     clock = pygame.time.Clock()
 
     choosing_starter = True

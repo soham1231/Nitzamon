@@ -7,15 +7,15 @@ import random
 
 
 class FightMenu:
-    def __init__(self, player_nitzamons, enemy_nitzamons):
+    def __init__(self):
 
-        self.player_nitzamons = player_nitzamons
-        self.enemy_nitzamons = enemy_nitzamons
+        self.player_nitzamons = None
+        self.enemy_nitzamons = None
 
-        self.equipped_player_nitzamon = self.player_nitzamons[0]
-        self.equipped_enemy_nitzamon = self.enemy_nitzamons[0]
+        self.equipped_player_nitzamon = None
+        self.equipped_enemy_nitzamon = None
 
-        self.playerTurn = self.equipped_player_nitzamon.spd >= self.equipped_enemy_nitzamon.spd
+        self.playerTurn = None
         if self.playerTurn:
             self.enemy_attack_time = 0
         else:
@@ -47,15 +47,15 @@ class FightMenu:
         self.catch_text = self.font.render("Catch", True, Constants.WHITE)
         self.run_text = self.font.render("Run", True, Constants.WHITE)
 
-        self.player_nitzamon_name = self.font.render(f"Name: {self.equipped_player_nitzamon.name}", True, Constants.BLACK)
-        self.player_nitzamon_hp = self.font.render(f"HP: {self.equipped_player_nitzamon.hp}/{self.equipped_player_nitzamon.max_hp}", True, Constants.BLACK)
-        self.player_nitzamon_lvl = self.font.render(f"Level: {self.equipped_player_nitzamon.lvl}", True, Constants.BLACK)
-        self.player_nitzamon_element = self.font.render(f"Element: {self.equipped_player_nitzamon.element}", True, Constants.BLACK)
+        self.player_nitzamon_name = None
+        self.player_nitzamon_hp = None
+        self.player_nitzamon_lvl = None
+        self.player_nitzamon_element = None
 
-        self.enemy_nitzamon_name = self.font.render(f"Name: {self.equipped_enemy_nitzamon.name}", True, Constants.BLACK)
-        self.enemy_nitzamon_hp = self.font.render(f"HP: {self.equipped_enemy_nitzamon.hp}/{self.equipped_enemy_nitzamon.max_hp}", True, Constants.BLACK)
-        self.enemy_nitzamon_lvl = self.font.render(f"Level: {self.equipped_enemy_nitzamon.lvl}", True, Constants.BLACK)
-        self.enemy_nitzamon_element = self.font.render(f"Element: {self.equipped_enemy_nitzamon.element}", True, Constants.BLACK)
+        self.enemy_nitzamon_name = None
+        self.enemy_nitzamon_hp = None
+        self.enemy_nitzamon_lvl = None
+        self.enemy_nitzamon_element = None
 
     def draw_screen(self):
         self.change_info()
