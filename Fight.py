@@ -149,7 +149,6 @@ class FightMenu:
         Constants.WIN.blit(self.player_nitzamon_hp,
                            (self.player_nitzamon_info.x + 10,
                             self.player_nitzamon_info.y + 20 + Constants.FIGHT_FONT_SIZE))
-
         Constants.WIN.blit(self.player_nitzamon_lvl,
                            (self.player_nitzamon_info.x + 10,
                             self.player_nitzamon_info.y + 30 + 2 * Constants.FIGHT_FONT_SIZE))

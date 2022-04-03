@@ -19,12 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="added backgrounds">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="added moves (HEIL NITZLER)">
       <change beforePath="$PROJECT_DIR$/.idea/Nitzamon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Nitzamon.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_03_2022_18_34__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_03_2022_18_34__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_03_2022_18_34_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_03_2022_18_34__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_11_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_11_36__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_11_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_03_2022_11_47__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_03_2022_8_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_03_2022_8_48__Changes_.xml" afterDir="false" />
@@ -38,12 +39,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_18_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_18_10__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_18_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_18_52__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_19_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_19_32__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_19_55__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_19_55__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_19_55__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_19_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_03_2022_19_57__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/NPC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/NPC.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +68,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Constants.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="269jaZhTCQBB0sPIEvgCsT2kQsX" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -84,6 +87,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\Desktop\nitzanim\nitzamon\Assets\Nitzamons" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\NitzamonClasses" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\Character Classes" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\Nitzamon Classes" />
@@ -132,14 +136,14 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Game" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Nitzamon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\USER\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\User\AppData\Local\Programs\Python\Python310\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -217,16 +221,15 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.main" />
       <item itemvalue="Python.Constants" />
       <item itemvalue="Python.Fight" />
       <item itemvalue="Python.Game" />
       <item itemvalue="Python.Main" />
       <item itemvalue="Python.WorldFunctions" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Game" />
         <item itemvalue="Python.Main" />
         <item itemvalue="Python.WorldFunctions" />
         <item itemvalue="Python.Fight" />
@@ -363,31 +366,37 @@
       <option name="presentableId" value="LOCAL‎00020" />
       <updated>1648486451446</updated>
     </task>
-    <task id="LOCAL‎00021" summary="added another nitzamon">
-      <created>1648567636860</created>
+    <task id="LOCAL‎00021" summary="can change nitzamons mid fight">
+      <created>1648490113264</created>
       <option name="number" value="LOCAL‎00021" />
       <option name="presentableId" value="LOCAL‎00021" />
-      <updated>1648567636861</updated>
+      <updated>1648490113264</updated>
     </task>
-    <task id="LOCAL‎00022" summary="someone changed the fullscreen??">
-      <created>1648568783756</created>
+    <task id="LOCAL‎00022" summary="changed some names and added name constants">
+      <created>1648578588608</created>
       <option name="number" value="LOCAL‎00022" />
       <option name="presentableId" value="LOCAL‎00022" />
-      <updated>1648568783756</updated>
+      <updated>1648578588608</updated>
     </task>
-    <task id="LOCAL‎00023" summary="Added nitzamons and start fight function">
-      <created>1648572795858</created>
+    <task id="LOCAL‎00023" summary="added attack">
+      <created>1648653106041</created>
       <option name="number" value="LOCAL‎00023" />
       <option name="presentableId" value="LOCAL‎00023" />
-      <updated>1648572795858</updated>
+      <updated>1648653106041</updated>
     </task>
-    <task id="LOCAL‎00024" summary="added backgrounds">
-      <created>1648575483648</created>
+    <task id="LOCAL‎00024" summary="fixed bugs, added player turn">
+      <created>1648655261176</created>
       <option name="number" value="LOCAL‎00024" />
       <option name="presentableId" value="LOCAL‎00024" />
-      <updated>1648575483648</updated>
+      <updated>1648655261176</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL‎00025" summary="added moves (HEIL NITZLER)">
+      <created>1648659373284</created>
+      <option name="number" value="LOCAL‎00025" />
+      <option name="presentableId" value="LOCAL‎00025" />
+      <updated>1648659373284</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -433,21 +442,11 @@
     <MESSAGE value="can change the equipped nitzamon" />
     <MESSAGE value="Added the delete button" />
     <MESSAGE value="can open the inventory in fight" />
-    <MESSAGE value="added another nitzamon" />
-    <MESSAGE value="someone changed the fullscreen??" />
-    <MESSAGE value="Added nitzamons and start fight function" />
-    <MESSAGE value="added backgrounds" />
-    <option name="LAST_COMMIT_MESSAGE" value="added backgrounds" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>74</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="can change nitzamons mid fight" />
+    <MESSAGE value="changed some names and added name constants" />
+    <MESSAGE value="added attack" />
+    <MESSAGE value="fixed bugs, added player turn" />
+    <MESSAGE value="added moves (HEIL NITZLER)" />
+    <option name="LAST_COMMIT_MESSAGE" value="added moves (HEIL NITZLER)" />
   </component>
 </project>
