@@ -171,7 +171,7 @@ def main():
 
     # npcs
     # guide: create a new npc and add it to npc_list
-    roni = NPC.NPC("Roni", Constants.NPC_SPRITE_RONI, (5, 5), [], [Dialogue.Dialogue("HI! \n HELLO!", None)], world)
+    roni = NPC.NPC("Roni", Constants.NPC_SPRITE_RONI, Constants.NPC_PFP_RONI, (5, 5), [], [Dialogue.Dialogue("HI! \n HELLO!", None)], world)
     npc_list = [roni]
     talked_to = False
     npc = None
