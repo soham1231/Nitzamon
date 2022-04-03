@@ -1,6 +1,7 @@
 import pygame
 from math import ceil
 from Classes.NitzamonClasses.Move import Move
+from Classes.NitzamonClasses.Nitzamon import Nitzamon
 
 pygame.init()
 WIN = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
@@ -17,17 +18,17 @@ WORLD_HEIGHT = 250
 WATER = "water"
 FIRE = "fire"
 EARTH = "earth"
-COMMENTAR = "commentar"
-GEM_TRIO = "gem trio"
-MASMERION = "masmerion"
-NITZAPHONE = "nitzaphone"
-HEARTIAN = "heartian"
-SHAREE = "sharee"
-DARK_SQUARION = "dark squarion"
-MANAGEREON = "managereon"
-PENTAGEON = "pentageon"
-HEADEA = "headea"
-TRION = "trion"
+COMMENTAR = "Commentar"
+GEM_TRIO = "Gem trio"
+MASMERION = "Masmerion"
+NITZAPHONE = "Nitzaphone"
+HEARTIAN = "Heartian"
+SHAREE = "Sharee"
+DARK_SQUARION = "Dark squarion"
+MANAGEREON = "Managereon"
+PENTAGEON = "Pentageon"
+HEADEA = "Headea"
+TRION = "Trion"
 NAMES = [COMMENTAR, GEM_TRIO, MASMERION, NITZAPHONE, HEARTIAN, SHAREE, DARK_SQUARION, MANAGEREON, PENTAGEON,
          HEADEA, TRION]
 NITZAMON_ELEMENTS_DICT = {COMMENTAR: WATER,
@@ -42,23 +43,35 @@ NITZAMON_ELEMENTS_DICT = {COMMENTAR: WATER,
                           HEADEA: FIRE,
                           TRION: EARTH}
 # Moves
-SCRATCH = Move("normal", 9, "Scratch")
-PUNCH = Move("normal", 10, "Punch")
-SLASH = Move("normal", 11, "Slash")
-BURN = Move(FIRE, 10, "Burn")
-FIREBALL = Move(FIRE, 11, "Fire-ball")
-LASER = Move(FIRE, 12, "Laser")
-EARTHQUAKE = Move(EARTH, 12, "Earthquake")
-ROCKSLIDE = Move(EARTH, 11, "Rockslide")
-LEAFBLADE = Move(EARTH, 10, "LeafBlade")
-WATERFALL = Move(WATER, 12, "Waterfall")
-SPIT = Move(WATER, 10, "Spit")
-GEYSER = Move(WATER, 11, "Geyser")
+SCRATCH = Move("normal", 9, "Scratch", pygame.mixer.Sound("Assets\\Sounds\\Moves\\Scratch.mp3"))
+PUNCH = Move("normal", 10, "Punch", pygame.mixer.Sound("Assets\\Sounds\\Moves\\Punch.mp3"))
+SLASH = Move("normal", 11, "Slash", pygame.mixer.Sound("Assets\\Sounds\\Moves\\Slash.mp3"))
+BURN = Move(FIRE, 10, "Burn", pygame.mixer.Sound("Assets\\Sounds\\Moves\\Burn.mp3"))
+FIREBALL = Move(FIRE, 11, "Fire-ball", pygame.mixer.Sound("Assets\\Sounds\\Moves\\Fireball.mp3"))
+LASER = Move(FIRE, 12, "Laser", pygame.mixer.Sound("Assets\\Sounds\\Moves\\Laser.mp3"))
+EARTHQUAKE = Move(EARTH, 12, "Earthquake", pygame.mixer.Sound("Assets\\Sounds\\Moves\\Earthquake.mp3"))
+ROCKSLIDE = Move(EARTH, 11, "RockSlide", pygame.mixer.Sound("Assets\\Sounds\\Moves\\Rockslide.mp3"))
+LEAFBLADE = Move(EARTH, 10, "LeafBlade", pygame.mixer.Sound("Assets\\Sounds\\Moves\\Leafblade.mp3"))
+WATERFALL = Move(WATER, 12, "Waterfall", pygame.mixer.Sound("Assets\\Sounds\\Moves\\Waterfall.mp3"))
+SPIT = Move(WATER, 10, "Spit", pygame.mixer.Sound("Assets\\Sounds\\Moves\\Spit.mp3"))
+GEYSER = Move(WATER, 11, "Geyser", pygame.mixer.Sound("Assets\\Sounds\\Moves\\Geyser.mp3"))
 
 FIRE_MOVES = [FIREBALL, LASER, BURN]
 EARTH_MOVES = [EARTHQUAKE, LEAFBLADE, ROCKSLIDE]
 WATER_MOVES = [SPIT, WATERFALL, GEYSER]
 NORMAL_MOVES = [SCRATCH, PUNCH, SLASH]
+
+# Starters
+NITZAPHONE_STARTER = Nitzamon(NITZAPHONE, 1, 20, 20, 15, 10, pygame.image.load("Assets\\Nitzamons\\nitzaphone.png"), NITZAMON_ELEMENTS_DICT[NITZAPHONE], [SCRATCH, SLASH, WATERFALL, SPIT], pygame.mixer.Sound("Assets\\Sounds\\Fight Entrance\\Nitzaphone.mp3"), pygame.mixer.Sound("Assets\\Sounds\\Death\\Nitzaphone.mp3"))
+GEM_TRIO_STARTER = Nitzamon(GEM_TRIO, 1, 20, 20, 15, 10, pygame.image.load("Assets\\Nitzamons\\gem trio.png"), NITZAMON_ELEMENTS_DICT[GEM_TRIO], [PUNCH, SLASH, BURN, LASER], pygame.mixer.Sound("Assets\\Sounds\\Fight Entrance\\Gem trio.mp3"), pygame.mixer.Sound("Assets\\Sounds\\Death\\Gem trio.mp3"))
+MASMERION_STARTER = Nitzamon(MASMERION, 1, 20, 20, 15, 10, pygame.image.load("Assets\\Nitzamons\\masmerion.png"), NITZAMON_ELEMENTS_DICT[MASMERION], [SCRATCH, PUNCH, EARTHQUAKE, ROCKSLIDE], pygame.mixer.Sound("Assets\\Sounds\\Fight Entrance\\Masmerion.mp3"), pygame.mixer.Sound("Assets\\Sounds\\Death\\Masmerion.mp3"))
+
+# Nitzaballs
+NITZABALL_CHANCES = {"Normal": 0.1,
+                     "Gem": 0.2,
+                     "Phone": 0.4,
+                     "Masmer": 0.6,
+                     "Ultimate": 1}
 
 # Images
 GRASS1_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Tiles\\Grass1.png"), (SCALE, SCALE))
@@ -71,6 +84,7 @@ BORDER_IMAGE = pygame.transform.scale(pygame.image.load("Assets/Tiles/Border.png
 
 NPC_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Characters\\npc.png"), (SCALE, SCALE))
 PLAYER_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Characters\\player.png"), (SCALE, SCALE))
+NPC_SPRITE_RONI = pygame.transform.scale(pygame.image.load("Assets\\Characters\\NPCS\\Roni.jpg"), (SCALE, SCALE))
 
 # Tiles
 TILES = {"G": GRASS1_IMAGE,
@@ -91,8 +105,6 @@ WORLD1_PATH = "Worlds\\World1.txt"
 
 FPS = 20
 fps = FPS  # Not a constant but i don't know where to put it
-
-
 
 # Colors
 BLACK = (0, 0, 0)

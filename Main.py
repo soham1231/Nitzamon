@@ -6,7 +6,6 @@ import json
 import Constants
 from Constants import WIN
 from Classes.NitzamonClasses import Nitzamon
-from Classes.NitzamonClasses import Move
 from Worlds import WorldFunctions
 import Fight
 from Classes.CharacterClasses import Dialogue, Enemy, Player, NPC
@@ -51,33 +50,17 @@ def draw_minimap(world, player):
              (x_center + player.pos[0] * Constants.MINI_SCALE, y_center + player.pos[1] * Constants.MINI_SCALE))
 
 
-# npcs
-# guide: create a new npc, and add it to npc_list
-world1 = WorldFunctions.read_world(Constants.WORLD1_PATH)
-NPC_SPRITE_RONI = pygame.transform.scale(pygame.image.load("Assets\\Characters\\NPCS\\Roni.jpg"),
-                                         (Constants.SCALE, Constants.SCALE))
-roni = NPC.NPC("Roni", NPC_SPRITE_RONI, (5, 5), [], [Dialogue.Dialogue("HI! \n HELLO!", None)], world1)
-npc_list = [roni]
-
-
-def draw_npcs(npc_list, camera_pos):  # NUMBER OF N'S ON THE MAP MUST BE EQUAL TO NUMBER OF NPCS!
-    for npc in npc_list:
+def draw_npcs(npcs, camera_pos):  # NUMBER OF N'S ON THE MAP MUST BE EQUAL TO NUMBER OF NPCS!
+    for npc in npcs:
         npc.draw(camera_pos)
-
-
-def random_move():
-    element = random.choice(["fire", "water", "earth"])
-    dmg = random.choice([1, 2, 3, 4])
-    name = random.choice(["hug", "kiss", "pet", "touch"])
-    return Move.Move(element, dmg, name)
 
 
 def random_nitzamon():
     name = random.choice(Constants.NAMES)
     sprite = pygame.image.load(f"Assets\\Nitzamons\\{name}.png")
     level = random.randint(1, 100)
-    health = level + random.randint(50, 400)
-    attack = level + random.randint(0, 50)
+    health = level + random.randint(level * 2, level * 4)
+    attack = level + random.randint(0, int(level/2))
     speed = level + random.randint(0, 20)
     element = Constants.NITZAMON_ELEMENTS_DICT[name]
     fire_moves = Constants.FIRE_MOVES
@@ -92,25 +75,27 @@ def random_nitzamon():
         fire_moves.append(tmp_move)
     elif element == Constants.EARTH:
         move1 = random.choice(earth_moves)
-        tmp_move = fire_moves.pop(earth_moves.index(move1))
+        tmp_move = earth_moves.pop(earth_moves.index(move1))
         move2 = random.choice(earth_moves)
-        fire_moves.append(tmp_move)
+        earth_moves.append(tmp_move)
     else:
         move1 = random.choice(water_moves)
-        tmp_move = fire_moves.pop(water_moves.index(move1))
+        tmp_move = water_moves.pop(water_moves.index(move1))
         move2 = random.choice(water_moves)
-        fire_moves.append(tmp_move)
+        water_moves.append(tmp_move)
 
     move3 = random.choice(normal_moves)
-    tmp_move = fire_moves.pop(normal_moves.index(move3))
+    tmp_move = normal_moves.pop(normal_moves.index(move3))
     move4 = random.choice(normal_moves)
-    fire_moves.append(tmp_move)
+    normal_moves.append(tmp_move)
+    entrance_sound = pygame.mixer.Sound(f"Assets\\Sounds\\Fight Entrance\\{name}.mp3")
+    death_sound = pygame.mixer.Sound(f"Assets\\Sounds\\Death\\{name}.mp3")
 
     return Nitzamon.Nitzamon(name, level, health, health, attack, speed, sprite, element,
-                             [move1, move2, move3, move4])
+                             [move1, move2, move3, move4], entrance_sound, death_sound)
 
 
-def save(player, enemy):
+def save(player, enemy):  # Probably gonna remove it
     info = {
         "name": player.name,
         "pos": player.pos,
@@ -124,63 +109,118 @@ def save(player, enemy):
     print(nitzamon_info)
 
 
+def npcs_in_range(npcs, pos):  # Im thinking of moving it to Player class
+    for npc in npcs:
+        if ((pos[0] == npc.pos[0] - 1) and (pos[1] == npc.pos[1])) or \
+                ((pos[0] == npc.pos[0]) and (pos[1] == npc.pos[1] + 1)) or \
+                ((pos[0] == npc.pos[0] + 1) and (pos[1] == npc.pos[1])) or \
+                ((pos[0] == npc.pos[0]) and (pos[1] == npc.pos[1] - 1)):
+            return True, npc
+    return False, None
+
+
+def draw_starters():  # Leave this to Adi
+    WIN.fill(Constants.GREY)
+    font = pygame.font.SysFont("Comic Sans MS", 128)
+    text = font.render("Choose your starter", True, Constants.WHITE)
+    WIN.blit(text, (Constants.X / 2 - text.get_width() / 2, 20))
+    font = pygame.font.SysFont("Comic Sans MS", 16)
+
+    nitzaphone_sprite = pygame.transform.scale(Constants.NITZAPHONE_STARTER.sprite, (200, 200))
+    nitzaphone_name = font.render("Name: " + Constants.NITZAPHONE, True, Constants.WHITE)
+    nitzaphone_element = font.render("Element: " + Constants.NITZAMON_ELEMENTS_DICT[Constants.NITZAPHONE], True, Constants.WHITE)
+    WIN.blit(nitzaphone_name, (Constants.X / 2 - 500, 230 + nitzaphone_sprite.get_height()))
+    WIN.blit(nitzaphone_element, (Constants.X / 2 - 500, 250 + nitzaphone_sprite.get_height()))
+
+    gem_trio_sprite = pygame.transform.scale(Constants.GEM_TRIO_STARTER.sprite, (200, 200))
+    nitzaphone_name = font.render("Name: " + Constants.GEM_TRIO, True, Constants.WHITE)
+    nitzaphone_element = font.render("Element: " + Constants.NITZAMON_ELEMENTS_DICT[Constants.GEM_TRIO], True, Constants.WHITE)
+    WIN.blit(nitzaphone_name, (Constants.X / 2 - 100, 230 + gem_trio_sprite.get_height()))
+    WIN.blit(nitzaphone_element, (Constants.X / 2 - 100, 250 + gem_trio_sprite.get_height()))
+
+    masmerion_sprite = pygame.transform.scale(Constants.MASMERION_STARTER.sprite, (200, 200))
+    nitzaphone_name = font.render("Name: " + Constants.MASMERION, True, Constants.WHITE)
+    nitzaphone_element = font.render("Element: " + Constants.NITZAMON_ELEMENTS_DICT[Constants.MASMERION], True, Constants.WHITE)
+    WIN.blit(nitzaphone_name, (Constants.X / 2 + 300, 230 + masmerion_sprite.get_height()))
+    WIN.blit(nitzaphone_element, (Constants.X / 2 + 300, 250 + masmerion_sprite.get_height()))
+
+    WIN.blit(nitzaphone_sprite, (Constants.X / 2 - 500, Constants.Y / 2 - 150))
+    WIN.blit(gem_trio_sprite, (Constants.X / 2 - 100, Constants.Y / 2 - 150))
+    WIN.blit(masmerion_sprite, (Constants.X / 2 + 300, Constants.Y / 2 - 150))
+
+
+def choose_starters(player, pos):
+    nitzamon = None
+    if Constants.Y / 2 - 150 <= pos[1] <= Constants.Y / 2 + 50:
+        if Constants.X/2 - 500 <= pos[0] <= Constants.X/2 - 300:
+            nitzamon = Constants.NITZAPHONE_STARTER
+        elif Constants.X / 2 - 100 <= pos[0] <= Constants.X / 2 + 100:
+            nitzamon = Constants.GEM_TRIO_STARTER
+        elif Constants.X / 2 + 300 <= pos[0] <= Constants.X / 2 + 500:
+            nitzamon = Constants.MASMERION_STARTER
+
+    if nitzamon is not None:
+        player.nitzamons.append(nitzamon)
+        player.nitzamon_bag.append(nitzamon)
+        return True
+    return False
+
+
 def main():
     world = WorldFunctions.read_world(Constants.WORLD1_PATH)
+
+    # npcs
+    # guide: create a new npc and add it to npc_list
+    roni = NPC.NPC("Roni", Constants.NPC_SPRITE_RONI, (5, 5), [], [Dialogue.Dialogue("HI! \n HELLO!", None)], world)
+    npc_list = [roni]
     talked_to = False
     npc = None
-    nitzamon_list = []
-    equipped = []
-    for i in range(20):
-        nitzamon_list.append(random_nitzamon())
-    for i in range(3):
-        equipped.append(random_nitzamon())
-    equipped[0].spd = 10000
-    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], equipped, nitzamon_list, 0, world)
-    nitzamon_pressed = None
-    player.camera()
 
-    enemy_nitzamon = Nitzamon.Nitzamon("Adi", 50, 50, 60, 30, 30, Constants.NPC_IMAGE, Constants.FIRE, [])
+    # nitzamon_list = []
+    # equipped = []
+    # for i in range(20):  # Leave this until we add the ability to catch nitzamons
+    #     nitzamon_list.append(random_nitzamon())
+    # for i in range(3):
+    #     equipped.append(random_nitzamon())
+    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [], [], 0, world, {"Gem": 1})
+    nitzamon_pressed = None
+
+    enemy_nitzamon = random_nitzamon()
 
     dialogs = [Dialogue.Dialogue("Hi", 0), Dialogue.Dialogue("H1", 0)]
     enemy = Enemy.Enemy("Adi", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], dialogs, world, False)
 
-    fight_menu = Fight.FightMenu(player.nitzamons, enemy.nitzamons)
+    fight_menu = Fight.FightMenu()
     clock = pygame.time.Clock()
 
+    choosing_starter = True
     run = True
     while run:
         clock.tick(Constants.fps)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
-
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if fight_menu.in_fight:
-                    if fight_menu.playerTurn and not fight_menu.attacking:
-                        fight_menu.run(pygame.mouse.get_pos())
+                fight_menu.handle_events()
 
-                    if fight_menu.topRight_rect.collidepoint(pygame.mouse.get_pos()) and not fight_menu.attacking:
-                        fight_menu.changing_nitzamons = True
+                if choosing_starter:
+                    if choose_starters(player, pygame.mouse.get_pos()):
+                        choosing_starter = False
 
-                    if fight_menu.changing_nitzamons:
-                        replacing = Inventory.check_collision(pygame.mouse.get_pos(), fight_menu.player_nitzamons)
-                        if replacing is not None:
-                            fight_menu.change_nitzamons(replacing)
-                            fight_menu.changing_nitzamons = False
-                    if fight_menu.attacking and fight_menu.playerTurn:
-                        fight_menu.attack(pygame.mouse.get_pos())
-                    if fight_menu.topLeft_rect.collidepoint(pygame.mouse.get_pos()) and not fight_menu.changing_nitzamons:
-                        fight_menu.attacking = True
-
+                # Checking if the player pressed a nitzamon in inventory
                 if Inventory.is_open and not (Inventory.info_open or Inventory.equip_open):
                     nitzamon_pressed = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamon_bag)
                     if nitzamon_pressed is not None:
                         Inventory.info_open = True
+                # Checking if the player is pressing the "equip"
                 if Inventory.info_open and Inventory.equip_rect.collidepoint(pygame.mouse.get_pos()):
                     Inventory.equip_open = True
+                # Checking if the player is pressing the "remove" button
                 elif Inventory.info_open and Inventory.remove_rect.collidepoint(pygame.mouse.get_pos()):
                     player.delete_nitzamon(nitzamon_pressed)
                     Inventory.info_open = False
+                # If the player pressed the "equip" button, it will open the inventory again and check if the player
+                # Has pressed another nitzamon
                 if Inventory.equip_open:
                     new_nitzamon = Inventory.check_collision(pygame.mouse.get_pos(), player.nitzamon_bag)
                     if new_nitzamon is not None:
@@ -189,12 +229,14 @@ def main():
                         Inventory.info_open = False
 
             if event.type == pygame.KEYDOWN:
+                # If the player pressed 'e' it will either open or close the inventory
                 if event.key == pygame.K_e:
                     Inventory.is_open = not Inventory.is_open
+                # Going back to the menu before or quits the game
                 if event.key == pygame.K_ESCAPE:
                     if fight_menu.in_fight and fight_menu.changing_nitzamons:
                         fight_menu.changing_nitzamons = False
-                    if fight_menu.in_fight and fight_menu.attacking:
+                    elif fight_menu.in_fight and fight_menu.attacking:
                         fight_menu.attacking = False
                     elif Inventory.equip_open:
                         Inventory.equip_open = False
@@ -204,43 +246,38 @@ def main():
                         Inventory.is_open = False
                     else:
                         run = False
+                # If the player pressed the 'f' key it will check if npcs are nearby
                 if event.key == pygame.K_f:
-                    for npc in npc_list:
-                        if ((player.pos[0] == npc.pos[0] - 1) and (player.pos[1] == npc.pos[1])) or \
-                                ((player.pos[0] == npc.pos[0]) and (player.pos[1] == npc.pos[1] + 1)) or \
-                                ((player.pos[0] == npc.pos[0] + 1) and (player.pos[1] == npc.pos[1])) or \
-                                ((player.pos[0] == npc.pos[0]) and (player.pos[1] == npc.pos[1] - 1)):
-                            print(npc.name)
-                            talked_to = True
-                            break
+                    talked_to, npc = npcs_in_range(npc_list, player.pos)
 
+                if event.key == pygame.K_h:
+                    player.heal_nitzamons()
+        # Checking if the player is walking on tall grass and not in fight
         if world[player.pos[1]][player.pos[0]] == "T" and not fight_menu.in_fight:
             passed_time = time.time() - fight_menu.fight_start
-            if random.randint(1,
-                              100) >= 90 and passed_time > Constants.FIGHT_COOL_DOWN:  # 1% chance of fighting and checking if enough time passed since the last fight
+            # Checking if fight cooldown is over
+            if random.randint(1, 100) > 90 and passed_time > Constants.FIGHT_COOL_DOWN:  # 10% chance of fighting and checking if enough time passed since the last fight
                 fight_menu.start_fight_single(player.nitzamons, random_nitzamon())
 
         keys = pygame.key.get_pressed()
-        if fight_menu.in_fight:
-            if not fight_menu.playerTurn:
-                if time.time() - fight_menu.enemy_attack_time >= 1:
-                    fight_menu.enemy_attack()
-            if fight_menu.changing_nitzamons:
-                Inventory.draw_inventory(player.nitzamons)
-            elif fight_menu.attacking:
-                fight_menu.draw_attack()
-            else:
-                fight_menu.draw_screen()
-            fight_menu.check_hovers(pygame.mouse.get_pos())
 
+        if choosing_starter:
+            draw_starters()
+        # If the player is in fight, check which screen to draw
+        elif fight_menu.in_fight:
+            fight_menu.handle_fight_encounter()
+        # If the player pressed the 'm' key, draw minimap
         elif keys[pygame.K_m]:
             draw_minimap(world, player)
+
+        # If the inventory is open, check which screen to draw
         elif Inventory.is_open:
             Inventory.draw_inventory(player.nitzamon_bag)
             if Inventory.equip_open:
                 Inventory.draw_inventory(player.nitzamon_bag)
             elif Inventory.info_open:
                 Inventory.show_info(nitzamon_pressed)
+        # Draw the world
         else:
             player.camera()
             draw_world(world, player)

@@ -2,7 +2,7 @@
 
 class Nitzamon:
 
-    def __init__(self, name, lvl, hp, max_hp, dmg, spd, sprite, element, list_of_moves):
+    def __init__(self, name, lvl, hp, max_hp, dmg, spd, sprite, element, list_of_moves, entrance_sound, death_sound):
         self.name = name
         self.element = element
         self.dmg = dmg
@@ -12,3 +12,8 @@ class Nitzamon:
         self.sprite = sprite
         self.list_of_moves = list_of_moves
         self.lvl = lvl
+        self.entrance_sound = entrance_sound
+        self.death_sound = death_sound
+
+        self.entrance_sound.set_volume(0.1)
+        self.death_sound.set_volume(0.1)
