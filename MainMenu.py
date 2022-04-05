@@ -11,18 +11,19 @@ class MainMenu:
         self.play_text = self.font.render("Play", True, Constants.BLACK)
 
         self.nitzamon_font = pygame.font.SysFont("Arial", Constants.NITZAMON_FONT_SIZE)
-        self.nitzamon_text = self.nitzamon_font.render("NITZAMON!!!!", True, Constants.WHITE)
+        # self.nitzamon_text = self.nitzamon_font.render("NITZAMON!!!!", True, Constants.WHITE)
+        self.logo = pygame.transform.scale(pygame.image.load("Assets\\logo.png"), (250, 250))
 
     def draw(self):
         Constants.WIN.fill(Constants.BLACK)
         pygame.draw.rect(Constants.WIN, self.play_rect_color, self.play_rect)
         Constants.WIN.blit(self.play_text, (self.play_rect.x + 225, self.play_rect.y + 7))
 
-        Constants.WIN.blit(self.nitzamon_text, (Constants.X / 2 - 150, 50))
+        Constants.WIN.blit(self.logo, (Constants.X / 2 - self.logo.get_width() / 2 - 10, 25))
+        # Constants.WIN.blit(self.nitzamon_text, (Constants.X / 2 - 150, 50))
 
     def check_hover(self, pos):
         if self.play_rect.collidepoint(pos):
             self.play_rect_color = Constants.GREY
         else:
             self.play_rect_color = Constants.WHITE
-

@@ -129,34 +129,33 @@ def draw_starters():  # Leave this to Adi
     nitzaphone_sprite = pygame.transform.scale(Constants.NITZAPHONE_STARTER.sprite, (200, 200))
     nitzaphone_name = font.render("Name: " + Constants.NITZAPHONE, True, Constants.WHITE)
     nitzaphone_element = font.render("Element: " + Constants.NITZAMON_ELEMENTS_DICT[Constants.NITZAPHONE], True, Constants.WHITE)
-    WIN.blit(nitzaphone_name, (Constants.X / 2 - 500, 230 + nitzaphone_sprite.get_height()))
-    WIN.blit(nitzaphone_element, (Constants.X / 2 - 500, 250 + nitzaphone_sprite.get_height()))
+    WIN.blit(nitzaphone_name, (Constants.X / 3.5 - nitzaphone_sprite.get_width(), Constants.Y / 2))
+    WIN.blit(nitzaphone_element, (Constants.X / 3.5 - nitzaphone_sprite.get_width(), Constants.Y / 2 + font.get_height()))
+    WIN.blit(nitzaphone_sprite, (Constants.X / 3.5 - nitzaphone_sprite.get_width(), Constants.Y / 2 - nitzaphone_sprite.get_height()))
 
     gem_trio_sprite = pygame.transform.scale(Constants.GEM_TRIO_STARTER.sprite, (200, 200))
-    nitzaphone_name = font.render("Name: " + Constants.GEM_TRIO, True, Constants.WHITE)
-    nitzaphone_element = font.render("Element: " + Constants.NITZAMON_ELEMENTS_DICT[Constants.GEM_TRIO], True, Constants.WHITE)
-    WIN.blit(nitzaphone_name, (Constants.X / 2 - 100, 230 + gem_trio_sprite.get_height()))
-    WIN.blit(nitzaphone_element, (Constants.X / 2 - 100, 250 + gem_trio_sprite.get_height()))
+    gem_trio_name = font.render("Name: " + Constants.GEM_TRIO, True, Constants.WHITE)
+    gem_trio_element = font.render("Element: " + Constants.NITZAMON_ELEMENTS_DICT[Constants.GEM_TRIO], True, Constants.WHITE)
+    WIN.blit(gem_trio_name, (Constants.X * (2/3.5) - gem_trio_sprite.get_width(), Constants.Y / 2))
+    WIN.blit(gem_trio_element, (Constants.X * (2/3.5) - gem_trio_sprite.get_width(), Constants.Y / 2 + font.get_height()))
+    WIN.blit(gem_trio_sprite, (Constants.X * (2/3.5) - gem_trio_sprite.get_width(), Constants.Y / 2 - gem_trio_sprite.get_height()))
 
     masmerion_sprite = pygame.transform.scale(Constants.MASMERION_STARTER.sprite, (200, 200))
-    nitzaphone_name = font.render("Name: " + Constants.MASMERION, True, Constants.WHITE)
-    nitzaphone_element = font.render("Element: " + Constants.NITZAMON_ELEMENTS_DICT[Constants.MASMERION], True, Constants.WHITE)
-    WIN.blit(nitzaphone_name, (Constants.X / 2 + 300, 230 + masmerion_sprite.get_height()))
-    WIN.blit(nitzaphone_element, (Constants.X / 2 + 300, 250 + masmerion_sprite.get_height()))
-
-    WIN.blit(nitzaphone_sprite, (Constants.X / 2 - 500, Constants.Y / 2 - 150))
-    WIN.blit(gem_trio_sprite, (Constants.X / 2 - 100, Constants.Y / 2 - 150))
-    WIN.blit(masmerion_sprite, (Constants.X / 2 + 300, Constants.Y / 2 - 150))
+    masmerion_name = font.render("Name: " + Constants.MASMERION, True, Constants.WHITE)
+    masmerion_element = font.render("Element: " + Constants.NITZAMON_ELEMENTS_DICT[Constants.MASMERION], True, Constants.WHITE)
+    WIN.blit(masmerion_name, (Constants.X * (3/3.5) - masmerion_sprite.get_width(), Constants.Y / 2))
+    WIN.blit(masmerion_element, (Constants.X * (3/3.5) - masmerion_sprite.get_width(), Constants.Y / 2 + font.get_height()))
+    WIN.blit(masmerion_sprite, (Constants.X * (3/3.5) - masmerion_sprite.get_width(), Constants.Y / 2 - masmerion_sprite.get_height()))
 
 
 def choose_starters(player, pos):
     nitzamon = None
-    if Constants.Y / 2 - 150 <= pos[1] <= Constants.Y / 2 + 50:
-        if Constants.X/2 - 500 <= pos[0] <= Constants.X/2 - 300:
+    if Constants.Y / 2 - 200 <= pos[1] <= Constants.Y / 2:
+        if Constants.X / 3.5 - 200 <= pos[0] <= Constants.X / 3.5:
             nitzamon = Constants.NITZAPHONE_STARTER
-        elif Constants.X / 2 - 100 <= pos[0] <= Constants.X / 2 + 100:
+        elif Constants.X * (2/3.5) - 200 <= pos[0] <= Constants.X * (2/3.5):
             nitzamon = Constants.GEM_TRIO_STARTER
-        elif Constants.X / 2 + 300 <= pos[0] <= Constants.X / 2 + 500:
+        elif Constants.X * (3/3.5) - 200 <= pos[0] <= Constants.X * (3/3.5):
             nitzamon = Constants.MASMERION_STARTER
 
     if nitzamon is not None:

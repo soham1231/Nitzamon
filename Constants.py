@@ -85,7 +85,7 @@ BORDER_IMAGE = pygame.transform.scale(pygame.image.load("Assets/Tiles/Border.png
 NPC_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Characters\\npc.png"), (SCALE, SCALE))
 PLAYER_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Characters\\player.png"), (SCALE, SCALE))
 NPC_SPRITE_RONI = pygame.transform.scale(pygame.image.load("Assets\\Characters\\NPCS\\Roni.jpg"), (SCALE, SCALE))
-NPC_PFP_RONI = pygame.transform.scale(pygame.image.load("Assets/Characters/NPCS/Roni_pfp.jpg"), (X / 4, Y / 4))
+NPC_PFP_RONI = pygame.transform.scale(pygame.image.load("Assets/Characters/NPCS/Roni_pfp.jpg"), (int(X / 4), int(Y / 4)))
 
 # Tiles
 TILES = {"G": GRASS1_IMAGE,
