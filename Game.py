@@ -1,6 +1,9 @@
 import Main
 import MainMenu
 import pygame
+from Constants import X, Y
+
+print(X, Y)
 
 pygame.init()
 

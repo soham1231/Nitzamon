@@ -5,12 +5,12 @@ import Constants
 
 class Nitzamon:
 
-    def __init__(self, name, lvl, hp, list_of_moves):
+    def __init__(self, name, lvl, list_of_moves):
         self.name = name
         self.element = Constants.NITZAMON_ELEMENTS_DICT[name]
         self.dmg = lvl + random.randint(lvl, lvl + 10)
-        self.hp = hp
-        self.max_hp = hp
+        self.hp = lvl * 5
+        self.max_hp = self.hp
         self.spd = lvl + random.randint(lvl, lvl + 5)
         self.sprite = pygame.image.load(f"Assets\\Nitzamons\\{name}.png")
         self.list_of_moves = list_of_moves

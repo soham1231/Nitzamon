@@ -9,6 +9,7 @@ from Classes.NitzamonClasses import Nitzamon
 from Worlds import WorldFunctions
 import Fight
 from Classes.CharacterClasses import Dialogue, Enemy, Player, NPC
+import EnemyNitzamons
 import Inventory
 
 pygame.init()
@@ -88,7 +89,7 @@ def random_nitzamon():
     entrance_sound = pygame.mixer.Sound(f"Assets\\Sounds\\Fight Entrance\\{name}.mp3")
     death_sound = pygame.mixer.Sound(f"Assets\\Sounds\\Death\\{name}.mp3")
 
-    return Nitzamon.Nitzamon(name, level, health, [move1, move2, move3, move4])
+    return Nitzamon.Nitzamon(name, level, [move1, move2, move3, move4])
 
 
 def save(player, enemy):  # Probably gonna remove it
@@ -117,10 +118,10 @@ def npcs_in_range(npcs, pos):  # Im thinking of moving it to Player class
 
 def draw_starters():  # Leave this to Adi
     WIN.fill(Constants.GREY)
-    font = pygame.font.SysFont("Comic Sans MS", 128)
+    font = pygame.font.SysFont("Comic Sans MS", int((Constants.X + Constants.Y) / 16))
     text = font.render("Choose your starter", True, Constants.WHITE)
-    WIN.blit(text, (Constants.X / 2 - text.get_width() / 2, 20))
-    font = pygame.font.SysFont("Comic Sans MS", 16)
+    WIN.blit(text, (Constants.X / 2 - text.get_width() / 2, int(Constants.Y / 36) - 25))
+    font = pygame.font.SysFont("Comic Sans MS", int((Constants.X + Constants.Y) / 125))
 
     nitzaphone_sprite = pygame.transform.scale(Constants.NITZAPHONE_STARTER.sprite, (200, 200))
     nitzaphone_name = font.render("Name: " + Constants.NITZAPHONE, True, Constants.WHITE)
@@ -171,19 +172,28 @@ def main():
     talked_to = False
     npc = None
 
-    nitzamon_list = []
-    equipped = []
-    for i in range(20):  # Leave this until we add the ability to catch nitzamons
-        nitzamon_list.append(random_nitzamon())
-    for i in range(3):
-        equipped.append(random_nitzamon())
-    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], equipped, nitzamon_list, 0, world, {"Gem": 1})
+    # Enemies
+    shoham_nitzamons = [EnemyNitzamons.shoham_nitzamon1, EnemyNitzamons.shoham_nitzamon2, EnemyNitzamons.shoham_nitzamon3]
+    shoham = Enemy.Enemy("Shoham", pygame.image.load("Assets\\Characters\\player.png"), (3, 29), shoham_nitzamons, world, True)
+
+    gilad_nitzamons = [EnemyNitzamons.gilad_nitzamon1, EnemyNitzamons.gilad_nitzamon2, EnemyNitzamons.gilad_nitzamon3]
+    gilad = Enemy.Enemy("Gilad", pygame.image.load("Assets\\Characters\\player.png"), (17, 84), gilad_nitzamons, world, True)
+
+    adi_nitzamons = [EnemyNitzamons.adi_nitzamon1, EnemyNitzamons.adi_nitzamon2, EnemyNitzamons.adi_nitzamon3]
+    adi = Enemy.Enemy("Adi", pygame.image.load("Assets\\Characters\\player.png"), (92, 49), adi_nitzamons, world, True)
+
+    enemy_list = [shoham, gilad, adi]
+
+    # nitzamon_list = []
+    # equipped = []
+    # for i in range(20):  # Leave this until we add the ability to catch nitzamons
+    #     nitzamon_list.append(random_nitzamon())
+    # for i in range(3):
+    #     equipped.append(random_nitzamon())
+    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [], [], 0, world, {"Gem": 1})
     nitzamon_pressed = None
 
-    enemy_nitzamon = random_nitzamon()
-
     dialogs = [Dialogue.Dialogue("Hi", 0), Dialogue.Dialogue("H1", 0)]
-    enemy = Enemy.Enemy("Adi", Constants.NPC_IMAGE, [5, 5], [enemy_nitzamon], dialogs, world, False)
 
     fight_menu = Fight.FightMenu()
     clock = pygame.time.Clock()
@@ -279,6 +289,7 @@ def main():
             player.move(keys)
             player.draw(player.camera_pos)
             draw_npcs(npc_list, player.camera_pos)
+            draw_npcs(enemy_list, player.camera_pos)
             if talked_to and npc is not None:
                 npc.talk(player)
                 if keys[pygame.K_w] or keys[pygame.K_d] or keys[pygame.K_a] or keys[pygame.K_s]:

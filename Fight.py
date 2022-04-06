@@ -106,8 +106,8 @@ class FightMenu:
                            (self.enemy_nitzamon_info.x + 10,
                             self.enemy_nitzamon_info.y + 40 + 3 * Constants.FIGHT_FONT_SIZE))
 
-        player_nitzamon_sprite = pygame.transform.scale(self.equipped_player_nitzamon.sprite, (200, 200))
-        enemy_nitzamon_sprite = pygame.transform.scale(self.equipped_enemy_nitzamon.sprite, (200, 200))
+        player_nitzamon_sprite = pygame.transform.scale(self.equipped_player_nitzamon.sprite, (int(Constants.X / 6.4), int(Constants.Y / 3.6)))
+        enemy_nitzamon_sprite = pygame.transform.scale(self.equipped_enemy_nitzamon.sprite, (int(Constants.X / 6.4), int(Constants.Y / 3.6)))
         enemy_nitzamon_sprite = pygame.transform.flip(enemy_nitzamon_sprite, True, False)
         Constants.WIN.blit(player_nitzamon_sprite, (100, self.player_nitzamon_info.y + 250))
         Constants.WIN.blit(enemy_nitzamon_sprite, (Constants.X - 300, self.enemy_nitzamon_info.y + 250))
