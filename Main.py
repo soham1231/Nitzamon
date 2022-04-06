@@ -57,11 +57,8 @@ def draw_npcs(npcs, camera_pos):  # NUMBER OF N'S ON THE MAP MUST BE EQUAL TO NU
 
 def random_nitzamon():
     name = random.choice(Constants.NAMES)
-    sprite = pygame.image.load(f"Assets\\Nitzamons\\{name}.png")
     level = random.randint(1, 100)
     health = level + random.randint(level * 2, level * 4)
-    attack = level + random.randint(0, int(level/2))
-    speed = level + random.randint(0, 20)
     element = Constants.NITZAMON_ELEMENTS_DICT[name]
     fire_moves = Constants.FIRE_MOVES
     water_moves = Constants.WATER_MOVES
@@ -91,8 +88,7 @@ def random_nitzamon():
     entrance_sound = pygame.mixer.Sound(f"Assets\\Sounds\\Fight Entrance\\{name}.mp3")
     death_sound = pygame.mixer.Sound(f"Assets\\Sounds\\Death\\{name}.mp3")
 
-    return Nitzamon.Nitzamon(name, level, health, health, attack, speed, sprite, element,
-                             [move1, move2, move3, move4], entrance_sound, death_sound)
+    return Nitzamon.Nitzamon(name, level, health, [move1, move2, move3, move4])
 
 
 def save(player, enemy):  # Probably gonna remove it
@@ -175,13 +171,13 @@ def main():
     talked_to = False
     npc = None
 
-    # nitzamon_list = []
-    # equipped = []
-    # for i in range(20):  # Leave this until we add the ability to catch nitzamons
-    #     nitzamon_list.append(random_nitzamon())
-    # for i in range(3):
-    #     equipped.append(random_nitzamon())
-    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [], [], 0, world, {"Gem": 1})
+    nitzamon_list = []
+    equipped = []
+    for i in range(20):  # Leave this until we add the ability to catch nitzamons
+        nitzamon_list.append(random_nitzamon())
+    for i in range(3):
+        equipped.append(random_nitzamon())
+    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], equipped, nitzamon_list, 0, world, {"Gem": 1})
     nitzamon_pressed = None
 
     enemy_nitzamon = random_nitzamon()

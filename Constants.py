@@ -62,9 +62,9 @@ WATER_MOVES = [SPIT, WATERFALL, GEYSER]
 NORMAL_MOVES = [SCRATCH, PUNCH, SLASH]
 
 # Starters
-NITZAPHONE_STARTER = Nitzamon(NITZAPHONE, 1, 20, 20, 15, 10, pygame.image.load("Assets\\Nitzamons\\nitzaphone.png"), NITZAMON_ELEMENTS_DICT[NITZAPHONE], [SCRATCH, SLASH, WATERFALL, SPIT], pygame.mixer.Sound("Assets\\Sounds\\Fight Entrance\\Nitzaphone.mp3"), pygame.mixer.Sound("Assets\\Sounds\\Death\\Nitzaphone.mp3"))
-GEM_TRIO_STARTER = Nitzamon(GEM_TRIO, 1, 20, 20, 15, 10, pygame.image.load("Assets\\Nitzamons\\gem trio.png"), NITZAMON_ELEMENTS_DICT[GEM_TRIO], [PUNCH, SLASH, BURN, LASER], pygame.mixer.Sound("Assets\\Sounds\\Fight Entrance\\Gem trio.mp3"), pygame.mixer.Sound("Assets\\Sounds\\Death\\Gem trio.mp3"))
-MASMERION_STARTER = Nitzamon(MASMERION, 1, 20, 20, 15, 10, pygame.image.load("Assets\\Nitzamons\\masmerion.png"), NITZAMON_ELEMENTS_DICT[MASMERION], [SCRATCH, PUNCH, EARTHQUAKE, ROCKSLIDE], pygame.mixer.Sound("Assets\\Sounds\\Fight Entrance\\Masmerion.mp3"), pygame.mixer.Sound("Assets\\Sounds\\Death\\Masmerion.mp3"))
+NITZAPHONE_STARTER = Nitzamon(NITZAPHONE, 5, 100, [SCRATCH, SLASH, WATERFALL, SPIT])
+GEM_TRIO_STARTER = Nitzamon(GEM_TRIO, 5, 100, [PUNCH, SLASH, BURN, LASER])
+MASMERION_STARTER = Nitzamon(MASMERION, 5, 100, [SCRATCH, PUNCH, EARTHQUAKE, ROCKSLIDE])
 
 # Nitzaballs
 NITZABALL_CHANCES = {"Normal": 0.1,
