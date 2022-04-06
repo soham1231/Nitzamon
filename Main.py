@@ -174,9 +174,15 @@ def main():
 
     # Enemies
     shoham_nitzamons = [EnemyNitzamons.shoham_nitzamon1, EnemyNitzamons.shoham_nitzamon2, EnemyNitzamons.shoham_nitzamon3]
-    shoham = Enemy.Enemy("Shoham", pygame.image.load("Assets\\Characters\\player.png"), (6, 6), shoham_nitzamons, world, True)
+    shoham = Enemy.Enemy("Shoham", pygame.image.load("Assets\\Characters\\player.png"), (3, 29), shoham_nitzamons, world, True)
 
-    enemy_list = [shoham]
+    gilad_nitzamons = [EnemyNitzamons.gilad_nitzamon1, EnemyNitzamons.gilad_nitzamon2, EnemyNitzamons.gilad_nitzamon3]
+    gilad = Enemy.Enemy("Gilad", pygame.image.load("Assets\\Characters\\player.png"), (17, 84), gilad_nitzamons, world, True)
+
+    adi_nitzamons = [EnemyNitzamons.adi_nitzamon1, EnemyNitzamons.adi_nitzamon2, EnemyNitzamons.adi_nitzamon3]
+    adi = Enemy.Enemy("Adi", pygame.image.load("Assets\\Characters\\player.png"), (92, 49), adi_nitzamons, world, True)
+
+    enemy_list = [shoham, gilad, adi]
 
     # nitzamon_list = []
     # equipped = []
