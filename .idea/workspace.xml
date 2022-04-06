@@ -212,12 +212,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.main" />
       <item itemvalue="Python.Constants" />
       <item itemvalue="Python.Fight" />
       <item itemvalue="Python.Game" />
       <item itemvalue="Python.Main" />
       <item itemvalue="Python.WorldFunctions" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
