@@ -118,10 +118,10 @@ def npcs_in_range(npcs, pos):  # Im thinking of moving it to Player class
 
 def draw_starters():  # Leave this to Adi
     WIN.fill(Constants.GREY)
-    font = pygame.font.SysFont("Comic Sans MS", 128)
+    font = pygame.font.SysFont("Comic Sans MS", int((Constants.X + Constants.Y) / 16))
     text = font.render("Choose your starter", True, Constants.WHITE)
-    WIN.blit(text, (Constants.X / 2 - text.get_width() / 2, 20))
-    font = pygame.font.SysFont("Comic Sans MS", 16)
+    WIN.blit(text, (Constants.X / 2 - text.get_width() / 2, int(Constants.Y / 36) - 25))
+    font = pygame.font.SysFont("Comic Sans MS", int((Constants.X + Constants.Y) / 125))
 
     nitzaphone_sprite = pygame.transform.scale(Constants.NITZAPHONE_STARTER.sprite, (200, 200))
     nitzaphone_name = font.render("Name: " + Constants.NITZAPHONE, True, Constants.WHITE)
