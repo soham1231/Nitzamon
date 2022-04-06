@@ -134,6 +134,7 @@ class FightMenu:
                 self.in_fight = False
                 self.fight_start = time.time()
             self.playerTurn = False
+            self.sound_delay = time.time()
 
     def draw_attack(self):
         move1 = self.font.render(self.equipped_player_nitzamon.list_of_moves[0].name, True, Constants.WHITE)
@@ -316,7 +317,7 @@ class FightMenu:
 
     def handle_events(self):
         if self.in_fight:
-            if self.playerTurn and not self.attacking:
+            if self.playerTurn and not self.attacking and time.time() - self.sound_delay >= 2:
                 self.run(pygame.mouse.get_pos())
 
             if self.topRight_rect.collidepoint(pygame.mouse.get_pos()) and not self.attacking:
