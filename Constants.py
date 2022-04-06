@@ -29,8 +29,9 @@ MANAGEREON = "Managereon"
 PENTAGEON = "Pentageon"
 HEADEA = "Headea"
 TRION = "Trion"
+WORKERY = "Workery"
 NAMES = [COMMENTAR, GEM_TRIO, MASMERION, NITZAPHONE, HEARTIAN, SHAREE, DARK_SQUARION, MANAGEREON, PENTAGEON,
-         HEADEA, TRION]
+         HEADEA, TRION, WORKERY]
 NITZAMON_ELEMENTS_DICT = {COMMENTAR: WATER,
                           GEM_TRIO: FIRE,
                           MASMERION: EARTH,
@@ -41,7 +42,8 @@ NITZAMON_ELEMENTS_DICT = {COMMENTAR: WATER,
                           MANAGEREON: EARTH,
                           PENTAGEON: WATER,
                           HEADEA: FIRE,
-                          TRION: EARTH}
+                          TRION: EARTH,
+                          WORKERY: EARTH}
 # Moves
 SCRATCH = Move("normal", 9, "Scratch", pygame.mixer.Sound("Assets\\Sounds\\Moves\\Scratch.mp3"))
 PUNCH = Move("normal", 10, "Punch", pygame.mixer.Sound("Assets\\Sounds\\Moves\\Punch.mp3"))
@@ -62,9 +64,9 @@ WATER_MOVES = [SPIT, WATERFALL, GEYSER]
 NORMAL_MOVES = [SCRATCH, PUNCH, SLASH]
 
 # Starters
-NITZAPHONE_STARTER = Nitzamon(NITZAPHONE, 5, 100, [SCRATCH, SLASH, WATERFALL, SPIT])
-GEM_TRIO_STARTER = Nitzamon(GEM_TRIO, 5, 100, [PUNCH, SLASH, BURN, LASER])
-MASMERION_STARTER = Nitzamon(MASMERION, 5, 100, [SCRATCH, PUNCH, EARTHQUAKE, ROCKSLIDE])
+NITZAPHONE_STARTER = Nitzamon(NITZAPHONE, 5, [SCRATCH, SLASH, WATERFALL, SPIT])
+GEM_TRIO_STARTER = Nitzamon(GEM_TRIO, 5, [PUNCH, SLASH, BURN, LASER])
+MASMERION_STARTER = Nitzamon(MASMERION, 5, [SCRATCH, PUNCH, EARTHQUAKE, ROCKSLIDE])
 
 # Nitzaballs
 NITZABALL_CHANCES = {"Normal": 0.1,
