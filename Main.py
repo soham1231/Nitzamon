@@ -172,18 +172,20 @@ def main():
     talked_to = False
     npc = None
 
-    # Enemies
+    # Enemies go into enemy list
     shoham_nitzamons = [EnemyNitzamons.shoham_nitzamon1, EnemyNitzamons.shoham_nitzamon2, EnemyNitzamons.shoham_nitzamon3]
-    shoham = Enemy.Enemy("Shoham", Constants.SHOHAM_NPC, (3, 29), shoham_nitzamons, world, True)
+    shoham = Enemy.Enemy("Shoham", Constants.SHOHAM_NPC, Constants.SHOHAM_NPC, (3, 29), shoham_nitzamons, world, "I AM SHOHAM")
 
     gilad_nitzamons = [EnemyNitzamons.gilad_nitzamon1, EnemyNitzamons.gilad_nitzamon2, EnemyNitzamons.gilad_nitzamon3]
-    gilad = Enemy.Enemy("Gilad", Constants.GILAD_NPC, (17, 84), gilad_nitzamons, world, True)
+    gilad = Enemy.Enemy("Gilad", Constants.GILAD_NPC, Constants.GILAD_NPC, (17, 84), gilad_nitzamons, world, "I AM GILAD")
 
     adi_nitzamons = [EnemyNitzamons.adi_nitzamon1, EnemyNitzamons.adi_nitzamon2, EnemyNitzamons.adi_nitzamon3]
-    adi = Enemy.Enemy("Adi", Constants.ADI_NPC, (92, 49), adi_nitzamons, world, True)
+    adi = Enemy.Enemy("Adi", Constants.ADI_NPC, Constants.ADI_NPC, (92, 49), adi_nitzamons, world, "I AM ADI")
 
     enemy_list = [shoham, gilad, adi]
 
+    # enemies are added to npc list
+    npc_list += enemy_list
     # nitzamon_list = []
     # equipped = []
     # for i in range(20):  # Leave this until we add the ability to catch nitzamons
@@ -291,6 +293,8 @@ def main():
             if talked_to and npc is not None:
                 npc.talk(player)
                 if keys[pygame.K_w] or keys[pygame.K_d] or keys[pygame.K_a] or keys[pygame.K_s]:
+                    if type(npc) == Enemy.Enemy:
+                        fight_menu.start_fight_single(player.nitzamons, random_nitzamon())
                     talked_to = False
         # pygame.draw.rect(WIN, BLACK, pygame.Rect((0, (3 * Y / 4)), (X, (3 * Y / 4))))
         pygame.display.update()

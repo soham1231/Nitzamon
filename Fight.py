@@ -137,6 +137,7 @@ class FightMenu:
             self.sound_delay = time.time()
 
     def draw_attack(self):
+        self.draw_screen()
         move1 = self.font.render(self.equipped_player_nitzamon.list_of_moves[0].name, True, Constants.WHITE)
         move2 = self.font.render(self.equipped_player_nitzamon.list_of_moves[1].name, True, Constants.WHITE)
         move3 = self.font.render(self.equipped_player_nitzamon.list_of_moves[2].name, True, Constants.WHITE)
@@ -154,37 +155,37 @@ class FightMenu:
         Constants.WIN.blit(move4, (self.bottomRight_rect.x + 60, self.bottomRight_rect.y + 5))
         self.change_info()
 
-        pygame.draw.rect(Constants.WIN, Constants.GREY, self.enemy_nitzamon_info)
-        pygame.draw.rect(Constants.WIN, Constants.GREY, self.player_nitzamon_info)
-        Constants.WIN.blit(self.player_nitzamon_name,
-                           (self.player_nitzamon_info.x + 10,
-                            self.player_nitzamon_info.y + 10))
-
-        Constants.WIN.blit(self.player_nitzamon_hp,
-                           (self.player_nitzamon_info.x + 10,
-                            self.player_nitzamon_info.y + 20 + Constants.FIGHT_FONT_SIZE))
-        Constants.WIN.blit(self.player_nitzamon_lvl,
-                           (self.player_nitzamon_info.x + 10,
-                            self.player_nitzamon_info.y + 30 + 2 * Constants.FIGHT_FONT_SIZE))
-
-        Constants.WIN.blit(self.player_nitzamon_element,
-                           (self.player_nitzamon_info.x + 10,
-                            self.player_nitzamon_info.y + 40 + 3 * Constants.FIGHT_FONT_SIZE))
-
-        Constants.WIN.blit(self.enemy_nitzamon_name,
-                           (self.enemy_nitzamon_info.x + 10, self.enemy_nitzamon_info.y + 10))
-
-        Constants.WIN.blit(self.enemy_nitzamon_hp,
-                           (self.enemy_nitzamon_info.x + 10,
-                            self.enemy_nitzamon_info.y + 20 + Constants.FIGHT_FONT_SIZE))
-
-        Constants.WIN.blit(self.enemy_nitzamon_lvl,
-                           (self.enemy_nitzamon_info.x + 10,
-                            self.enemy_nitzamon_info.y + 30 + 2 * Constants.FIGHT_FONT_SIZE))
-
-        Constants.WIN.blit(self.enemy_nitzamon_element,
-                           (self.enemy_nitzamon_info.x + 10,
-                            self.enemy_nitzamon_info.y + 40 + 3 * Constants.FIGHT_FONT_SIZE))
+        # pygame.draw.rect(Constants.WIN, Constants.GREY, self.enemy_nitzamon_info)
+        # pygame.draw.rect(Constants.WIN, Constants.GREY, self.player_nitzamon_info)
+        # Constants.WIN.blit(self.player_nitzamon_name,
+        #                    (self.player_nitzamon_info.x + 10,
+        #                     self.player_nitzamon_info.y + 10))
+        #
+        # Constants.WIN.blit(self.player_nitzamon_hp,
+        #                    (self.player_nitzamon_info.x + 10,
+        #                     self.player_nitzamon_info.y + 20 + Constants.FIGHT_FONT_SIZE))
+        # Constants.WIN.blit(self.player_nitzamon_lvl,
+        #                    (self.player_nitzamon_info.x + 10,
+        #                     self.player_nitzamon_info.y + 30 + 2 * Constants.FIGHT_FONT_SIZE))
+        #
+        # Constants.WIN.blit(self.player_nitzamon_element,
+        #                    (self.player_nitzamon_info.x + 10,
+        #                     self.player_nitzamon_info.y + 40 + 3 * Constants.FIGHT_FONT_SIZE))
+        #
+        # Constants.WIN.blit(self.enemy_nitzamon_name,
+        #                    (self.enemy_nitzamon_info.x + 10, self.enemy_nitzamon_info.y + 10))
+        #
+        # Constants.WIN.blit(self.enemy_nitzamon_hp,
+        #                    (self.enemy_nitzamon_info.x + 10,
+        #                     self.enemy_nitzamon_info.y + 20 + Constants.FIGHT_FONT_SIZE))
+        #
+        # Constants.WIN.blit(self.enemy_nitzamon_lvl,
+        #                    (self.enemy_nitzamon_info.x + 10,
+        #                     self.enemy_nitzamon_info.y + 30 + 2 * Constants.FIGHT_FONT_SIZE))
+        #
+        # Constants.WIN.blit(self.enemy_nitzamon_element,
+        #                    (self.enemy_nitzamon_info.x + 10,
+        #                     self.enemy_nitzamon_info.y + 40 + 3 * Constants.FIGHT_FONT_SIZE))
 
     def attack(self, pos):
         self.check_hovers(pos)
@@ -314,6 +315,9 @@ class FightMenu:
                     self.equipped_player_nitzamon.entrance_sound.play()
                     self.sound_delay = time.time()
                     break
+
+
+
 
     def handle_events(self):
         if self.in_fight:
