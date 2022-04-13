@@ -342,7 +342,7 @@ class FightMenu:
                 if nitzamon.lvl > self.equipped_player_nitzamon.lvl:
                     lvl_sum += 5
                 else:
-                    lvl_sum += 4
+                    lvl_sum += 3
         else:
             if self.equipped_enemy_nitzamon.lvl > self.equipped_player_nitzamon.lvl:
                 lvl_sum += 5
