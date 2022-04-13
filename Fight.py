@@ -420,3 +420,24 @@ class FightMenu:
             self.equipped_player_nitzamon.hp = 0
             return True
         return False
+
+    def catch(self, player):
+        player.nitzaballs["Gem"] -= 1
+        catched = False
+        nitzamon_hp = (self.equipped_enemy_nitzamon.hp / self.equipped_enemy_nitzamon.max_hp) * 100
+        if nitzamon_hp < 25:
+            if random.randint(1, 4) == 1:
+                catched = True
+        elif nitzamon_hp < 50:
+            if random.randint(1, 8) == 1:
+                catched = True
+        elif nitzamon_hp < 75:
+            if random.randint(1, 12) == 1:
+                catched = True
+        else:
+            if random.randint(1, 16) == 1:
+                catched = True
+
+        if catched:
+            self.equipped_enemy_nitzamon.hp = self.equipped_enemy_nitzamon.max_hp
+            player.nitzamon_bag += self.equipped_enemy_nitzamon
