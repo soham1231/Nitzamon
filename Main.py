@@ -56,9 +56,12 @@ def draw_npcs(npcs, camera_pos):  # NUMBER OF N'S ON THE MAP MUST BE EQUAL TO NU
         npc.draw(camera_pos)
 
 
-def random_nitzamon():
+def random_nitzamon(lvl):
     name = random.choice(Constants.NAMES)
-    level = random.randint(1, 100)
+    if lvl < 5:
+        level = random.randint(1, 4)
+    else:
+        level = random.randint(lvl - 2, lvl + 3)
     health = level + random.randint(level * 2, level * 4)
     element = Constants.NITZAMON_ELEMENTS_DICT[name]
     fire_moves = Constants.FIRE_MOVES
@@ -261,7 +264,7 @@ def main():
             passed_time = time.time() - fight_menu.fight_start
             # Checking if fight cooldown is over
             if random.randint(1, 100) > 90 and passed_time > Constants.FIGHT_COOL_DOWN:  # 10% chance of fighting and checking if enough time passed since the last fight
-                fight_menu.start_fight_single(player.nitzamons, random_nitzamon())
+                fight_menu.start_fight_single(player.nitzamons, random_nitzamon(player.nitzamons[0].lvl))
 
         keys = pygame.key.get_pressed()
 

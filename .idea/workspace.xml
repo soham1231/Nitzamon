@@ -19,9 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="added enemy background">
-      <change beforePath="$PROJECT_DIR$/.idea/Nitzamon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Nitzamon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="d">
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Characters/Roni.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Death/Robot.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Fight Entrance/Robot.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_04_2022_17_21_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_04_2022_17_21__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_04_2022_17_43_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_04_2022_17_43__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_17_05__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_17_05__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_17_49__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_17_49__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_17_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_17_54__Changes_.xml" afterDir="false" />
@@ -34,10 +39,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2022_17_58__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2022_17_58__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_2022_11_52__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_2022_11_52__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_2022_12_39__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_2022_12_39__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/Enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/Enemy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Characters/sohami.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/shoham.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/NPC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/NPC.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,13 +137,13 @@
       <method v="2" />
     </configuration>
     <configuration name="Game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Nitzamon" />
+      <module name="NITZAMON" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\User\AppData\Local\Programs\Python\Python310\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\ADMIN\AppData\Local\Programs\Python\Python39\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -217,12 +221,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.main" />
       <item itemvalue="Python.Constants" />
       <item itemvalue="Python.Fight" />
       <item itemvalue="Python.Game" />
       <item itemvalue="Python.Main" />
       <item itemvalue="Python.WorldFunctions" />
-      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
@@ -435,14 +439,7 @@
       <option name="presentableId" value="LOCAL‎00032" />
       <updated>1648906311770</updated>
     </task>
-    <task id="LOCAL-00033" summary="added enemy functionality">
-      <created>1649843647519</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1649843647519</updated>
-    </task>
-    <option name="localTasksCounter" value="34" />
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -469,6 +466,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Added hovering color" />
     <MESSAGE value="Added fight info (bad looking code)" />
     <MESSAGE value="Added borders" />
     <MESSAGE value="Changed the chances of finding a nitzamon in tall grass and added grass in the middle of the map" />
@@ -493,7 +491,40 @@
     <MESSAGE value="added element info in fight screen and fixed a small bug" />
     <MESSAGE value="started working on nitzaball class and added nitzaball chances" />
     <MESSAGE value="Player can now choose a starter, Adi just needs to make the starters screen relative to the screen size" />
-    <MESSAGE value="added enemy functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="added enemy functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Player can now choose a starter, Adi just needs to make the starters screen relative to the screen size" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1649839499736">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1649839499736" />
+    <state width="1004" height="210" key="GridCell.Tab.0.bottom" timestamp="1649839749870">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1004" height="210" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1649839749870" />
+    <state width="1004" height="210" key="GridCell.Tab.0.center" timestamp="1649839749870">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1004" height="210" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1649839749870" />
+    <state width="1004" height="210" key="GridCell.Tab.0.left" timestamp="1649839749870">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1004" height="210" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1649839749870" />
+    <state width="1004" height="210" key="GridCell.Tab.0.right" timestamp="1649839749870">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1004" height="210" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1649839749870" />
+    <state x="470" y="80" key="VCS.ChangeListViewerDialog" timestamp="1649840529699">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="470" y="80" key="VCS.ChangeListViewerDialog/0.0.1366.728@0.0.1366.728" timestamp="1649840529698" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1649840431896">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1649840431896" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1649840523128">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1649840523128" />
   </component>
 </project>
