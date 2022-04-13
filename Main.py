@@ -261,7 +261,7 @@ def main():
                 if event.key == pygame.K_f:
                     talked_to, npc = npcs_in_range(npc_list, player.pos)
 
-                if event.key == pygame.K_h:
+                if event.key == pygame.K_h and not fight_menu.in_fight:
                     player.heal_nitzamons()
         # Checking if the player is walking on tall grass and not in fight
         if world[player.pos[1]][player.pos[0]] == "T" and not fight_menu.in_fight:
