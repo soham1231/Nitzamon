@@ -52,10 +52,9 @@ class Nitzamon:
         for i in range(360):
             clock.tick(1000)
             Constants.WIN.fill(Constants.GREY)
-            old_sprite = pygame.transform.rotate(old_sprite, i)
-            if i % 2 == 0:
-                old_sprite.set_alpha(i)
-            Constants.WIN.blit((Constants.X//2 - new_sprite.get_width() // 2, Constants.Y//2 - old_sprite.get_height() + 15))
+            if i % 2 == 0 and i <= 255:
+                old_sprite.set_alpha(255 - i)
+            Constants.WIN.blit(pygame.transform.rotate(old_sprite, i), (Constants.X//2 - new_sprite.get_width() // 2, Constants.Y//2 - old_sprite.get_height() + 15))
             pygame.display.update()
 
         Constants.WIN.fill(Constants.GREY)

@@ -80,16 +80,16 @@ class Player(NitzamonUser):
         else:
             Constants.fps = Constants.FPS
 
-        if keys[pygame.K_a] and self.check_collisions("l"):  # Left
+        if keys[pygame.K_LEFT] and self.check_collisions("l"):  # Left
             self.pos[0] -= 1
 
-        if keys[pygame.K_d] and self.check_collisions("r"):  # Right
+        if keys[pygame.K_RIGHT] and self.check_collisions("r"):  # Right
             self.pos[0] += 1
 
-        if keys[pygame.K_w] and self.check_collisions("u"):  # Up
+        if keys[pygame.K_UP] and self.check_collisions("u"):  # Up
             self.pos[1] -= 1
 
-        if keys[pygame.K_s] and self.check_collisions("d"):  # Down
+        if keys[pygame.K_DOWN] and self.check_collisions("d"):  # Down
             self.pos[1] += 1
 
     # def draw(self):
