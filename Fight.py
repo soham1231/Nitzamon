@@ -108,6 +108,9 @@ class FightMenu:
                            (self.enemy_nitzamon_info.x + 10,
                             self.enemy_nitzamon_info.y + 40 + 3 * Constants.FIGHT_FONT_SIZE))
 
+        if self.info_text is not None:
+            Constants.WIN.blit(self.info_text, (50, Constants.Y - 150))
+
         player_nitzamon_sprite = pygame.transform.scale(self.equipped_player_nitzamon.sprite, (int(Constants.X / 6.4), int(Constants.Y / 3.6)))
         enemy_nitzamon_sprite = pygame.transform.scale(self.equipped_enemy_nitzamon.sprite, (int(Constants.X / 6.4), int(Constants.Y / 3.6)))
         enemy_nitzamon_sprite = pygame.transform.flip(enemy_nitzamon_sprite, True, False)
@@ -155,9 +158,6 @@ class FightMenu:
         Constants.WIN.blit(move2, (self.topRight_rect.x + 30, self.topRight_rect.y + 5))
         Constants.WIN.blit(move3, (self.bottomLeft_rect.x + 50, self.bottomLeft_rect.y + 5))
         Constants.WIN.blit(move4, (self.bottomRight_rect.x + 60, self.bottomRight_rect.y + 5))
-
-        if self.info_text is not None:
-            Constants.WIN.blit(self.info_text, (50, Constants.Y - 150))
 
         self.change_info()
 
@@ -213,8 +213,8 @@ class FightMenu:
 
         attack_move.sound.play()
 
-        effectiveness = attack_move.get_effectiveness(self.equipped_enemy_nitzamon)
-        self.info_text = self.font.render(f"{self.equipped_player_nitzamon.name} used {attack_move.name}! It was {effectiveness.lower()}!", True, Constants.BLACK)
+        effectiveness = attack_move.get_effectiveness(self.equipped_enemy_nitzamon.element)
+        self.info_text = self.font.render(f"{self.equipped_player_nitzamon.name} used {attack_move.name}! It was {effectiveness}!", True, Constants.BLACK)
         damage = int((self.equipped_player_nitzamon.dmg + attack_move.dmg) / 2)
         if effectiveness == "Super effective":
             damage *= 2
@@ -291,23 +291,17 @@ class FightMenu:
 
     # Enemy attacking
     def enemy_attack(self):
-        move1 = self.equipped_enemy_nitzamon.list_of_moves[0]
-        move2 = self.equipped_enemy_nitzamon.list_of_moves[1]
-        move3 = self.equipped_enemy_nitzamon.list_of_moves[2]
-        move4 = self.equipped_enemy_nitzamon.list_of_moves[3]
-        moves = [move1, move2, move3, move4]
-
-        chosen_move = random.choice(moves)
+        chosen_move = random.choice(self.equipped_enemy_nitzamon.list_of_moves)
         chosen_move.sound.play()
         self.sound_delay = time.time()
 
-        effectiveness = chosen_move.get_effectiveness(self.equipped_enemy_nitzamon.element)
+        effectiveness = chosen_move.get_effectiveness(self.equipped_player_nitzamon.element)
         self.info_text = self.font.render(f"{self.equipped_enemy_nitzamon.name} used {chosen_move.name}! It was {effectiveness.lower()}!", True, Constants.BLACK)
         # Calculating damage
         damage = int((self.equipped_player_nitzamon.dmg + chosen_move.dmg) / 2)
-        if chosen_move.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Super effective":
+        if effectiveness == "Super effective":
             damage *= 2
-        elif chosen_move.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Not very effective":
+        elif effectiveness == "Not very effective":
             damage = int(damage * 0.5)
 
         self.equipped_player_nitzamon.hp -= damage
@@ -362,10 +356,8 @@ class FightMenu:
             if nitzamon != self.equipped_player_nitzamon:
                 nitzamon.level_up(int(lvl_sum / 3))
 
-    def evolve_animation(self):
-        pass
-
     def handle_fight_encounter(self):
+        evolving = False
         if self.player_won():
             self.level_up_nitzamons()
             self.end_fight()
