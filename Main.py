@@ -183,7 +183,7 @@ def main():
     gilad = Enemy.Enemy("Gilad", Constants.GILAD_NPC, Constants.GILAD_NPC, (17, 84), gilad_nitzamons, world, "I AM GILAD")
 
     adi_nitzamons = [EnemyNitzamons.adi_nitzamon1, EnemyNitzamons.adi_nitzamon2, EnemyNitzamons.adi_nitzamon3]
-    adi = Enemy.Enemy("Adi", Constants.ADI_NPC, Constants.ADI_NPC, (92, 49), adi_nitzamons, world, "I AM ADI")
+    adi = Enemy.Enemy("Adi", Constants.ADI_NPC, Constants.ADI_NPC, (79, 48), adi_nitzamons, world, "I AM ADI")
 
     enemy_list = [shoham, gilad, adi]
     # enemies are added to npc list
