@@ -360,6 +360,7 @@ class FightMenu:
                 nitzamon.level_up(int(lvl_sum / 3))
 
     def handle_fight_encounter(self):
+        font = pygame.font.SysFont("Comic Sans MS", 128)
         if self.player_won() and not self.win_screen or self.evolve_screen:
             self.level_up_nitzamons()
             self.win_screen = True
@@ -374,8 +375,19 @@ class FightMenu:
         if self.evolve_screen:
             self.equipped_player_nitzamon.evolve()
         elif self.win_screen:
+            Constants.WIN.fill(Constants.BLACK)
+            you_win = font.render("YOU WIN!", True, Constants.WHITE)
+            Constants.WIN.blit(you_win, (Constants.X // 2 - you_win.get_width() // 2, Constants.Y // 2 - you_win.get_height()))
+            pygame.display.update()
+            time.sleep(1)
             self.end_fight()
+
         elif self.lose_screen:
+            Constants.WIN.fill(Constants.BLACK)
+            you_lose = font.render("YOU LOSE!", True, Constants.WHITE)
+            Constants.WIN.blit(you_lose, (Constants.X // 2 - you_lose.get_width() // 2, Constants.Y // 2 - you_lose.get_height()))
+            pygame.display.update()
+            time.sleep(1)
             self.end_fight()
         elif self.changing_nitzamons:
             Inventory.draw_inventory(self.player_nitzamons)
