@@ -193,7 +193,6 @@ def main():
     player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [], [], 0, world, {"Gem": 1})
     nitzamon_pressed = None
 
-
     fight_menu = Fight.FightMenu()
     clock = pygame.time.Clock()
 
