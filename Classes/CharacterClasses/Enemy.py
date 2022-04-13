@@ -26,3 +26,4 @@ class Enemy(NitzamonUser):
             text = font.render(self.fight_talk, True, (255, 255, 255))
             WIN.blit(self.pfp, (Constants.X - self.pfp.get_width(), (3 * Constants.Y / 4)))
             WIN.blit(text, (10, (3 * Constants.Y / 4) + 10))
+            # hello
