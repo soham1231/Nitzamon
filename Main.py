@@ -40,7 +40,7 @@ def draw_world(world, player):
 
 def draw_minimap(world, player):
     WIN.fill(Constants.BLACK)
-    x_center = Constants.X / 2 - Constants.MINI_SCALE / 2 * len(world)
+    x_center = Constants.X/ 2 - Constants.MINI_SCALE / 2 * len(world)
     y_center = Constants.Y / 2 - Constants.MINI_SCALE / 2 * len(world)
     for y in range(len(world)):
         for x in range(len(world)):
