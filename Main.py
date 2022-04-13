@@ -167,20 +167,20 @@ def main():
 
     # npcs
     # guide: create a new npc and add it to npc_list
-    roni = NPC.NPC("Roni", Constants.NPC_SPRITE_RONI, Constants.NPC_PFP_RONI, (5, 5), [], [Dialogue.Dialogue("HI! \n HELLO!", None)], world)
+    roni = NPC.NPC("Roni", Constants.NPC_SPRITE_RONI, Constants.NPC_PFP_RONI, (5, 5), [], ["HI! HELLO!"], world)
     npc_list = [roni]
     talked_to = False
     npc = None
 
     # Enemies
     shoham_nitzamons = [EnemyNitzamons.shoham_nitzamon1, EnemyNitzamons.shoham_nitzamon2, EnemyNitzamons.shoham_nitzamon3]
-    shoham = Enemy.Enemy("Shoham", pygame.image.load("Assets\\Characters\\player.png"), (3, 29), shoham_nitzamons, world, True)
+    shoham = Enemy.Enemy("Shoham", Constants.SHOHAM_NPC, (3, 29), shoham_nitzamons, world, True)
 
     gilad_nitzamons = [EnemyNitzamons.gilad_nitzamon1, EnemyNitzamons.gilad_nitzamon2, EnemyNitzamons.gilad_nitzamon3]
-    gilad = Enemy.Enemy("Gilad", pygame.image.load("Assets\\Characters\\player.png"), (17, 84), gilad_nitzamons, world, True)
+    gilad = Enemy.Enemy("Gilad", Constants.GILAD_NPC, (17, 84), gilad_nitzamons, world, True)
 
     adi_nitzamons = [EnemyNitzamons.adi_nitzamon1, EnemyNitzamons.adi_nitzamon2, EnemyNitzamons.adi_nitzamon3]
-    adi = Enemy.Enemy("Adi", pygame.image.load("Assets\\Characters\\player.png"), (92, 49), adi_nitzamons, world, True)
+    adi = Enemy.Enemy("Adi", Constants.ADI_NPC, (92, 49), adi_nitzamons, world, True)
 
     enemy_list = [shoham, gilad, adi]
 
@@ -193,7 +193,6 @@ def main():
     player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [], [], 0, world, {"Gem": 1})
     nitzamon_pressed = None
 
-    dialogs = [Dialogue.Dialogue("Hi", 0), Dialogue.Dialogue("H1", 0)]
 
     fight_menu = Fight.FightMenu()
     clock = pygame.time.Clock()
