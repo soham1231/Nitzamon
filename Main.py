@@ -8,7 +8,7 @@ from Constants import WIN
 from Classes.NitzamonClasses import Nitzamon
 from Worlds import WorldFunctions
 import Fight
-from Classes.CharacterClasses import Dialogue, Enemy, Player, NPC
+from Classes.CharacterClasses import Enemy, Player, NPC
 import EnemyNitzamons
 import Inventory
 
@@ -167,20 +167,20 @@ def main():
 
     # npcs
     # guide: create a new npc and add it to npc_list
-    roni = NPC.NPC("Roni", Constants.NPC_SPRITE_RONI, Constants.NPC_PFP_RONI, (5, 5), [], [Dialogue.Dialogue("HI! \n HELLO!", None)], world)
+    roni = NPC.NPC("Roni", Constants.NPC_SPRITE_RONI, Constants.NPC_PFP_RONI, (5, 5), [], ["HI! HELLO!"], world)
     npc_list = [roni]
     talked_to = False
     npc = None
 
     # Enemies
     shoham_nitzamons = [EnemyNitzamons.shoham_nitzamon1, EnemyNitzamons.shoham_nitzamon2, EnemyNitzamons.shoham_nitzamon3]
-    shoham = Enemy.Enemy("Shoham", pygame.image.load("Assets\\Characters\\player.png"), (3, 29), shoham_nitzamons, world, True)
+    shoham = Enemy.Enemy("Shoham", Constants.SHOHAM_NPC, (3, 29), shoham_nitzamons, world, True)
 
     gilad_nitzamons = [EnemyNitzamons.gilad_nitzamon1, EnemyNitzamons.gilad_nitzamon2, EnemyNitzamons.gilad_nitzamon3]
-    gilad = Enemy.Enemy("Gilad", pygame.image.load("Assets\\Characters\\player.png"), (17, 84), gilad_nitzamons, world, True)
+    gilad = Enemy.Enemy("Gilad", Constants.GILAD_NPC, (17, 84), gilad_nitzamons, world, True)
 
     adi_nitzamons = [EnemyNitzamons.adi_nitzamon1, EnemyNitzamons.adi_nitzamon2, EnemyNitzamons.adi_nitzamon3]
-    adi = Enemy.Enemy("Adi", pygame.image.load("Assets\\Characters\\player.png"), (92, 49), adi_nitzamons, world, True)
+    adi = Enemy.Enemy("Adi", Constants.ADI_NPC, (92, 49), adi_nitzamons, world, True)
 
     enemy_list = [shoham, gilad, adi]
 
@@ -192,8 +192,6 @@ def main():
     #     equipped.append(random_nitzamon())
     player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [], [], 0, world, {"Gem": 1})
     nitzamon_pressed = None
-
-    dialogs = [Dialogue.Dialogue("Hi", 0), Dialogue.Dialogue("H1", 0)]
 
     fight_menu = Fight.FightMenu()
     clock = pygame.time.Clock()
@@ -292,8 +290,11 @@ def main():
             draw_npcs(enemy_list, player.camera_pos)
             if talked_to and npc is not None:
                 npc.talk(player)
+                if not pygame.mixer.get_busy():
+                    npc.voice.play()
                 if keys[pygame.K_w] or keys[pygame.K_d] or keys[pygame.K_a] or keys[pygame.K_s]:
                     talked_to = False
+                    npc.voice.stop()
         # pygame.draw.rect(WIN, BLACK, pygame.Rect((0, (3 * Y / 4)), (X, (3 * Y / 4))))
         pygame.display.update()
     return run
