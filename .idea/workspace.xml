@@ -430,7 +430,13 @@
       <option name="presentableId" value="LOCAL‎00034" />
       <updated>1649613575197</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL‎00035" summary="added enemies' sprites">
+      <created>1649839983296</created>
+      <option name="number" value="LOCAL‎00035" />
+      <option name="presentableId" value="LOCAL‎00035" />
+      <updated>1649839983296</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
