@@ -183,7 +183,6 @@ def main():
     adi = Enemy.Enemy("Adi", Constants.ADI_NPC, Constants.ADI_NPC, (92, 49), adi_nitzamons, world, "I AM ADI")
 
     enemy_list = [shoham, gilad, adi]
-
     # enemies are added to npc list
     npc_list += enemy_list
     # nitzamon_list = []
@@ -289,7 +288,6 @@ def main():
             player.move(keys)
             player.draw(player.camera_pos)
             draw_npcs(npc_list, player.camera_pos)
-            draw_npcs(enemy_list, player.camera_pos)
             if talked_to and npc is not None:
                 npc.talk(player)
                 if keys[pygame.K_w] or keys[pygame.K_d] or keys[pygame.K_a] or keys[pygame.K_s]:
