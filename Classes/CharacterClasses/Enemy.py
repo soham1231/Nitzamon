@@ -9,6 +9,13 @@ class Enemy(NitzamonUser):
         self.fight_talk = fight_talk
         self.pfp = pfp
 
+
+    def start_fight(self):
+        pass
+
+    def enemy_is_dead(self):
+        pass
+
     def talk(self, player):
         if ((player.pos[0] == self.pos[0] - 1) and (player.pos[1] == self.pos[1])) or \
                 ((player.pos[0] == self.pos[0]) and (player.pos[1] == self.pos[1]) + 1) or \
@@ -19,3 +26,4 @@ class Enemy(NitzamonUser):
             text = font.render(self.fight_talk, True, (255, 255, 255))
             WIN.blit(self.pfp, (Constants.X - self.pfp.get_width(), (3 * Constants.Y / 4)))
             WIN.blit(text, (10, (3 * Constants.Y / 4) + 10))
+            #HELLO

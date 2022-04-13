@@ -335,8 +335,27 @@ class FightMenu:
             if self.topLeft_rect.collidepoint(pygame.mouse.get_pos()) and not self.changing_nitzamons:
                 self.attacking = True
 
+    def level_up_nitzamons(self):
+        lvl_sum = 0
+        if type(self.enemy_nitzamons) == list:
+            for nitzamon in self.enemy_nitzamons:
+                if nitzamon.lvl > self.equipped_player_nitzamon.lvl:
+                    lvl_sum += 5
+                else:
+                    lvl_sum += 3
+        else:
+            if self.equipped_enemy_nitzamon.lvl > self.equipped_player_nitzamon.lvl:
+                lvl_sum += 5
+            else:
+                lvl_sum += 4
+        self.equipped_player_nitzamon.level_up(lvl_sum)
+        for nitzamon in self.player_nitzamons:
+            if nitzamon != self.equipped_player_nitzamon:
+                nitzamon.level_up(int(lvl_sum / 3))
+
     def handle_fight_encounter(self):
         if self.player_won():
+            self.level_up_nitzamons()
             self.end_fight()
         elif self.enemy_won():  # Two different if statements because we may want to add rewards when player wins
             self.end_fight()
