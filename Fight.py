@@ -453,5 +453,6 @@ class FightMenu:
 
         if catched:
             self.equipped_enemy_nitzamon.hp = self.equipped_enemy_nitzamon.max_hp
-            player.nitzamon_bag.append(self.equipped_enemy_nitzamon)
+            player.add_nitzamon(self.equipped_enemy_nitzamon)
+            self.level_up_nitzamons()
             self.end_fight()

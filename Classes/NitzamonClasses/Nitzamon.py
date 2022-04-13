@@ -24,8 +24,8 @@ class Nitzamon:
 
     def level_up(self, lvl_num):
         self.lvl += lvl_num
-        self.dmg += lvl_num + 2
-        self.max_hp += lvl_num + 2
+        self.dmg += random.randint(lvl_num + 2, lvl_num + 10)
+        self.max_hp += random.randint(lvl_num + 5, lvl_num + 15)
         self.hp = self.max_hp
         self.spd += lvl_num
         if self.lvl >= 15 and not self.evolved:
