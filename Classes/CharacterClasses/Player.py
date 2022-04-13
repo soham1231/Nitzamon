@@ -133,3 +133,8 @@ class Player(NitzamonUser):
             self.nitzamons.remove(nitzamon)
             if len(self.nitzamon_bag) > 3:
                 self.nitzamons.append(self.nitzamon_bag[3])
+
+    def add_nitzamon(self, nitzamon):
+        if len(self.nitzamons) < 3:
+            self.nitzamons.append(nitzamon)
+        self.nitzamon_bag.append(nitzamon)

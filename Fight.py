@@ -15,6 +15,8 @@ class FightMenu:
         self.equipped_player_nitzamon = None
         self.equipped_enemy_nitzamon = None
 
+        self.info_text = None
+
         self.playerTurn = None
         if self.playerTurn:
             self.enemy_attack_time = 0
@@ -153,6 +155,10 @@ class FightMenu:
         Constants.WIN.blit(move2, (self.topRight_rect.x + 30, self.topRight_rect.y + 5))
         Constants.WIN.blit(move3, (self.bottomLeft_rect.x + 50, self.bottomLeft_rect.y + 5))
         Constants.WIN.blit(move4, (self.bottomRight_rect.x + 60, self.bottomRight_rect.y + 5))
+
+        if self.info_text is not None:
+            Constants.WIN.blit(self.info_text, (50, Constants.Y - 150))
+
         self.change_info()
 
         # pygame.draw.rect(Constants.WIN, Constants.GREY, self.enemy_nitzamon_info)
@@ -207,10 +213,12 @@ class FightMenu:
 
         attack_move.sound.play()
 
+        effectiveness = attack_move.get_effectiveness(self.equipped_enemy_nitzamon)
+        self.info_text = self.font.render(f"{self.equipped_player_nitzamon.name} used {attack_move.name}! It was {effectiveness.lower()}!", True, Constants.BLACK)
         damage = int((self.equipped_player_nitzamon.dmg + attack_move.dmg) / 2)
-        if attack_move.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Super effective":
+        if effectiveness == "Super effective":
             damage *= 2
-        elif attack_move.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Not very effective":
+        elif effectiveness == "Not very effective":
             damage = int(damage * 0.5)
         self.playerTurn = False
         self.enemy_attack_time = time.time()
@@ -293,6 +301,8 @@ class FightMenu:
         chosen_move.sound.play()
         self.sound_delay = time.time()
 
+        effectiveness = chosen_move.get_effectiveness(self.equipped_enemy_nitzamon.element)
+        self.info_text = self.font.render(f"{self.equipped_enemy_nitzamon.name} used {chosen_move.name}! It was {effectiveness.lower()}!", True, Constants.BLACK)
         # Calculating damage
         damage = int((self.equipped_player_nitzamon.dmg + chosen_move.dmg) / 2)
         if chosen_move.get_effectiveness(self.equipped_enemy_nitzamon.element) == "Super effective":
@@ -317,23 +327,22 @@ class FightMenu:
                     break
 
     def handle_events(self):
-        if self.in_fight:
-            if self.playerTurn and not self.attacking and time.time() - self.sound_delay >= 2:
-                self.run(pygame.mouse.get_pos())
+        if self.playerTurn and not self.attacking and time.time() - self.sound_delay >= 2:
+            self.run(pygame.mouse.get_pos())
 
-            if self.topRight_rect.collidepoint(pygame.mouse.get_pos()) and not self.attacking:
-                self.changing_nitzamons = True
+        if self.topRight_rect.collidepoint(pygame.mouse.get_pos()) and not self.attacking:
+            self.changing_nitzamons = True
 
-            if time.time() - self.sound_delay >= 2:
-                if self.changing_nitzamons:
-                    replacing = Inventory.check_collision(pygame.mouse.get_pos(), self.player_nitzamons)
-                    if replacing is not None:
-                        self.change_nitzamons(replacing)
-                        self.changing_nitzamons = False
-                if self.attacking and self.playerTurn:
-                    self.attack(pygame.mouse.get_pos())
-            if self.topLeft_rect.collidepoint(pygame.mouse.get_pos()) and not self.changing_nitzamons:
-                self.attacking = True
+        if time.time() - self.sound_delay >= 2:
+            if self.changing_nitzamons:
+                replacing = Inventory.check_collision(pygame.mouse.get_pos(), self.player_nitzamons)
+                if replacing is not None:
+                    self.change_nitzamons(replacing)
+                    self.changing_nitzamons = False
+            if self.attacking and self.playerTurn:
+                self.attack(pygame.mouse.get_pos())
+        if self.topLeft_rect.collidepoint(pygame.mouse.get_pos()) and not self.changing_nitzamons:
+            self.attacking = True
 
     def level_up_nitzamons(self):
         lvl_sum = 0
@@ -352,6 +361,9 @@ class FightMenu:
         for nitzamon in self.player_nitzamons:
             if nitzamon != self.equipped_player_nitzamon:
                 nitzamon.level_up(int(lvl_sum / 3))
+
+    def evolve_animation(self):
+        pass
 
     def handle_fight_encounter(self):
         if self.player_won():
@@ -422,7 +434,8 @@ class FightMenu:
         return False
 
     def catch(self, player):
-        player.nitzaballs["Gem"] -= 1
+        self.playerTurn = False
+        player.nitzaballs -= 1
         catched = False
         nitzamon_hp = (self.equipped_enemy_nitzamon.hp / self.equipped_enemy_nitzamon.max_hp) * 100
         if nitzamon_hp < 25:
@@ -440,4 +453,5 @@ class FightMenu:
 
         if catched:
             self.equipped_enemy_nitzamon.hp = self.equipped_enemy_nitzamon.max_hp
-            player.nitzamon_bag += self.equipped_enemy_nitzamon
+            player.nitzamon_bag.append(self.equipped_enemy_nitzamon)
+            self.end_fight()

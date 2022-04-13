@@ -194,7 +194,7 @@ def main():
     #     nitzamon_list.append(random_nitzamon())
     # for i in range(3):
     #     equipped.append(random_nitzamon())
-    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [], [], 0, world, 1)
+    player = Player.Player("Shoham", Constants.PLAYER_IMAGE, [1, 1], [], [], 0, world, 10)
     nitzamon_pressed = None
 
     fight_menu = Fight.FightMenu()
@@ -208,7 +208,11 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
             if event.type == pygame.MOUSEBUTTONDOWN:
-                fight_menu.handle_events()
+                if fight_menu.in_fight:
+                    fight_menu.handle_events()
+                    if (not fight_menu.attacking or fight_menu.changing_nitzamons) and fight_menu.playerTurn:
+                        if fight_menu.bottomLeft_rect.collidepoint(pygame.mouse.get_pos()):
+                            fight_menu.catch(player)
 
                 if choosing_starter:
                     if choose_starters(player, pygame.mouse.get_pos()):
@@ -293,6 +297,8 @@ def main():
             draw_npcs(npc_list, player.camera_pos)
             if talked_to and npc is not None:
                 npc.talk(player)
+                if not pygame.mixer.get_busy():
+                    npc.voice.play()
                 if keys[pygame.K_w] or keys[pygame.K_d] or keys[pygame.K_a] or keys[pygame.K_s]:
                     if type(npc) == Enemy.Enemy:
                         fight_menu.start_fight_enemy(player.nitzamons, npc.nitzamons)
