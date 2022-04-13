@@ -89,8 +89,12 @@ PLAYER_IMAGE = pygame.transform.scale(pygame.image.load("Assets\\Characters\\pla
 NPC_SPRITE_RONI = pygame.transform.scale(pygame.image.load("Assets\\Characters\\NPCS\\Roni.jpg"), (SCALE, SCALE))
 NPC_PFP_RONI = pygame.transform.scale(pygame.image.load("Assets/Characters/NPCS/Roni_pfp.jpg"), (int(X / 4), int(Y / 4)))
 GILAD_NPC = pygame.transform.scale(pygame.image.load("Assets\\Characters\\gilad.png"), (SCALE + 5, SCALE + 5))
+GILAD_PFP = pygame.transform.scale(pygame.image.load("Assets\\Characters\\Gilad_pfp.png"), (int(X / 4), int(Y / 4)))
 SHOHAM_NPC = pygame.transform.scale(pygame.image.load("Assets\\Characters\\shoham.png"), (SCALE + 5, SCALE + 5))
+SHOHAM_PFP = pygame.transform.scale(pygame.image.load("Assets\\Characters\\Shoham_pfp.png"), (int(X / 4), int(Y / 4)))
 ADI_NPC = pygame.transform.scale(pygame.image.load("Assets\\Characters\\adi.png"), (SCALE + 5, SCALE + 5))
+ADI_PFP = pygame.transform.scale(pygame.image.load("Assets\\Characters\\Adi_pfp.png"), (int(X / 4), int(Y / 4)))
+
 
 # Tiles
 TILES = {"G": GRASS1_IMAGE,

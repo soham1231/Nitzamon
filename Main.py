@@ -177,7 +177,7 @@ def main():
 
     # Enemies go into enemy list
     shoham_nitzamons = [EnemyNitzamons.shoham_nitzamon1, EnemyNitzamons.shoham_nitzamon2, EnemyNitzamons.shoham_nitzamon3]
-    shoham = Enemy.Enemy("Shoham", Constants.SHOHAM_NPC, Constants.SHOHAM_NPC, (3, 29), shoham_nitzamons, world, "I AM SHOHAM")
+    shoham = Enemy.Enemy("Shoham", Constants.SHOHAM_NPC, Constants.SHOHAM_PFP, (3, 29), shoham_nitzamons, world, "I AM SHOHAM")
 
     gilad_nitzamons = [EnemyNitzamons.gilad_nitzamon1, EnemyNitzamons.gilad_nitzamon2, EnemyNitzamons.gilad_nitzamon3]
     gilad = Enemy.Enemy("Gilad", Constants.GILAD_NPC, Constants.GILAD_NPC, (17, 84), gilad_nitzamons, world, "I AM GILAD")
