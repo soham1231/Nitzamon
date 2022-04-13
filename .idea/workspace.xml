@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="added enemy functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/Enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/Enemy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/Player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,12 +202,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.main" />
       <item itemvalue="Python.Constants" />
       <item itemvalue="Python.Fight" />
       <item itemvalue="Python.Game" />
       <item itemvalue="Python.Main" />
       <item itemvalue="Python.WorldFunctions" />
-      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
@@ -439,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649847256608</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="added enemy functionality">
+      <created>1649847742261</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1649847742261</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
