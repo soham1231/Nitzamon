@@ -316,9 +316,6 @@ class FightMenu:
                     self.sound_delay = time.time()
                     break
 
-
-
-
     def handle_events(self):
         if self.in_fight:
             if self.playerTurn and not self.attacking and time.time() - self.sound_delay >= 2:

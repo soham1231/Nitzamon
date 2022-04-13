@@ -4,8 +4,8 @@ from Classes.CharacterClasses.NitzamonUser import *
 
 
 class Enemy(NitzamonUser):
-    def _init_(self, name, sprite, pfp, pos, nitzamons, world, fight_talk):
-        super()._init_(name, sprite, pos, nitzamons, world)
+    def __init__(self, name, sprite, pfp, pos, nitzamons, world, fight_talk):
+        super().__init__(name, sprite, pos, nitzamons, world)
         self.fight_talk = fight_talk
         self.pfp = pfp
 

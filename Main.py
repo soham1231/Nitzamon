@@ -292,7 +292,7 @@ def main():
                 npc.talk(player)
                 if keys[pygame.K_w] or keys[pygame.K_d] or keys[pygame.K_a] or keys[pygame.K_s]:
                     if type(npc) == Enemy.Enemy:
-                        fight_menu.start_fight_single(player.nitzamons, random_nitzamon())
+                        fight_menu.start_fight_enemy(player.nitzamons, npc.nitzamons)
                     talked_to = False
         # pygame.draw.rect(WIN, BLACK, pygame.Rect((0, (3 * Y / 4)), (X, (3 * Y / 4))))
         pygame.display.update()
