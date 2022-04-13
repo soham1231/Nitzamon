@@ -19,31 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="d">
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Characters/Roni.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Death/Robot.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Fight Entrance/Robot.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Nitzamon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Nitzamon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_04_2022_17_21_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_04_2022_17_21__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_04_2022_17_43_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_04_2022_17_43__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_17_05__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_17_05__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_17_49__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_17_49__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_17_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_17_54__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_19_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_19_02__Changes_.xml" afterDir="false" />
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="added enemies' sprites">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_19_28__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_19_28__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_19_28__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_19_28__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_19_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_19_29__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_19_30__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2022_19_30__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_18__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_03_2022_19_31__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/sohami.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Characters/shoham.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/CharacterClasses/NPC.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/CharacterClasses/NPC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/NitzamonClasses/Nitzamon.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/NitzamonClasses/Nitzamon.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,12 +65,15 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Assets/Characters" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Student\Desktop\Nitzamon\Assets\Characters" />
+      <recent name="C:\Users\Student\Desktop\Nitzamon\Assets\Characters\NPCS" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ADMIN\Desktop\nitzanim\nitzamon\Assets\Sounds\Death" />
-      <recent name="C:\Users\ADMIN\Desktop\nitzanim\nitzamon\Assets\Sounds\Fight Entrance" />
+      <recent name="C:\Users\Student\Desktop\Nitzamon\Assets\Characters" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\NitzamonClasses" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\Character Classes" />
       <recent name="C:\Users\Student\Desktop\Nitzamon\Classes\Nitzamon Classes" />
@@ -144,7 +129,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\ADMIN\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\Student\AppData\Local\Programs\Python\Python310\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -440,7 +425,13 @@
       <option name="presentableId" value="LOCAL‎00032" />
       <updated>1648906311770</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL‎00033" summary="added enemies">
+      <created>1649262485954</created>
+      <option name="number" value="LOCAL‎00033" />
+      <option name="presentableId" value="LOCAL‎00033" />
+      <updated>1649262485954</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -467,7 +458,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added hovering color" />
     <MESSAGE value="Added fight info (bad looking code)" />
     <MESSAGE value="Added borders" />
     <MESSAGE value="Changed the chances of finding a nitzamon in tall grass and added grass in the middle of the map" />
@@ -492,28 +482,7 @@
     <MESSAGE value="added element info in fight screen and fixed a small bug" />
     <MESSAGE value="started working on nitzaball class and added nitzaball chances" />
     <MESSAGE value="Player can now choose a starter, Adi just needs to make the starters screen relative to the screen size" />
-    <option name="LAST_COMMIT_MESSAGE" value="Player can now choose a starter, Adi just needs to make the starters screen relative to the screen size" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1649839499736">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1649839499736" />
-    <state width="1004" height="210" key="GridCell.Tab.0.bottom" timestamp="1649839749870">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1004" height="210" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1649839749870" />
-    <state width="1004" height="210" key="GridCell.Tab.0.center" timestamp="1649839749870">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1004" height="210" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1649839749870" />
-    <state width="1004" height="210" key="GridCell.Tab.0.left" timestamp="1649839749870">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1004" height="210" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1649839749870" />
-    <state width="1004" height="210" key="GridCell.Tab.0.right" timestamp="1649839749870">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1004" height="210" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1649839749870" />
+    <MESSAGE value="added enemies" />
+    <option name="LAST_COMMIT_MESSAGE" value="added enemies" />
   </component>
 </project>
