@@ -20,3 +20,10 @@ class Nitzamon:
 
         self.entrance_sound.set_volume(0.1)
         self.death_sound.set_volume(0.1)
+
+    def level_up(self, lvlNum):
+        self.lvl += lvlNum
+        self.dmg += lvlNum + 2
+        self.max_hp += lvlNum + 2
+        self.hp = self.max_hp
+        self.spd += lvlNum
