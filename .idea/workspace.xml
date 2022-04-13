@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="added add_nitzamon function and made the level up a bit better">
+    <list default="true" id="334d6a7e-db16-455a-9585-08f3f86397a4" name="Changes" comment="i dont even know anymore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/NitzamonClasses/Nitzamon.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/NitzamonClasses/Nitzamon.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fight.py" beforeDir="false" afterPath="$PROJECT_DIR$/Fight.py" afterDir="false" />
@@ -201,12 +201,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.main" />
       <item itemvalue="Python.Constants" />
       <item itemvalue="Python.Fight" />
       <item itemvalue="Python.Game" />
       <item itemvalue="Python.Main" />
       <item itemvalue="Python.WorldFunctions" />
-      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
@@ -440,7 +440,13 @@
       <option name="project" value="LOCAL" />
       <updated>1649847256608</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL‎00036" summary="i dont even know anymore">
+      <created>1649862863966</created>
+      <option name="number" value="LOCAL‎00036" />
+      <option name="presentableId" value="LOCAL‎00036" />
+      <updated>1649862863966</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -467,7 +473,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added fight info (bad looking code)" />
     <MESSAGE value="Added borders" />
     <MESSAGE value="Changed the chances of finding a nitzamon in tall grass and added grass in the middle of the map" />
     <MESSAGE value="Added a main menu" />
@@ -492,32 +497,37 @@
     <MESSAGE value="started working on nitzaball class and added nitzaball chances" />
     <MESSAGE value="Player can now choose a starter, Adi just needs to make the starters screen relative to the screen size" />
     <MESSAGE value="added enemy functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="added enemy functionality" />
+    <MESSAGE value="i dont even know anymore" />
+    <option name="LAST_COMMIT_MESSAGE" value="i dont even know anymore" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1649857956513">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1649857956513" />
-    <state width="1002" height="22" key="GridCell.Tab.0.bottom" timestamp="1649862774418">
+    <state width="1002" height="238" key="GridCell.Tab.0.bottom" timestamp="1649865439884">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1002" height="22" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1649862774418" />
-    <state width="1002" height="22" key="GridCell.Tab.0.center" timestamp="1649862774418">
+    <state width="1002" height="238" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1649865439884" />
+    <state width="1002" height="238" key="GridCell.Tab.0.center" timestamp="1649865439884">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1002" height="22" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1649862774418" />
-    <state width="1002" height="22" key="GridCell.Tab.0.left" timestamp="1649862774418">
+    <state width="1002" height="238" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1649865439884" />
+    <state width="1002" height="238" key="GridCell.Tab.0.left" timestamp="1649865439884">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1002" height="22" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1649862774418" />
-    <state width="1002" height="22" key="GridCell.Tab.0.right" timestamp="1649862774418">
+    <state width="1002" height="238" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1649865439884" />
+    <state width="1002" height="238" key="GridCell.Tab.0.right" timestamp="1649865439884">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1002" height="22" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1649862774418" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1649859622859">
+    <state width="1002" height="238" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1649865439884" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1649862865760">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1649859622859" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1649862865760" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1649862834883">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1649862834883" />
   </component>
 </project>

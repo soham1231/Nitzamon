@@ -27,6 +27,9 @@ class FightMenu:
         self.changing_nitzamons = False
         self.attacking = False
         self.fight_start = time.time()
+        self.win_screen = False
+        self.lose_screen = False
+        self.evolve_screen = False
 
         self.background = pygame.transform.scale(pygame.image.load("Assets\\Gemgem bg.png"), (Constants.X, Constants.Y - 250))
 
@@ -351,24 +354,30 @@ class FightMenu:
                 lvl_sum += 5
             else:
                 lvl_sum += 4
-        self.equipped_player_nitzamon.level_up(lvl_sum)
+        self.evolve_screen = self.equipped_player_nitzamon.level_up(lvl_sum)
         for nitzamon in self.player_nitzamons:
             if nitzamon != self.equipped_player_nitzamon:
                 nitzamon.level_up(int(lvl_sum / 3))
 
     def handle_fight_encounter(self):
-        evolving = False
-        if self.player_won():
+        if self.player_won() and not self.win_screen or self.evolve_screen:
             self.level_up_nitzamons()
-            self.end_fight()
-        elif self.enemy_won():  # Two different if statements because we may want to add rewards when player wins
-            self.end_fight()
+            self.win_screen = True
+        elif self.enemy_won() and not self.lose_screen or self.evolve_screen:  # Two different if statements because we may want to add rewards when player wins
+            self.lose_screen = True
         if time.time() - self.sound_delay >= 2:
             self.change_deaths()
         if not self.playerTurn:
             if time.time() - self.enemy_attack_time >= 2:
                 self.enemy_attack()
-        if self.changing_nitzamons:
+
+        if self.evolve_screen:
+            self.equipped_player_nitzamon.evolve()
+        elif self.win_screen:
+            self.end_fight()
+        elif self.lose_screen:
+            self.end_fight()
+        elif self.changing_nitzamons:
             Inventory.draw_inventory(self.player_nitzamons)
         elif self.attacking:
             self.draw_attack()
@@ -401,6 +410,9 @@ class FightMenu:
         self.in_fight = False
         self.attacking = False
         self.changing_nitzamons = False
+        self.evolve_screen = False
+        self.win_screen = False
+        self.lose_screen = False
         self.fight_start = time.time()
 
     def player_won(self):

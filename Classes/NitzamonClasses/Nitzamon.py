@@ -1,6 +1,7 @@
 import random
 import pygame
 import Constants
+from time import sleep
 
 
 class Nitzamon:
@@ -42,13 +43,22 @@ class Nitzamon:
             self.name = "Gem Army"
         elif self.name == Constants.MASMERION:
             self.name = "Agent Patish"
-        old_sprite = pygame.transform.scale(self.sprite, (100, 100))
+        size = Constants.X // 4
+        old_sprite = pygame.transform.scale(self.sprite, (size, size))
         self.sprite = pygame.image.load(f"Assets\\Nitzamons\\{self.name}.png")
-        new_sprite = pygame.transform.scale(self.sprite, (100, 100))
+        new_sprite = pygame.transform.scale(self.sprite, (size, size))
 
         clock = pygame.time.Clock()
-        clock.tick(20)
-        for i in range(1, 360):
-            Constants.WIN.fill(Constants.BLACK)
-            Constants.WIN.blit(old_sprite, (Constants.X//2, Constants.Y//2 - old_sprite.get_height()))
+        for i in range(360):
+            clock.tick(1000)
+            Constants.WIN.fill(Constants.GREY)
             old_sprite = pygame.transform.rotate(old_sprite, i)
+            if i % 2 == 0:
+                old_sprite.set_alpha(i)
+            Constants.WIN.blit((Constants.X//2 - new_sprite.get_width() // 2, Constants.Y//2 - old_sprite.get_height() + 15))
+            pygame.display.update()
+
+        Constants.WIN.fill(Constants.GREY)
+        Constants.WIN.blit(new_sprite, (Constants.X // 2 - new_sprite.get_width() // 2, Constants.Y // 2 - new_sprite.get_height() + 15))
+        pygame.display.update()
+        sleep(2)
