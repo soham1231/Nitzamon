@@ -303,6 +303,7 @@ def main():
                     if type(npc) == Enemy.Enemy:
                         fight_menu.start_fight_enemy(player.nitzamons, npc.nitzamons)
                     talked_to = False
+                    npc.voice.stop()
         # pygame.draw.rect(WIN, BLACK, pygame.Rect((0, (3 * Y / 4)), (X, (3 * Y / 4))))
         pygame.display.update()
     return run
