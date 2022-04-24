@@ -299,7 +299,7 @@ def main():
                 npc.talk(player)
                 if not pygame.mixer.get_busy():
                     npc.voice.play()
-                if keys[pygame.K_w] or keys[pygame.K_d] or keys[pygame.K_a] or keys[pygame.K_s]:
+                if keys[pygame.K_UP] or keys[pygame.K_RIGHT] or keys[pygame.K_LEFT] or keys[pygame.K_DOWN]:
                     if type(npc) == Enemy.Enemy:
                         fight_menu.start_fight_enemy(player.nitzamons, npc.nitzamons)
                     talked_to = False
